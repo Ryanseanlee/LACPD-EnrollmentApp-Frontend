@@ -68,7 +68,7 @@ Before commiting please format your code with `prettier`. This is a tool that fo
 #### Test Server
 When a pull request or commit gets pushed to the master branch, it will automatically trigger the test server to update. The test server is [here](https://pacific-waters-97783.herokuapp.com/). It should mirror what is on the `master` branch.
 
-## Authors
+## 2021 Authors
 
 👤 **Adrian Palomares**
 
@@ -82,4 +82,7 @@ When a pull request or commit gets pushed to the master branch, it will automati
 
 - Github: [@PaulClefUbeCoding](https://github.com/PaulClefUbeCoding)
 
+## 2022 Authors
+
+👤 **Ryan Sean Lee**
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
