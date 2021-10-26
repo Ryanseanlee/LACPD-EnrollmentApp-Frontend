@@ -1,0 +1,55 @@
+.container {
+    padding-top: 40px;
+}
+
+.mat-tab-group {
+    margin-bottom: 48px;
+  }
+
+ .card {
+     align-items: center;
+ } 
+
+mat-card-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+} 
+
+ .caption {
+     text-align: center;
+ }
+
+ .mat-input-width {
+    width: 60%;
+ }
+
+ p {
+    padding-top: 20px;
+    text-align: center;
+ }
+
+.table-container {
+    text-align:center;
+    width: 100%;
+
+}
+
+.table-container .search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat2-input-width {
+    width: 40%;
+    margin-right: 20%;
+    flex-direction: row;
+}
+
+.button-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

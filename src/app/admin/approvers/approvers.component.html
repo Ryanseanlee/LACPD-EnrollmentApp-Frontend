@@ -1,0 +1,279 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="container">
+    <mat-card class="card">
+        <mat-card-header >
+            <mat-card-title><h3>Approvers</h3></mat-card-title>
+        </mat-card-header>  
+        <mat-tab-group mat-align-tabs="center" dynamicHeight (selectedTabChange)="clear()">
+            <mat-tab label="New Approvers">
+                <div class="caption">
+                    <p>Create a new approver</p>
+                    <div class="error-message position-fixed"
+                     class="alert alert-success"
+                     role="alert"
+                     *ngIf="sucess"
+                     > New approver added!
+                    </div>
+
+                    <div class="add-container">
+                        <form [formGroup] = "newApprover">
+                            <mat-form-field appearance="outline" class="mat-input-width">
+                                <mat-label>Select an option</mat-label>
+                                <mat-select [(value)]="selected">
+                                
+                                  <mat-option *ngFor="let selectedRole of roles" [value]="selectedRole">
+                                    {{selectedRole}}
+                                  </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="mat-input-width">
+                                <mat-label>Name</mat-label>
+                                <input matInput formControlName="name" 
+                                [errorStateMatcher]="errorStateMatcher"
+                                required />
+                                <mat-error>Name must be letters only</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="mat-input-width">
+                                <mat-label>Phone</mat-label>
+                                <input matInput formControlName="phone" 
+                                [errorStateMatcher]="errorStateMatcher"
+                                required />
+                                <mat-error>Phone number must be 10 digit</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="mat-input-width">
+                                <mat-label>Email</mat-label>
+                                <input matInput formControlName="email"
+                                [errorStateMatcher]="errorStateMatcher"  
+                                required />
+                                <mat-error>Email is required with correct email format</mat-error>
+                            </mat-form-field>
+                            <div class="button-container">
+                                <button mat-raised-button color="primary" (click)="add()" [disabled]="!newApprover.valid">Add</button>
+                                <button mat-raised-button color="accent"  class="ml-2" (click)="clear()" >Clear</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Existing Approvers">
+                <div class = "table-container">
+                    <p>Edit details or delete current approvers</p>
+                    <div class="error-message position-fixed"
+                    class="alert alert-success"
+                    role="alert"
+                    *ngIf="deleted"
+                    >Approver deleted!
+                   </div>
+                   <div class="error-message position-fixed"
+                   class="alert alert-success"
+                   role="alert"
+                   *ngIf="updated"
+                   >Approver info updated!
+                  </div>
+                    <div class = "input-group search">
+                        <mat-form-field appearance="outline" class="mat-input-width">
+                            <mat-label>Approver role</mat-label>
+                            <mat-select [(value)]="selectedRole" (selectionChange)="setInput()">
+                              <mat-option>None</mat-option>
+                              <mat-option *ngFor="let role of roles" [value]="role">
+                                {{role}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                    <div class="div-chief" *ngIf="selectedRole==='Division Chief Manager'">
+                        <mat-form-field appearance="outline" class="mat-input-width">
+                            <mat-label>Division Chief Manager Name</mat-label>
+                            <mat-select [(value)]="selectedDiv" (selectionChange)="setInput()">
+                              <mat-option>None</mat-option>
+                              <mat-option *ngFor="let role of divChief" [value]="role.id">
+                                {{role.name}}
+                              </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div *ngIf="selectedDiv">
+                            <form [formGroup] = "existingApprover">
+                                <mat-form-field  appearance="outline" class="mat-input-width">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput  appearance="outline" 
+                                    formControlName="name"
+                                    required
+                                    [errorStateMatcher]="errorStateMatcher"
+                                    />
+                                    <mat-error>Name must be letters only</mat-error>
+                                  </mat-form-field>
+                                  <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Phone</mat-label>
+                                    <input matInput  formControlName="phone" 
+                                    required
+                                    [errorStateMatcher]="errorStateMatcher"/>
+                                    <mat-error>Phone number must be 10 digit</mat-error>
+                                  </mat-form-field>
+                                  <mat-form-field  appearance="outline" class="mat-input-width">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput formControlName="email"
+                                    required 
+                                    [errorStateMatcher]="errorStateMatcher"/>
+                                    <mat-error>Email is required with correct email format</mat-error>
+                                  </mat-form-field>
+                                  <div class="button-container">
+                                    <button mat-raised-button color="primary" (click)="edit()" >Update</button>
+                                    <button mat-raised-button color="warn"  class="ml-2" (click)="deleteSelection()" >Delete</button>
+                                </div>
+                            </form>
+  
+
+                        </div>
+
+                    </div>
+
+                    <div class="div-chief" *ngIf="selectedRole==='Department Head'">
+                        <mat-form-field appearance="outline" class="mat-input-width">
+                            <mat-label>Department Head Name</mat-label>
+                            <mat-select [(value)]="selectedDeptHead" (selectionChange)="setInput()">
+                              <mat-option>None</mat-option>  
+                              <mat-option *ngFor="let role of deptHead" [value]="role.id">
+                                {{role.name}}
+                              </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div *ngIf="selectedDeptHead">
+
+                            <form [formGroup] = "existingApprover">
+                                <mat-form-field  appearance="outline" class="mat-input-width">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput  appearance="outline" 
+                                    formControlName="name"
+                                    required
+                                    [errorStateMatcher]="errorStateMatcher"
+                                    />
+                                    <mat-error>Name must be letters only</mat-error>
+                                  </mat-form-field>
+                                  <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Phone</mat-label>
+                                    <input matInput  formControlName="phone"
+                                    required
+                                    [errorStateMatcher]="errorStateMatcher" />
+                                    <mat-error>Phone number must be 10 digit</mat-error>
+                                  </mat-form-field>
+                                  <mat-form-field  appearance="outline" class="mat-input-width">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput formControlName="email"
+                                    required 
+                                    [errorStateMatcher]="errorStateMatcher" />
+                                    <mat-error>Email is required with correct email format</mat-error>
+                                  </mat-form-field>
+                                  <div class="button-container">
+                                    <button mat-raised-button color="primary" (click)="edit()">Update</button>
+                                    <button mat-raised-button color="warn"  class="ml-2" (click)="deleteSelection()" >Delete</button>
+                                </div>
+                            </form>
+  
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="div-chief" *ngIf="selectedRole==='Application Coordinator'">
+                        <mat-form-field appearance="outline" class="mat-input-width">
+                            <mat-label>Application Coordinator Name</mat-label>
+                            <mat-select [(value)]="selectedAppCoord" (selectionChange)="setInput()">
+                              <mat-option>None</mat-option>  
+                              <mat-option *ngFor="let role of appCoord" [value]="role.id">
+                                {{role.name}}
+                              </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div *ngIf="selectedAppCoord">
+
+                            <form [formGroup] = "existingApprover">
+                                <mat-form-field  appearance="outline" class="mat-input-width">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput  appearance="outline" 
+                                    formControlName="name"
+                                    required
+                                    [errorStateMatcher]="errorStateMatcher"
+                                    />
+                                    <mat-error>Name must be letters only</mat-error>
+                                  </mat-form-field>
+                                  <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Phone</mat-label>
+                                    <input matInput  formControlName="phone"
+                                    required
+                                    [errorStateMatcher]="errorStateMatcher" />
+                                    <mat-error>Phone number must be 10 digit</mat-error>
+                                  </mat-form-field>
+                                  <mat-form-field  appearance="outline" class="mat-input-width">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput formControlName="email" 
+                                    required
+                                    [errorStateMatcher]="errorStateMatcher" />
+                                    <mat-error>Email is required with correct email format</mat-error>
+                                  </mat-form-field>
+                                  <div class="button-container">
+                                    <button mat-raised-button color="primary" (click)="edit()" >Update</button>
+                                    <button mat-raised-button color="warn"  class="ml-2" (click)="deleteSelection()" >Delete</button>
+                                </div>
+                            </form>
+  
+
+                        </div>
+
+                    </div>
+
+                    <div class="div-chief" *ngIf="selectedRole==='Department Info Security Officer'">
+                        <mat-form-field appearance="outline" class="mat-input-width">
+                            <mat-label>Department Info Security Officer Name</mat-label>
+                            <mat-select [(value)]="selectedDeptInfo" (selectionChange)="setInput()">
+                              <mat-option>None</mat-option>  
+                              <mat-option *ngFor="let role of deptInfo" [value]="role.id">
+                                {{role.name}}
+                              </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div *ngIf="selectedDeptInfo">
+
+                            <form [formGroup] = "existingApprover">
+                                <mat-form-field  appearance="outline" class="mat-input-width">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput  appearance="outline" 
+                                    formControlName="name"
+                                    required
+                                    [errorStateMatcher]="errorStateMatcher"
+                                    />
+                                    <mat-error>Name must be letters only</mat-error>
+                                  </mat-form-field>
+                                  <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Phone</mat-label>
+                                    <input matInput  formControlName="phone"
+                                    required
+                                    [errorStateMatcher]="errorStateMatcher" />
+                                    <mat-error>Phone number must be 10 digit</mat-error>
+                                  </mat-form-field>
+                                  <mat-form-field  appearance="outline" class="mat-input-width">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput formControlName="email"
+                                    required
+                                    [errorStateMatcher]="errorStateMatcher" />
+                                    <mat-error>Email is required with correct email format</mat-error>
+                                  </mat-form-field>
+                                  <div class="button-container">
+                                    <button mat-raised-button color="primary" (click)="edit()" >Update</button>
+                                    <button mat-raised-button color="warn"  class="ml-2"  (click)="deleteSelection()">Delete</button>
+                                </div>
+                            </form>
+  
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+
+
+    </mat-card>
+</div>    

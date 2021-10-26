@@ -1,0 +1,144 @@
+<div>
+  <h2 class="mat-display-1" style="margin-bottom: 32px">Internet Access</h2>
+  <!-- Information -->
+  <div>
+    <br />
+    <h5><u>Policy Rules Descriptions:</u></h5>
+    <p>
+      <small
+        ><b>Default Countywide Policy:</b> Block Pornography, Adult/Mature,
+        Nudity, Intimate Apparel/Swimsuit, Games, Gambling, Personals/Dating,
+        Social Networking, Phishing, Spyware/Effect/Malware, Hacking, Proxy
+        Avoidance and Remote Access Tools.<br />
+        <b>Department Policy Rule 0</b>: Allow full access, no restrictions.<br />
+        <b>Department Policy Rule 1</b>: Allow access to Pornography,
+        Adult/Mature, Nudity, Intimate Apparel/Swimsuit, Games, Gambling,
+        Personals/Dating, Social Networking.<br />
+        <b>Department Policy Rule 2</b>: Allow access to Phishing,
+        Spyware/Effect/Malware, Hacking, Proxy Avoidance, Remote Access
+        Tools.<br />
+        <b>Department Policy Rule 3</b>: Countywide Global Policy + add’l
+        categories (chosen by your department).<br />
+        <b>Department Policy Rule 4</b>: Remove categories from the Global
+        Policy (chosen by your department).<br />
+        <b>Social Networking Facebook / Twitter / LinkedIn:</b> Allow access to
+        Facebook, Twitter, and LinkedIn, respectively.<br />
+        <br />
+        <span style="color: red">Please Note: </span>
+        <span
+          >Policy Rules “0” through “4” and Social Networking Facebook, Twitter
+          and LinkedIn are not setup by default. Your department must have
+          already submitted an approved “Category Selection Worksheet” before
+          you can request to have rules “0” through “4” applied.</span
+        ></small
+      >
+    </p>
+  </div>
+
+  <!-- First Row -->
+  <div class="flex-container">
+    <!-- For some reason need to also apply to parent in order for this style to work, access-option-button -->
+    <div class="flex-column access-option-button">
+      <mat-button-toggle
+        id="applyDefaultCountyWidePolicy"
+        class="access-option-button"
+        [checked]="applyDefaultCountyWidePolicy"
+        (change)="onButtonChange($event, 'Default Countywide Policy')"
+        >Default Countywide Policy
+      </mat-button-toggle>
+    </div>
+    <div class="flex-column access-option-button">
+      <mat-button-toggle
+        id="departmentPolicyRule0"
+        class="access-option-button"
+        [checked]="departmentPolicyRule0"
+        (change)="onButtonChange($event, 'Department Policy Rule 0')"
+        >Department Policy Rule 0</mat-button-toggle
+      >
+    </div>
+    <div class="flex-column access-option-button">
+      <mat-button-toggle
+        id="departmentPolicyRule1"
+        class="access-option-button"
+        [checked]="departmentPolicyRule1"
+        (change)="onButtonChange($event, 'Department Policy Rule 1')"
+        >Department Policy Rule 1</mat-button-toggle
+      >
+    </div>
+  </div>
+
+  <!-- Second row -->
+  <div class="flex-container">
+    <div class="flex-column access-option-button">
+      <mat-button-toggle
+        id="departmentPolicyRule2"
+        class="access-option-button"
+        [checked]="departmentPolicyRule2"
+        (change)="onButtonChange($event, 'Department Policy Rule 2')"
+        >Department Policy Rule 2</mat-button-toggle
+      >
+    </div>
+    <div class="flex-column access-option-button">
+      <mat-button-toggle
+        id="departmentPolicyRule3"
+        class="access-option-button"
+        [checked]="departmentPolicyRule3"
+        (change)="onButtonChange($event, 'Department Policy Rule 3')"
+        >Department Policy Rule 3</mat-button-toggle
+      >
+    </div>
+    <div class="flex-column access-option-button">
+      <mat-button-toggle
+        id="departmentPolicyRule4"
+        class="access-option-button"
+        [checked]="departmentPolicyRule4"
+        (change)="onButtonChange($event, 'Department Policy Rule 4')"
+        >Department Policy Rule 4</mat-button-toggle
+      >
+    </div>
+  </div>
+
+  <!-- Third Row -->
+  <div class="flex-container">
+    <div class="flex-column access-option-button">
+      <mat-button-toggle
+        id="socialNetworkingFacebook"
+        class="access-option-button"
+        [checked]="socialNetworkingFacebook"
+        (change)="onButtonChange($event, 'Social Networking Facebook')"
+        >Social Networking Facebook</mat-button-toggle
+      >
+    </div>
+    <div class="flex-column access-option-button">
+      <mat-button-toggle
+        id="socialNetworkingTwitter"
+        class="access-option-button"
+        [checked]="socialNetworkingTwitter"
+        (change)="onButtonChange($event, 'Social Networking Twitter')"
+        >Social Networking Twitter</mat-button-toggle
+      >
+    </div>
+    <div class="flex-column access-option-button">
+      <mat-button-toggle
+        id="socialNetworkingLinkedIn"
+        class="access-option-button"
+        [checked]="socialNetworkingLinkedIn"
+        (change)="onButtonChange($event, 'Social Networking LinkedIn')"
+        >Social Networking LinkedIn</mat-button-toggle
+      >
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button mat-raised-button matStepperPrevious>Previous</button>
+    <button
+      mat-raised-button
+      matStepperNext
+      color="primary"
+      class="ml-2"
+      (click)="printForm()"
+    >
+      Next
+    </button>
+  </div>
+</div>

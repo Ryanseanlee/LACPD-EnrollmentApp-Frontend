@@ -1,0 +1,59 @@
+
+<!-- the route.children.length == 0 means this div will only 
+  show in parent componpent /admin, and  parent view won't show in /admin/rese-password 
+  children and other children nested route components 
+  -->
+<div *ngIf="route.children.length === 0" >
+  <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <mat-card fxFlex="50">
+      <mat-toolbar color="primary">Login</mat-toolbar>
+      <mat-card-title color="primary">Welcome to PD</mat-card-title>
+      <div
+        class="error-message position-fixed"
+        *ngIf="alert"
+        class="alert alert-danger"
+        role="alert"
+      >
+        <mat-error>
+          {{ errorMessage }}
+        </mat-error>
+      </div>
+      <mat-card-content>
+        <form
+          [formGroup]="formLogin"
+          fxLayoutAlign="stretch"
+          fxLayout="column"
+          class="login-form"
+        >
+          <mat-form-field appearance="outline">
+            <mat-label>password</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              placeholder="password"
+              formControlName="password"
+              
+            />
+            <i class ="material-icons" matSuffix 
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              {{ hide ? 'visibility_off' : 'visibility' }}
+            </i>
+          </mat-form-field>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" [disabled]="isLoading" (click)="adminLogin()">
+              <span *ngIf="isLoading" class="spinner-border spinner-border-sm mr-1"></span>
+              Login
+            </button>
+          </mat-card-actions>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
+

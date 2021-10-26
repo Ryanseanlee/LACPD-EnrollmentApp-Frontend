@@ -1,0 +1,59 @@
+.mat-input-width {
+    width: 60%;
+  }
+  
+  
+.button-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-column {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+div.flex-container {
+  margin-top: 10px;
+}
+
+.active-directory-button-container, .internet-access-button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+}
+
+.active-directory-button, .internet-access-button {
+  width: 235px;
+}
+
+.access-option-button {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.mat-button-toggle-checked {
+  background-color: lawngreen;
+}
+
+@media only screen and (max-width: 600px) {
+    .flex-container {
+      display: block;
+    }
+    .mat-input-width {
+      width: 100%;
+    }
+    .active-directory-button, .internet-access-button {
+      margin-bottom: 5px;
+    }
+  }

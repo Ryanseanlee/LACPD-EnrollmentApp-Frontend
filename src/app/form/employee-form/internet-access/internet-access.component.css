@@ -1,0 +1,46 @@
+.flex-container {
+    display: flex;
+  }
+  
+  .flex-column {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  div.flex-container {
+    margin-top: 10px;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .access-option-button {
+    width: 235px;
+  }
+  
+  .mat-button-toggle-checked {
+    background-color: lawngreen;
+  }
+  
+  input[type="checkbox"] {
+    visibility: hidden;
+  }
+  input[type="checkbox"]:checked + label:before {
+    background: #fff;
+    color: rgb(40, 212, 83);
+    content: "\2713";
+    text-align: center;
+    margin-right: 5px;
+  }
+  input[type="checkbox"]:checked + label:after {
+    font-weight: bold;
+  }

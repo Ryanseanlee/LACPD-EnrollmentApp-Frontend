@@ -1,0 +1,41 @@
+.flex-container {
+  display: flex;
+}
+
+.flex-column {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+div.flex-container {
+  margin-top: 10px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.access-option-button {
+  width: 235px;
+}
+
+.mat-button-toggle-checked {
+  background-color: lawngreen;
+}
+
+@media only screen and (max-width: 600px) {
+  .flex-container {
+    display: block;
+  }
+
+  .access-option-button {
+    margin-bottom: 5px;
+  }
+}

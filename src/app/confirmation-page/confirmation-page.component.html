@@ -1,0 +1,41 @@
+<!-- Admin Confirmation Page -->
+<div *ngIf="isAdmin; else defaultConfirmationPage" class="container mb-4 mt-4">
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Thanks! Submission Received</h4>
+    <p>
+      Service request has been submitted to Adobe Sign for signing for request
+      number provided below.
+    </p>
+    <hr />
+    <p class="mb-0">
+      Request number:
+      <span id="request-number" class="font-weight-bold">
+        {{ requestNumber }}
+      </span>
+    </p>
+  </div>
+  <hr />
+  <p><a routerLink="/admin/service-requests">Redirect to homepage</a></p>
+</div>
+
+<!-- Default Confirmation Page -->
+<ng-template #defaultConfirmationPage>
+  <div class="container mb-4 mt-4">
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Thanks! Submission Received</h4>
+      <p>Please save the number provided below for future reference.</p>
+      <hr />
+      <p class="mb-0">
+        This number will be used to check on the form's status.
+      </p>
+    </div>
+    <hr />
+    <p>
+      Here is your reference number:
+      <span id="request-number" class="font-weight-bold">{{
+        requestNumber
+      }}</span>
+    </p>
+    <p>Please save this for future reference.</p>
+  </div>
+</ng-template>

@@ -1,0 +1,1508 @@
+<form
+  id="regForm"
+  [formGroup]="formContractor"
+  [@myAnimation]
+  class="container"
+>
+  <mat-horizontal-stepper #stepper linear>
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <!----------------------- CONTRACTOR BASIC INFORMATION STEP -------------------->
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <mat-step
+      formGroupName="contractorBasicInformation"
+      [stepControl]="formContractor.get('contractorBasicInformation')"
+    >
+      <ng-template matStepLabel>Contractor Basic</ng-template>
+      <h2 class="mat-display-1" style="margin-bottom: 32px">
+        Contractor Basic Information
+      </h2>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>First Name</mat-label>
+          <input
+            id="firstNameInput"
+            type="text"
+            matInput
+            formControlName="firstName"
+            required
+            pattern="[a-zA-Z ]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error>First name is required and must be letters only</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Last Name</mat-label>
+          <input
+            id="lastNameInput"
+            type="text"
+            matInput
+            formControlName="lastName"
+            required
+            pattern="[a-zA-Z ]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error>Last name is required and must be letters only</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Middle Initial</mat-label>
+          <input
+            id="middleInitialInput"
+            type="text"
+            matInput
+            formControlName="middleInitial"
+            pattern="[a-zA-Z ]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-error>Middle initial must be letters only</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Company Name</mat-label>
+          <input
+            id="companyNameInput"
+            type="text"
+            matInput
+            formControlName="companyName"
+            required
+            pattern="[a-zA-Z ]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error
+            >Company name is required and must be letters only</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Company Email Address</mat-label>
+          <input
+            id="companyEmailAddressInput"
+            type="text"
+            matInput
+            formControlName="companyEmailAddress"
+            required
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-error
+            >Company email is required with correct email format</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Phone number</mat-label>
+          <input
+            id="phoneNumberInput"
+            type="phone"
+            matInput
+            formControlName="phoneNumber"
+            required
+            pattern="[0-9]{10}"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-error
+            >Company phone number is required and must be 10 digit</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="button-container">
+        <button mat-raised-button matStepperPrevious>Previous</button>
+        <button mat-raised-button matStepperNext color="primary" class="ml-2">
+          Next
+        </button>
+      </div>
+
+      <!--<app-contractor-information [regForm]="formContractor"></app-contractor-information>-->
+    </mat-step>
+
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <!----------------------- CONTRACTOR ADDRESS INFORMATION STEP -------------------->
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <mat-step
+      formGroupName="contractorAddressInformation"
+      [stepControl]="formContractor.get('contractorAddressInformation')"
+    >
+      <ng-template matStepLabel>Contractor Address</ng-template>
+      <h2 class="mat-display-1" style="margin-bottom: 32px">
+        Contractor Address Information
+      </h2>
+
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Company Street Address</mat-label>
+          <input
+            id="companyStreetAddressInput"
+            type="text"
+            matInput
+            formControlName="companyStreetAddress"
+            required
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error>Company street address is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>City</mat-label>
+          <input
+            id="cityInput"
+            type="text"
+            matInput
+            formControlName="city"
+            required
+            pattern="[a-zA-Z ]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error>City is required and must be letters only</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>State</mat-label>
+          <input
+            id="stateInput"
+            type="text"
+            matInput
+            formControlName="state"
+            required
+            pattern="[a-zA-Z ]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error>State is required and must be letters only</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Zip Code</mat-label>
+          <input
+            id="zipCodeInput"
+            type="text"
+            matInput
+            formControlName="zipCode"
+            required
+            pattern="[0-9]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error
+            >Zipcode is required and must be numbers only with length
+            5-7</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="button-container">
+        <button mat-raised-button matStepperPrevious>Previous</button>
+        <button mat-raised-button matStepperNext color="primary" class="ml-2">
+          Next
+        </button>
+      </div>
+    </mat-step>
+
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <!----------------------- COUNTY BASIC INFORMATION STEP -------------------->
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <mat-step
+      formGroupName="countyBasicInformation"
+      [stepControl]="formContractor.get('countyBasicInformation')"
+    >
+      <ng-template matStepLabel>County Basic</ng-template>
+      <h2 class="mat-display-1" style="margin-bottom: 32px">
+        County Basic Information
+      </h2>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Contract Work Order No</mat-label>
+          <input
+            id="contractWorkOrderNumberInput"
+            type="text"
+            matInput
+            formControlName="contractWorkOrderNumber"
+            required
+            pattern="[0-9]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-error
+            >Contract work order number is required and digits only</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Contract Expiration Date</mat-label>
+          <input
+            id="contactExpirationDateInput"
+            type="date"
+            min="2021-03-03"
+            matInput
+            placeholder="Choose a Date"
+            formControlName="contractExpirationDate"
+            required
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-error>Contract expiration date is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>LA County Email Address</mat-label>
+          <input
+            id="countyEmailAddressInput"
+            type="text"
+            matInput
+            formControlName="countyEmailAddress"
+            required
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-error
+            >Company email is required with correct email format</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Phone number</mat-label>
+          <input
+            id="phoneNumberInput"
+            type="phone"
+            matInput
+            formControlName="phoneNumber"
+            required
+            pattern="[0-9]{10}"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-error
+            >Company phone number is required and must be 10 digit</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Department Name</mat-label>
+          <input
+            id="departmentNameInput"
+            type="text"
+            matInput
+            formControlName="departmentName"
+            required
+            pattern="[a-zA-Z ]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error
+            >Department name is required and must be letters only</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Department number</mat-label>
+          <input
+            id="departmentNumberInput"
+            type="text"
+            matInput
+            formControlName="departmentNumber"
+            required
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-error>Department number is required and digits only</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="button-container">
+        <button mat-raised-button matStepperPrevious>Previous</button>
+        <button mat-raised-button matStepperNext color="primary" class="ml-2">
+          Next
+        </button>
+      </div>
+      <!-- <app-county-information [regForm]="formContractor"></app-county-information> -->
+    </mat-step>
+
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <!----------------------- COUNTY ADDRESS INFORMATION STEP -------------------->
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <mat-step
+      formGroupName="countyAddressInformation"
+      [stepControl]="formContractor.get('countyAddressInformation')"
+    >
+      <ng-template matStepLabel>County Address</ng-template>
+      <h2 class="mat-display-1" style="margin-bottom: 32px">
+        County Address Information
+      </h2>
+
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Business Street Address</mat-label>
+          <input
+            id="businessStreetAddressInput"
+            type="text"
+            matInput
+            formControlName="businessStreetAddress"
+            required
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error>Business street address is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>City</mat-label>
+          <input
+            id="businessCityInput"
+            type="text"
+            matInput
+            formControlName="businessCity"
+            required
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error>Business street address is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Zip Code</mat-label>
+          <input
+            id="businessZipCodeInput"
+            type="text"
+            matInput
+            formControlName="businessZipCode"
+            required
+            pattern="[0-9]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error
+            >Zipcode is required and must be numbers only with length
+            5-7</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <div class="button-container">
+        <button mat-raised-button matStepperPrevious>Previous</button>
+        <button mat-raised-button matStepperNext color="primary" class="ml-2">
+          Next
+        </button>
+      </div>
+    </mat-step>
+
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <!----------------------- APPLICATIONS REQUESTED STEP -------------------->
+    <!---------------------------------------------------------------------------------------------------------------------->
+
+    <mat-step
+      formGroupName="applicationsRequested"
+      [stepControl]="formContractor.get('applicationsRequested')"
+    >
+      <ng-template matStepLabel>Applications</ng-template>
+      <h2 class="mat-display-1" style="margin-bottom: 32px">
+        Applications Requested
+      </h2>
+
+      <div>
+        <br />
+        <h5>Select the following Options:</h5>
+      </div>
+
+      <!-- First Row -->
+      <div class="flex-container">
+        <!-- For some reason need to also apply to parent in order for this style to work, access-option-button -->
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="internetAccess"
+            class="access-option-button"
+            [checked]="internetAccess"
+            (change)="onButtonChange3($event, 'Internet Access')"
+            >Internet Access
+          </mat-button-toggle>
+        </div>
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="emailAccount"
+            class="access-option-button"
+            [checked]="emailAccount"
+            (change)="onButtonChange3($event, 'Email Account')"
+            >Email Account</mat-button-toggle
+          >
+        </div>
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="emailEncryption"
+            class="access-option-button"
+            [checked]="emailEncryption"
+            (change)="onButtonChange3($event, 'Email Encryption')"
+            >Email Encryption</mat-button-toggle
+          >
+        </div>
+      </div>
+
+      <!-- Second row -->
+      <div class="flex-container">
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="tokenlessAuthentication"
+            class="access-option-button"
+            [checked]="tokenlessAuthentication"
+            (change)="onButtonChange3($event, 'Tokenless Authentication')"
+            >Tokenless Authentication</mat-button-toggle
+          >
+        </div>
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="lacMobileWifi"
+            class="access-option-button"
+            [checked]="lacMobileWifi"
+            (change)="onButtonChange3($event, 'LACMobile Wifi')"
+            >LACMobile Wifi</mat-button-toggle
+          >
+        </div>
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="cherwellSMS"
+            class="access-option-button"
+            [checked]="cherwellSMS"
+            (change)="onButtonChange3($event, 'Cherwell SMS')"
+            >Cherwell SMS</mat-button-toggle
+          >
+        </div>
+      </div>
+
+      <!-- Third Row -->
+      <div class="flex-container">
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="windowRightsManagement"
+            class="access-option-button"
+            [checked]="windowRightsManagement"
+            (change)="onButtonChange3($event, 'Window Rights Management')"
+            >Window Rights Management</mat-button-toggle
+          >
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button mat-raised-button matStepperPrevious>Previous</button>
+        <button mat-raised-button matStepperNext color="primary" class="ml-2">
+          Next
+        </button>
+      </div>
+    </mat-step>
+
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <!----------------------- INTERNET POLICY STEP -------------------->
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <mat-step
+      formGroupName="policyRulesInformation"
+      [stepControl]="formContractor.get('policyRulesInformation')"
+    >
+      <ng-template matStepLabel>Internet Policy</ng-template>
+      <h2 class="mat-display-1" style="margin-bottom: 32px">
+        Internet Policy Information
+      </h2>
+      <!-- Information -->
+      <div>
+        <br />
+        <h5><u>Policy Rules Descriptions:</u></h5>
+        <p>
+          <small
+            ><b>Default Countywide Policy:</b> Block Pornography, Adult/Mature,
+            Nudity, Intimate Apparel/Swimsuit, Games, Gambling,
+            Personals/Dating, Social Networking, Phishing,
+            Spyware/Effect/Malware, Hacking, Proxy Avoidance and Remote Access
+            Tools.<br />
+            <b>Department Policy Rule 0</b>: Allow full access, no
+            restrictions.<br />
+            <b>Department Policy Rule 1</b>: Allow access to Pornography,
+            Adult/Mature, Nudity, Intimate Apparel/Swimsuit, Games, Gambling,
+            Personals/Dating, Social Networking.<br />
+            <b>Department Policy Rule 2</b>: Allow access to Phishing,
+            Spyware/Effect/Malware, Hacking, Proxy Avoidance, Remote Access
+            Tools.<br />
+            <b>Department Policy Rule 3</b>: Countywide Global Policy + add’l
+            categories (chosen by your department).<br />
+            <b>Department Policy Rule 4</b>: Remove categories from the Global
+            Policy (chosen by your department).<br />
+            <b>Social Networking Facebook / Twitter / LinkedIn:</b> Allow access
+            to Facebook, Twitter, and LinkedIn, respectively.<br />
+            <br />
+            <span style="color: red">Please Note: </span>
+            <span
+              >Policy Rules “0” through “4” and Social Networking Facebook,
+              Twitter and LinkedIn are not setup by default. Your department
+              must have already submitted an approved “Category Selection
+              Worksheet” before you can request to have rules “0” through “4”
+              applied.</span
+            ></small
+          >
+        </p>
+      </div>
+
+      <!-- First Row -->
+      <div class="flex-container">
+        <!-- For some reason need to also apply to parent in order for this style to work, access-option-button -->
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="applyDefaultCountyWidePolicy"
+            class="access-option-button"
+            [checked]="applyDefaultCountyWidePolicy"
+            (change)="onButtonChange($event, 'Default Countywide Policy')"
+            >Default Countywide Policy
+          </mat-button-toggle>
+        </div>
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="departmentPolicyRule0"
+            class="access-option-button"
+            [checked]="departmentPolicyRule0"
+            (change)="onButtonChange($event, 'Department Policy Rule 0')"
+            >Department Policy Rule 0</mat-button-toggle
+          >
+        </div>
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="departmentPolicyRule1"
+            class="access-option-button"
+            [checked]="departmentPolicyRule1"
+            (change)="onButtonChange($event, 'Department Policy Rule 1')"
+            >Department Policy Rule 1</mat-button-toggle
+          >
+        </div>
+      </div>
+
+      <!-- Second row -->
+      <div class="flex-container">
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="departmentPolicyRule2"
+            class="access-option-button"
+            [checked]="departmentPolicyRule2"
+            (change)="onButtonChange($event, 'Department Policy Rule 2')"
+            >Department Policy Rule 2</mat-button-toggle
+          >
+        </div>
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="departmentPolicyRule3"
+            class="access-option-button"
+            [checked]="departmentPolicyRule3"
+            (change)="onButtonChange($event, 'Department Policy Rule 3')"
+            >Department Policy Rule 3</mat-button-toggle
+          >
+        </div>
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="departmentPolicyRule4"
+            class="access-option-button"
+            [checked]="departmentPolicyRule4"
+            (change)="onButtonChange($event, 'Department Policy Rule 4')"
+            >Department Policy Rule 4</mat-button-toggle
+          >
+        </div>
+      </div>
+
+      <!-- Third Row -->
+      <div class="flex-container">
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="socialNetworkingFacebook"
+            class="access-option-button"
+            [checked]="socialNetworkingFacebook"
+            (change)="onButtonChange($event, 'Social Networking Facebook')"
+            >Social Networking Facebook</mat-button-toggle
+          >
+        </div>
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="socialNetworkingTwitter"
+            class="access-option-button"
+            [checked]="socialNetworkingTwitter"
+            (change)="onButtonChange($event, 'Social Networking Twitter')"
+            >Social Networking Twitter</mat-button-toggle
+          >
+        </div>
+        <div class="flex-column access-option-button">
+          <mat-button-toggle
+            id="socialNetworkingLinkedIn"
+            class="access-option-button"
+            [checked]="socialNetworkingLinkedIn"
+            (change)="onButtonChange($event, 'Social Networking LinkedIn')"
+            >Social Networking LinkedIn</mat-button-toggle
+          >
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button mat-raised-button matStepperPrevious>Previous</button>
+        <button mat-raised-button matStepperNext color="primary" class="ml-2">
+          Next
+        </button>
+      </div>
+
+      <!-- <app-policy-rules></app-policy-rules> -->
+    </mat-step>
+
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <!----------------------- DATE CENTER STEP -------------------->
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <mat-step
+      formGroupName="additionalAccessInformation"
+      [stepControl]="formContractor.get('additionalAccessInformation')"
+    >
+      <ng-template matStepLabel>Data Center Access</ng-template>
+      <h2 class="mat-display-1" style="margin-bottom: 32px">
+        Access Options:
+      </h2>
+      <div>
+        <div class="row">
+          <!-- Access choices -->
+
+          <!-- IBM Access info button -->
+          <div class="access-option-button col-sm-12 col-md-4">
+            <mat-button-toggle
+              id="ibmChecked"
+              class="access-option-button"
+              [checked]="ibmChecked"
+              (change)="onButtonChange2($event, 'IBM Access')"
+              >IBM Access Information
+            </mat-button-toggle>
+            <br />
+            <div
+              class="ibmForm"
+              *ngIf="
+                formContractor.value.additionalAccessInformation.ibmChecked
+              "
+            >
+              <div>
+                <!-- TODO: Add a heading here -->
+                <mat-form-field appearance="outline" class="mat-input-width">
+                  <mat-label>Logon ID</mat-label>
+                  <input
+                    id="ibmLogonIdInput"
+                    type="text"
+                    matInput
+                    formControlName="ibmLogonId"
+                    [errorStateMatcher]="errorStateMatcher"
+                  />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                  <mat-label>2-Digit Major Group Code</mat-label>
+                  <input
+                    id="majorGroupCodeInput"
+                    matInput
+                    type="text"
+                    formControlName="majorGroupCode"
+                    [errorStateMatcher]="errorStateMatcher"
+                  />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                  <mat-label>2-Digit LSO Group Code</mat-label>
+                  <input
+                    id="lsoGroupCodeInput"
+                    matInput
+                    type="text"
+                    formControlName="lsoGroupCode"
+                    [errorStateMatcher]="errorStateMatcher"
+                  />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                  <mat-label>Security Authorization</mat-label>
+                  <input
+                    id="securityAuthInput"
+                    matInput
+                    type="text"
+                    formControlName="securityAuthorization"
+                    [errorStateMatcher]="errorStateMatcher"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unix Environment button -->
+          <div class="access-option-button col-sm-12 col-md-4">
+            <mat-button-toggle
+              id="unixChecked"
+              class="access-option-button"
+              [checked]="unixChecked"
+              (change)="onButtonChange2($event, 'Unix Access')"
+              >Unix Environment Access</mat-button-toggle
+            >
+            <br />
+            <div
+              class="unix-access-form"
+              *ngIf="
+                formContractor.value.additionalAccessInformation.unixChecked
+              "
+            >
+              <!-- TODO: Needs the Type of Request section -->
+              <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                  <mat-label>Login ID</mat-label>
+                  <input
+                    id="unixLogonIdInput"
+                    matInput
+                    type="text"
+                    formControlName="unixLogonId"
+                    [errorStateMatcher]="errorStateMatcher"
+                  />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                  <mat-label>Application</mat-label>
+                  <input
+                    id="applicationInput"
+                    matInput
+                    type="text"
+                    formControlName="application"
+                    [errorStateMatcher]="errorStateMatcher"
+                  />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                  <mat-label>Access Group</mat-label>
+                  <input
+                    id="accessGroupInput"
+                    matInput
+                    type="text"
+                    formControlName="accessGroup"
+                    [errorStateMatcher]="errorStateMatcher"
+                  />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                  <mat-label>Account Number</mat-label>
+                  <input
+                    id="accountNumberInput"
+                    matInput
+                    type="text"
+                    formControlName="accountNumber"
+                    [errorStateMatcher]="errorStateMatcher"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <!-- SecurId button -->
+          <div class="access-option-button col-sm-12 col-md-4">
+            <mat-button-toggle
+              id="securidChecked"
+              class="access-option-button"
+              [checked]="securidChecked"
+              (change)="onButtonChange2($event, 'SecurID Access')"
+              >SecurID Remote Access</mat-button-toggle
+            >
+            <br />
+            <div
+              class="secur-id-access-form"
+              *ngIf="
+                formContractor.value.additionalAccessInformation.securidChecked
+              "
+            >
+              <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                  <mat-label>Billing Account Number</mat-label>
+                  <input
+                    id="billingAccountInput"
+                    matInput
+                    type="text"
+                    formControlName="billingAccountNumber"
+                    [errorStateMatcher]="errorStateMatcher"
+                  />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                  <mat-label>Access Type</mat-label>
+                  <select
+                    formControlName="accessType"
+                    id="accessTypeSelect"
+                    matNativeControl
+                    [errorStateMatcher]="errorStateMatcher"
+                  >
+                    <option selected="SecurIDVPN">SecurID VPN</option>
+                    <option value="Adapative Authentication VPN">
+                      Adapative Authentication VPN
+                    </option>
+                  </select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-container">
+          <button mat-raised-button matStepperPrevious>Previous</button>
+          <button mat-raised-button matStepperNext color="primary" class="ml-2">
+            Next
+          </button>
+        </div>
+      </div>
+    </mat-step>
+
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <!----------------------- SUBMIT STEP -------------------->
+    <!---------------------------------------------------------------------------------------------------------------------->
+    <mat-step>
+      <ng-template matStepLabel>Submit</ng-template>
+      <div class="container contact-form">
+        <h3>You're Almost Done!</h3>
+        <p class="instruction">
+          Please confirm the information below. If there is any mistake, click
+          on the heading to go back and make changes. Click Submit once done!
+        </p>
+
+        <!-- Start of First Row -->
+        <div class="row">
+          <!-- Contractor Basic Information -->
+          <div class="col">
+            <h4 (click)="move(0)">Contractor Basic Information</h4>
+
+            <div>
+              <h6>First Name</h6>
+              <div class="sub-group">
+                <p>
+                  {{
+                    formContractor.value.contractorBasicInformation.firstName ||
+                      "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Middle Initial</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.contractorBasicInformation
+                      .middleInitial || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Last Name</h6>
+              <div class="sub-group">
+                <p>
+                  {{
+                    formContractor.value.contractorBasicInformation.lastName ||
+                      "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Company Name</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.contractorBasicInformation
+                      .companyName || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Company Email</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.contractorBasicInformation
+                      .companyEmailAddress || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Phone Number</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.contractorBasicInformation
+                      .phoneNumber || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contractor Address Information-->
+          <div class="col">
+            <h4 (click)="move(1)">Contractor Address</h4>
+
+            <div>
+              <h6>Company Street Address</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.contractorAddressInformation
+                      .companyStreetAddress || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>City</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.contractorAddressInformation.city ||
+                      "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>State</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.contractorAddressInformation.state ||
+                      "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Zipcode</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.contractorAddressInformation.zipCode ||
+                      "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- County Basic Information -->
+          <div class="col">
+            <h4 (click)="move(2)">County Basic Information</h4>
+
+            <div>
+              <h6>Contract Work Order No</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.countyBasicInformation
+                      .contractWorkOrderNumber || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Contract Expiration Date</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.countyBasicInformation
+                      .contractExpirationDate || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>County Email Address</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.countyBasicInformation
+                      .countyEmailAddress || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Phone Number</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.countyBasicInformation.phoneNumber ||
+                      "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Department Name</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.countyBasicInformation
+                      .departmentName || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Department Number</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.countyBasicInformation
+                      .departmentNumber || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- County Address Information -->
+          <div class="col">
+            <h4 (click)="move(3)">County Address</h4>
+
+            <div>
+              <h6>Business Street Address</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.countyAddressInformation
+                      .businessStreetAddress || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Business City</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.countyAddressInformation
+                      .businessCity || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h6>Business Zipcode</h6>
+              <div class="subgroup">
+                <p>
+                  {{
+                    formContractor.value.countyAddressInformation
+                      .businessZipCode || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of first row -->
+
+        <br />
+        <br />
+
+        <!-- Start of second row -->
+        <div class="row">
+          <!-- Applications Requested -->
+          <div class="col">
+            <h4 (click)="move(4)">Applications Requested</h4>
+
+            <div>
+              <h6>Selected Policies</h6>
+              <div class="subgroup">
+                <div
+                  *ngIf="
+                    formContractor.value.applicationsRequested.internetAccess
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Internet Access</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.applicationsRequested.emailAccount
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Email Account</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.applicationsRequested.emailEncryption
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Email Encryption</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.applicationsRequested
+                      .tokenlessAuthentication
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Tokenless Authentication</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.applicationsRequested.lacMobileWifi
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>LACMobile Wifi</label>
+                </div>
+
+                <div
+                  *ngIf="formContractor.value.applicationsRequested.cherwellSMS"
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Cherwell SMS</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.applicationsRequested
+                      .windowRightsManagement
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Window Rights Management</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.applicationsRequested.internetAccess ==
+                      false &&
+                    formContractor.value.applicationsRequested.emailAccount ==
+                      false &&
+                    formContractor.value.applicationsRequested
+                      .emailEncryption == false &&
+                    formContractor.value.applicationsRequested
+                      .tokenlessAuthentication == false &&
+                    formContractor.value.applicationsRequested.lacMobileWifi ==
+                      false &&
+                    formContractor.value.applicationsRequested.cherwellSMS ==
+                      false &&
+                    formContractor.value.applicationsRequested
+                      .windowRightsManagement == false
+                  "
+                >
+                  <p>No applications selected</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Internet Access Information -->
+          <div class="col">
+            <h4 (click)="move(5)">Internet Access Information</h4>
+
+            <div>
+              <h6>Selected Policies</h6>
+              <div class="subgroup">
+                <div
+                  *ngIf="
+                    formContractor.value.policyRulesInformation
+                      .applyDefaultCountyWidePolicy
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Default County Wide Policy</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.policyRulesInformation
+                      .departmentPolicyRule0
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Department Policy 0</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.policyRulesInformation
+                      .departmentPolicyRule1
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Department Policy 1</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.policyRulesInformation
+                      .departmentPolicyRule2
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Department Policy 2</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.policyRulesInformation
+                      .departmentPolicyRule3
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Department Policy 3</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.policyRulesInformation
+                      .departmentPolicyRule4
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Department Policy 4</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.policyRulesInformation
+                      .applyDefaultCountyWidePolicy == false &&
+                    formContractor.value.policyRulesInformation
+                      .departmentPolicyRule0 == false &&
+                    formContractor.value.policyRulesInformation
+                      .departmentPolicyRule1 == false &&
+                    formContractor.value.policyRulesInformation
+                      .departmentPolicyRule2 == false &&
+                    formContractor.value.policyRulesInformation
+                      .departmentPolicyRule3 == false &&
+                    formContractor.value.policyRulesInformation
+                      .departmentPolicyRule4 == false
+                  "
+                >
+                  <p>No policies selected</p>
+                </div>
+              </div>
+            </div>
+
+            <br />
+
+            <div>
+              <h6>Selected Social Networking</h6>
+              <div class="subgroup">
+                <div
+                  *ngIf="
+                    formContractor.value.policyRulesInformation
+                      .socialNetworkingFacebook
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Social Networking Facebook</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.policyRulesInformation
+                      .socialNetworkingTwitter
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Social Networking Twitter</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.policyRulesInformation
+                      .socialNetworkingLinkedIn
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Social Networking LinkedIn</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.policyRulesInformation
+                      .socialNetworkingFacebook == false &&
+                    formContractor.value.policyRulesInformation
+                      .socialNetworkingTwitter == false &&
+                    formContractor.value.policyRulesInformation
+                      .socialNetworkingLinkedIn == false
+                  "
+                >
+                  <p>No social networking selected</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Access Information-->
+          <div class="col">
+            <h4 (click)="move(6)">Additional Access Information</h4>
+
+            <div>
+              <h6>Selected Access</h6>
+              <div class="subgroup">
+                <div
+                  *ngIf="
+                    formContractor.value.additionalAccessInformation.ibmChecked
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>IBM Access</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.additionalAccessInformation.unixChecked
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>Unix Access</label>
+                </div>
+
+                <div
+                  *ngIf="
+                    formContractor.value.additionalAccessInformation
+                      .securidChecked
+                  "
+                >
+                  <input type="checkbox" disabled checked />
+                  <label>SecurID Access</label>
+                </div>
+              </div>
+            </div>
+
+            <br />
+
+            <div
+              *ngIf="
+                formContractor.value.additionalAccessInformation.ibmChecked ==
+                true
+              "
+            >
+              <h6>IBM Access</h6>
+              <div class="subgroup">
+                <p>
+                  Logon ID:&nbsp;{{
+                    formContractor.value.additionalAccessInformation
+                      .ibmLogonId || "N/A"
+                  }}
+                </p>
+                <p>
+                  Major Group Code:&nbsp;{{
+                    formContractor.value.additionalAccessInformation
+                      .majorGroupCode || "N/A"
+                  }}
+                </p>
+                <p>
+                  LSO Group Code:&nbsp;{{
+                    formContractor.value.additionalAccessInformation
+                      .lsoGroupCode || "N/A"
+                  }}
+                </p>
+                <p>
+                  Security Authorization:&nbsp;{{
+                    formContractor.value.additionalAccessInformation
+                      .securityAuthorization || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div
+              *ngIf="
+                formContractor.value.additionalAccessInformation.unixChecked
+              "
+            >
+              <h6>Unix Access</h6>
+              <div class="subgroup">
+                <p>
+                  Login ID:&nbsp;{{
+                    formContractor.value.additionalAccessInformation
+                      .unixLogonId || "N/A"
+                  }}
+                </p>
+                <p>
+                  Applicaiton:&nbsp;{{
+                    formContractor.value.additionalAccessInformation
+                      .application || "N/A"
+                  }}
+                </p>
+                <p>
+                  Access Group:&nbsp;{{
+                    formContractor.value.additionalAccessInformation
+                      .accessGroup || "N/A"
+                  }}
+                </p>
+                <p>
+                  Account Number:&nbsp;{{
+                    formContractor.value.additionalAccessInformation
+                      .accountNumber || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <div
+              *ngIf="
+                formContractor.value.additionalAccessInformation.securidChecked
+              "
+            >
+              <h6>SecurID Access</h6>
+              <div class="subgroup">
+                <p>
+                  Billing Account Number:&nbsp;{{
+                    formContractor.value.additionalAccessInformation
+                      .billingAccountNumber || "N/A"
+                  }}
+                </p>
+                <p>
+                  Access Type:&nbsp;{{
+                    formContractor.value.additionalAccessInformation
+                      .accessType || "N/A"
+                  }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of second row -->
+
+        <div class="text-center">
+          <button class="btnContact" (click)="onClick()">Submit</button>
+        </div>
+      </div>
+
+      <!--<app-submit [regForm]="formContractor"></app-submit>-->
+    </mat-step>
+  </mat-horizontal-stepper>
+</form>

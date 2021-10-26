@@ -1,0 +1,142 @@
+.mat-input-width {
+  width: 75%;
+}
+
+@media only screen and (max-width: 600px) {
+  .mat-input-width {
+    width: 100%;
+  }
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+body {
+  background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+}
+
+.contact-form {
+  background: #fff;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 100%;
+}
+.contact-form .form-control {
+  border-radius: 1rem;
+}
+.contact-form form {
+  padding: 12%;
+}
+.contact-form form .row {
+  margin-bottom: 5%;
+}
+.contact-form h3 {
+  margin-bottom: 7%;
+  margin-top: -7%;
+  text-align: center;
+  color: #0062cc;
+  font-weight: bold;
+  font-size: 50px;
+  font-family: "Kaushan Script";
+}
+
+.instruction {
+  margin-top: -5;
+  margin-bottom: 5%;
+}
+
+.contact-form h4 {
+  margin-bottom: 7%;
+  text-decoration: underline;
+  color: #0062cc;
+  cursor: pointer;
+}
+
+.contact-form .btnContact {
+  margin-top: 8%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5%;
+  background: #dc3545;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.contact-form .btnSub {
+  width: 90%;
+  margin-top: 8%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5%;
+  background: #1f45c4;
+  font-weight: 300;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btnContactSubmit {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  color: #fff;
+  background-color: #0062cc;
+  border: none;
+  cursor: pointer;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-column {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+div.flex-container {
+  margin-top: 10px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.access-option-button {
+  width: 235px;
+}
+
+.mat-button-toggle-checked {
+  background-color: lawngreen;
+}
+
+input[type="checkbox"] {
+  visibility: hidden;
+}
+input[type="checkbox"]:checked + label:before {
+  background: #fff;
+  color: rgb(40, 212, 83);
+  content: "\2713";
+  text-align: center;
+  margin-right: 5px;
+}
+input[type="checkbox"]:checked + label:after {
+  font-weight: bold;
+}

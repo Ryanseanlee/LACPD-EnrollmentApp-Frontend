@@ -1,0 +1,671 @@
+<!-- Contractor Form -->
+<form id="regForm" [formGroup]="adminContractor" [@myAnimation] class="container"
+    [style.display]="isLoading ? 'none' : 'block'">
+    <mat-horizontal-stepper #stepper>
+        <mat-step formGroupName="contractorInformation" [stepControl]="adminContractor.get('contractorInformation')">
+            <ng-template matStepLabel>Contractor</ng-template>
+            <h2 class="mat-display-1" style="margin-bottom: 32px">
+                Contractor Information
+            </h2>
+            <p *ngIf="requestNumber">
+                Your request number: <span style="color: red">{{ requestNumber }}</span>
+            </p>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>First Name</mat-label>
+                    <input id="firstNameInput" type="text" matInput formControlName="firstName" required
+                        pattern="[a-zA-Z ]*" [errorStateMatcher]="errorStateMatcher" />
+                    <mat-hint>Required</mat-hint>
+                    <mat-error>First name is required and must be letters only</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Last Name</mat-label>
+                    <input id="lastNameInput" type="text" matInput formControlName="lastName" required
+                        pattern="[a-zA-Z ]*" [errorStateMatcher]="errorStateMatcher" />
+                    <mat-hint>Required</mat-hint>
+                    <mat-error>Last name is required and must be letters only</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Middle Initial</mat-label>
+                    <input id="middleInitialInput" type="text" matInput formControlName="middleInitial"
+                        pattern="[a-zA-Z ]*" [errorStateMatcher]="errorStateMatcher" />
+                    <mat-error>Middle initial must be letters only</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Company Name</mat-label>
+                    <input id="companyNameInput" type="text" matInput formControlName="companyName" required
+                        pattern="[a-zA-Z ]*" [errorStateMatcher]="errorStateMatcher" />
+                    <mat-hint>Required</mat-hint>
+                    <mat-error>Company name is required and must be letters only</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Company Email Address</mat-label>
+                    <input id="companyEmailAddressInput" type="text" matInput formControlName="companyEmailAddress"
+                        required [errorStateMatcher]="errorStateMatcher" />
+                    <mat-error>Company email is required with correct email format</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Company Street Address</mat-label>
+                    <input id="companyStreetAddressInput" type="text" matInput formControlName="companyStreetAddress"
+                        required [errorStateMatcher]="errorStateMatcher" />
+                    <mat-hint>Required</mat-hint>
+                    <mat-error>Company street address is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>City</mat-label>
+                    <input id="cityInput" type="text" matInput formControlName="city" required pattern="[a-zA-Z ]*"
+                        [errorStateMatcher]="errorStateMatcher" />
+                    <mat-hint>Required</mat-hint>
+                    <mat-error>City is required and must be letters only</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>State</mat-label>
+                    <input id="stateInput" type="text" matInput formControlName="state" required pattern="[a-zA-Z ]*"
+                        [errorStateMatcher]="errorStateMatcher" />
+                    <mat-hint>Required</mat-hint>
+                    <mat-error>State is required and must be letters only</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Zip Code</mat-label>
+                    <input id="zipCodeInput" type="text" matInput formControlName="zipCode" required pattern="[0-9]*"
+                        [errorStateMatcher]="errorStateMatcher" />
+                    <mat-hint>Required</mat-hint>
+                    <mat-error>Zipcode is required and must be numbers only with length
+                        5-7</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Phone number</mat-label>
+                    <input id="phoneNumberInput" type="phone" matInput formControlName="phoneNumber" required
+                        pattern="[0-9]{10}" [errorStateMatcher]="errorStateMatcher" />
+                    <mat-error>Company phone number is required and must be 10 digit</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="button-container">
+                <button mat-raised-button matStepperNext color="primary" class="ml-2">
+                    Next
+                </button>
+                <span class="spacer"></span>
+                <button id="personal-info-save-btn" mat-raised-button class="save-button" color="accent"
+                    (click)="save()">
+                    Save
+                </button>
+            </div>
+        </mat-step>
+        <!--<app-contractor-information [regForm]="formContractor"></app-contractor-information>-->
+        <mat-step formGroupName="countyInformation" [stepControl]="adminContractor.get('countyInformation')">
+            <ng-template matStepLabel>County</ng-template>
+            <h2 class="mat-display-1" style="margin-bottom: 32px">
+                Contractor Information
+            </h2>
+            <p *ngIf="requestNumber">
+                Your request number: <span style="color: red">{{ requestNumber }}</span>
+            </p>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Contract Work Order No</mat-label>
+                    <input id="contractWorkOrderNumberInput" type="text" matInput
+                        formControlName="contractWorkOrderNumber" required pattern="[0-9]*"
+                        [errorStateMatcher]="errorStateMatcher" />
+                    <mat-error>Contract work order number is required and digits only</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Contract Expiration Date</mat-label>
+                    <input id="contactExpirationDateInput" type="date" min="2021-03-03" matInput
+                        placeholder="Choose a Date" formControlName="contractExpirationDate" required
+                        [errorStateMatcher]="errorStateMatcher" />
+                    <mat-error>Contract expiration date is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>LA County Email Address</mat-label>
+                    <input id="countyEmailAddressInput" type="text" matInput formControlName="countyEmailAddress"
+                        required [errorStateMatcher]="errorStateMatcher" />
+                    <mat-error>Company email is required with correct email format</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Phone number</mat-label>
+                    <input id="phoneNumberInput" type="phone" matInput formControlName="phoneNumber" required
+                        pattern="[0-9]{10}" [errorStateMatcher]="errorStateMatcher" />
+                    <mat-error>Company phone number is required and must be 10 digit</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Department Name</mat-label>
+                    <input id="departmentNameInput" type="text" matInput formControlName="departmentName" required
+                        pattern="[a-zA-Z ]*" [errorStateMatcher]="errorStateMatcher" />
+                    <mat-hint>Required</mat-hint>
+                    <mat-error>Department name is required and must be letters only</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Department number</mat-label>
+                    <input id="departmentNumberInput" type="text" matInput formControlName="departmentNumber" required
+                        [errorStateMatcher]="errorStateMatcher" />
+                    <mat-error>Department number is required and digits only</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Business Street Address</mat-label>
+                    <input id="businessStreetAddressInput" type="text" matInput formControlName="businessStreetAddress"
+                        required [errorStateMatcher]="errorStateMatcher" />
+                    <mat-hint>Required</mat-hint>
+                    <mat-error>Business street address is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>City</mat-label>
+                    <input id="businessCityInput" type="text" matInput formControlName="businessCity" required
+                        [errorStateMatcher]="errorStateMatcher" />
+                    <mat-hint>Required</mat-hint>
+                    <mat-error>Business street address is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Zip Code</mat-label>
+                    <input id="businessZipCodeInput" type="text" matInput formControlName="businessZipCode" required
+                        pattern="[0-9]*" [errorStateMatcher]="errorStateMatcher" />
+                    <mat-hint>Required</mat-hint>
+                    <mat-error>Zipcode is required and must be numbers only with length
+                        5-7</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="button-container">
+                <button mat-raised-button matStepperPrevious>Previous</button>
+                <button mat-raised-button matStepperNext color="primary" class="ml-2">
+                    Next
+                </button>
+                <span class="spacer"></span>
+                <button id="personal-info-save-btn" mat-raised-button class="save-button" color="accent"
+                    (click)="save()">
+                    Save
+                </button>
+            </div>
+        </mat-step>
+        <mat-step formGroupName="policyRulesInformation" [stepControl]="adminContractor.get('policyRulesInformation')">
+            <ng-template matStepLabel>Internet Policy</ng-template>
+            <h2 class="mat-display-1" style="margin-bottom: 32px">
+                Internet Policy Information
+            </h2>
+            <!-- Information -->
+            <div>
+                <br />
+                <h5><u>Policy Rules Descriptions:</u></h5>
+                <p>
+                    <small><b>Default Countywide Policy:</b> Block Pornography, Adult/Mature,
+                        Nudity, Intimate Apparel/Swimsuit, Games, Gambling,
+                        Personals/Dating, Social Networking, Phishing,
+                        Spyware/Effect/Malware, Hacking, Proxy Avoidance and Remote Access
+                        Tools.<br />
+                        <b>Department Policy Rule 0</b>: Allow full access, no
+                        restrictions.<br />
+                        <b>Department Policy Rule 1</b>: Allow access to Pornography,
+                        Adult/Mature, Nudity, Intimate Apparel/Swimsuit, Games, Gambling,
+                        Personals/Dating, Social Networking.<br />
+                        <b>Department Policy Rule 2</b>: Allow access to Phishing,
+                        Spyware/Effect/Malware, Hacking, Proxy Avoidance, Remote Access
+                        Tools.<br />
+                        <b>Department Policy Rule 3</b>: Countywide Global Policy + add’l
+                        categories (chosen by your department).<br />
+                        <b>Department Policy Rule 4</b>: Remove categories from the Global
+                        Policy (chosen by your department).<br />
+                        <b>Social Networking Facebook / Twitter / LinkedIn:</b> Allow access
+                        to Facebook, Twitter, and LinkedIn, respectively.<br />
+                        <br />
+                        <span style="color: red">Please Note: </span>
+                        <span>Policy Rules “0” through “4” and Social Networking Facebook,
+                            Twitter and LinkedIn are not setup by default. Your department
+                            must have already submitted an approved “Category Selection
+                            Worksheet” before you can request to have rules “0” through “4”
+                            applied.</span></small>
+                </p>
+            </div>
+
+            <!-- First Row -->
+            <div class="flex-container">
+                <!-- For some reason need to also apply to parent in order for this style to work, access-option-button -->
+                <div class="flex-column internet-access-button">
+                    <mat-button-toggle id="defaultCountyWidePolicy" class="internet-access-button"
+                        [checked]="defaultCountyWidePolicy"
+                        (change)="onButtonChange2($event, 'Default Countywide Policy')">Default Countywide Policy
+                    </mat-button-toggle>
+                </div>
+                <div class="flex-column internet-access-button">
+                    <mat-button-toggle id="departmentPolicyRule0" class="internet-access-button"
+                        [checked]="departmentPolicyRule0"
+                        (change)="onButtonChange2($event, 'Department Policy Rule 0')">
+                        Department Policy Rule 0</mat-button-toggle>
+                </div>
+                <div class="flex-column internet-access-button">
+                    <mat-button-toggle id="departmentPolicyRule1" class="internet-access-button"
+                        [checked]="departmentPolicyRule1"
+                        (change)="onButtonChange2($event, 'Department Policy Rule 1')">
+                        Department Policy Rule 1</mat-button-toggle>
+                </div>
+            </div>
+
+            <!-- Second row -->
+            <div class="flex-container">
+                <div class="flex-column internet-access-button">
+                    <mat-button-toggle id="departmentPolicyRule2" class="internet-access-button"
+                        [checked]="departmentPolicyRule2"
+                        (change)="onButtonChange2($event, 'Department Policy Rule 2')">
+                        Department Policy Rule 2</mat-button-toggle>
+                </div>
+                <div class="flex-column internet-access-button">
+                    <mat-button-toggle id="departmentPolicyRule3" class="internet-access-button"
+                        [checked]="departmentPolicyRule3"
+                        (change)="onButtonChange2($event, 'Department Policy Rule 3')">
+                        Department Policy Rule 3</mat-button-toggle>
+                </div>
+                <div class="flex-column internet-access-button">
+                    <mat-button-toggle id="departmentPolicyRule4" class="internet-access-button"
+                        [checked]="departmentPolicyRule4"
+                        (change)="onButtonChange2($event, 'Department Policy Rule 4')">
+                        Department Policy Rule 4</mat-button-toggle>
+                </div>
+            </div>
+
+            <!-- Third Row -->
+            <div class="flex-container">
+                <div class="flex-column internet-access-button">
+                    <mat-button-toggle id="socialNetworkingFacebook" class="internet-access-button"
+                        [checked]="socialNetworkingFacebook"
+                        (change)="onButtonChange2($event, 'Social Networking Facebook')">Social Networking Facebook
+                    </mat-button-toggle>
+                </div>
+                <div class="flex-column internet-access-button">
+                    <mat-button-toggle id="socialNetworkingTwitter" class="internet-access-button"
+                        [checked]="socialNetworkingTwitter"
+                        (change)="onButtonChange2($event, 'Social Networking Twitter')">Social Networking Twitter
+                    </mat-button-toggle>
+                </div>
+                <div class="flex-column internet-access-button">
+                    <mat-button-toggle id="socialNetworkingLinkedIn" class="internet-access-button"
+                        [checked]="socialNetworkingLinkedIn"
+                        (change)="onButtonChange2($event, 'Social Networking LinkedIn')">Social Networking LinkedIn
+                    </mat-button-toggle>
+                </div>
+            </div>
+
+            <div class="internet-access-button-container">
+                <button mat-raised-button matStepperPrevious>Previous</button>
+                <button mat-raised-button matStepperNext color="primary" class="ml-2">
+                    Next
+                </button>
+                <span class="spacer"></span>
+                <button id="internet-access-save-btn" mat-raised-button class="save-button" color="accent"
+                    (click)="save()">
+                    Save
+                </button>
+            </div>
+
+        </mat-step>
+        <mat-step formGroupName="accessInformation" [stepControl]="adminContractor.get('accessInformation')">
+            <ng-template matStepLabel>Additional Access</ng-template>
+            <h2 class="mat-display-1" style="margin-bottom: 32px">
+                Additional Access Options:
+            </h2>
+            <div>
+
+                <div class="row">
+                    <!-- Access choices -->
+
+                    <!-- IBM Access info button -->
+                    <div class="access-option-button col-sm-12 col-md-4">
+                        <mat-button-toggle id="ibmChecked" class="access-option-button"
+                            >IBM Access Information
+                        </mat-button-toggle>
+                        <br>
+                        <div class="ibmForm" >
+                            <div>
+                                <!-- TODO: Add a heading here -->
+                                <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Logon ID</mat-label>
+                                    <input id="ibmLogonIdInput" type="text" matInput formControlName="ibmLogonId"
+                                        [errorStateMatcher]="errorStateMatcher" />
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>2-Digit Major Group Code</mat-label>
+                                    <input id="majorGroupCodeInput" matInput type="text"
+                                        formControlName="majorGroupCode" [errorStateMatcher]="errorStateMatcher" />
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>2-Digit LSO Group Code</mat-label>
+                                    <input id="lsoGroupCodeInput" matInput type="text" formControlName="lsoGroupCode"
+                                        [errorStateMatcher]="errorStateMatcher" />
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Security Authorization</mat-label>
+                                    <input id="securityAuthInput" matInput type="text"
+                                        formControlName="securityAuthorization"
+                                        [errorStateMatcher]="errorStateMatcher" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Unix Environment button -->
+                    <div class="access-option-button col-sm-12 col-md-4">
+                        <mat-button-toggle id="unixChecked" class="access-option-button"
+                            >Unix Environment Access
+                        </mat-button-toggle>
+                        <br>
+                        <div class="unix-access-form" >
+                            <!-- TODO: Needs the Type of Request section -->
+                            <div>
+                                <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Login ID</mat-label>
+                                    <input id="unixLogonIdInput" matInput type="text" formControlName="unixLogonId"
+                                        [errorStateMatcher]="errorStateMatcher" />
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Application</mat-label>
+                                    <input id="applicationInput" matInput type="text" formControlName="application"
+                                        [errorStateMatcher]="errorStateMatcher" />
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Access Group</mat-label>
+                                    <input id="accessGroupInput" matInput type="text" formControlName="accessGroup"
+                                        [errorStateMatcher]="errorStateMatcher" />
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Account Number</mat-label>
+                                    <input id="accountNumberInput" matInput type="text" formControlName="accountNumber"
+                                        [errorStateMatcher]="errorStateMatcher" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SecurId button -->
+                    <div class="access-option-button col-sm-12 col-md-4">
+                        <mat-button-toggle id="securidChecked" class="access-option-button" 
+                            >SecurID Remote Access
+                        </mat-button-toggle>
+                        <br>
+                        <div class="secur-id-access-form">
+                            <div>
+                                <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Billing Account Number</mat-label>
+                                    <input id="billingAccountInput" matInput type="text"
+                                        formControlName="billingAccountNumber"
+                                        [errorStateMatcher]="errorStateMatcher" />
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field appearance="outline" class="mat-input-width">
+                                    <mat-label>Access Type</mat-label>
+                                    <select formControlName="accessType" id="accessTypeSelect" matNativeControl
+                                        [errorStateMatcher]="errorStateMatcher">
+                                        <option selected="SecurIDVPN">SecurID VPN</option>
+                                        <option value="Adapative Authentication VPN">
+                                            Adapative Authentication VPN
+                                        </option>
+                                    </select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button mat-raised-button matStepperPrevious>Previous</button>
+                    <button mat-raised-button matStepperNext color="primary" class="ml-2">
+                        Next
+                    </button>
+                    <span class="spacer"></span>
+                    <button id="access-info-save-btn" mat-raised-button class="save-button" color="accent"
+                        (click)="save()">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step formGroupName="additionalInformation" [stepControl]="adminContractor.get('additionalInformation')">
+            <ng-template matStepLabel>Active Directory</ng-template>
+            <div>
+                <h2 class="mat-display-1">Applications Requested</h2>
+                <h3 class="mat-title">Select the following options</h3>
+                <div class="flex-container">
+                    <!-- For some reason need to also apply to parent in order for this style to work, access-option-button -->
+                    <div class="flex-column active-directory-button">
+                        <mat-button-toggle id="internetApplication" class="active-directory-button"
+                            [checked]="internetApplication" (change)="onButtonChange($event, 'Internet Access')">
+                            Internet Access
+                        </mat-button-toggle>
+                    </div>
+                    <div class="flex-column active-directory-button">
+                        <mat-button-toggle id="exchangeEmail" class="active-directory-button" [checked]="exchangeEmail"
+                            (change)="onButtonChange($event, 'Email Account')">Email Account</mat-button-toggle>
+                    </div>
+                    <div class="flex-column active-directory-button">
+                        <mat-button-toggle id="emailEncryption" class="active-directory-button"
+                            [checked]="emailEncryption" (change)="onButtonChange($event, 'Email Encryption')">Email
+                            Encryption</mat-button-toggle>
+                    </div>
+                </div>
+                <div class="flex-container">
+                    <div class="flex-column active-directory-button">
+                        <mat-button-toggle id="tokenlessAuthentication" class="active-directory-button"
+                            [checked]="tokenlessAuthentication"
+                            (change)="onButtonChange($event, 'Tokenless Authentication')">Tokenless Authentication
+                        </mat-button-toggle>
+                    </div>
+                    <div class="flex-column active-directory-button">
+                        <mat-button-toggle id="lacMobileWifiAccess" class="active-directory-button"
+                            [checked]="lacMobileWifiAccess" (change)="onButtonChange($event, 'LAC Mobile')">LACMobile
+                        </mat-button-toggle>
+                    </div>
+                    <div class="flex-column active-directory-button">
+                        <mat-button-toggle id="cherwellSms" class="active-directory-button" [checked]="cherwellSms"
+                            (change)="onButtonChange($event, 'Cherwell SMS')">Cherwell SMS</mat-button-toggle>
+                    </div>
+                </div>
+                <div class="flex-container">
+                    <div class="flex-column active-directory-button">
+                        <mat-button-toggle id="windowsRightsMgmt" class="active-directory-button"
+                            [checked]="windowsRightsMgmt"
+                            (change)="onButtonChange($event, 'Windows Rights Management')">Window Rights Management
+                        </mat-button-toggle>
+                    </div>
+                    <!-- This is a spacer to help align items properly -->
+                    <div class="flex-column"></div>
+                </div>
+                <!-- <button (click)="sampleFunction()">Test</button> -->
+                <div class="active-directory-button-container">
+                    <button mat-raised-button matStepperPrevious>Previous</button>
+                    <button mat-raised-button matStepperNext color="primary" class="ml-2">
+                        Next
+                    </button>
+                    <span class="spacer"></span>
+                    <button id="active-directory-save-btn" mat-raised-button class="save-button" color="accent"
+                        (click)="save()">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step formGroupName="managerInformation" [stepControl]="adminContractor.get('managerInformation')">
+            <ng-template matStepLabel>Manager</ng-template>
+            <h2 class="mat-display-1" style="margin-bottom: 32px">Manager's Contact Information</h2>
+            <div>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Manager's First Name</mat-label>
+                    <input matInput formControlName="managerFirstName" />
+                </mat-form-field>
+                <br />
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Manager's Last Name</mat-label>
+                    <input matInput formControlName="managerLastName" />
+                </mat-form-field>
+                <br />
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Manager's Phone #</mat-label>
+                    <input matInput formControlName="managerPhone" />
+                </mat-form-field>
+                <br />
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Manager's Email</mat-label>
+                    <input matInput formControlName="managerEmail" />
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="mat-input-width">
+                    <mat-label>Manager's Title</mat-label>
+                    <input matInput formControlName="managerTitle" />
+                </mat-form-field>
+            </div>
+            <div class="button-container">
+                <button mat-raised-button matStepperPrevious>Previous</button>
+                <button mat-raised-button matStepperNext color="primary" class="ml-2">
+                    Next
+                </button>
+                <span class="spacer"></span>
+                <button id="manager-info-save-btn" mat-raised-button class="save-button " color="accent"
+                    (click)="save()">
+                    Save
+                </button>
+            </div>
+
+        </mat-step>
+        <!-- Signatures-->
+        <mat-step formGroupName="signatures" [stepControl]="adminContractor.get('signatures')">
+            <ng-template matStepLabel>Approvers</ng-template>
+            <div>
+                <h2 class="mat-display-1">Signatures</h2>
+                <h3 class="mat-title">Select the following for signatures</h3>
+                <div class="dropdown-container">
+                    <div class="dropdown-divChief">
+
+                        <mat-form-field appearance="outline" class="mat-input-width">
+                            <mat-label>Division Chief Manager</mat-label>
+                            <mat-select formControlName="divChiefManagerName">
+                                <mat-option [value]="null" (click)="setSelectedValue('divisionChief', null)">None
+                                </mat-option>
+                                <mat-option *ngFor="let food of divCheifList" [value]="food.name"
+                                    (click)="setSelectedValue('divisionChief', food.id)">
+                                    {{food.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                    <div class="dropdown-deptHead">
+
+                        <mat-form-field appearance="outline" class="mat-input-width">
+                            <mat-label>Department Head</mat-label>
+                            <mat-select formControlName="departmentHeadName">
+                                <mat-option [value]="null" (click)="setSelectedValue('departmentHead', null)">None
+                                </mat-option>
+                                <mat-option *ngFor="let food of deptHeadList" [value]="food.name"
+                                    (click)="setSelectedValue('departmentHead', food.id)">
+                                    {{food.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="dropdown-appCoord">
+                        <mat-form-field appearance="outline" class="mat-input-width">
+                            <mat-label>Application Coordinator</mat-label>
+                            <mat-select formControlName="applicationCoordinatorName">
+                                <mat-option [value]="null" (click)="setSelectedValue('appCoord', null)">None
+                                </mat-option>
+                                <mat-option *ngFor="let food of appCoordList" [value]="food.name"
+                                    (click)="setSelectedValue('appCoord', food.id)">
+                                    {{food.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="dropdown-deptInfo">
+
+                        <mat-form-field appearance="outline" class="mat-input-width">
+                            <mat-label>Dept. Info Sec. Officer</mat-label>
+                            <mat-select formControlName="deptInfoSecurityOfficerName">
+                                <mat-option [value]="null" (click)="setSelectedValue('deptInfo', null)">None
+                                </mat-option>
+                                <mat-option *ngFor="let food of deptInfoList" [value]="food.name"
+                                    (click)="setSelectedValue('deptInfo', food.id)">
+                                    {{food.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button mat-raised-button matStepperPrevious>Previous</button>
+                <button mat-raised-button matStepperNext color="primary" class="ml-2">
+                    Next
+                </button>
+                <span class="spacer"></span>
+                <button id="employee-info-save-btn" mat-raised-button class="save-button" color="accent"
+                    (click)="save() ">
+                    Save
+                </button>
+            </div>
+        </mat-step>
+        <!-- Submit -->
+        <mat-step>
+            <ng-template matStepLabel>Start Adobe Process</ng-template>
+            <div>
+                <h2 class="mat-display-1">Start Adobe Sign process</h2>
+                <div class="button-container">
+                    <button mat-raised-button matStepperPrevious>Previous</button>
+                    <button mat-raised-button matStepperNext color="primary" class="ml-2">
+                        Next
+                    </button>
+                    <span class="spacer"></span>
+                    <button class="submit" id="employee-info-save-btn" mat-raised-button class="save-button"
+                        color="warn" (click)="startAdobeProcess()">
+                        Submit
+                    </button>
+                </div>
+            </div>
+
+        </mat-step>
+    </mat-horizontal-stepper>
+</form>
+
+<!-- Loading page -->
+<ng-container *ngIf="isLoading">
+    <app-loading-page></app-loading-page>
+  </ng-container>

@@ -1,0 +1,39 @@
+<div [formGroup]="form">
+  <h2 class="mat-display-1" style="margin-bottom: 32px">
+    Manager's Contact Information
+  </h2>
+  <div formGroupName="managerInformation">
+    <mat-form-field appearance="outline">
+      <mat-label>Manager's First Name</mat-label>
+      <input matInput formControlName="managerFirstName" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="outline">
+      <mat-label>Manager's Last Name</mat-label>
+      <input matInput formControlName="managerLastName" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="outline">
+      <mat-label>Manager's Phone #</mat-label>
+      <input matInput formControlName="managerPhoneNumber" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="outline">
+      <mat-label>Manager's Email</mat-label>
+      <input matInput formControlName="managerEmail" />
+    </mat-form-field>
+  </div>
+  <!-- Previous/Next Buttons -->
+  <div>
+    <button mat-raised-button matStepperPrevious>Previous</button>
+    <button
+      mat-raised-button
+      matStepperNext
+      color="primary"
+      class="ml-2"
+      (click)="printForm()"
+    >
+      Next
+    </button>
+  </div>
+</div>

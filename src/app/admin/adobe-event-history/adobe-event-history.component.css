@@ -1,0 +1,41 @@
+.container {
+    padding-top: 40px;
+
+}
+
+mat-card-header {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.card {
+    align-items: center;
+} 
+
+.requestNumber-container {
+    align-items: center;
+    justify-content: center;
+    display: flex; 
+
+}
+
+.eventHistory-container {
+    align-items: center;
+    justify-content: center;
+    display: flex; 
+}
+
+
+th.mat-header-cell {
+    text-align: center !important;
+    justify-content: center
+}
+
+td mat-cell {
+    text-align: center !important;
+    justify-content: center;
+    align-items: center;
+
+}
