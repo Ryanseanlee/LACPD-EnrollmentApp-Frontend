@@ -82,9 +82,7 @@ When a pull request or commit gets pushed to the master branch, it will automati
 
 - Github: [@PaulClefUbeCoding](https://github.com/PaulClefUbeCoding)
 
-## 2022 Authors
 
-👤 **Ryan Sean Lee**
 
 
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
