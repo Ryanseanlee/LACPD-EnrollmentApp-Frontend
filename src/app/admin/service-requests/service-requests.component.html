@@ -72,6 +72,26 @@ First Name
             <td *matCellDef="let element">{{ element.lastName }}</td>
           </ng-container>
 
+          <!-- Contractor/Employee -->
+          <ng-container matColumnDef="conOrEm">
+            <th *matHeaderCellDef></th>
+            <td *matCellDef="let element">{{ element.lastName }}</td>
+          </ng-container>
+
+
+          <!-- Submitted Date -->
+          <ng-container matColumnDef="subDate">
+            <th *matHeaderCellDef></th>
+            <td *matCellDef="let element">{{ element.lastName }}</td>
+          </ng-container>
+
+          <!-- Completed Date -->
+          <ng-container matColumnDef="compDate">
+            <th *matHeaderCellDef></th>
+            <td *matCellDef="let element">{{ element.lastName }}</td>
+          </ng-container>
+
+
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   
