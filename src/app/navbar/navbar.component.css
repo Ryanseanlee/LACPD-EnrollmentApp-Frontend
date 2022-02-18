@@ -1,9 +1,15 @@
 .sidenav-container {
   height: 100%;
+  background-color: #89d4ff;
 }
 
 .sidenav {
   width: 200px;
+}
+
+.mat-toolbar {
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(33, 33, 33);
 }
 
 .sidenav .mat-toolbar {
@@ -20,6 +26,10 @@
   flex: 1 1 auto;
 }
 
+.mat-raised-button {
+  background-color: rgb(255, 204, 1);
+}
+
 .mat-raised-button.mat-success {
   background-color: #8bc34a;
 }
@@ -27,5 +37,5 @@
 .nav-title:hover,
 .nav-title {
   text-decoration: none;
-  color: white;
+  color: rgb(48, 48, 48);
 }
