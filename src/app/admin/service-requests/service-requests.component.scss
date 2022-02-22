@@ -8,10 +8,10 @@ $font_type2: 20px/1.2 "Roboto", Helvetica, Arial, serif;
 .service-request- {
   &block {
     display: flex;
-    background-color: #89d4ff;
   }
   &block.layout {
-    position: relative;
+    position: static;
+    width: auto;
     overflow: hidden;
     min-height: 720px;
     flex-shrink: 0;
@@ -21,10 +21,10 @@ $font_type2: 20px/1.2 "Roboto", Helvetica, Arial, serif;
     @include flex-column;
   }
   &flex.layout {
-    position: relative;
+    position: static;
     height: min-content;
     width: 90%;
-    margin: 10px 0% 0px 5.39%;
+    margin: 0px 0% 0px 5.39%;
   }
   &hero-title {
     @include h-center-content;
@@ -204,5 +204,5 @@ $font_type2: 20px/1.2 "Roboto", Helvetica, Arial, serif;
   background-color: transparent;
 }
 .text-color{
-  color: black;
+  color: rgb(252, 252, 252);
 }

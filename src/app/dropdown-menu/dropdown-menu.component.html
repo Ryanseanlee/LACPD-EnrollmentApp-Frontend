@@ -1,5 +1,19 @@
-<div>
-    
-<ng-content></ng-content>
-<p>Hello</p>
-</div>
+
+<mat-sidenav-container class="background-color">
+    <mat-sidenav mode="over" [(opened)]="opened" (closedStart)="isButtonVisible=true">
+
+        <div class="box">
+            <button [routerLink]="['/admin']">Admin Login</button>
+            <button [routerLink]="['/admin/reset-password']">Reset Password</button>
+            <button [routerLink]="['/admin/service-request']">Service Request</button>
+            <button [routerLink]="['/admin/approvers']">Approvers</button>
+            <button [routerLink]="['/admin/signing-events']">Signing Events</button>
+            <button [routerLink]="['/admin/service-requests']">Review Request</button>
+        </div>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <button class="Side-Menu-Logo" *ngIf="this.isButtonVisible" (click)="opened=!opened; isButtonVisible=false">Menu</button>
+        <ng-component></ng-component>
+    </mat-sidenav-content>
+</mat-sidenav-container>

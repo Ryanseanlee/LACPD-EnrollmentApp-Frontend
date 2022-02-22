@@ -6,7 +6,6 @@ $font_type0: 24px/1.2 "Abel", Helvetica, Arial, serif;
 .home-screen- {
   &block {
     display: flex;
-    background-color: rgb(108, 209, 243);
     border-width: 0px;
   }
   &block.layout {
@@ -69,7 +68,7 @@ $font_type0: 24px/1.2 "Abel", Helvetica, Arial, serif;
     border-radius: 8px 8px 8px 8px;
   }
   &flex2.layout {
-    margin-top: 50px;
+   
     position: relative;
     height: min-content;
     flex-grow: 1;

@@ -1,3 +1,75 @@
-
-    <!-- Add Content Here -->
-    <ng-content></ng-content>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      #drawer
+      class="sidenav"
+      fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    >
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list *ngIf="!(isAdminLoggedIn | async)">
+        <a mat-list-item routerLink="">Start Form</a>
+        <a mat-list-item routerLink="admin">Admin Login</a>
+        <!-- <a mat-list-item href="#">Link 3</a> -->
+      </mat-nav-list>
+      <mat-nav-list *ngIf="isAdminLoggedIn | async">
+        <a mat-list-item routerLink="/admin/reset-password">Reset Password</a>
+        <a mat-list-item routerLink="/admin/service-requests">Manage Requests</a>
+        <a mat-list-item routerLink="/admin/approvers">Manage Approvers</a>
+        <a mat-list-item (click)="onLogoutClick()">Logout</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>
+          <a class="nav-title" routerLink="/">Los Angeles Public Defender</a>
+        </span>
+        <span class="spacer"></span>
+        <!-- This part will show when it is not in mobile mode. -->
+        <ng-template [ngIf]="!(isHandset$ | async)">
+          <!-- When admin IS NOT logged in -->
+          <ng-template [ngIf]="!(isAdminLoggedIn | async)">
+            <a mat-raised-button routerLink="" style="margin-right: 10px"
+              >Start form</a
+            >
+            <a mat-raised-button routerLink="admin">Admin</a>
+          </ng-template>
+          <!-- When the admin IS logged in -->
+          <ng-template [ngIf]="isAdminLoggedIn | async">
+            <a
+              mat-raised-button
+              routerLink=""
+              style="margin-right: 10px"
+              routerLink="/admin/reset-password"
+              >Reset Password</a
+            >
+            <a
+              mat-raised-button
+              routerLink="admin"
+              style="margin-right: 10px"
+              routerLink="/admin/service-requests"
+              >View Requests</a
+            >
+            <a
+              mat-raised-button
+              style="margin-right: 10px"
+              routerLink="/admin/approvers"
+              >Manage Approvers</a
+            >
+            <a mat-raised-button color="warn" (click)="onLogoutClick()">Logout</a>
+          </ng-template>
+        </ng-template>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

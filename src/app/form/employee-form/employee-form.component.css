@@ -25,3 +25,12 @@
   background-color: black;
   color: black;
 }
+mat-step{
+  background-color: blue;
+}
+mat-horizontal-stepper{
+  background-color: rgba(82, 151, 255, 0.404);
+}
+mat-label{
+  color: rgb(0, 0, 0);
+}

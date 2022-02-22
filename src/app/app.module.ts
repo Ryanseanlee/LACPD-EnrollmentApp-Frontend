@@ -108,6 +108,7 @@ import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
     MatDialogModule,
     MatTableModule,
     MatProgressSpinnerModule,
+    MatSidenavModule
   ],
   exports: [],
   providers: [AuthGuard],

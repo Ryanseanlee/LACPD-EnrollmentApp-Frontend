@@ -1,6 +1,4 @@
-<div class="fullscreen-whole" style="display: flex">
-  <div class="service-request service-request-block layout">
-    <div class="service-request-flex layout">
+<div class="service-request-flex layout">
       <img class="image-format" src="/assets/small_logo.png">
       <h1 class="service-request-hero-title layout">Service Request</h1>
       <form class="form-organizer">
@@ -75,20 +73,20 @@ First Name
           <!-- Contractor/Employee -->
           <ng-container matColumnDef="conOrEm">
             <th *matHeaderCellDef></th>
-            <td *matCellDef="let element">{{ element.lastName }}</td>
+            <td *matCellDef="let element">{{ element.conOrEm }}</td>
           </ng-container>
 
 
           <!-- Submitted Date -->
           <ng-container matColumnDef="subDate">
             <th *matHeaderCellDef></th>
-            <td *matCellDef="let element">{{ element.lastName }}</td>
+            <td *matCellDef="let element">{{ element.subDate }}</td>
           </ng-container>
 
           <!-- Completed Date -->
           <ng-container matColumnDef="compDate">
             <th *matHeaderCellDef></th>
-            <td *matCellDef="let element">{{ element.lastName }}</td>
+            <td *matCellDef="let element">{{ element.compDate }}</td>
           </ng-container>
 
 
@@ -104,5 +102,4 @@ First Name
         </table>
       </div>
     </div>
-  </div>
-</div>
+

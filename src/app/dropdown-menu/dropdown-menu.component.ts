@@ -5,11 +5,21 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dropdown-menu.component.html',
   styleUrls: ['./dropdown-menu.component.css']
 })
-export class DropdownMenuComponent implements OnInit {
+export class DropdownMenuComponent{
 
-  constructor() { }
+  opened = false;
 
-  ngOnInit(): void {
+  isButtonVisible = true;
+
+
+  changeButton(): boolean {
+    
+    if(this.opened){
+      return false;
+    }else{
+      return true;
+    }
+    
   }
 
 }
