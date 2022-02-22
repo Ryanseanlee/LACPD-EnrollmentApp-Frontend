@@ -14,10 +14,4 @@ body {
 .mat-step-header .mat-step-icon-state-done,
 .mat-step-header .mat-step-icon-state-edit {
   background-color: rgb(255, 204, 1) !important;
-  color: rgb(38 38 38) !important;
-}
-
-.mat-step-header .mat-step-icon {
-  background-color: rgb(79 79 79 / 77%);
-  color: #fff;
 }
