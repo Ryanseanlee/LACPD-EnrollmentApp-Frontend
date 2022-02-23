@@ -22,3 +22,37 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: rgba(255, 255, 255, 0.87);
     background-color: rgb(0, 0, 0);
   }
+
+  .mat-option{
+      background-color: rgba(43, 43, 185, 0.507);
+      color: white;
+  }
+
+.mat-select-panel .mat-optgroup-label, .mat-select-panel {
+    font-size: inherit;
+    line-height: 3em;
+    background-color: rgb(201, 201, 201);
+    color: black;
+  }
+
+  .table{
+      color: rgb(247, 247, 247);
+  }
+
+.mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #000000;
+  }
+
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: transparent;
+  }
+
+  

@@ -26,10 +26,10 @@ mat-sidenav{
     flex:auto;
     
 }
-.box > button{
-    margin: 20% 10px 00px 10px;
-    background-color: rgba(0, 0, 0, 0.404);
-    height: 100px;
+.nav-buttons{
+    margin: 10% 00px 00px 0px;
+    background-color: rgba(49, 46, 94, 0.103);
+    height: 60px;
     border-color: transparent;
     width: 200px;
     color: rgb(230, 218, 218);
@@ -40,8 +40,36 @@ mat-sidenav{
     
 }
 .Side-Menu-Logo{
+    position: absolute;
     background-color: rgba(115, 179, 252, 0.466);
     border-radius: 6px;
     border-color: transparent;
-    padding: 30px;
+    padding: 5px;
+}
+.menu-bar{
+
+    width: 40px;
+    height: 6px;
+    margin: 10px;
+    color: black;
+    background-color: black;
+
+}
+.exit-button{
+    position: relative;
+    background-color: rgba(115, 179, 252, 0.466);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 6px;
+    border-color: transparent;
+    padding: 5px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+.exit-bar{
+    width: 40px;
+    height: 6px;
+    margin: 10px;
+    color: black;
+    background-color: black;
 }

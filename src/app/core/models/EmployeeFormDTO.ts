@@ -124,6 +124,8 @@ export class EmployeeFormDTO {
     const accessInformation = formGroup.value.accessInformation;
     const additionalInformation = formGroup.value.additionalInformation;
 
+    this.createDate = addressInformation.createDate;
+
     // Form stuff
     if (formGroup.value.requestNumber !== null) {
       this.requestNumber = formGroup.value.requestNumber;

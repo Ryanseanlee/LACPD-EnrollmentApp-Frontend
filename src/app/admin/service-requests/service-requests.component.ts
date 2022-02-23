@@ -19,9 +19,7 @@ export class ServiceRequestsComponent implements OnInit {
     'requestStatus',
     'firstName',
     'lastName',
-    'conOrEm',
-    'subDate',
-    'compDate'
+    'createDate'
   ];
   dataSource: any;
 

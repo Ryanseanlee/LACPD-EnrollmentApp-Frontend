@@ -21,8 +21,9 @@ $font_type0: 24px/1.2 "Abel", Helvetica, Arial, serif;
   &flex1.layout {
     position: relative;
     height: min-content;
+    width:90%;
     flex-grow: 1;
-    margin: 50px 6px 9px 0px;
+    margin: 60px;
   }
   &flex {
     @include flex-column;

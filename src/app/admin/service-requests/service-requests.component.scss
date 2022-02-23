@@ -66,7 +66,7 @@ $font_type2: 20px/1.2 "Roboto", Helvetica, Arial, serif;
   }
   &content-box {
     display: flex;
-    background-color: rgba(0, 174, 255, 0.616);
+    background-color: rgba(12, 137, 196, 0.616);
     border-radius: 8px 8px 8px 8px;
   }
   &content-box.layout {
@@ -163,9 +163,8 @@ $font_type2: 20px/1.2 "Roboto", Helvetica, Arial, serif;
     margin: 15px 60px 24px 0px;
   }
   &box2 {
-    background-color: rgba(0, 132, 255, 0.87);
+    background-color: rgba(92, 129, 207, 0.534);
     border-radius: 8px 8px 8px 8px;
-    opacity: 0.3;
   }
   &box2.layout {
     position: relative;
@@ -204,5 +203,5 @@ $font_type2: 20px/1.2 "Roboto", Helvetica, Arial, serif;
   background-color: transparent;
 }
 .text-color{
-  color: rgb(252, 252, 252);
+  color: rgb(0, 0, 0);
 }

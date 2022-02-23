@@ -1,19 +1,42 @@
 
 <mat-sidenav-container class="background-color">
-    <mat-sidenav mode="over" [(opened)]="opened" (closedStart)="isButtonVisible=true">
+    <mat-sidenav mode="over" [(opened)]="opened">
+            
 
         <div class="box">
-            <button [routerLink]="['/admin']">Admin Login</button>
-            <button [routerLink]="['/admin/reset-password']">Reset Password</button>
-            <button [routerLink]="['/admin/service-request']">Service Request</button>
-            <button [routerLink]="['/admin/approvers']">Approvers</button>
-            <button [routerLink]="['/admin/signing-events']">Signing Events</button>
-            <button [routerLink]="['/admin/service-requests']">Review Request</button>
+            <button class="exit-button" [@exitAnimation]="exitState" (click)="opened=false">
+                <div class="menu-bar" [@exit-sign]="exitSignColor">
+
+                </div>
+                <div class="menu-bar" [@exit-sign]="exitSignColor">
+                   
+                </div>
+                <div class="menu-bar" [@exit-sign]="exitSignColor">
+            
+                </div>
+            </button>
+            <button class="nav-buttons" [@press]="stateTrigger" (click)="push=!push"  [routerLink]="['/admin']">Admin Login</button>
+            <button class="nav-buttons" [@press]="stateTrigger1" (click)="push1=!push1"  [routerLink]="['/employee-form']">Employee Form</button>
+            <button class="nav-buttons" [@press]="stateTrigger2" (click)="push2=!push2"  [routerLink]="['/admin/reset-password']">Reset Password</button>
+            <button class="nav-buttons" [@press]="stateTrigger3" (click)="push3=!push3"  [routerLink]="['/admin/service-request']">Service Request</button>
+            <button class="nav-buttons" [@press]="stateTrigger4" (click)="push4=!push4"  [routerLink]="['/admin/approvers']">Approvers</button>
+            <button class="nav-buttons" [@press]="stateTrigger5" (click)="push5=!push5" [routerLink]="['/admin/signing-events']">Signing Events</button>
+            <button class="nav-buttons" [@press]="stateTrigger6" (click)="push6=!push6" [routerLink]="['/admin/service-requests']">Review Request</button>
         </div>
 
     </mat-sidenav>
     <mat-sidenav-content>
-        <button class="Side-Menu-Logo" *ngIf="this.isButtonVisible" (click)="opened=!opened; isButtonVisible=false">Menu</button>
+        <button [@fade]="stateName" class="Side-Menu-Logo"  (click)="opened=!opened">
+            <div class="menu-bar">
+
+            </div>
+            <div class="menu-bar">
+               
+            </div>
+            <div class="menu-bar">
+        
+            </div>
+        </button>
         <ng-component></ng-component>
     </mat-sidenav-content>
 </mat-sidenav-container>
