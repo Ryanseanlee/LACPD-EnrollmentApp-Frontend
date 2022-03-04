@@ -7,7 +7,7 @@ import { AdminService } from '../core/services/admin.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css'],
+  styleUrls: ['./admin.component.scss'],
   // smoother router transitions
 })
 export class AdminComponent implements OnInit {

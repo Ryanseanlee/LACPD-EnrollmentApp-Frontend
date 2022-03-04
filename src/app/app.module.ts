@@ -49,6 +49,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
 import { AdobeEventHistoryComponent } from './admin/adobe-event-history/adobe-event-history.component';
+import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { AdobeEventHistoryComponent } from './admin/adobe-event-history/adobe-ev
     InternetAccessComponent,
     ReviewContractorComponent,
     AdobeEventHistoryComponent,
+    DropdownMenuComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -106,6 +108,7 @@ import { AdobeEventHistoryComponent } from './admin/adobe-event-history/adobe-ev
     MatDialogModule,
     MatTableModule,
     MatProgressSpinnerModule,
+    MatSidenavModule,
   ],
   exports: [],
   providers: [AuthGuard],

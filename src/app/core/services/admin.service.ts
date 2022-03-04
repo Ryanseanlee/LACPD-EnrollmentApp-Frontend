@@ -111,12 +111,14 @@ export class AdminService {
       employee: true, // Since it is the employee form
 
       // Personal Information
+      createDate: data.personalInformation.createDate,
       lastName: data.personalInformation.lastName,
       firstName: data.personalInformation.firstName,
       middleInitial: data.personalInformation.middleInitial,
       employeeEmailAddress: data.personalInformation.emailAddress,
       businessPhoneNumber: data.personalInformation.phoneNumber,
       employeeNumber: data.personalInformation.employeeNumber,
+
 
       // Address Information
       businessStreetAddress: data.addressInformation.address,
@@ -197,6 +199,7 @@ export class AdminService {
       complete: isComplete,
       employee: false,
       // contractor info
+      createDate: data.personalInformation.createDate,
       lastName: data.contractorInformation.lastName,
       firstName: data.contractorInformation.firstName,
       middleInitial: data.contractorInformation.middleInitial,

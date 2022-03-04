@@ -1,58 +1,35 @@
 
-<!-- the route.children.length == 0 means this div will only 
-  show in parent componpent /admin, and  parent view won't show in /admin/rese-password 
-  children and other children nested route components 
-  -->
-<div *ngIf="route.children.length === 0" >
-  <div fxLayoutAlign="center center" fxFlexFill class="main-div">
-    <mat-card fxFlex="50">
-      <mat-toolbar color="primary">Login</mat-toolbar>
-      <mat-card-title color="primary">Welcome to PD</mat-card-title>
-      <div
-        class="error-message position-fixed"
-        *ngIf="alert"
-        class="alert alert-danger"
-        role="alert"
-      >
-        <mat-error>
-          {{ errorMessage }}
-        </mat-error>
-      </div>
-      <mat-card-content>
-        <form
-          [formGroup]="formLogin"
-          fxLayoutAlign="stretch"
-          fxLayout="column"
-          class="login-form"
-        >
-          <mat-form-field appearance="outline">
-            <mat-label>password</mat-label>
-            <input
-              matInput
+      <div *ngIf="route.children.length === 0" class="home-screen-flex1 layout">
+        <div class="home-screen-flex1-spacer"></div>
+        <div class="home-screen-flex layout">
+          <div class="home-screen-cover-block1 layout">
+            <div
+              style="--src:url(/assets/ef9f96a24793db6094814339d3c04ea9.png)"
+              class="home-screen-image layout"
+            ></div>
+          </div>
+          <div class="home-screen-cover-group layout">
+            <form class="home-screen-flex2 layout" [formGroup]="formLogin">
+              <div class="text-format">Welcome</div>
+
+              <input class="home-screen-box3 layout"
+              [type]="hide ? 'username' : 'text'"
+              placeholder="username"
+              formControlName="username"
+              >
+              <input class="home-screen-box3 layout1"
               [type]="hide ? 'password' : 'text'"
               placeholder="password"
-              formControlName="password"
-              
-            />
-            <i class ="material-icons" matSuffix 
-              (click)="hide = !hide"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide"
-            >
-              {{ hide ? 'visibility_off' : 'visibility' }}
-            </i>
-          </mat-form-field>
-          <mat-card-actions>
-            <button mat-raised-button color="primary" [disabled]="isLoading" (click)="adminLogin()">
-              <span *ngIf="isLoading" class="spinner-border spinner-border-sm mr-1"></span>
-              Login
-            </button>
-          </mat-card-actions>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </div>
-</div>
+              formControlName="password">
+              <div class="home-screen-cover-block layout">
+                <button class="home-screen-medium-title layout" [disabled]="isLoading" (click)="adminLogin()">Login</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    
+
 
 
 <router-outlet></router-outlet>

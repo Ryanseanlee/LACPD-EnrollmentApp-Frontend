@@ -1,0 +1,191 @@
+/* This source code is exported from pxCode, you can get more document from https://www.pxcode.io */
+.service-request-block {
+  display: flex;
+  background-color: white; }
+
+.service-request-block.layout {
+  position: relative;
+  overflow: hidden;
+  min-height: 720px;
+  flex-shrink: 0;
+  flex-grow: 1; }
+
+.service-request-flex {
+  display: flex;
+  flex-direction: column; }
+
+.service-request-flex.layout {
+  position: relative;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: 90.78%;
+  margin: 66px 3.83% 51px 5.39%; }
+
+.service-request-hero-title {
+  display: flex;
+  justify-content: center;
+  font: 36px/1.2 "Roboto", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px; }
+
+.service-request-hero-title.layout {
+  position: relative;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: 22.89%;
+  margin: 0px auto; }
+
+.service-request-cover-block {
+  display: flex;
+  background-color: rgba(255, 242, 242, 0.36);
+  border-radius: 24.5px 24.5px 24.5px 24.5px; }
+
+.service-request-cover-block.layout {
+  position: relative;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: 23.75%;
+  margin: 5px auto 0px; }
+
+.service-request-medium-title {
+  display: flex;
+  justify-content: center;
+  font: 24px/1.2 "Roboto", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px; }
+
+.service-request-medium-title.layout {
+  position: relative;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  flex-grow: 1;
+  margin: 10px 0px; }
+
+.service-request-content-box {
+  display: flex;
+  background-color: rgba(0, 184, 255, 0.09);
+  border-radius: 19px 19px 19px 19px; }
+
+.service-request-content-box.layout {
+  position: relative;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin: 18px 0px 0px; }
+
+.service-request-highlights {
+  display: flex;
+  justify-content: center;
+  font: 16px/1.2 "Roboto", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px; }
+
+.service-request-highlights.layout {
+  position: relative;
+  flex: 0 0 auto;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin: 15px 0px 17px 12.5px; }
+
+.service-request-content-box-spacer {
+  flex: 0 1 41px; }
+
+.service-request-highlights1-box {
+  display: flex;
+  justify-content: center; }
+
+.service-request-highlights1-box.layout {
+  position: relative;
+  flex: 0 0 auto;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin: 15px 0px 17px; }
+
+.service-request-highlights1 {
+  overflow: visible;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin: 0px;
+  font: 16px/1.2 "Roboto", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px;
+  white-space: pre-wrap; }
+
+.service-request-content-box-spacer1 {
+  flex: 0 1 62.5px; }
+
+.service-request-highlights2-box {
+  display: flex;
+  justify-content: center; }
+
+.service-request-highlights2-box.layout {
+  position: relative;
+  flex: 0 0 auto;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin: 15px 0px 17px; }
+
+.service-request-highlights2 {
+  overflow: visible;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin: 0px;
+  font: 16px/1.2 "Roboto", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px;
+  white-space: pre-wrap; }
+
+.service-request-content-box-spacer2 {
+  flex: 0 1 66.5px; }
+
+.service-request-highlights.layout1 {
+  position: relative;
+  flex: 0 0 auto;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin: 15px 0px 17px; }
+
+.service-request-content-box-spacer3 {
+  flex: 0 1 63px; }
+
+.service-request-highlights.layout2 {
+  position: relative;
+  flex: 0 0 auto;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin: 15px 0px 17px; }
+
+.service-request-content-box-spacer4 {
+  flex: 0 1 23.5px; }
+
+.service-request-highlights.layout3 {
+  position: relative;
+  flex: 0 0 auto;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin: 8px 159px 24px 0px; }
+
+.service-request-box2 {
+  background-color: rgba(0, 184, 255, 0.298);
+  border-radius: 19px 19px 19px 19px;
+  opacity: 0.3; }
+
+.service-request-box2.layout {
+  position: relative;
+  height: 425px;
+  margin: 10px 0px 0px; }

@@ -44,7 +44,7 @@ div.flex-container {
 }
 
 .mat-button-toggle-checked {
-  background-color: lawngreen;
+  background-color: rgb(255, 255, 255);
 }
 
 @media only screen and (max-width: 600px) {
@@ -57,4 +57,7 @@ div.flex-container {
   .active-directory-button, .internet-access-button {
     margin-bottom: 5px;
   }
+}
+.button-color{
+  background-color: black;
 }

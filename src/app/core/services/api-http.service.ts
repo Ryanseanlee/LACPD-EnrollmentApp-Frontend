@@ -27,7 +27,8 @@ export class ApiHttpService {
       submitted: isSubmitted,
       employee: true, // Since it is the employee form
 
-      // Personal Information
+      // Personal Information\
+      createDate: data.personalInformation.createDate,
       lastName: data.personalInformation.lastName,
       firstName: data.personalInformation.firstName,
       middleInitial: data.personalInformation.middleInitial,
@@ -88,6 +89,7 @@ export class ApiHttpService {
       // Form specific data
       employee: false,
       // contractor info
+      createDate: data.personalInformation.createDate,
       lastName: data.contractorInformation.lastName,
       firstName: data.contractorInformation.firstName,
       middleInitial: data.contractorInformation.middleInitial,
