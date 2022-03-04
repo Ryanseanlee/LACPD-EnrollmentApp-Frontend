@@ -34,7 +34,8 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.formLogin = new FormGroup({
-      password: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
     });
   }
 
@@ -47,7 +48,7 @@ export class AdminComponent implements OnInit {
   seeResetPassword(): Promise<boolean> {
     return this.router.navigate(['/admin/reset-password']);
   }
-
+  
   isHomeRoute(): boolean {
     return this.router.url === '/admin';
   }
@@ -55,6 +56,10 @@ export class AdminComponent implements OnInit {
   adminLogin(): void {
     // save user password to session storage
     this.isLoading = true;
+    this.adminService.setAdminUsername(
+      this.formLogin.get('email').value.toString()
+    );
+
     this.adminService.setAdminCredentials(
       this.formLogin.get('password').value.toString()
     );

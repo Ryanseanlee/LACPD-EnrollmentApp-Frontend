@@ -12,6 +12,10 @@ export class AdminService {
 
   // tranferring form data in admin side between components
   public adminFormData: any;
+
+  // hold username for admin
+  public adminUsername: any;
+
   // hold password for admin
   public adminPassword: any;
 
@@ -35,6 +39,12 @@ export class AdminService {
     } else {
       return true;
     }
+  }
+
+  // This function sets username
+  setAdminUsername(usernameFromAdmin: string): void {
+    this.adminUsername = usernameFromAdmin;
+    sessionStorage.setItem('email', usernameFromAdmin);
   }
 
   //This function sets password
@@ -62,13 +72,14 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        password: this.adminPassword,
+        email: this.adminUsername,
+        password: this.adminPassword
       }),
     };
 
     return this.http.get(
       `${environment.apiUrl}/admin/service_requests/${requestNumber}`,
-      httpOptions
+      httpOptions 
     );
   }
 
@@ -77,6 +88,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
