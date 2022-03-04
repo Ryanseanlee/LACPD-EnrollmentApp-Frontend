@@ -4,37 +4,17 @@
       <form class="form-organizer">
       <input class="service-request-cover-block layout"  (keyup)="applyFilter($event)" placeholder="Search" >
     </form>
-      <article class="service-request-content-box layout">
-        <h5 class="service-request-highlights layout">Request Number</h5>
-        <div class="service-request-content-box-spacer"></div>
-        <h5 class="service-request-highlights1-box layout">
-          <pre class="service-request-highlights1">
-Request Status
-</pre
-          >
-        </h5>
-        <div class="service-request-content-box-spacer1"></div>
-        <h5 class="service-request-highlights2-box layout">
-          <pre class="service-request-highlights2">
-First Name
-</pre
-          >
-        </h5>
-        <div class="service-request-content-box-spacer2"></div>
-        <h5 class="service-request-highlights layout1">Last Name</h5>
-        <div class="service-request-content-box-spacer3"></div>
-        <h5 class="service-request-highlights layout2">
-          Employee/Contractor
-        </h5>
-        <div class="service-request-content-box-spacer4"></div>
-        <h5 class="service-request-highlights layout3">
-          Request Submitted Date
-        </h5>
-        <div class="service-request-content-box-spacer5"></div>
-        <h5 class="service-request-highlights layout3">
-          Request Completed Date
-        </h5>
-      </article>
+      <div class="column-text-holder">
+        <div class="column-text">Request Number</div>
+          <div class="column-text">Request Status</div>
+          <div class="column-text">First Name</div>
+        <div class="column-text">Last Name</div>
+        <div class="column-text">Employee/Contractor</div>
+        <div class="column-text">Request Submitted Date</div>
+        <div class="column-text">Request Completed Date</div>
+      </div>
+
+
       <div class="service-request-box2 layout">
         <table class="table" mat-table [dataSource]="dataSource">
           <!-- requestNumber Column -->

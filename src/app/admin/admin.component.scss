@@ -19,11 +19,11 @@ $font_type0: 24px/1.2 "Abel", Helvetica, Arial, serif;
     @include flex-column;
   }
   &flex1.layout {
-    position: relative;
-    height: min-content;
+    position:relative;
+    height: 30%;
     width:90%;
     flex-grow: 1;
-    margin: 60px;
+    margin: auto;
   }
   &flex {
     @include flex-column;
@@ -32,7 +32,7 @@ $font_type0: 24px/1.2 "Abel", Helvetica, Arial, serif;
     position: relative;
     height: min-content;
     width: 79.79%;
-    margin: 24px auto 26px;
+    margin: 1% auto 26px;
   }
   &cover-block1 {
     display: flex;
@@ -108,9 +108,9 @@ $font_type0: 24px/1.2 "Abel", Helvetica, Arial, serif;
   &cover-block.layout {
     position: relative;
     height: min-content;
-    width: 110px;
-    min-width: 110px;
-    margin: 22px auto 24px;
+    width: 80%;
+    min-width: 40%;
+    margin: 10%;
   }
   &medium-title {
     @include h-center-content;

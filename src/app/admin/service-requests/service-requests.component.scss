@@ -205,3 +205,21 @@ $font_type2: 20px/1.2 "Roboto", Helvetica, Arial, serif;
 .text-color{
   color: rgb(0, 0, 0);
 }
+.column-text-holder{
+position: relative;
+display: flex;
+flex-direction: row;
+width: 90%;
+min-width: 80%;
+padding: 20px;
+margin: auto auto 10px auto;
+background-color: rgba(92, 129, 207, 0.534);
+border-radius: 6px;
+text-align: center;
+}
+.column-text{
+  background-color: rgba(92, 128, 207, 0.137);
+margin: 0px 40px 0px 0px;
+font-size: 16px;
+border-radius: 6px;
+}
