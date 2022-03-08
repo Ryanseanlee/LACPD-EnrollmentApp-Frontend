@@ -68,7 +68,7 @@ export class AdminService {
 
   // access service_requests for admins by id
   public searchById(requestNumber: any): Observable<any> {
-    // set the password in headers
+    // set the username/password in headers
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -307,6 +307,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -334,6 +335,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -368,6 +370,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -381,6 +384,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -394,6 +398,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -408,6 +413,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -422,6 +428,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -437,6 +444,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -450,6 +458,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -463,6 +472,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -477,6 +487,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -491,6 +502,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -506,6 +518,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -532,6 +545,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -546,6 +560,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -560,6 +575,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -575,6 +591,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -588,6 +605,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -601,6 +619,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -615,6 +634,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
@@ -629,6 +649,7 @@ export class AdminService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        email: this.adminUsername,
         password: this.adminPassword,
       }),
     };
