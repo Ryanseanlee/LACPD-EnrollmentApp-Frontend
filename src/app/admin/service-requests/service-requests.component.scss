@@ -168,10 +168,9 @@ $font_type2: 20px/1.2 "Roboto", Helvetica, Arial, serif;
   }
   &box2.layout {
     position: relative;
-    height: 600px;
-    min-width: 50%;
-    width: 90%;
-    margin: 10px 50px 0px;
+    margin-top: 5px;
+    height: 400px;
+    width: auto;
   }
 }
 .fullscreen- {
@@ -196,8 +195,8 @@ $font_type2: 20px/1.2 "Roboto", Helvetica, Arial, serif;
     margin:auto;
 }
 .table{
-  background-color: transparent;
-  height: inherit;
+  background-color: white;
+  border-color: white;
 }
 .button{
   background-color: transparent;
@@ -209,17 +208,19 @@ $font_type2: 20px/1.2 "Roboto", Helvetica, Arial, serif;
 position: relative;
 display: flex;
 flex-direction: row;
-width: 90%;
-min-width: 80%;
-padding: 20px;
-margin: auto auto 10px auto;
-background-color: rgba(92, 129, 207, 0.534);
 border-radius: 6px;
-text-align: center;
+margin-top: 5px;
+min-width: 1000px;
+background-color: rgba(170, 170, 243, 0.541);
+padding: 15px;
 }
 .column-text{
-  background-color: rgba(92, 128, 207, 0.137);
-margin: 0px 40px 0px 0px;
+background-color: rgba(92, 128, 207, 0.801);
+padding: 0px 20px;
+margin: 5px;
+text-align: center;
 font-size: 16px;
 border-radius: 6px;
+line-height: 40px;
+flex-grow: 1;
 }

@@ -18,10 +18,9 @@
             <button class="nav-buttons" [@press]="stateTrigger" (click)="push=!push"  [routerLink]="['/admin']">Admin Login</button>
             <button class="nav-buttons" [@press]="stateTrigger1" (click)="push1=!push1"  [routerLink]="['/employee-form']">Employee Form</button>
             <button class="nav-buttons" [@press]="stateTrigger2" (click)="push2=!push2"  [routerLink]="['/admin/reset-password']">Reset Password</button>
-            <button class="nav-buttons" [@press]="stateTrigger3" (click)="push3=!push3"  [routerLink]="['/admin/service-request']">Service Request</button>
+            <button class="nav-buttons" [@press]="stateTrigger3" (click)="push3=!push3"  [routerLink]="['/admin/service-requests']">Service Request</button>
             <button class="nav-buttons" [@press]="stateTrigger4" (click)="push4=!push4"  [routerLink]="['/admin/approvers']">Approvers</button>
-            <button class="nav-buttons" [@press]="stateTrigger5" (click)="push5=!push5" [routerLink]="['/admin/signing-events']">Signing Events</button>
-            <button class="nav-buttons" [@press]="stateTrigger6" (click)="push6=!push6" [routerLink]="['/admin/service-requests']">Review Request</button>
+            <button class="logout-button" (click)="onLogoutClick()">Logout</button>
         </div>
 
     </mat-sidenav>

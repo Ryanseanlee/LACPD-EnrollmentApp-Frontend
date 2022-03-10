@@ -73,3 +73,15 @@ mat-sidenav{
     color: black;
     background-color: black;
 }
+
+.logout-button{
+    margin: 10% 00px 00px 0px;
+    background-color: rgba(255, 0, 0, 0.37);
+    height: 60px;
+    border-color: transparent;
+    width: 200px;
+    color: rgb(255, 255, 255);
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    border-radius: 3px;
+}

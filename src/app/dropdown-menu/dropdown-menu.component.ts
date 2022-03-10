@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger, keyframes } from '@angular/animations';
+import { AdminService } from '../core/services/admin.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dropdown-menu',
@@ -86,5 +88,17 @@ export class DropdownMenuComponent{
   }
   get stateTrigger6(){
     return this.push6 ? '*' : 'in'
+  }
+
+  isAdminLoggedIn: BehaviorSubject<boolean>;
+
+  constructor(
+    private adminService: AdminService
+  ) {
+    this.isAdminLoggedIn = this.adminService.adminLoggedIn;
+  }
+
+  onLogoutClick(): void {
+    this.adminService.logAdminOut();
   }
 }
