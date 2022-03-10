@@ -118,6 +118,7 @@ export class AdminService {
       employeeEmailAddress: data.personalInformation.emailAddress,
       businessPhoneNumber: data.personalInformation.phoneNumber,
       employeeNumber: data.personalInformation.employeeNumber,
+      countyDepartmentName : data.personalInformation.countyDepartmentName,
 
 
       // Address Information

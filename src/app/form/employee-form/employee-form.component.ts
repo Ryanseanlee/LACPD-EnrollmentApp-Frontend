@@ -103,6 +103,10 @@ export class EmployeeFormComponent implements OnInit {
           Validators.required,
           Validators.email,
         ]),
+        CountyDepartmentName: new FormControl(null, [
+          Validators.required,
+          Validators.pattern('[a-z A-Z]*'),
+        ]),
         phoneNumber: new FormControl(null, [
           Validators.required,
           Validators.pattern('[0-9]{10}'),
@@ -205,6 +209,10 @@ export class EmployeeFormComponent implements OnInit {
           this.formDataService.formData.employeeEmailAddress,
           [Validators.required, Validators.email]
         ),
+        countyDepartmentName: new FormControl(this.formDataService.formData.countyDepartmentName, [
+          Validators.required,
+          Validators.pattern('[a-z A-Z]*'),
+        ]),
         phoneNumber: new FormControl(
           this.formDataService.formData.businessPhoneNumber,
           [Validators.required, Validators.pattern('[0-9]{10}')]

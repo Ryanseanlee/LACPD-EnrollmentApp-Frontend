@@ -11,6 +11,7 @@ const EMPLOYEE_FORM = {
     firstName: new FormControl(null),
     middleInitial: new FormControl(null),
     emailAddress: new FormControl(null),
+    countyDepartmentName: new FormControl(null),
     phoneNumber: new FormControl(null),
     address: new FormControl(null),
     city: new FormControl(null),
