@@ -106,7 +106,7 @@
             matInput
             formControlName="countyDepartmentNumber"
             required
-            pattern="[0-9]"
+            pattern="[0-9]*"
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-hint>Required</mat-hint>
@@ -386,68 +386,6 @@
             </div>
           </div>
 
-          <!-- TSO Data Denter button -->
-          <div class="access-option-button col-sm-12 col-md-4">
-            <mat-button-toggle
-              id="tso-access-btn"
-              (click)="toggleFormRender('tso')"
-              >TSO Access</mat-button-toggle
-            >
-            <div class="tso-access-form">
-              <!-- TODO: Needs the Type of Request section -->
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>2-Digit TSO GRP Code</mat-label>
-                  <input
-                    id="tso-grp-code-input"
-                    matInput
-                    formControlName="tso-grp-code"
-                  />
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>Bin Number</mat-label>
-                  <input
-                    id="binNumberinput"
-                    matInput
-                    formControlName="binNumber"
-                  />
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>Sub-Group 1</mat-label>
-                  <input
-                    id="subGroup1-input"
-                    matInput
-                    formControlName="subGroup1"
-                  />
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>Sub-Group 2</mat-label>
-                  <input
-                    id="subGroup2-input"
-                    matInput
-                    formControlName="subGroup2"
-                  />
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>Sub-Group 3</mat-label>
-                  <input
-                    id="subGroup3-input"
-                    matInput
-                    formControlName="subGroup3"
-                  />
-                </mat-form-field>
-              </div>
-            </div>
-          </div>
-
           <!-- Unix Environment button -->
           <div class="access-option-button col-sm-12 col-md-4">
             <mat-button-toggle
@@ -489,66 +427,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- Options -->
-        <!-- The forms will render here after the user checks the corresponding checkbox-->
-        <div class="accessInformationForms">
-          <!-- SecurID Access form -->
-
-          <div class="button-container">
-            <button mat-raised-button matStepperPrevious>Previous</button>
-            <button
-              mat-raised-button
-              matStepperNext
-              color="primary"
-              class="ml-2"
-              (click)="printForm()"
-            >
-              Next
-            </button>
-            <span class="spacer"></span>
-            <button
-              id="access-info-save-btn"
-              mat-raised-button
-              class="save-button"
-              color="accent"
-              (click)="save()"
-            >
-              Save
-            </button>
-          </div>
-        </div>
-      </div>
-    </mat-step>
-    <!-- Remote Access Step-->
-    <mat-step>
-      <ng-template matStepLabel> Remote Access</ng-template>
-      <div>
-        <h2 class="mat-display-1" style="margin-bottom: 16px">Remote Access</h2>
-        <p *ngIf="requestNumber">
-          Your request number:
-          <span style="color: red">{{ requestNumber }}</span>
-        </p>
-        <div class="row">
-          <div>
-            <label>Type: </label>
-            <mat-radio-button id="newToken" formControlName="newToken"
-              >New Token
-            </mat-radio-button>
-            <mat-radio-button id="replaceToken" formControlName="replaceToken"
-              >Replace Lost/Stolen Token</mat-radio-button
-            >
-            <mat-radio-button
-              id="replaceDefectiveToken"
-              formControlName="repleceDefectiveToken"
-              >Replace Defective Token</mat-radio-button
-            >
-            <mat-radio-button id="renewToken" formControlName="renewToken"
-              >Renew Token</mat-radio-button
-            >
-          </div>
-        </div>
-        <div class="row">
           <!-- SecurId button -->
           <div class="access-option-button col-sm-12 col-md-4">
             <mat-button-toggle
@@ -585,8 +463,37 @@
             </div>
           </div>
         </div>
+        <!-- Options -->
+        <!-- The forms will render here after the user checks the corresponding checkbox-->
+        <div class="accessInformationForms">
+          <!-- SecurID Access form -->
+
+          <div class="button-container">
+            <button mat-raised-button matStepperPrevious>Previous</button>
+            <button
+              mat-raised-button
+              matStepperNext
+              color="primary"
+              class="ml-2"
+              (click)="printForm()"
+            >
+              Next
+            </button>
+            <span class="spacer"></span>
+            <button
+              id="access-info-save-btn"
+              mat-raised-button
+              class="save-button"
+              color="accent"
+              (click)="save()"
+            >
+              Save
+            </button>
+          </div>
+        </div>
       </div>
     </mat-step>
+
     <!-- Department -->
     <mat-step [stepControl]="form.get('additionalInformation')">
       <ng-template matStepLabel>Active Directory</ng-template>

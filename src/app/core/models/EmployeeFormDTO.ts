@@ -21,7 +21,11 @@ export class EmployeeFormDTO {
   middleInitial: string;
   employeeEmailAddress: string;
   businessPhoneNumber: string;
+  workPhoneNumber: string;
   countyDepartmentName: string;
+  countyDepartmentNumber: string;
+  contractorName: string;
+  workOrderNumberInput: string;
 
   // Customer Information
   employeeNumber: string;
@@ -139,6 +143,7 @@ export class EmployeeFormDTO {
     this.employeeEmailAddress = personalInformation.emailAddress;
     this.businessPhoneNumber = personalInformation.phoneNumber;
     this.countyDepartmentName = personalInformation.countyDepartmentName;
+    this.countyDepartmentNumber = personalInformation.countyDepartmentNumber;
 
     // Address Information
     this.businessStreetAddress = addressInformation.address;

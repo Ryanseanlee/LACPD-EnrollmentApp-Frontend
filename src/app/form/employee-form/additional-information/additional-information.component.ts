@@ -37,14 +37,10 @@ export class AdditionalInformationComponent implements OnInit {
   @Input() form: FormGroup;
 
   // These variable represent if the user wants access to these items
-  internetApplication: boolean;
-  exchangeEmail: boolean;
-  emailEncryption: boolean;
+  
   laCountyGovAccess: boolean;
-  tokenlessAuthentication: boolean;
   lacMobileWifiAccess: boolean;
-  cherwellSms: boolean;
-  windowsRightsMgmt: boolean;
+  o360Email: boolean;
 
   // Options will be used for the chips
   options = new Set();
@@ -52,37 +48,17 @@ export class AdditionalInformationComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.internetApplication = this.form.get([
-      'additionalInformation',
-      'internetApplication',
-    ]).value;
-    this.exchangeEmail = this.form.get([
-      'additionalInformation',
-      'exchangeEmail',
-    ]).value;
-    this.emailEncryption = this.form.get([
-      'additionalInformation',
-      'emailEncryption',
-    ]).value;
     this.laCountyGovAccess = this.form.get([
       'additionalInformation',
       'laCountyGovAccess',
-    ]).value;
-    this.tokenlessAuthentication = this.form.get([
-      'additionalInformation',
-      'tokenlessAuthentication',
     ]).value;
     this.lacMobileWifiAccess = this.form.get([
       'additionalInformation',
       'lacMobileWifiAccess',
     ]).value;
-    this.cherwellSms = this.form.get([
+    this.o360Email = this.form.get([
       'additionalInformation',
-      'cherwellSms',
-    ]).value;
-    this.windowsRightsMgmt = this.form.get([
-      'additionalInformation',
-      'windowsRightsMgmt',
+      'o360Email',
     ]).value;
   } // 854572
 
@@ -112,13 +88,8 @@ export class AdditionalInformationComponent implements OnInit {
 
   // FOR TESTING PURPOSES
   sampleFunction(): void {
-    console.log('Internet Access: ', this.internetApplication);
-    console.log('Email Account: ', this.exchangeEmail);
-    console.log('Email Encryption: ', this.emailEncryption);
     console.log('La County Access: ', this.laCountyGovAccess);
-    console.log('Tokenless Auth: ', this.tokenlessAuthentication);
     console.log('lacMobile: ', this.lacMobileWifiAccess);
-    console.log('Cherwell', this.cherwellSms);
-    console.log('Windows: ', this.windowsRightsMgmt);
+    console.log('O360 E-mail', this.o360Email);
   }
 }
