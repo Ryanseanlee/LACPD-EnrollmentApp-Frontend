@@ -66,14 +66,12 @@ body {
 }
 
 
-.table td,
-.table th {
-  padding: .75rem;
-  vertical-align: top;
-  border-top: 1px solid #000000;
+.ng-star-inserted {
+  border-color: transparent;
+  background-color: transparent;
 }
 
-.table thead th {
-  vertical-align: bottom;
-  border-bottom: transparent;
+.table-format {
+  border-color: transparent;
+  border: transparent;
 }

@@ -19,7 +19,9 @@ export class ServiceRequestsComponent implements OnInit {
     'requestStatus',
     'firstName',
     'lastName',
-    'createDate'
+    'submitDate',
+    'isEmployee',
+    'isComplete'
   ];
   dataSource: any;
 
