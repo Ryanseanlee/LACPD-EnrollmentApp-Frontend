@@ -1,71 +1,70 @@
-<div class="service-request-flex layout">
-      <img class="image-format" src="/assets/small_logo.png">
-      <h1 class="service-request-hero-title layout">Service Request</h1>
-      <form class="form-organizer">
-      <input class="service-request-cover-block layout"  (keyup)="applyFilter($event)" placeholder="Search" >
-    </form>
-      <div class="column-text-holder">
-        <div class="column-text">Request Number</div>
-          <div class="column-text">Request Status</div>
-          <div class="column-text">First Name</div>
-        <div class="column-text">Last Name</div>
-        <div class="column-text">Employee/Contractor</div>
-        <div class="column-text">Request Submitted Date</div>
-        <div class="column-text">Request Completed Date</div>
-      </div>
+<div>
+  <app-top-logo></app-top-logo>
 
+  <div>
 
-      <div class="service-request-box2 layout">
-        <table class="table" mat-table [dataSource]="dataSource">
-          <!-- requestNumber Column -->
-          <ng-container matColumnDef="requestNumber">
-            <th *matHeaderCellDef></th>
-            <td *matCellDef="let element">
-              <button class="button"
-                mat-flat-button
-                (click)="viewDetails(element.requestNumber)"
-              >
-                {{ element.requestNumber }}
-              </button>
-            </td>
-          </ng-container>
-  
-          <!-- requestStatus Column -->
-          <ng-container  matColumnDef="requestStatus">
-            <th  *matHeaderCellDef></th>
-            <td  *matCellDef="let element">
-              <div >{{ element.requestStatus }}</div>
-            </td>
-          </ng-container>
-  
-          <!-- firstName Column -->
-          <ng-container matColumnDef="firstName">
-            <th *matHeaderCellDef></th>
-            <td  *matCellDef="let element">{{ element.firstName }}</td>
-          </ng-container>
-  
-          <!-- lastName Column -->
-          <ng-container matColumnDef="lastName">
-            <th *matHeaderCellDef></th>
-            <td *matCellDef="let element">{{ element.lastName }}</td>
-          </ng-container>
+<div class="table">
+<div class="top-table-bar">
+  <table class="table-format" mat-table [dataSource]="dataSource">
+    <!-- requestNumber Column -->
+    <ng-container matColumnDef="requestNumber">
+      <th *matHeaderCellDef></th>
+      <td *matCellDef="let element">
+        <button class="button"
+          mat-flat-button
+          (click)="viewDetails(element.requestNumber)"
+        >
+          {{ element.requestNumber }}
+        </button>
+      </td>
+    </ng-container>
 
-          <!-- Contractor/Employee -->
-          <ng-container matColumnDef="createDate">
-            <th *matHeaderCellDef></th>
-            <td *matCellDef="let element">{{ element.createDate }}</td>
-          </ng-container>
+    <!-- requestStatus Column -->
+    <ng-container  matColumnDef="requestStatus">
+      <th  *matHeaderCellDef>Request Status</th>
+      <td  *matCellDef="let element">
+        <div >{{ element.requestStatus }}</div>
+      </td>
+    </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  
-          <!-- Row shown when there is no matching data. -->
-          <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="6">
-              No data matching the filter "{{ input.value }}"
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
+    <!-- firstName Column -->
+    <ng-container matColumnDef="firstName">
+      <th *matHeaderCellDef>First name</th>
+      <td  *matCellDef="let element">{{ element.firstName }}</td>
+    </ng-container>
 
+    <!-- lastName Column -->
+    <ng-container matColumnDef="lastName">
+      <th *matHeaderCellDef>Last Name</th>
+      <td *matCellDef="let element">{{ element.lastName }}</td>
+    </ng-container>
+
+    <!-- Contractor/Employee -->
+    <ng-container matColumnDef="submitDate">
+      <th *matHeaderCellDef>Submit Date</th>
+      <td *matCellDef="let element">{{ element.submitDate}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="isEmployee">
+      <th *matHeaderCellDef>Employee/Contractor</th>
+      <td *matCellDef="let element">{{element.isEmployee? 'Employee' : 'Contractor'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="isComplete">
+      <th *matHeaderCellDef>Complete</th>
+      <td *matCellDef="let element">{{element.isComplete? 'Yes' : 'No'}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="6">
+        No data matching the filter "{{ input.value }}"
+      </td>
+    </tr>
+  </table>
+  </div>
+  </div>
+</div>

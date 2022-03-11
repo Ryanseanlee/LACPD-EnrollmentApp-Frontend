@@ -54,3 +54,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     vertical-align: bottom;
     border-bottom: transparent;
   }
+
+  .ng-star-inserted{
+    border-color: transparent;
+    background-color: transparent;
+  }
+  .table-format{
+    border-color: transparent;
+    border: transparent;
+  }

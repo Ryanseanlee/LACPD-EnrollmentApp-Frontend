@@ -1,0 +1,7 @@
+.image {
+    position:relative;
+    height: 100px;
+    width: 99px;
+    background: var(--src) center center / contain no-repeat;
+    margin: 1% auto 0% auto;
+}
