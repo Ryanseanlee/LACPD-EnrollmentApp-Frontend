@@ -7,3 +7,10 @@
 .full-width {
   width: 100%;
 }
+
+.page-color{
+  background-color: #102a43;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}

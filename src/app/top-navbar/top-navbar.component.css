@@ -1,0 +1,38 @@
+.nav-container{ 
+    position:sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #334E68;
+    column-gap: 25px;
+    padding: 5px 12px;
+}
+
+.nav-buttons{
+    background-color: transparent;
+    border-color: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.logout-button{
+    border-color: transparent;
+    background-color: rgb(238, 58, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+    font-size: 12px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.spacer{
+    flex: 1;
+}
+
+.mini-logo{
+    height: 50px;
+}
+
+.input-flexbox{
+    height: 1px;
+}

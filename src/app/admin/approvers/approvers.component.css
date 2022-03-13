@@ -7,9 +7,9 @@
   }
 
  .card {
-     align-items: center;
-     border-radius: 6px;
-     background-color: rgba(95, 177, 253, 0.534);
+    align-items: center;
+    background-color: #829AB1;
+    border-radius: 6px;
  } 
 
 mat-card-header {
@@ -51,17 +51,7 @@ mat-card-header {
     flex-direction: row;
 }
 
-.button-container {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-mat-label{
+.mat-tab-label{
     color: black;
-}
-mat-select{
-    border-color: black;
-    border-inline-color: black;
-}
-.Text-Color{
-    background-color: black;
+    opacity: 1;
 }

@@ -1,17 +1,14 @@
-<div>
-  <app-top-logo></app-top-logo>
 
-  <div>
-
-<div class="table">
-<div class="top-table-bar">
+<div class="service-request-container"> 
+  <div class="service-request-title">Service Request</div>
+  <div class="table-container">
   <table class="table-format" mat-table [dataSource]="dataSource">
     <!-- requestNumber Column -->
     <ng-container matColumnDef="requestNumber">
-      <th *matHeaderCellDef></th>
+      <th *matHeaderCellDef>Request Number</th>
       <td *matCellDef="let element">
-        <button class="button"
-          mat-flat-button
+        <button
+          class="request-number-button"
           (click)="viewDetails(element.requestNumber)"
         >
           {{ element.requestNumber }}
@@ -65,6 +62,5 @@
       </td>
     </tr>
   </table>
-  </div>
-  </div>
+</div>
 </div>
