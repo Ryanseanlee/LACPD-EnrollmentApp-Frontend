@@ -15,64 +15,40 @@ export class InternetAccessComponent implements OnInit {
   @Input() form: FormGroup;
 
   //Registration Boolean Variables
-  applyDefaultCountyWidePolicy: boolean;
-  departmentPolicyRule0: boolean;
-  departmentPolicyRule1: boolean;
-  departmentPolicyRule2: boolean;
-  departmentPolicyRule3: boolean;
-  departmentPolicyRule4: boolean;
-  socialNetworkingFacebook: boolean;
-  socialNetworkingTwitter: boolean;
-  socialNetworkingLinkedIn: boolean;
+  countywidePolicyB: boolean;
+  countyWidePolicyA: boolean;
+  allWebmail: boolean;
+  streamMedia: boolean;
+  justification: string;
 
   constructor() {}
 
   ngOnInit(): void {
     // If continuing a form, we have to add value manually
-    this.applyDefaultCountyWidePolicy = this.form.get([
+    this.countyWidePolicyA = this.form.get([
       'internetAccess',
-      'applyDefaultCountyWidePolicy',
+      'countyWidePolicyA',
     ]).value;
 
-    this.departmentPolicyRule0 = this.form.get([
+    this.countywidePolicyB = this.form.get([
       'internetAccess',
-      'departmentPolicyRule0',
+      'countywidePolicyB',
     ]).value;
 
-    this.departmentPolicyRule1 = this.form.get([
+    this.allWebmail = this.form.get([
       'internetAccess',
-      'departmentPolicyRule1',
+      'allWebmail',
     ]).value;
 
-    this.departmentPolicyRule2 = this.form.get([
+    this.streamMedia = this.form.get([
       'internetAccess',
-      'departmentPolicyRule2',
+      'streammedia',
+    ]).value;
+    this.justification = this.form.get([
+      'internetAccess',
+      'justification',
     ]).value;
 
-    this.departmentPolicyRule3 = this.form.get([
-      'internetAccess',
-      'departmentPolicyRule3',
-    ]).value;
-
-    this.departmentPolicyRule4 = this.form.get([
-      'internetAccess',
-      'departmentPolicyRule4',
-    ]).value;
-
-    this.socialNetworkingFacebook = this.form.get([
-      'internetAccess',
-      'socialNetworkingFacebook',
-    ]).value;
-
-    this.socialNetworkingTwitter = this.form.get([
-      'internetAccess',
-      'socialNetworkingTwitter',
-    ]).value;
-
-    this.socialNetworkingLinkedIn = this.form.get([
-      'internetAccess',
-      'socialNetworkingLinkedIn',
-    ]).value;
   }
 
   onButtonChange(event: MatButtonToggleChange, nameOfOption: string): void {

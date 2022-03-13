@@ -229,6 +229,8 @@ fdescribe('EmployeeFormComponent', () => {
       middleInitial: 'A',
       employeeNumber: 1234,
       hostedId: 12345,
+      //here
+      countyDepartmentName: null,
       departmentName: null,
       departmentNumber: null,
       companyName: null,
