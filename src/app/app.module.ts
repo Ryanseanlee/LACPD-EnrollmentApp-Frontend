@@ -46,11 +46,11 @@ import { SubmitPageComponent } from './form/employee-form/submit-page/submit-pag
 import { LoadingPageComponent } from './form/shared/loading-page/loading-page.component';
 import { SubmissionConfirmationPageComponent } from './form/shared/submission-confirmation-page/submission-confirmation-page.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
 import { AdobeEventHistoryComponent } from './admin/adobe-event-history/adobe-event-history.component';
 import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 import { TopLogoComponent } from './top-logo/top-logo.component';
+import { TopNavbarComponent } from './top-navbar/top-navbar.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +67,6 @@ import { TopLogoComponent } from './top-logo/top-logo.component';
     ServiceEmployeeRequestsDetailComponent,
 
     ReviewEmployeeComponent,
-    NavbarComponent,
     LoadingPageComponent,
     SubmissionConfirmationPageComponent,
     ConfirmationPageComponent,
@@ -78,6 +77,7 @@ import { TopLogoComponent } from './top-logo/top-logo.component';
     AdobeEventHistoryComponent,
     DropdownMenuComponent,
     TopLogoComponent,
+    TopNavbarComponent,
   ],
   imports: [
     ReactiveFormsModule,

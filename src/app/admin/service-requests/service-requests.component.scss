@@ -1,245 +1,47 @@
-/* This source code is exported from pxCode, you can get more document from https://www.pxcode.io */
-@import "utils";
+.service-request-container{
+  display: flex;
+  margin: 60px auto 0px;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 1467px;
+}
 
-$font_type0: 36px/1.2 "Roboto", Helvetica, Arial, serif;
-$font_type1: 24px/1.2 "Roboto", Helvetica, Arial, serif;
-$font_type2: 20px/1.2 "Roboto", Helvetica, Arial, serif;
-
-.service-request- {
-  &block {
-    display: flex;
-  }
-  &block.layout {
-    position: static;
-    width: auto;
-    overflow: hidden;
-    min-height: 720px;
-    flex-shrink: 0;
-    flex-grow: 1;
-  }
-  &flex {
-    @include flex-column;
-  }
-  &flex.layout {
-    position: static;
-    height: min-content;
-    width: 90%;
-    margin: 0px 0% 0px 5.39%;
-  }
-  &hero-title {
-    @include h-center-content;
-    font: $font_type0;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    letter-spacing: 0px;
-  }
-  &hero-title.layout {
-    position: relative;
-    height: min-content;
-    width: 22.89%;
-    margin: 0 auto;
-  }
-  &cover-block {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.562);
-    border-radius: 10px 10px 10px 10px;
-    border-color: transparent;
-  }
-  &cover-block.layout { 
-    height: 40px;
-    margin: 10px auto 0px;
-    text-align: center;
-    font-size: 25px;
-  }
-  &medium-title {
-    @include h-center-content;
-    font: $font_type1;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    letter-spacing: 0px;
-  }
-  &medium-title.layout {
-    position: relative;
-    height: min-content;
-    flex-grow: 1;
-    margin: 10px 0px;
-  }
-  &content-box {
-    display: flex;
-    background-color: rgba(12, 137, 196, 0.616);
-    border-radius: 8px 8px 8px 8px;
-  }
-  &content-box.layout {
-    position:relative;
-    height: min-content;
-    width: 90%;
-    margin: 10px 50px 0px;
-  }
-  &highlights {
-    @include h-center-content;
-    font: $font_type2;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    letter-spacing: 0px;
-  }
-  &highlights.layout {
-    position: relative;
-    flex: 0 0 auto;
-    height: min-content;
-    margin: 17px 0px 17px 30px;
-  }
-  &content-box-spacer {
-    flex: 0 1 41px;
-  }
-  &highlights1-box {
-    @include h-center-content;
-  }
-  &highlights1-box.layout {
-    position: relative;
-    flex: 0 0 auto;
-    height: min-content;
-    margin: 15px 0px 17px;
-  }
-  &highlights1 {
-    overflow: visible;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin: 0px;
-    font: $font_type2;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    letter-spacing: 0px;
-    white-space: pre-wrap;
-  }
-  &content-box-spacer1 {
-    flex: 0 1 62.5px;
-  }
-  &highlights2-box {
-    @include h-center-content;
-  }
-  &highlights2-box.layout {
-    position: relative;
-    flex: 0 0 auto;
-    height: min-content;
-    margin: 15px 0px 17px;
-  }
-  &highlights2 {
-    overflow: visible;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin: 0px;
-    font: $font_type2;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    letter-spacing: 0px;
-    white-space: pre-wrap;
-  }
-  &content-box-spacer2 {
-    flex: 0 1 66.5px;
-  }
-  &highlights.layout1 {
-    position: relative;
-    flex: 0 0 auto;
-    height: min-content;
-    margin: 15px 0px 17px;
-  }
-  &content-box-spacer3 {
-    flex: 0 1 50px;
-  }
-  &highlights.layout2 {
-    position: relative;
-    flex: 0 0 auto;
-    height: min-content;
-    margin: 15px 0px 17px;
-  }
-  &content-box-spacer4 {
-    margin-left: 60px;
-  }
-
-  &highlights.layout3 {
-    position: relative;
-    flex: 0 0 auto;
-    height: min-content;
-    margin: 15px 60px 24px 0px;
-  }
-  &box2 {
-    background-color: rgba(92, 129, 207, 0.534);
-    border-radius: 8px 8px 8px 8px;
-  }
-  &box2.layout {
-    position: relative;
-    margin-top: 5px;
-    height: 400px;
-    width: auto;
-  }
-}
-.fullscreen- {
-    &whole{
-        min-height: 100%;
-        min-width: 1024px;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        
-    }
-}
-.image-format{
-    position: relative;
-    height: 80px;
-    width: 90px;
-    margin: auto;
-}
-.form-organizer{
-    margin:auto;
-}
-.table{
+.service-request-title{
   position: relative;
-  background-color: rgb(1, 73, 155);
-  margin: 2% auto auto auto;
+  margin-bottom: 15px;
+  font-size: 30px;
+  color: #BCCCDC;
+  align-self: flex-start;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.table-container{
+  padding: 0px;
+  background: linear-gradient(0deg, #829AB1 90%, #9FB3C8 60%);
   border-radius: 6px;
-  width: 80%;
-  height: 700px;
-}
-.button{
-  background-color: transparent;
-}
-.text-color{
-  color: rgb(0, 0, 0);
-}
-.column-text-holder{
-position: relative;
-display: flex;
-flex-direction: row;
-border-radius: 6px;
-margin-top: 5px;
-min-width: 1000px;
-background-color: rgba(170, 170, 243, 0.541);
-padding: 15px;
-}
-.column-text{
-background-color: rgba(92, 128, 207, 0.801);
-padding: 0px 20px;
-margin: 5px;
-text-align: center;
-font-size: 16px;
-border-radius: 6px;
-line-height: 40px;
-flex-grow: 1;
+  height: 620px;
 }
 
-.top-table-bar{
-  position:relative;
-  background-color: rgb(0, 117, 185);
-  border-radius: 6px 6px 0px 0px;
-  width: 100%;
-  height: 80px;
-}
 .table-format{
-  position: relative;
   background-color: transparent;
-  border-color: transparent;
+  border-collapse: separate;
+  border-spacing: 80px 0;
+  font-size: 16px;
+  max-height: 700px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+th{
   color: black;
-  margin: auto;
+}
+
+
+.request-number-button{
+  background-color: #243B53;
+  border-color: transparent;
+  border-radius: 3px;
+  min-width: 70px;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
