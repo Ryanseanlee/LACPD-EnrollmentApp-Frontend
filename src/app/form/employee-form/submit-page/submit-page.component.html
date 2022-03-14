@@ -57,10 +57,28 @@
         </div>
       </div>
       <div>
-        <h6>Phone Number</h6>
+        <h6>County Department Number</h6>
+        <div class="subgroup">
+          <p>
+            {{
+              regForm.value.personalInformation.countyDepartmentNumber || "N/A"
+            }}
+          </p>
+        </div>
+      </div>
+      <div>
+        <h6>Cell Phone Number</h6>
         <div class="subgroup">
           <p>
             {{ regForm.value.personalInformation.phoneNumber || "N/A" }}
+          </p>
+        </div>
+      </div>
+      <div>
+        <h6>Work Phone Number</h6>
+        <div class="subgroup">
+          <p>
+            {{ regForm.value.personalInformation.workPhoneNumber || "N/A" }}
           </p>
         </div>
       </div>
@@ -69,6 +87,32 @@
         <div class="subgroup">
           <p class="font-weight-light">
             {{ regForm.value.personalInformation.employeeNumber || "N/A" }}
+          </p>
+        </div>
+      </div>
+      <div>
+        <h6>Contractor Company Name</h6>
+        <div class="subgroup">
+          <p class="font-weight-light">
+            {{ regForm.value.personalInformation.contractorName || "N/A" }}
+          </p>
+        </div>
+      </div>
+      <div>
+        <h6>Contract Work Order Number</h6>
+        <div class="subgroup">
+          <p class="font-weight-light">
+            {{
+              regForm.value.personalInformation.workOrderNumberInput || "N/A"
+            }}
+          </p>
+        </div>
+      </div>
+      <div>
+        <h6>Contract Expiration Date</h6>
+        <div class="subgroup">
+          <p class="font-weight-light">
+            {{ regForm.value.personalInformation.expirationDate || "N/A" }}
           </p>
         </div>
       </div>
@@ -169,61 +213,26 @@
       <div>
         <h6>Selected Policies</h6>
         <div class="subgroup">
-          <div *ngIf="regForm.value.additionalInformation.internetApplication">
-            <input type="checkbox" disabled checked />
-            <label>Internet Access</label>
-          </div>
-
-          <div *ngIf="regForm.value.additionalInformation.exchangeEmail">
-            <input type="checkbox" disabled checked />
-            <label>Email Account</label>
-          </div>
-
-          <div *ngIf="regForm.value.additionalInformation.emailEncryption">
-            <input type="checkbox" disabled checked />
-            <label>Email Encryption</label>
-          </div>
-
           <div *ngIf="regForm.value.additionalInformation.laCountyGovAccess">
             <input type="checkbox" disabled checked />
             <label>LA County Gov</label>
           </div>
 
-          <div
-            *ngIf="regForm.value.additionalInformation.tokenlessAuthentication"
-          >
-            <input type="checkbox" disabled checked />
-            <label>Tokenless Authentication</label>
-          </div>
-
           <div *ngIf="regForm.value.additionalInformation.lacMobileWifiAccess">
             <input type="checkbox" disabled checked />
-            <label>LACMobile Wifi</label>
+            <label>LACMobile</label>
           </div>
 
-          <div *ngIf="regForm.value.additionalInformation.cherwellSms">
+          <div *ngIf="regForm.value.additionalInformation.o360Email">
             <input type="checkbox" disabled checked />
-            <label>Cherwell SMS</label>
-          </div>
-
-          <div *ngIf="regForm.value.additionalInformation.windowsRightsMgmt">
-            <input type="checkbox" disabled checked />
-            <label>Window Rights Management</label>
+            <label>Office 360 Email</label>
           </div>
 
           <div
             *ngIf="
-              regForm.value.additionalInformation.internetApplication ==
-                false &&
-              regForm.value.additionalInformation.exchangeEmail == false &&
-              regForm.value.additionalInformation.emailEncryption == false &&
               regForm.value.additionalInformation.laCountyGovAccess == false &&
-              regForm.value.additionalInformation.tokenlessAuthentication ==
-                false &&
-              regForm.value.additionalInformation.lacMobileWifiAccess ==
-                false &&
-              regForm.value.additionalInformation.cherwellSms == false &&
-              regForm.value.additionalInformation.windowsRightsMgmt == false
+              regForm.value.additionalInformation.o360Email == false &&
+              regForm.value.additionalInformation.lacMobileWifiAccess == false
             "
           >
             <p>No applications selected</p>
@@ -239,82 +248,43 @@
       <div>
         <h6>Selected Policies</h6>
         <div class="subgroup">
-          <div
-            *ngIf="regForm.value.internetAccess.applyDefaultCountyWidePolicy"
-          >
+          <div *ngIf="regForm.value.internetAccess.countyWidePolicyA">
             <input type="checkbox" disabled checked />
-            <label>Default County Wide Policy</label>
+            <label>County Wide Policy A</label>
           </div>
 
-          <div *ngIf="regForm.value.internetAccess.departmentPolicyRule0">
+          <div *ngIf="regForm.value.internetAccess.countywidePolicyB">
             <input type="checkbox" disabled checked />
-            <label>Department Policy 0</label>
+            <label>County Wide Policy B</label>
           </div>
 
-          <div *ngIf="regForm.value.internetAccess.departmentPolicyRule1">
+          <div *ngIf="regForm.value.internetAccess.allWebmail">
             <input type="checkbox" disabled checked />
-            <label>Department Policy 1</label>
+            <label>All Webmail</label>
           </div>
 
-          <div *ngIf="regForm.value.internetAccess.departmentPolicyRule2">
+          <div *ngIf="regForm.value.internetAccess.streamMedia">
             <input type="checkbox" disabled checked />
-            <label>Department Policy 2</label>
+            <label>Stream Media</label>
           </div>
-
-          <div *ngIf="regForm.value.internetAccess.departmentPolicyRule3">
-            <input type="checkbox" disabled checked />
-            <label>Department Policy 3</label>
-          </div>
-
-          <div *ngIf="regForm.value.internetAccess.departmentPolicyRule4">
-            <input type="checkbox" disabled checked />
-            <label>Department Policy 4</label>
+          <div>
+            <h6>Justification</h6>
+            <div class="subgroup">
+              <p>
+                {{ regForm.value.internetAccess.justification || "N/A" }}
+              </p>
+            </div>
           </div>
 
           <div
             *ngIf="
-              regForm.value.internetAccess.applyDefaultCountyWidePolicy ==
-                false &&
-              regForm.value.internetAccess.departmentPolicyRule0 == false &&
-              regForm.value.internetAccess.departmentPolicyRule1 == false &&
-              regForm.value.internetAccess.departmentPolicyRule2 == false &&
-              regForm.value.internetAccess.departmentPolicyRule3 == false &&
-              regForm.value.internetAccess.departmentPolicyRule4 == false
+              regForm.value.internetAccess.countyWidePolicyA == false &&
+              regForm.value.internetAccess.countywidePolicyB == false &&
+              regForm.value.internetAccess.allWebmail == false &&
+              regForm.value.internetAccess.streamMedia == false
             "
           >
             <p>No policies selected</p>
-          </div>
-        </div>
-      </div>
-
-      <br />
-
-      <div>
-        <h6>Selected Social Networking</h6>
-        <div class="subgroup">
-          <div *ngIf="regForm.value.internetAccess.socialNetworkingFacebook">
-            <input type="checkbox" disabled checked />
-            <label>Social Networking Facebook</label>
-          </div>
-
-          <div *ngIf="regForm.value.internetAccess.socialNetworkingTwitter">
-            <input type="checkbox" disabled checked />
-            <label>Social Networking Twitter</label>
-          </div>
-
-          <div *ngIf="regForm.value.internetAccess.LinkedIn">
-            <input type="checkbox" disabled checked />
-            <label>Social Networking LinkedIn</label>
-          </div>
-
-          <div
-            *ngIf="
-              regForm.value.internetAccess.socialNetworkingFacebook == false &&
-              regForm.value.internetAccess.socialNetworkingTwitter == false &&
-              regForm.value.internetAccess.socialNetworkingLinkedIn == false
-            "
-          >
-            <p>No social networking selected</p>
           </div>
         </div>
       </div>

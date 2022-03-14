@@ -42,7 +42,7 @@ export class InternetAccessComponent implements OnInit {
 
     this.streamMedia = this.form.get([
       'internetAccess',
-      'streammedia',
+      'streamMedia',
     ]).value;
     this.justification = this.form.get([
       'internetAccess',

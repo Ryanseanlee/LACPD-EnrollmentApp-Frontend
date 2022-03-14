@@ -148,15 +148,11 @@ export class EmployeeFormComponent implements OnInit {
         ]),
       }),
       internetAccess: new FormGroup({
-        applyDefaultCountyWidePolicy: new FormControl(false),
-        departmentPolicyRule0: new FormControl(false),
-        departmentPolicyRule1: new FormControl(false),
-        departmentPolicyRule2: new FormControl(false),
-        departmentPolicyRule3: new FormControl(false),
-        departmentPolicyRule4: new FormControl(false),
-        socialNetworkingFacebook: new FormControl(false),
-        socialNetworkingTwitter: new FormControl(false),
-        socialNetworkingLinkedIn: new FormControl(false),
+        countyWidePolicyA: new FormControl(false),
+        countywidePolicyB: new FormControl(false),
+        allWebmail: new FormControl(false),
+        streamMedia: new FormControl(false),
+        justification: new FormControl(false),
       }),
       accessInformation: new FormGroup({
         // IBM Data Center Access
@@ -176,20 +172,14 @@ export class EmployeeFormComponent implements OnInit {
         unixLogonId: new FormControl(null),
         application: new FormControl(null),
         accessGroup: new FormControl(null),
-        accountNumber: new FormControl(null),
         // SecurID Remote Access
         billingAccountNumber: new FormControl(null),
         accessType: new FormControl(null),
       }),
       additionalInformation: new FormGroup({
-        internetApplication: new FormControl(false),
-        exchangeEmail: new FormControl(false),
-        emailEncryption: new FormControl(false),
         laCountyGovAccess: new FormControl(false),
-        tokenlessAuthentication: new FormControl(false),
         lacMobileWifiAccess: new FormControl(false),
-        cherwellSms: new FormControl(false),
-        windowsRightsMgmt: new FormControl(false),
+        o360Email: new FormControl(false),
       }),
       managerInformation: new FormGroup({
         managerFirstName: new FormControl(null),
