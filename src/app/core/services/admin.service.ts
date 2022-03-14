@@ -105,6 +105,7 @@ export class AdminService {
         'Content-Type': 'application/json',
         password: old,
         'new-password': newPass,
+        email: this.adminUsername
       }),
     };
     //sessionStorage.setItem('password', newPass);
