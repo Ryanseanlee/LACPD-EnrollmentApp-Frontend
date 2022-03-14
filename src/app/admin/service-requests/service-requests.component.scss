@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   padding: 20px;
-  max-width: 1490px;
+  max-width: 1467px;
 }
 
 .service-request-title{
@@ -17,10 +17,10 @@
 }
 
 .table-container{
-  padding: 10px;
-  background: linear-gradient(160deg, #829AB1 80%, #9FB3C8 60%);
+  padding: 0px;
+  background: linear-gradient(0deg, #829AB1 90%, #9FB3C8 60%);
   border-radius: 6px;
-  
+  height: 620px;
 }
 
 .table-format{
@@ -40,6 +40,7 @@ th{
 .request-number-button{
   background-color: #243B53;
   border-color: transparent;
+  border-radius: 3px;
   min-width: 70px;
   color: white;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
