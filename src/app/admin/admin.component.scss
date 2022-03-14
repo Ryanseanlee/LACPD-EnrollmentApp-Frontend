@@ -26,25 +26,25 @@
 }
 
 .greetings{
-  color: rgb(82, 82, 82);
+  color: rgb(0, 0, 0);
   margin-bottom: 50px;
   font-size: 50px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: sans-serif;
 }
 
 .email-input-text-box{ 
-  border-color: transparent;
+  border: 1px solid black;
   margin: 10px;
   border-radius: 3px;
 
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: sans-serif;
 }
 
 .password-input-text-box{ 
-  border-color: transparent;
+  border: 1px solid black;
   margin: 10px;
   border-radius: 3px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: sans-serif;
 }
 
 .login-button{
@@ -52,5 +52,5 @@
   background-color: #334E68;
   color: white;
   border-radius: 3px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: sans-serif;
 }
