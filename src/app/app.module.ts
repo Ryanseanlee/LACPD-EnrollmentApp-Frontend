@@ -51,6 +51,7 @@ import { SharedModule } from './shared/shared.module';
 import { AdobeEventHistoryComponent } from './admin/adobe-event-history/adobe-event-history.component';
 import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 import { TopLogoComponent } from './top-logo/top-logo.component';
+import { NewAdminComponent } from './new-admin/new-admin.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { TopLogoComponent } from './top-logo/top-logo.component';
     AdobeEventHistoryComponent,
     DropdownMenuComponent,
     TopLogoComponent,
+    NewAdminComponent,
   ],
   imports: [
     ReactiveFormsModule,
