@@ -8,9 +8,13 @@
   }
 }
 
+mat-horizontal-stepper {
+  background-color: rgb(208, 222, 225);
+  border-radius: 1rem;
+}
 
 mat-label {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .button-container {
@@ -22,8 +26,8 @@ mat-label {
 .mat-raised-button.mat-primary,
 .mat-fab.mat-primary,
 .mat-mini-fab.mat-primary {
-  background-color: #334E68;
-  color: rgba(255, 255, 255, 0.905);
+  background-color: #9AA5B1;
+  color: rgba(0, 0, 0, 0.905);
 }
 
 .mat-flat-button.mat-accent,
@@ -45,29 +49,18 @@ mat-label {
 }
 
 .button-color {
-  background-color: black;
+  background-color: #334E68;;
   color: black;
 }
 
 mat-step {
-  background-color: #829AB1;
+  background-color: blue;
 }
 
 mat-horizontal-stepper {
   background-color: #CBD2D9;
-  border-radius: 6px;
-
 }
 
 mat-label {
   color: rgb(0, 0, 0);
-}
-
-.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
-  background-color: #334E68;
-}
-
-.container{
-  margin: 50px auto 0px;
-
 }
