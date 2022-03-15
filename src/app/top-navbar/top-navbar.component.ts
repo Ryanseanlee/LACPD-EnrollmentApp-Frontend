@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject , Observable} from 'rxjs';
 import { AdminService } from '../core/services/admin.service';
 
 @Component({
-  selector: 'app-top-logo',
-  templateUrl: './top-logo.component.html',
-  styleUrls: ['./top-logo.component.css']
+  selector: 'app-top-navbar',
+  templateUrl: './top-navbar.component.html',
+  styleUrls: ['./top-navbar.component.css']
 })
-export class TopLogoComponent implements OnInit {
+export class TopNavbarComponent {
+
+  ngOnInit(): void {
+  }
 
   isAdminLoggedIn: BehaviorSubject<boolean>;
 
@@ -19,8 +22,6 @@ export class TopLogoComponent implements OnInit {
 
   onLogoutClick(): void {
     this.adminService.logAdminOut();
-  }
-  ngOnInit(): void {
   }
 
 }

@@ -1,6 +1,50 @@
-.box{
-    position: relative;
-    width: auto;
-    background: red;
-    
+.service-request-container{
+  display: flex;
+  margin: 30px auto 0px;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  width: fit-content;
+}
+
+.service-request-title{
+  position: relative;
+  margin-bottom: 15px;
+  font-size: clamp(40px, 1.5vw, 60px);
+  color: #BCCCDC;
+  align-self: flex-start;
+  font-family: sans-serif;
+}
+
+.table-container{
+  padding: clamp(5px, .8vw, 20px) clamp(10px, .8vw, 40px);
+  background: linear-gradient(0deg, #E4E7EB 90%, #CBD2D9 60%);
+  border-radius: 6px;
+  width: clamp(1000px, 50vw, 1860px);
+}
+
+.table-format{
+  background-color: transparent;
+  border-collapse: separate;
+  border-spacing: 50px 0;
+  font-size: clamp(10px, 1vw, 30px);
+  font-family: sans-serif;
+}
+
+th{
+  color: black;
+  font-family: sans-serif;
+}
+td{
+  color: rgb(27, 27, 27);
+  font-family: sans-serif;
+}
+
+.request-number-button{
+  background-color: #243B53;
+  border-color: transparent;
+  border-radius: clamp(3px, 10vw, 6px);
+  width: clamp(60px, 3vw, 160px);
+  color: white;
+  font-family: sans-serif;
 }

@@ -1,36 +1,23 @@
+<div *ngIf="route.children.length === 0" class="admin-login-container">
+  <div class="max-logo">
+    <img src="assets/ef9f96a24793db6094814339d3c04ea9.png" alt="max-logo" class="logo">
+  </div>
+  <form class="login-input-container" [formGroup]="formLogin">
+    <div class="greetings">Welcome</div>
 
-      <div *ngIf="route.children.length === 0" class="home-screen-flex1 layout">
-        <div class="home-screen-flex1-spacer"></div>
-        <div class="home-screen-flex layout">
-          <div class="home-screen-cover-block1 layout">
-            <div
-              style="--src:url(/assets/ef9f96a24793db6094814339d3c04ea9.png)"
-              class="home-screen-image layout"
-            ></div>
-          </div>
-          <div class="home-screen-cover-group layout">
-            <form class="home-screen-flex2 layout" [formGroup]="formLogin">
-              <div class="text-format">Welcome</div>
+    <input class="email-input-text-box"
+    [type]="hide ? 'email' : 'text'"
+    placeholder="email"
+    formControlName="email"
+    >
+    <input class="password-input-text-box"
+    [type]="hide ? 'password' : 'text'"
+    placeholder="password"
+    formControlName="password">
+    <button class="login-button" [disabled]="isLoading" (click)="adminLogin()">Login</button>
 
-              <input class="home-screen-box3 layout"
-              [type]="hide ? 'email' : 'text'"
-              placeholder="email"
-              formControlName="email"
-              >
-              <input class="home-screen-box3 layout1"
-              [type]="hide ? 'password' : 'text'"
-              placeholder="password"
-              formControlName="password">
-              <div class="home-screen-cover-block layout">
-                <button class="home-screen-medium-title layout" [disabled]="isLoading" (click)="adminLogin()">Login</button>
-              </div>
-              </form>
-            </div>
-          </div>
-        </div>
-    
-
+    </form>
+</div>
 
 
 <router-outlet></router-outlet>
-

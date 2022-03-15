@@ -8,13 +8,9 @@
   }
 }
 
-mat-horizontal-stepper {
-  background-color: rgb(208, 222, 225);
-  border-radius: 1rem;
-}
 
 mat-label {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .button-container {
@@ -26,16 +22,16 @@ mat-label {
 .mat-raised-button.mat-primary,
 .mat-fab.mat-primary,
 .mat-mini-fab.mat-primary {
-  background-color: rgb(255, 217, 66) !important;
-  color: rgba(0, 0, 0, 0.905);
+  background-color: #334E68;
+  color: rgba(255, 255, 255, 0.905);
 }
 
 .mat-flat-button.mat-accent,
 .mat-raised-button.mat-accent,
 .mat-fab.mat-accent,
 .mat-mini-fab.mat-accent {
-  background-color: #ff2020;
-  color: black;
+  background-color: #334E68;
+  color: white;
 }
 
 .spacer {
@@ -54,13 +50,23 @@ mat-label {
 }
 
 mat-step {
-  background-color: blue;
+  background-color: #829AB1;
 }
 
 mat-horizontal-stepper {
-  background-color: rgba(82, 151, 255, 0.404);
+  background-color: #CBD2D9;
+  border-radius: 6px;
+
 }
 
 mat-label {
   color: rgb(0, 0, 0);
+}
+
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  background-color: #334E68;
+}
+
+.container{
+  margin: 50px auto 0px;
 }

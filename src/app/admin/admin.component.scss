@@ -1,153 +1,64 @@
-/* This source code is exported from pxCode, you can get more document from https://www.pxcode.io */
-@import "utils";
-
-$font_type0: 24px/1.2 "Abel", Helvetica, Arial, serif;
-
-.home-screen- {
-  &block {
-    display: flex;
-    border-width: 0px;
-  }
-  &block.layout {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-    flex-shrink: 0;
-    flex-grow: 1;
-  }
-  &flex1 {
-    @include flex-column;
-  }
-  &flex1.layout {
-    position:relative;
-    height: 30%;
-    width:90%;
-    flex-grow: 1;
-    margin: auto;
-  }
-  &flex {
-    @include flex-column;
-  }
-  &flex.layout {
-    position: relative;
-    height: min-content;
-    width: 79.79%;
-    margin: 1% auto 26px;
-  }
-  &cover-block1 {
-    display: flex;
-    background-color: rgba(6, 164, 238, 0.507);
-    border-radius: 8px 8px 8px 8px;
-  }
-  &cover-block1.layout {
-    position: relative;
-    height: min-content;
-  }
-  &image {
-    background: var(--src) center center / contain no-repeat;
-  }
-  &image.layout {
-    position: relative;
-    height: 190px;
-    width: 83.32%;
-    margin: 34px 9.24% 34px 7.45%;
-  }
-  &cover-group {
-    display: flex;
-    background-color: rgba(0, 184, 255, 0.09);
-    border-radius: 19px 19px 19px 19px;
-  }
-  &cover-group.layout {
-    position: relative;
-    height: min-content;
-    width: 37.54%;
-    margin: 64px auto 0px;
-  }
-  &flex2 {
-    @include flex-column;
-    background-color: rgba(0, 172, 226, 0.419);
-    border-radius: 8px 8px 8px 8px;
-  }
-  &flex2.layout {
-   
-    position: relative;
-    height: min-content;
-    flex-grow: 1;
-  }
-  &image1 {
-    background: var(--src) center center / contain no-repeat;
-  }
-  &image1.layout {
-    position: relative;
-    height: 74px;
-    width: 61.64%;
-    margin: 30px auto 0px;
-  }
-  &box3 {
-    background-color: rgb(255, 255, 255);
-    border-color: transparent;
-    border-radius: 4px;
-  }
-  &box3.layout {
-    position: relative;
-    height: 41px;
-    width: 73.81%;
-    margin: 40px auto 20px;
-  }
-  &box3.layout1 {
-    position: relative;
-    height: 41px;
-    width: 73.81%;
-    margin: 15px auto 0px;
-  }
-  &cover-block {
-    display: flex;
-    background-color: rgba(6, 72, 94, 0.459);
-    border-radius: 4px;
-  }
-  &cover-block.layout {
-    position: relative;
-    height: min-content;
-    width: 80%;
-    min-width: 40%;
-    margin: 10%;
-  }
-  &medium-title {
-    @include h-center-content;
-    font: $font_type0;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    letter-spacing: 0px;
-    background-color: transparent;
-    border-color: transparent;
-  }
-  &medium-title.layout {
-    position: relative;
-    height: min-content;
-    flex-grow: 1;
-    margin: 0px 22.5px 1px;
-  }
+.admin-login-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.fullscreen- {
-    &whole{
-        min-height: 100%;
-        min-width: 100%;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        
-    }
+.max-logo{
+  background-color: #CBD2D9;
+  margin: 40px auto clamp(100px, 10.5vw, 300px);
+  border-radius: 6px;
+  padding: 15px;
 }
 
-.text-format{
+.logo{
+  height: clamp(160px, 10.5vw, 400px);
+  max-width: auto;
+}
+
+.login-input-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #CBD2D9;
+  padding: 20px 40px;
+  border-radius: 6px;
+}
+
+.greetings{
+  color: rgb(0, 0, 0);
+  margin-bottom: clamp(30px, 2.5vw, 40px);
+  font-size: clamp(5px, 2vw, 60px);
+  font-family: sans-serif;
+}
+
+.email-input-text-box{ 
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-bottom: clamp(10px, 1.5vw, 30px);
+  font-size: clamp(15px, 1vw, 25px);
+  width: clamp(150px, 10.5vw, 600px);
+  height: clamp(5px, 3vh, 50px);
+  font-family: sans-serif;
+}
+
+.password-input-text-box{ 
+  border: 1px solid black;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  width: clamp(150px, 10.5vw, 600px);
+  height: clamp(5px, 3vh, 50px);
+  font-size: clamp(15px, 1vw, 25px);
+  font-family: sans-serif;
+}
+
+.login-button{
+  border-color: transparent;
+  background-color: #334E68;
   color: white;
-  text-align: center;
-  margin-top: 40px;
-  font-size: 60px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 3px;
+  font-size: clamp(15px, 1vw, 25px);
+  
+  font-family: sans-serif;
 }
-
-
