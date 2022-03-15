@@ -4,8 +4,8 @@
     flex-direction: row;
     align-items: center;
     background-color: #323F4B;
-    column-gap: 10px;
-    padding: 5px 12px;
+    column-gap: min(1vw, 60px);
+    padding: min(.5vw, 20px);
 }
 
 .nav-buttons{
@@ -27,32 +27,33 @@
 }
 
 .mini-logo{
-    height: 50px;
+    width: min(3vw, 120px);
+
 }
 
 .service-request-logo{
-    height: 40px;
-    width: auto;
+    height: auto;
+    width: min(1.7vw, 80px);
 }
 
 .employee-form-logo{
-    height: 40px;
-    width: auto;
+    height: auto;
+    width: min(1.7vw, 80px);
 }
 
 .logout-logo{
-    height: 40px;
-    width: auto;
+    height: auto;
+    width: min(1.7vw, 80px);
 }
 
 .new-admin-logo{
-    height: 40px;
-    width: auto;
+    height: auto;
+    width: min(1.7vw, 80px);
 }
 
 .reset-logo{
-    height: 40px;
-    width: auto;
+    height: auto;
+    width: min(1.7vw, 80px);
 }
 
 .button-flex{
@@ -63,6 +64,6 @@
 
 .text-under-button{
     color: white;
-    font-size: 11px;
+    font-size: min(.6vw, 25px);
     font-family: sans-serif;
 }

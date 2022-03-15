@@ -6,15 +6,15 @@
 }
 
 .max-logo{
+  margin: min(5vw,250px) 0px min(4vw,300px) 0px;
   background-color: #CBD2D9;
-  margin: 40px auto clamp(100px, 10.5vw, 300px);
   border-radius: 6px;
   padding: 15px;
 }
 
 .logo{
-  height: clamp(160px, 10.5vw, 400px);
-  max-width: auto;
+  max-width: min(55vw, 2000px);
+  min-width: max(10vw, 320px);
 }
 
 .login-input-container{
@@ -27,29 +27,24 @@
 }
 
 .greetings{
+  font-size: clamp(25px, 3vw, 80px);
   color: rgb(0, 0, 0);
-  margin-bottom: clamp(30px, 2.5vw, 40px);
-  font-size: clamp(5px, 2vw, 60px);
   font-family: sans-serif;
 }
 
 .email-input-text-box{ 
   border: 1px solid black;
   border-radius: 3px;
-  margin-bottom: clamp(10px, 1.5vw, 30px);
-  font-size: clamp(15px, 1vw, 25px);
-  width: clamp(150px, 10.5vw, 600px);
-  height: clamp(5px, 3vh, 50px);
+  font-size: clamp(10px, 1vw, 30px);
   font-family: sans-serif;
+  margin: min(2vw, 400px) auto min(1vw, 200px);
 }
 
 .password-input-text-box{ 
   border: 1px solid black;
-  margin-bottom: 10px;
   border-radius: 3px;
-  width: clamp(150px, 10.5vw, 600px);
-  height: clamp(5px, 3vh, 50px);
-  font-size: clamp(15px, 1vw, 25px);
+  font-size: clamp(10px, 1vw, 30px);
+  margin: 0 auto min(1vw, 200px);
   font-family: sans-serif;
 }
 
@@ -58,7 +53,6 @@
   background-color: #334E68;
   color: white;
   border-radius: 3px;
-  font-size: clamp(15px, 1vw, 25px);
-  
   font-family: sans-serif;
+  font-size: clamp(10px, 1vw, 30px);
 }
