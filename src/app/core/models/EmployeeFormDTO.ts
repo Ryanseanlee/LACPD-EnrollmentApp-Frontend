@@ -19,33 +19,29 @@ export class EmployeeFormDTO {
   lastName: string;
   firstName: string;
   middleInitial: string;
-  employeeEmailAddress: string;
-  businessPhoneNumber: string;
+  emailAddress: string;
+  phoneNumber: string;
   workPhoneNumber: string;
   countyDepartmentName: string;
   countyDepartmentNumber: string;
   contractorName: string;
   workOrderNumberInput: string;
+  employeeNumber: string;
+  expirationDate: string;
+
+  //addressInformation
 
   // Customer Information
-  employeeNumber: string;
-  department;
-  departmentName: string;
-  departmentNumber: string;
   businessStreetAddress: string;
   businessCity: string;
   businessState: string;
   businessZip: string;
 
   // Applications Requested
-  internetApplication: boolean;
-  exchangeEmail: boolean;
-  emailEncryption: boolean;
+ 
   laCountyGovAccess: boolean;
-  tokenlessAuthentication: boolean;
   lacMobileWifiAccess: boolean;
-  cherwellSms: boolean;
-  windowsRightsMgmt: boolean;
+  o360Email: boolean;
 
   // Personal Webmail Access
   gmailAccess: boolean;
@@ -87,19 +83,15 @@ export class EmployeeFormDTO {
 
   // SecurID Remote Access
   billingAccountNumber: string; // TODO: Request name change to billingAccountNumberForSecurIDToken
-  securIdVpn: boolean;
+  secureIdVpn: boolean;
   adaptiveAuthenticationVpn: boolean;
 
   // Department Policy Rules
-  defaultCountyWidePolicy: boolean;
-  departmentPolicyRule0: boolean;
-  departmentPolicyRule1: boolean;
-  departmentPolicyRule2: boolean;
-  departmentPolicyRule3: boolean;
-  departmentPolicyRule4: boolean;
-  socialNetworkingFacebook: boolean;
-  socialNetworkingTwitter: boolean;
-  socialNetworkingLinkedIn: boolean;
+  countyWidePolicyA: boolean;
+  countywidePolicyB: boolean;
+  allWebmail: boolean;
+  streamMedia: boolean;
+  justification: string;
 
   // TODO: Ask if these are for contractor form
   //   companyName;
@@ -137,13 +129,17 @@ export class EmployeeFormDTO {
     }
 
     // Personal Information
+    this.workPhoneNumber = personalInformation.workPhoneNumber;
     this.lastName = personalInformation.lastName;
     this.firstName = personalInformation.firstName;
     this.middleInitial = personalInformation.middleInitial;
-    this.employeeEmailAddress = personalInformation.emailAddress;
-    this.businessPhoneNumber = personalInformation.phoneNumber;
+    this.emailAddress = personalInformation.emailAddress;
+    this.phoneNumber = personalInformation.phoneNumber;
     this.countyDepartmentName = personalInformation.countyDepartmentName;
     this.countyDepartmentNumber = personalInformation.countyDepartmentNumber;
+    this.contractorName = personalInformation.contractorName;
+    this.workOrderNumberInput = personalInformation.workOrderNumberInput;
+    
 
     // Address Information
     this.businessStreetAddress = addressInformation.address;
@@ -153,6 +149,7 @@ export class EmployeeFormDTO {
 
     // Employee Information
     this.employeeNumber = employeeInformation.employeeNumber;
+    this.expirationDate = personalInformation.expirationDate;
 
     // Access Information
     this.ibmLogOnId = accessInformation.ibmLogonId;
@@ -175,17 +172,11 @@ export class EmployeeFormDTO {
     this.unixLogOnId = accessInformation.unixLogonId;
     this.unixApplication = accessInformation.application;
     this.unixAccessGroup = accessInformation.accessGroup;
-    this.unixAccountNumber = accessInformation.accountNumber;
+    this.unixAccountNumber = accessInformation.billingAccountNumber;
 
     // Additional Information
-    this.internetApplication = additionalInformation.internetApplication;
-    this.exchangeEmail = additionalInformation.exchangeEmail;
-    this.emailEncryption = additionalInformation.emailEncryption;
     this.laCountyGovAccess = additionalInformation.laCountyGovAccess;
-    this.tokenlessAuthentication =
-      additionalInformation.tokenlessAuthentication;
     this.lacMobileWifiAccess = additionalInformation.lacMobileWifiAccess;
-    this.cherwellSms = additionalInformation.cherwellSms;
-    this.windowsRightsMgmt = additionalInformation.windowsRightsMgmt;
+    this.o360Email = additionalInformation.o360Email;
   }
 }

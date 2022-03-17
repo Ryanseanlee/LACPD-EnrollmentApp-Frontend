@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
 
@@ -10,6 +10,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'form-app';
   registrationForm: FormGroup;
+  public navView = true;
 
   showheader: boolean;
 
@@ -33,5 +34,12 @@ export class AppComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  @HostListener('window: resize', ['$event'])
+  onResize(event){
+    this.navView = window.innerWidth > 800 ? true : false;
+  }
+
+  ngOnInit(): void {
+    this.navView = window.innerWidth > 800 ? true : false;
+  }
 }

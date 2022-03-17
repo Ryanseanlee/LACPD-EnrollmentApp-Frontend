@@ -1,47 +1,62 @@
 .service-request-container{
   display: flex;
-  margin: 60px auto 0px;
+  margin: min(0.2vw, 5px) auto 0px;
   align-items: center;
   flex-direction: column;
   padding: 20px;
-  max-width: 1467px;
+  width: fit-content;
 }
 
 .service-request-title{
   position: relative;
   margin-bottom: 15px;
-  font-size: 30px;
   color: #BCCCDC;
   align-self: flex-start;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: sans-serif;
+  font-size: clamp(25px, 2vw, 80px);
 }
 
 .table-container{
-  padding: 0px;
-  background: linear-gradient(0deg, #829AB1 90%, #9FB3C8 60%);
+  padding: min(1vw, 2px);
+  max-height: min(10vw, 1000px);
   border-radius: 6px;
-  height: 620px;
 }
 
 .table-format{
   background-color: transparent;
   border-collapse: separate;
-  border-spacing: 80px 0;
-  font-size: 16px;
-  max-height: 700px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: min(1vw, 50px);
+  font-family: sans-serif;
+  border-collapse:separate;
+  background-color: #E4E7EB;
 }
 
 th{
   color: black;
+  font-family: sans-serif;
+  text-align: center;
+  height: 70px;
+  padding: 15px;
+  background-color:  #CBD2D9;
+  border-radius: 6px 6px 0px 0px;
+}
+td{
+  color: rgb(27, 27, 27);
+  font-family: sans-serif;
+  text-align: center;
+  
+
 }
 
+th, td {
+  border-bottom: 1px solid rgb(146, 146, 146);
+}
 
 .request-number-button{
   background-color: #243B53;
   border-color: transparent;
   border-radius: 3px;
-  min-width: 70px;
   color: white;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: sans-serif;
+  width: min(4vw, 100px);
 }

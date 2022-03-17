@@ -1,40 +1,46 @@
-<mat-sidenav-container class="background-color">
-    <mat-sidenav mode="over" [(opened)]="opened">
-            
 
-        <div class="box">
-            <button class="exit-button" [@exitAnimation]="exitState" (click)="opened=false">
-                <div class="menu-bar" [@exit-sign]="exitSignColor">
-
-                </div>
-                <div class="menu-bar" [@exit-sign]="exitSignColor">
-                   
-                </div>
-                <div class="menu-bar" [@exit-sign]="exitSignColor">
-            
+<div>
+    <ng-component></ng-component>
+    <div class="bottom-navbar-container">
+        <div  *ngIf="!(isAdminLoggedIn | async)">
+            <button class="nav-buttons" [routerLink]="['/admin']">
+                <div class="button-flex">
+                <img src="assets/AdminLoginLogo.png" alt="" class="admin-login-logo">
+                    <div class="text-under-button">Admin Login</div>
                 </div>
             </button>
-            <button class="nav-buttons" [@press]="stateTrigger" (click)="push=!push"  [routerLink]="['/admin']">Admin Login</button>
-            <button class="nav-buttons" [@press]="stateTrigger1" (click)="push1=!push1"  [routerLink]="['/employee-form']">Employee Form</button>
-            <button class="nav-buttons" [@press]="stateTrigger2" (click)="push2=!push2"  [routerLink]="['/admin/reset-password']">Reset Password</button>
-            <button class="nav-buttons" [@press]="stateTrigger3" (click)="push3=!push3"  [routerLink]="['/admin/service-requests']">Service Request</button>
-            <button class="nav-buttons" [@press]="stateTrigger4" (click)="push4=!push4"  [routerLink]="['/admin/approvers']">Approvers</button>
-            <button class="logout-button" (click)="onLogoutClick()">Logout</button>
+            <button class="nav-buttons" [routerLink]="['/employee-form']">
+                <div class="button-flex">
+                    <img src="assets/FormsLogo.png" alt="" class="employee-form-logo">
+                    <div class="text-under-button">New Employee Form</div>
+                </div>
+            </button>
+            <button class="nav-buttons"  [routerLink]="['/admin/approvers']">
+                <div class="button-flex">
+                    <img src="assets/NewAdminLogo.png" alt="" class="new-admin-logo">
+                    <div class="text-under-button">New Admin</div>
+                </div>    
+            </button>
         </div>
-
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <button [@fade]="stateName" class="Side-Menu-Logo"  (click)="opened=!opened">
-            <div class="menu-bar">
-
-            </div>
-            <div class="menu-bar">
-               
-            </div>
-            <div class="menu-bar">
-        
-            </div>
-        </button>
-        <ng-component></ng-component>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+        <div *ngIf="isAdminLoggedIn | async">
+            <button class="nav-buttons" [routerLink]="['/admin/service-requests']">
+                <div class="button-flex">
+                    <img src="assets/ServiceRequestLogo.png" alt="ServiceRequestLogo" class="service-request-logo">
+                    <div class="text-under-button">Service Request</div>
+                </div>
+            </button>
+            <button class="nav-buttons"  [routerLink]="['/admin/reset-password']">
+                <div class="button-flex">
+                    <img src="assets/ResetPasswordLogo.png" alt="" class="reset-logo">
+                    <div class="text-under-button">Reset Password</div>
+                </div>
+            </button>
+            <button class="logout-button" (click)="onLogoutClick()">
+                <div class="button-flex">
+                    <img src="assets/LogoutLogo.png" alt="" class="logout-logo">
+                    <div class="text-under-button">Logout</div>
+                </div>
+            </button>
+        </div> 
+    </div>
+</div>

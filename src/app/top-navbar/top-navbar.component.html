@@ -1,37 +1,51 @@
 <div class="nav-container">
     <img src="assets/small_logo.png" alt="logo" class="mini-logo">
     <div class="spacer"></div>
-    <button class="nav-buttons" [routerLink]="['/admin']">
-    </button>
-    <button class="nav-buttons" [routerLink]="['/employee-form']">
-        <div class="button-flex">
-            <img src="assets/FormsLogo.png" alt="" class="employee-form-logo">
-            <div class="text-under-button">New Employee Form</div>
-        </div>
-    </button>
-    <button class="nav-buttons"  [routerLink]="['/admin/reset-password']">
-        <div class="button-flex">
-            <img src="assets/ResetPasswordLogo.png" alt="" class="reset-logo">
-            <div class="text-under-button">Reset Password</div>
-        </div>
-    </button>
-    <button class="nav-buttons" [routerLink]="['/admin/service-requests']">
-        <div class="button-flex">
-            <img src="assets/ServiceRequestLogo.png" alt="ServiceRequestLogo" class="service-request-logo">
-            <div class="text-under-button">Service Request</div>
-        </div>
-    </button>
-    <button class="nav-buttons"  [routerLink]="['/admin/approvers']">
-        <div class="button-flex">
-            <img src="assets/NewAdminLogo.png" alt="" class="new-admin-logo">
-            <div class="text-under-button">New Admin</div>
-        </div>    
-    </button>
-    <button class="logout-button" (click)="onLogoutClick()">
-        <div class="button-flex">
-            <img src="assets/LogoutLogo.png" alt="" class="logout-logo">
-            <div class="text-under-button">Logout</div>
-        </div>
-    </button>
+    <div  *ngIf="!(isAdminLoggedIn | async)">
+        <button class="nav-buttons" [routerLink]="['/admin']">
+            <div class="button-flex">
+            <img src="assets/AdminLoginLogo.png" alt="" class="admin-login-logo">
+                <div class="text-under-button">Admin Login</div>
+            </div>
+        </button>
+        <button class="nav-buttons" [routerLink]="['/employee-form']">
+            <div class="button-flex">
+                <img src="assets/FormsLogo.png" alt="" class="employee-form-logo">
+                <div class="text-under-button">New Employee Form</div>
+            </div>
+        </button>
+        <button class="nav-buttons"  [routerLink]="['/admin/approvers']">
+            <div class="button-flex">
+                <img src="assets/NewAdminLogo.png" alt="" class="new-admin-logo">
+                <div class="text-under-button">New Admin</div>
+            </div>    
+        </button>
+    </div>
+    <div *ngIf="isAdminLoggedIn | async">
+        <button class="nav-buttons" [routerLink]="['/admin/service-requests']">
+            <div class="button-flex">
+                <img src="assets/ServiceRequestLogo.png" alt="ServiceRequestLogo" class="service-request-logo">
+                <div class="text-under-button">Service Request</div>
+            </div>
+        </button>
+        <button class="nav-buttons" [routerLink]="['/employee-form']">
+            <div class="button-flex">
+                <img src="assets/FormsLogo.png" alt="" class="employee-form-logo">
+                <div class="text-under-button">New Employee Form</div>
+            </div>
+        </button>
+        <button class="nav-buttons"  [routerLink]="['/admin/reset-password']">
+            <div class="button-flex">
+                <img src="assets/ResetPasswordLogo.png" alt="" class="reset-logo">
+                <div class="text-under-button">Reset Password</div>
+            </div>
+        </button>
+        <button class="logout-button" (click)="onLogoutClick()">
+            <div class="button-flex">
+                <img src="assets/LogoutLogo.png" alt="" class="logout-logo">
+                <div class="text-under-button">Logout</div>
+            </div>
+        </button>
+    </div>    
 </div>
 <ng-component></ng-component>
