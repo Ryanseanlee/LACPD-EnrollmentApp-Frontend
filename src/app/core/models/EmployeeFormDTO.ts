@@ -90,7 +90,7 @@ export class EmployeeFormDTO {
   countyWidePolicyA: boolean;
   countywidePolicyB: boolean;
   allWebmail: boolean;
-  streamMedia: boolean;
+  streamingMedia: boolean;
   justification: string;
 
   // TODO: Ask if these are for contractor form
@@ -173,6 +173,8 @@ export class EmployeeFormDTO {
     this.unixApplication = accessInformation.application;
     this.unixAccessGroup = accessInformation.accessGroup;
     this.unixAccountNumber = accessInformation.billingAccountNumber;
+
+    
 
     // Additional Information
     this.laCountyGovAccess = additionalInformation.laCountyGovAccess;

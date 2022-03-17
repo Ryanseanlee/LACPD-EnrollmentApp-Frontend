@@ -217,16 +217,26 @@ export class EmployeeFormComponent implements OnInit {
           [Validators.required, Validators.email]
         ),
         countyDepartmentName: new FormControl(this.formDataService.formData.countyDepartmentName, [
-          Validators.required,
           Validators.pattern('[a-z A-Z]*'),
         ]),
+        countyDepartmentNumber: new FormControl(this.formDataService.formData.countyDepartmentNumber, [
+          Validators.pattern('[0-9]*'),
+        ]),
         phoneNumber: new FormControl(
-          this.formDataService.formData.businessPhoneNumber,
-          [Validators.required, Validators.pattern('[0-9]{10}')]
+          this.formDataService.formData.phoneNumber,
+          [ Validators.pattern('[0-9]{10}')]
+        ),
+        workPhoneNumber: new FormControl(
+          this.formDataService.formData.workPhoneNumber,
+          [ Validators.pattern('[0-9]{10}')]
+        ),
+        workOrderNumberInput: new FormControl(
+          this.formDataService.formData.workOrderNumberInput,
+          [ Validators.pattern('[0-9]*')]
         ),
         employeeNumber: new FormControl(
           this.formDataService.formData.employeeNumber,
-          [Validators.required]
+          []
         ),
       }),
       addressInformation: new FormGroup({
