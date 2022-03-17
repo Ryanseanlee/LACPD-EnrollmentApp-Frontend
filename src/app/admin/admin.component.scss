@@ -56,3 +56,70 @@
   font-family: sans-serif;
   font-size: clamp(10px, 1vw, 30px);
 }
+
+@media (max-width: 800px){
+  .admin-login-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .max-logo{
+    margin: 50px 0pc 160px;
+    background-color: #CBD2D9;
+    border-radius: 0px;
+    padding: 15px;
+  }
+  
+  .logo{
+    max-width: 100%;
+  }
+  
+  .login-input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b0b5bb;
+    padding: 30px 20px;
+    border-radius: 2px;
+
+    width: 100%;
+  }
+  
+  .greetings{
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+  }
+  
+  .email-input-text-box{ 
+    border: .5px solid black;
+    border-radius: 2px;
+    font-size: 22px;
+    font-family: sans-serif;
+    width: 350px;
+    height: 50px;
+    margin: 30px 0px 10px;
+  }
+  
+  .password-input-text-box{ 
+    border: .5px solid black;
+    border-radius: 2px;
+    font-size: 22px;
+    width: 350px;
+    margin: 20px 0px 30px;
+    height: 50px;
+    font-family: sans-serif;
+  }
+  
+  .login-button{
+    border-color: transparent;
+    background-color: #334E68;
+    color: white;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-size: 20px;
+    padding: 10px 20px; 
+  }
+}

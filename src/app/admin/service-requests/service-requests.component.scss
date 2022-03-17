@@ -17,9 +17,9 @@
 }
 
 .table-container{
-  border-radius: 20px;
   padding: min(1vw, 2px);
   max-height: min(10vw, 1000px);
+  border-radius: 6px;
 }
 
 .table-format{
@@ -37,7 +37,8 @@ th{
   text-align: center;
   height: 70px;
   padding: 15px;
-  background-color:  #CBD2D9
+  background-color:  #CBD2D9;
+  border-radius: 6px 6px 0px 0px;
 }
 td{
   color: rgb(27, 27, 27);
