@@ -219,6 +219,9 @@ export class EmployeeFormComponent implements OnInit {
         countyDepartmentName: new FormControl(this.formDataService.formData.countyDepartmentName, [
           Validators.pattern('[a-z A-Z]*'),
         ]),
+        contractorName: new FormControl(this.formDataService.formData.contractorName, [
+          Validators.pattern('[a-z A-Z]*'),
+        ]),
         countyDepartmentNumber: new FormControl(this.formDataService.formData.countyDepartmentNumber, [
           Validators.pattern('[0-9]*'),
         ]),
@@ -236,6 +239,10 @@ export class EmployeeFormComponent implements OnInit {
         ),
         employeeNumber: new FormControl(
           this.formDataService.formData.employeeNumber,
+          []
+        ),
+        expirationDate: new FormControl(
+          this.formDataService.formData.expirationDate,
           []
         ),
       }),
@@ -260,32 +267,20 @@ export class EmployeeFormComponent implements OnInit {
         ]),
       }),
       internetAccess: new FormGroup({
-        applyDefaultCountyWidePolicy: new FormControl(
-          this.formDataService.formData.defaultCountyWidePolicy
+        countyWidePolicyA: new FormControl(
+          this.formDataService.formData.countyWidePolicyA
         ),
-        departmentPolicyRule0: new FormControl(
-          this.formDataService.formData.departmentPolicyRule0
+        countywidePolicyB: new FormControl(
+          this.formDataService.formData.countywidePolicyB
         ),
-        departmentPolicyRule1: new FormControl(
-          this.formDataService.formData.departmentPolicyRule1
+        allWebmail: new FormControl(
+          this.formDataService.formData.allWebmail
         ),
-        departmentPolicyRule2: new FormControl(
-          this.formDataService.formData.departmentPolicyRule2
+        streamingMedia: new FormControl(
+          this.formDataService.formData.streamingMedia
         ),
-        departmentPolicyRule3: new FormControl(
-          this.formDataService.formData.departmentPolicyRule3
-        ),
-        departmentPolicyRule4: new FormControl(
-          this.formDataService.formData.departmentPolicyRule4
-        ),
-        socialNetworkingFacebook: new FormControl(
-          this.formDataService.formData.socialNetworkingFacebook
-        ),
-        socialNetworkingTwitter: new FormControl(
-          this.formDataService.formData.socialNetworkingTwitter
-        ),
-        socialNetworkingLinkedIn: new FormControl(
-          this.formDataService.formData.socialNetworkingLinkedIn
+        justification: new FormControl(
+          this.formDataService.formData.justification
         ),
       }),
       accessInformation: new FormGroup({
@@ -321,27 +316,14 @@ export class EmployeeFormComponent implements OnInit {
         accessType: new FormControl(null), // Not yet implemented on backend
       }),
       additionalInformation: new FormGroup({
-        internetApplication: new FormControl(
-          this.formDataService.formData.internetApplication
-        ),
-        exchangeEmail: new FormControl(
-          this.formDataService.formData.exchangeEmail
-        ),
-        emailEncryption: new FormControl(
-          this.formDataService.formData.emailEncryption
-        ),
         laCountyGovAccess: new FormControl(
           this.formDataService.formData.laCountyGovAccess
-        ),
-        tokenlessAuthentication: new FormControl(
-          this.formDataService.formData.tokenlessAuthentication
         ),
         lacMobileWifiAccess: new FormControl(
           this.formDataService.formData.lacMobileWifiAccess
         ),
-        cherwellSms: new FormControl(this.formDataService.formData.cherwellSms),
-        windowsRightsMgmt: new FormControl(
-          this.formDataService.formData.windowsRightsMgmt
+        o360Email: new FormControl(
+          this.formDataService.formData.o360Email
         ),
       }),
       // TODO: Retrieve these values from formData
