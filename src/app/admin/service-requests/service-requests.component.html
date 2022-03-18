@@ -15,6 +15,14 @@
         </td>
       </ng-container>
 
+      <!-- requestStatus Column -->
+      <ng-container matColumnDef="requestStatus">
+        <th *matHeaderCellDef>Request Status</th>
+        <td *matCellDef="let element">
+          <div>{{ element.requestStatus }}</div>
+        </td>
+      </ng-container>
+
       <!-- firstName Column -->
       <ng-container matColumnDef="firstName">
         <th *matHeaderCellDef>First name</th>
@@ -46,9 +54,6 @@
           {{ element.isComplete ? "Yes" : "No" }}
         </td>
       </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
