@@ -12,7 +12,7 @@
       formGroupName="personalInformation"
       [stepControl]="approval.get('personalInformation')"
     >
-      <ng-template class="button-color" >Personal</ng-template>
+      <ng-template matStepLabel>IDK</ng-template>
       <h2 class="mat-display-1" style="margin-bottom: 32px">
         Personal Information
       </h2>
@@ -77,27 +77,76 @@
             required
             [errorStateMatcher]="errorStateMatcher"
           />
+          <mat-hint>Required</mat-hint>
           <mat-error>Email is required with correct email format</mat-error>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Phone number</mat-label>
+          <mat-label>County Department Name/Organization Name</mat-label>
+          <input
+            id="countyDepartmentName"
+            type="text"
+            matInput
+            formControlName="countyDepartmentName"
+            required
+            pattern="[a-zA-Z ]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error>County Department Name is Required</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label> County Department number</mat-label>
+          <input
+            id="countyDepartmentNumber"
+            type="phone"
+            matInput
+            formControlName="countyDepartmentNumber"
+            required
+            pattern="[0-9]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error>County Department Number is is Required</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label> Cell Phone number</mat-label>
           <input
             id="phoneNumberInput"
             type="phone"
             matInput
-            formControlName="phoneNumber"
             required
+            formControlName="phoneNumber"
             pattern="[0-9]{10}"
             [errorStateMatcher]="errorStateMatcher"
           />
+          <mat-hint>Required</mat-hint>
+          <mat-error>Phone number is required and must be 10 digit</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label> Work Phone number</mat-label>
+          <input
+            id="workPhoneNumberInput"
+            type="phone"
+            matInput
+            formControlName="workPhoneNumber"
+            pattern="[0-9]{10}"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Leave empty if same as Cell Phone number</mat-hint>
           <mat-error>Phone number is required and must be 10 digit</mat-error>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline" style="width: 70%">
-          <mat-label>Employee Number</mat-label>
+          <mat-label>Employee or Contractor Number</mat-label>
           <input
             id="employeeNumberInput"
             type="text"
@@ -107,7 +156,46 @@
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-hint>Required</mat-hint>
-          <mat-error>Employee number is required</mat-error>
+          <mat-error>Employee or Contractor number is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="mat-input-width">
+          <mat-label>Contractor Company Name</mat-label>
+          <input
+            id="contractorName"
+            type="text"
+            matInput
+            formControlName="contractorName"
+            pattern="[a-zA-Z ]*"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+          <mat-hint>Required</mat-hint>
+          <mat-error>County Department Name is Required</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" style="width: 70%">
+          <mat-label>Contract Work Order Number</mat-label>
+          <input
+            id="workOrderNumberInput"
+            type="text"
+            matInput
+            formControlName="workOrderNumberInput"
+            [errorStateMatcher]="errorStateMatcher"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" style="width: 70%">
+          <mat-label>Contract Expiration Date</mat-label>
+          <input
+            id="expirationDate"
+            type="date"
+            matInput
+            formControlName="expirationDate"
+            [errorStateMatcher]="errorStateMatcher"
+          />
         </mat-form-field>
       </div>
       <div class="button-container">
