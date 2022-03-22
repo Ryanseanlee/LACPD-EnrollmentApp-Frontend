@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/core/services/admin.service';
 import { FormDataService } from 'src/app/core/services/form-data.service';
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-service-requests',
@@ -29,7 +30,8 @@ export class ServiceRequestsComponent implements OnInit {
   constructor(
     private adminService: AdminService,
     private router: Router,
-    private formDataService: FormDataService
+    private formDataService: FormDataService,
+    private datepipe: DatePipe
   ) {}
 
   ngOnInit(): void {
@@ -91,6 +93,10 @@ export class ServiceRequestsComponent implements OnInit {
       }
     });
   }
+
+  formatDate(myDate){
+    return this.datepipe.transform(myDate, 'MMM d, y');
+   }
 
   adobeEventHistory(requestNumber: any): void {
     this.adminService.searchById(requestNumber).subscribe((res) => {

@@ -35,10 +35,9 @@
         <td *matCellDef="let element">{{ element.lastName }}</td>
       </ng-container>
 
-      <!-- Contractor/Employee -->
       <ng-container matColumnDef="submitDate">
         <th *matHeaderCellDef>Submit Date</th>
-        <td *matCellDef="let element">{{ element.submitDate }}</td>
+        <td *matCellDef="let element">{{ formatDate(element.submitDate) }}</td>
       </ng-container>
 
       <ng-container matColumnDef="isEmployee">
@@ -62,7 +61,7 @@
             class="request-number-button"
             (click)="review(element.requestNumber)"
           >
-            Submit
+            Review
           </button>
         </td>
       </ng-container>

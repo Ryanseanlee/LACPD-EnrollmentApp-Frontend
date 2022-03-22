@@ -1,26 +1,6 @@
 <div class="nav-container">
     <img src="assets/small_logo.png" alt="logo" class="mini-logo">
     <div class="spacer"></div>
-    <div  *ngIf="!(isAdminLoggedIn | async)">
-        <button class="nav-buttons" [routerLink]="['/admin']">
-            <div class="button-flex">
-            <img src="assets/AdminLoginLogo.png" alt="" class="admin-login-logo">
-                <div class="text-under-button">Admin Login</div>
-            </div>
-        </button>
-        <button class="nav-buttons" [routerLink]="['/employee-form']">
-            <div class="button-flex">
-                <img src="assets/FormsLogo.png" alt="" class="employee-form-logo">
-                <div class="text-under-button">New Employee Form</div>
-            </div>
-        </button>
-        <button class="nav-buttons"  [routerLink]="['/admin/approvers']">
-            <div class="button-flex">
-                <img src="assets/NewAdminLogo.png" alt="" class="new-admin-logo">
-                <div class="text-under-button">New Admin</div>
-            </div>    
-        </button>
-    </div>
     <div *ngIf="isAdminLoggedIn | async">
         <button class="nav-buttons" [routerLink]="['/admin/service-requests']">
             <div class="button-flex">

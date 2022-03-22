@@ -13,6 +13,7 @@ import { ConfirmationPageComponent } from './confirmation-page/confirmation-page
 import { AuthGuard } from './core/services/auth.guard';
 import { ContractorFormComponent } from './form/contractor-form/contractor-form.component';
 import { EmployeeFormComponent } from './form/employee-form/employee-form.component';
+import { DatePipe } from '@angular/common'
 
 const routes: Routes = [
   {
