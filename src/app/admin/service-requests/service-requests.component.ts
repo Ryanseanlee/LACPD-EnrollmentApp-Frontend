@@ -21,7 +21,8 @@ export class ServiceRequestsComponent implements OnInit {
     'lastName',
     'submitDate',
     'isEmployee',
-    'isComplete'
+    'isComplete',
+    'submit'
   ];
   dataSource: any;
 

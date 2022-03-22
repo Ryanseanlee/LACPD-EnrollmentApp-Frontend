@@ -55,6 +55,18 @@
         </td>
       </ng-container>
 
+      <ng-container matColumnDef="submit">
+        <th *matHeaderCellDef>Submit/Review</th>
+        <td *matCellDef="let element">
+          <button
+            class="request-number-button"
+            (click)="review(element.requestNumber)"
+          >
+            Submit
+          </button>
+        </td>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
