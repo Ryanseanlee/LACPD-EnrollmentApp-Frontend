@@ -149,7 +149,7 @@ export class EmployeeFormComponent implements OnInit {
       }),
       internetAccess: new FormGroup({
         countyWidePolicyA: new FormControl(false),
-        countywidePolicyB: new FormControl(false),
+        countyWidePolicyB: new FormControl(false),
         allWebmail: new FormControl(false),
         streamMedia: new FormControl(false),
         justification: new FormControl(false),
@@ -179,7 +179,7 @@ export class EmployeeFormComponent implements OnInit {
       additionalInformation: new FormGroup({
         laCountyGovAccess: new FormControl(false),
         lacMobileWifiAccess: new FormControl(false),
-        o360Email: new FormControl(false),
+        o365Email: new FormControl(false),
       }),
       managerInformation: new FormGroup({
         managerFirstName: new FormControl(null),
@@ -270,8 +270,8 @@ export class EmployeeFormComponent implements OnInit {
         countyWidePolicyA: new FormControl(
           this.formDataService.formData.countyWidePolicyA
         ),
-        countywidePolicyB: new FormControl(
-          this.formDataService.formData.countywidePolicyB
+        countyWidePolicyB: new FormControl(
+          this.formDataService.formData.countyWidePolicyB
         ),
         allWebmail: new FormControl(
           this.formDataService.formData.allWebmail

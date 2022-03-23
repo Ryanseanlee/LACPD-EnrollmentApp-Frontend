@@ -40,7 +40,7 @@ export class AdditionalInformationComponent implements OnInit {
   
   laCountyGovAccess: boolean;
   lacMobileWifiAccess: boolean;
-  o360Email: boolean;
+  o365Email: boolean;
 
   // Options will be used for the chips
   options = new Set();
@@ -56,7 +56,7 @@ export class AdditionalInformationComponent implements OnInit {
       'additionalInformation',
       'lacMobileWifiAccess',
     ]).value;
-    this.o360Email = this.form.get([
+    this.o365Email = this.form.get([
       'additionalInformation',
       'o360Email',
     ]).value;
@@ -90,6 +90,6 @@ export class AdditionalInformationComponent implements OnInit {
   sampleFunction(): void {
     console.log('La County Access: ', this.laCountyGovAccess);
     console.log('lacMobile: ', this.lacMobileWifiAccess);
-    console.log('O360 E-mail', this.o360Email);
+    console.log('O365 E-mail', this.o365Email);
   }
 }

@@ -33,8 +33,14 @@ export class ApiHttpService {
       firstName: data.personalInformation.firstName,
       middleInitial: data.personalInformation.middleInitial,
       employeeEmailAddress: data.personalInformation.emailAddress,
-      businessPhoneNumber: data.personalInformation.phoneNumber,
+      phoneNumber: data.personalInformation.phoneNumber,
+      workPhoneNumber: data.personalInformation.workPhoneNumber,
       employeeNumber: data.personalInformation.employeeNumber,
+      countyDepartmentName: data.personalInformation.countyDepartmentName,
+      countyDepartmentNumber: data.personalInformation.countyDepartmentNumber,
+      contractorName: data.personalInformation.contractorName,
+      workOrderNumberInput: data.personalInformation.workOrderNumberInput,
+      expirationDate: data.personalInformation.expirationDate,
 
       // Address Information
       businessStreetAddress: data.addressInformation.address,
@@ -43,15 +49,20 @@ export class ApiHttpService {
       businessZip: data.addressInformation.zipCode,
 
       // Internet Access
-      defaultCountyWidePolicy: data.internetAccess.applyDefaultCountyWidePolicy,
-      departmentPolicyRule0: data.internetAccess.departmentPolicyRule0,
-      departmentPolicyRule1: data.internetAccess.departmentPolicyRule1,
-      departmentPolicyRule2: data.internetAccess.departmentPolicyRule2,
-      departmentPolicyRule3: data.internetAccess.departmentPolicyRule3,
-      departmentPolicyRule4: data.internetAccess.departmentPolicyRule4,
-      socialNetworkingFacebook: data.internetAccess.socialNetworkingFacebook,
-      socialNetworkingTwitter: data.internetAccess.socialNetworkingTwitter,
-      socialNetworkingLinkedIn: data.internetAccess.socialNetworkingLinkedIn,
+      countyWidePolicyA: data.internetAccess.countyWidePolicyA,
+      countyWidePolicyB: data.internetAccess.countyWidePolicyB,
+      allWebmail: data.internetAccess.allWebmail,
+      streamMedia: data.internetAccess.streamMedia,
+      justification: data.internetAccess.justification,
+      // defaultCountyWidePolicy: data.internetAccess.applyDefaultCountyWidePolicy,
+      // departmentPolicyRule0: data.internetAccess.departmentPolicyRule0,
+      // departmentPolicyRule1: data.internetAccess.departmentPolicyRule1,
+      // departmentPolicyRule2: data.internetAccess.departmentPolicyRule2,
+      // departmentPolicyRule3: data.internetAccess.departmentPolicyRule3,
+      // departmentPolicyRule4: data.internetAccess.departmentPolicyRule4,
+      // socialNetworkingFacebook: data.internetAccess.socialNetworkingFacebook,
+      // socialNetworkingTwitter: data.internetAccess.socialNetworkingTwitter,
+      // socialNetworkingLinkedIn: data.internetAccess.socialNetworkingLinkedIn,
 
       // Access Information
       ibmLogOnId: data.accessInformation.ibmLogonId,
@@ -65,15 +76,9 @@ export class ApiHttpService {
       billingAccountNumber: data.accessInformation.billingAccountNumber,
       // FIXME: On server side accessType(securid) might be misssing
       // Additional Information
-      internetApplication: data.additionalInformation.internetApplication,
-      exchangeEmail: data.additionalInformation.exchangeEmail,
-      emailEncryption: data.additionalInformation.emailEncryption,
       laCountyGovAccess: data.additionalInformation.laCountyGovAccess,
-      tokenlessAuthentication:
-        data.additionalInformation.tokenlessAuthentication,
       lacMobileWifiAccess: data.additionalInformation.lacMobileWifiAccess,
-      cherwellSms: data.additionalInformation.cherwellSms,
-      windowsRightsMgmt: data.additionalInformation.windowsRightsMgmt,
+      o365Email: data.additionalInformation.o365Email,
       // TODO: Add managerTitle
       // Mananger Information
       managerFirstName: data.managerInformation.managerFirstName,

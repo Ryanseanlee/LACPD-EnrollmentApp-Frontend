@@ -44,7 +44,7 @@
             type="text"
             matInput
             formControlName="middleInitial"
-            pattern="[a-zA-Z ]*"
+            pattern="[a-zA-Z ]"
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-error>Middle initial must be letters only</mat-error>
@@ -317,132 +317,97 @@
         Internet Access
       </h2>
         <!-- Information -->
-      <div>
-        <br />
-        <h5><u>Policy Rules Descriptions:</u></h5>
-        <p>
-          <small
-            ><b>Default Countywide Policy:</b> Block Pornography, Adult/Mature,
-            Nudity, Intimate Apparel/Swimsuit, Games, Gambling, Personals/Dating,
-            Social Networking, Phishing, Spyware/Effect/Malware, Hacking, Proxy
-            Avoidance and Remote Access Tools.<br />
-            <b>Department Policy Rule 0</b>: Allow full access, no restrictions.<br />
-            <b>Department Policy Rule 1</b>: Allow access to Pornography,
-            Adult/Mature, Nudity, Intimate Apparel/Swimsuit, Games, Gambling,
-            Personals/Dating, Social Networking.<br />
-            <b>Department Policy Rule 2</b>: Allow access to Phishing,
-            Spyware/Effect/Malware, Hacking, Proxy Avoidance, Remote Access
-            Tools.<br />
-            <b>Department Policy Rule 3</b>: Countywide Global Policy + add’l
-            categories (chosen by your department).<br />
-            <b>Department Policy Rule 4</b>: Remove categories from the Global
-            Policy (chosen by your department).<br />
-            <b>Social Networking Facebook / Twitter / LinkedIn:</b> Allow access to
-            Facebook, Twitter, and LinkedIn, respectively.<br />
-            <br />
-            <span style="color: red">Please Note: </span>
-            <span
-              >Policy Rules “0” through “4” and Social Networking Facebook, Twitter
-              and LinkedIn are not setup by default. Your department must have
-              already submitted an approved “Category Selection Worksheet” before
-              you can request to have rules “0” through “4” applied.</span
-            ></small
-          >
-        </p>
-      </div>
-
-      <div class="flex-container">
-        <!-- For some reason need to also apply to parent in order for this style to work, access-option-button -->
-        <div class="flex-column internet-access-button">
-          <mat-button-toggle
-            id="defaultCountyWidePolicy"
-            class="internet-access-button"
-            [checked]="defaultCountyWidePolicy"
-            (change)="onButtonChange2($event, 'Default Countywide Policy')"
-            >Default Countywide Policy
-          </mat-button-toggle>
+        <div>
+          <br />
+          <h5><u>Policy Rules Descriptions:</u></h5>
+          <p>
+            <small
+              ><b>Countywide Policy A:</b> Allow access to all categories -except bad
+              Categories<br />
+              <b>Countywide Policy B:(default)</b>No access to sites/domains that are
+              categorized as Adult Content, Gaming, Dating + additional categories
+              such as Hacking, Proxy Avoidance, Remote Access Tools, and Bad
+              Categories<br />
+              <br />
+            </small>
+          </p>
         </div>
-        <div class="flex-column internet-access-button">
-          <mat-button-toggle
-            id="departmentPolicyRule0"
-            class="internet-access-button"
-            [checked]="departmentPolicyRule0"
-            (change)="onButtonChange2($event, 'Department Policy Rule 0')"
-            >Department Policy Rule 0</mat-button-toggle
-          >
+      
+        <!-- First Row -->
+        <div class="flex-container">
+          <!-- For some reason need to also apply to parent in order for this style to work, access-option-button -->
+          <div class="flex-column access-option-button">
+            <mat-button-toggle
+              id="countyWidePolicyA"
+              class="access-option-button"
+              [checked]="countyWidePolicyA"
+              (change)="onButtonChange($event, 'Countywide Policy A')"
+              >Countywide Policy A
+            </mat-button-toggle>
+          </div>
+          <div class="flex-column access-option-button">
+            <mat-button-toggle
+              id="countyWidePolicyB"
+              class="access-option-button"
+              [checked]="countyWidePolicyB"
+              (change)="onButtonChange($event, 'Countywide Policy B')"
+              >Countywide Policy B</mat-button-toggle
+            >
+          </div>
         </div>
-        <div class="flex-column internet-access-button">
-          <mat-button-toggle
-            id="departmentPolicyRule1"
-            class="internet-access-button"
-            [checked]="departmentPolicyRule1"
-            (change)="onButtonChange2($event, 'Department Policy Rule 1')"
-            >Department Policy Rule 1</mat-button-toggle
-          >
+        <div>
+          <br />
+          <p>
+            <small>
+              <span style="color: red">Please Note: </span>
+              <span>
+                <ul>
+                  <li>
+                    Bad Categories (Malicious, Outbound Data/Botnets, Malicious
+                    Sources/Malnets,Phishing, and Spam) are Blocked regardless of
+                    Policy Rule level - exemptions can be made with proper DISO/CISO
+                    approval
+                  </li>
+                  <li>
+                    Access to Personal Webmail cuch as Yahoo, Gmail, AOL, ect., is
+                    BLOCKED countywide - exemptions can be made with selection and
+                    justification indicated below
+                  </li>
+                </ul>
+              </span>
+            </small>
+          </p>
         </div>
-      </div>
-    
-      <!-- Second row -->
-      <div class="flex-container">
-        <div class="flex-column internet-access-button">
-          <mat-button-toggle
-            id="departmentPolicyRule2"
-            class="internet-access-button"
-            [checked]="departmentPolicyRule2"
-            (change)="onButtonChange2($event, 'Department Policy Rule 2')"
-            >Department Policy Rule 2</mat-button-toggle
-          >
+        <!-- Second row -->
+        <div class="flex-container">
+          <div class="flex-column access-option-button">
+            <mat-button-toggle
+              id="allWebmail"
+              class="access-option-button"
+              [checked]="allWebmail"
+              (change)="onButtonChange($event, 'ALL Webmail')"
+              >All Webmail</mat-button-toggle
+            >
+          </div>
+          <div class="flex-column access-option-button">
+            <mat-button-toggle
+              id="streamMedia"
+              class="access-option-button"
+              [checked]="streamMedia"
+              (change)="onButtonChange($event, 'Stream Media')"
+              >Stream Media</mat-button-toggle
+            >
+          </div>
         </div>
-        <div class="flex-column internet-access-button">
-          <mat-button-toggle
-            id="departmentPolicyRule3"
-            class="internet-access-button"
-            [checked]="departmentPolicyRule3"
-            (change)="onButtonChange2($event, 'Department Policy Rule 3')"
-            >Department Policy Rule 3</mat-button-toggle
-          >
+        <!--Third Row-->
+        <div class="flex-container">
+          <div class="flex-column">
+            <mat-form-field>
+              <mat-label>*Business justification: </mat-label>
+              <input id="justification" matInput />
+            </mat-form-field>
+          </div>
         </div>
-        <div class="flex-column internet-access-button">
-          <mat-button-toggle
-            id="departmentPolicyRule4"
-            class="internet-access-button"
-            [checked]="departmentPolicyRule4"
-            (change)="onButtonChange2($event, 'Department Policy Rule 4')"
-            >Department Policy Rule 4</mat-button-toggle
-          >
-        </div>
-      </div>
-    
-      <!-- Third Row -->
-      <div class="flex-container">
-        <div class="flex-column internet-access-button">
-          <mat-button-toggle
-            id="socialNetworkingFacebook"
-            class="internet-access-button"
-            [checked]="socialNetworkingFacebook"
-            (change)="onButtonChange2($event, 'Social Networking Facebook')"
-            >Social Networking Facebook</mat-button-toggle
-          >
-        </div>
-        <div class="flex-column internet-access-button">
-          <mat-button-toggle
-            id="socialNetworkingTwitter"
-            class="internet-access-button"
-            [checked]="socialNetworkingTwitter"
-            (change)="onButtonChange2($event, 'Social Networking Twitter')"
-            >Social Networking Twitter</mat-button-toggle
-          >
-        </div>
-        <div class="flex-column internet-access-button">
-          <mat-button-toggle
-            id="socialNetworkingLinkedIn"
-            class="internet-access-button"
-            [checked]="socialNetworkingLinkedIn"
-            (change)="onButtonChange2($event, 'Social Networking LinkedIn')"
-            >Social Networking LinkedIn</mat-button-toggle
-          >
-        </div>
-      </div>
       <div class="internet-access-button-container">
         <button mat-raised-button matStepperPrevious>Previous</button>
         <button
@@ -663,33 +628,6 @@
         <h3 class="mat-title">Select the following options</h3>
         <div class="flex-container">
           <!-- For some reason need to also apply to parent in order for this style to work, access-option-button -->
-          <div class="flex-column active-directory-button">
-            <mat-button-toggle
-              id="internetApplication"
-              class="active-directory-button"
-              [checked]="internetApplication"
-              (change)="onButtonChange($event, 'Internet Access')"
-              >Internet Access
-            </mat-button-toggle>
-          </div>
-          <div class="flex-column active-directory-button">
-            <mat-button-toggle
-              id="exchangeEmail"
-              class="active-directory-button"
-              [checked]="exchangeEmail"
-              (change)="onButtonChange($event, 'Email Account')"
-              >Email Account</mat-button-toggle
-            >
-          </div>
-          <div class="flex-column active-directory-button">
-            <mat-button-toggle
-              id="emailEncryption"
-              class="active-directory-button"
-              [checked]="emailEncryption"
-              (change)="onButtonChange($event, 'Email Encryption')"
-              >Email Encryption</mat-button-toggle
-            >
-          </div>
         </div>
         <div class="flex-container">
           <div class="flex-column active-directory-button">
@@ -703,15 +641,6 @@
           </div>
           <div class="flex-column active-directory-button">
             <mat-button-toggle
-              id="tokenlessAuthentication"
-              class="active-directory-button"
-              [checked]="tokenlessAuthentication"
-              (change)="onButtonChange($event, 'Tokenless Authentication')"
-              >Tokenless Authentication</mat-button-toggle
-            >
-          </div>
-          <div class="flex-column active-directory-button">
-            <mat-button-toggle
               id="lacMobileWifiAccess"
               class="active-directory-button"
               [checked]="lacMobileWifiAccess"
@@ -719,26 +648,16 @@
               >LACMobile</mat-button-toggle
             >
           </div>
+          <div class="flex-column access-option-button">
+            <mat-button-toggle
+              id="o365Email"
+              class="access-option-button"
+              [checked]="o365Email"
+              (change)="onButtonChange($event, 'O365 E-mail')"
+              >O365 E-mail</mat-button-toggle
+            >
+          </div>
         </div>
-        <div class="flex-container">
-          <div class="flex-column active-directory-button">
-            <mat-button-toggle
-              id="cherwellSms"
-              class="active-directory-button"
-              [checked]="cherwellSms"
-              (change)="onButtonChange($event, 'Cherwell SMS')"
-              >Cherwell SMS</mat-button-toggle
-            >
-          </div>
-          <div class="flex-column active-directory-button">
-            <mat-button-toggle
-              id="windowsRightsMgmt"
-              class="active-directory-button"
-              [checked]="windowsRightsMgmt"
-              (change)="onButtonChange($event, 'Windows Rights Management')"
-              >Window Rights Management</mat-button-toggle
-            >
-          </div>
           <!-- This is a spacer to help align items properly -->
           <div class="flex-column"></div>
         </div>
@@ -763,8 +682,7 @@
           >
             Save
           </button>
-        </div>
-      </div>      
+        </div>   
     </mat-step>
 
     <!-- Manager -->
@@ -790,10 +708,6 @@
         <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label>Manager's Email</mat-label>
           <input matInput formControlName="managerEmail" />
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Manager's Title</mat-label>
-          <input matInput formControlName="managerTitle" />
         </mat-form-field>
       </div>
       <div class="button-container">
