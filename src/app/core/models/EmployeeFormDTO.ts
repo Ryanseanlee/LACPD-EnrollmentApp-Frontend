@@ -32,10 +32,10 @@ export class EmployeeFormDTO {
   //addressInformation
 
   // Customer Information
-  businessStreetAddress: string;
-  businessCity: string;
-  businessState: string;
-  businessZip: string;
+  address: string;
+  city: string;
+  state: string;
+  zipCode: string;
 
   // Applications Requested
  
@@ -142,10 +142,10 @@ export class EmployeeFormDTO {
     
 
     // Address Information
-    this.businessStreetAddress = addressInformation.address;
-    this.businessCity = addressInformation.city;
-    this.businessState = addressInformation.state;
-    this.businessZip = addressInformation.zipCode;
+    this.address = addressInformation.address;
+    this.city = addressInformation.city;
+    this.state = addressInformation.state;
+    this.zipCode = addressInformation.zipCode;
 
     // Employee Information
     this.employeeNumber = employeeInformation.employeeNumber;
