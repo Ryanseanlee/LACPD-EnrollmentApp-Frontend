@@ -71,17 +71,12 @@ export class EmployeeFormComponent implements OnInit {
      * means that the user is coming from the homepage. Meaning that they
      * are continuing a form.
      */
-    if (this.formDataService.formData !== undefined) {
-      // Set request number
-      this.requestNumber = this.formDataService.formData.requestNumber;
-      // And grab the prefilled formgroup
-      this.form = this.createContinuedFormGroup();
-    } else {
+    
       // Starting a new form
       this.form = this.createDefaultFormGroup();
       // To show the form instead of the submit page
       this.hasSubmitted = false;
-    }
+    
   }
   /**
    * Takes care of creating a form group.

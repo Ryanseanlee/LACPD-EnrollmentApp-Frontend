@@ -4,7 +4,7 @@
     <table class="table-format" mat-table [dataSource]="dataSource">
       <!-- requestNumber Column -->
       <ng-container matColumnDef="requestNumber">
-        <th *matHeaderCellDef>Request Number</th>
+        <th class="left-title" *matHeaderCellDef>Request Number</th>
         <td *matCellDef="let element">
           <button
             class="request-number-button"
@@ -55,7 +55,7 @@
       </ng-container>
 
       <ng-container matColumnDef="submit">
-        <th *matHeaderCellDef>Submit/Review</th>
+        <th class="right-title" *matHeaderCellDef>Submit/Review</th>
         <td *matCellDef="let element">
           <button
             class="request-number-button"

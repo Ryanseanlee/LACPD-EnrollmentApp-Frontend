@@ -32,7 +32,7 @@ export class ServiceRequestsComponent implements OnInit {
     private router: Router,
     private formDataService: FormDataService,
     private datepipe: DatePipe
-  ) {}
+  ) {}    
 
   ngOnInit(): void {
     this.adminService.display().subscribe((res) => {
