@@ -3,59 +3,21 @@
 html,
 body {
   height: 100%;
-}
-
-.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
-  background-color: #334E68;
-}
-
-.mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
-  color: rgba(0,0,0,.87);
-  background-color: #BCCCDC;
-}
-
-.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
-  background-color: #486581;
-  color: #fff;
-}
-
-
-.mat-button-toggle-appearance-standard {
-  color: rgba(0,0,0,.87);
-  background: white;
-}
-
-.mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
-  background-color: #486581;
-  color: black;
+  color: white;
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: rgb(0, 0, 0)
+  color: rgb(189, 189, 189);
+}
+.mat-hint {
+  color: rgba(255, 255, 255, 0.685);
 }
 
-.mat-form-field-hide-placeholder .mat-select-placeholder {
-  color: black;
-  display: block;
+.mat-step-header .mat-step-label.mat-step-label-active {
+  color: rgba(255, 255, 255, 0.87);
 }
 
-.mat-select{
-  color: black;
-}
-
-.mat-select-panel {
-  background: #BCCCDC;
-}
-
-.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
-  color: #000000;
-}
-
-.mat-form-field.mat-warn .mat-input-element, .mat-form-field-invalid .mat-input-element {
-  color: #000000;
-}
-
-.mat-tab-label{
-  color: black;
-  opacity: 1;
+.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+  background-color: #a1a1a1;
+  color: #fff;
 }

@@ -43,7 +43,7 @@
     <br />
     <p>
       <small>
-        <span style="color: red">Please Note: </span>
+        <span style="color: rgb(255, 92, 92)">Please Note: </span>
         <span>
           <ul>
             <li>
@@ -87,18 +87,16 @@
   <div class="flex-container">
     <div class="flex-column">
       <mat-form-field>
-        <mat-label>*Business justification: </mat-label>
+        <mat-label class="text-color">*Business justification: </mat-label>
         <input id="justification" matInput />
       </mat-form-field>
     </div>
   </div>
   <div class="button-container">
-    <button mat-raised-button matStepperPrevious>Previous</button>
+    <button matStepperPrevious class="previous-button">Previous</button>
     <button
-      mat-raised-button
       matStepperNext
-      color="primary"
-      class="ml-2"
+      class="next-button"
       (click)="printForm()"
     >
       Next

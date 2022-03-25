@@ -44,3 +44,30 @@
   input[type="checkbox"]:checked + label:after {
     font-weight: bold;
   }
+
+  .text-color{
+    color: white;
+  }
+
+  .next-button{
+    background-color: #000000;
+    border-radius: 6px;
+    border: 1px solid black;
+    color: rgb(255, 223, 155);
+    padding:5px 10px;
+  }
+  .previous-button{
+    background-color: #000000;
+    border-radius: 6px;
+    border: 1px solid black;
+    color: rgb(255, 138, 138);
+    padding:5px 10px;
+    margin-right: 5px;
+  }
+  .save-button{
+    background-color: #000000;
+    border-radius: 6px;
+    border: 1px solid black;
+    color: rgb(93, 119, 153);
+    padding:5px 10px;
+  }

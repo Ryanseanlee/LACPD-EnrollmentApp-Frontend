@@ -14,30 +14,13 @@ mat-horizontal-stepper {
 }
 
 mat-label {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .button-container {
   display: flex;
   flex-direction: row;
 }
-
-.mat-flat-button.mat-primary,
-.mat-raised-button.mat-primary,
-.mat-fab.mat-primary,
-.mat-mini-fab.mat-primary {
-  background-color: #9AA5B1;
-  color: rgba(0, 0, 0, 0.905);
-}
-
-.mat-flat-button.mat-accent,
-.mat-raised-button.mat-accent,
-.mat-fab.mat-accent,
-.mat-mini-fab.mat-accent {
-  background-color: #334E68;
-  color: white;
-}
-
 .spacer {
   flex: 1 1 auto;
 }
@@ -48,19 +31,43 @@ mat-label {
 
 }
 
-.button-color {
-  background-color: #334E68;;
-  color: black;
-}
 
 mat-step {
-  background-color: blue;
+  background-color: rgb(255, 255, 255);
 }
 
 mat-horizontal-stepper {
-  background-color: #CBD2D9;
+  margin: 60px auto 0px;
+  background-color: #1d1d1d;
 }
 
 mat-label {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+element {
+  color: rgb(255, 255, 255);
+}
+
+.next-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(255, 223, 155);
+  padding:5px 10px;
+}
+.previous-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(255, 138, 138);
+  padding:5px 10px;
+  margin-right: 5px;
+}
+.save-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(93, 119, 153);
+  padding:5px 10px;
 }

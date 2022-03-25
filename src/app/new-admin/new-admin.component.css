@@ -1,16 +1,16 @@
 .new-admin-container{
-    background-color: rgb(204, 204, 204);
+    background-color: #1d1d1d;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
-    margin: 100px auto;
+    margin: 150px auto 0px;
     align-items: flex-start;
     width: fit-content;
     padding: 30px;
 }
 
 .new-admin-text{
-    color: black;
+    color: white;
     margin: 0px 0px 30px 0px;
     font-size: 30px;
     font-weight: 300;
@@ -18,26 +18,29 @@
 }
 
 .title-text-format{
+    color: white;
     font-size: 16px;
-    font-weight: 100px;
+    font-weight: 400px;
     margin: 10px 0px 0px 0px;
 }
 
 .input-format{
     width: 100%;
     border-radius: 3px;
-    border-color: transparent;
-    background-color: white;
-    font-weight: 100;
+    border: 1px solid black;
+    background-color: #8a8a8a;
+    color:white;
+    font-weight: 400;
     font-family: sans-serif;
 }
 
 .password-container{
     margin: 10px 0px;
-    background-color: rgb(189, 189, 189);
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
     padding: 10px 10px 20px;
     border-radius: 3px;
-    font-weight: 250;
+    font-weight: 400;
     font-size: 16px;
     font-family: sans-serif;
 }
