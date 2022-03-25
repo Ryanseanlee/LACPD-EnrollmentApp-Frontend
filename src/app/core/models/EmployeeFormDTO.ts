@@ -88,7 +88,7 @@ export class EmployeeFormDTO {
 
   // Department Policy Rules
   countyWidePolicyA: boolean;
-  countywidePolicyB: boolean;
+  countyWidePolicyB: boolean;
   allWebmail: boolean;
   streamingMedia: boolean;
   justification: string;

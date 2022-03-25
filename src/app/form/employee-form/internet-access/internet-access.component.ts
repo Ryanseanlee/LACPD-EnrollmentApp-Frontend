@@ -15,7 +15,7 @@ export class InternetAccessComponent implements OnInit {
   @Input() form: FormGroup;
 
   //Registration Boolean Variables
-  countywidePolicyB: boolean;
+  countyWidePolicyB: boolean;
   countyWidePolicyA: boolean;
   allWebmail: boolean;
   streamMedia: boolean;
@@ -30,9 +30,9 @@ export class InternetAccessComponent implements OnInit {
       'countyWidePolicyA',
     ]).value;
 
-    this.countywidePolicyB = this.form.get([
+    this.countyWidePolicyB = this.form.get([
       'internetAccess',
-      'countywidePolicyB',
+      'countyWidePolicyB',
     ]).value;
 
     this.allWebmail = this.form.get([

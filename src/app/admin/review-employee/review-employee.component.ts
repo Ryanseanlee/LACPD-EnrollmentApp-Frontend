@@ -46,26 +46,18 @@ export class ReviewEmployeeComponent implements OnInit {
   errorStateMatcher = new InstantErrorStateMatcher();
   requestNumber: string;
 
-  //application requested
-  defaultCountyWidePolicy: boolean;
-  departmentPolicyRule0: boolean;
-  departmentPolicyRule1: boolean;
-  departmentPolicyRule2: boolean;
-  departmentPolicyRule3: boolean;
-  departmentPolicyRule4: boolean;
-  socialNetworkingFacebook: boolean;
-  socialNetworkingTwitter: boolean;
-  socialNetworkingLinkedIn: boolean;
+    //application requested
+  countyWidePolicyA: boolean;
+  countyWidePolicyB: boolean;
+  allWebmail: boolean;
+  streamMedia: boolean;
+  justification: boolean;
 
-  //active-directory
-  internetApplication: boolean;
-  exchangeEmail: boolean;
-  emailEncryption: boolean;
-  tokenlessAuthentication: boolean;
+
+    //active-directory
   laCountyGovAccess: boolean;
   lacMobileWifiAccess: boolean;
-  cherwellSms: boolean;
-  windowsRightsMgmt: boolean;
+  o365Email: boolean;
 
   //selections arrays
   divCheifList: Array<any>;
@@ -94,26 +86,17 @@ export class ReviewEmployeeComponent implements OnInit {
     //request Number to display in form
     this.requestNumber = this.formDataService.formData.requestNumber;
 
-    //internet-access
-    this.defaultCountyWidePolicy = this.formDataService.formData.defaultCountyWidePolicy;
-    this.departmentPolicyRule0 = this.formDataService.formData.departmentPolicyRule0;
-    this.departmentPolicyRule1 = this.formDataService.formData.departmentPolicyRule1;
-    this.departmentPolicyRule2 = this.formDataService.formData.departmentPolicyRule2;
-    this.departmentPolicyRule3 = this.formDataService.formData.departmentPolicyRule3;
-    this.departmentPolicyRule4 = this.formDataService.formData.departmentPolicyRule4;
-    this.socialNetworkingFacebook = this.formDataService.formData.socialNetworkingFacebook;
-    this.socialNetworkingTwitter = this.formDataService.formData.socialNetworkingTwitter;
-    this.socialNetworkingLinkedIn = this.formDataService.formData.socialNetworkingLinkedIn;
+      //internet-access
+    this.countyWidePolicyA = this.formDataService.formData.countyWidePolicyA;
+    this.countyWidePolicyB = this.formDataService.formData.countyWidePolicyB;
+    this.allWebmail = this.formDataService.formData.allWebmail;
+    this.streamMedia = this.formDataService.formData.streamMedia;
+    this.justification = this.formDataService.formData.justification;
 
-    //active-directory
-    this.internetApplication = this.formDataService.formData.internetApplication;
-    this.exchangeEmail = this.formDataService.formData.exchangeEmail;
-    this.emailEncryption = this.formDataService.formData.emailEncryption;
-    this.tokenlessAuthentication = this.formDataService.formData.tokenlessAuthentication;
+      //active-directory
     this.laCountyGovAccess = this.formDataService.formData.laCountyGovAccess;
     this.lacMobileWifiAccess = this.formDataService.formData.lacMobileWifiAccess;
-    this.cherwellSms = this.formDataService.formData.cherwellSms;
-    this.windowsRightsMgmt = this.formDataService.formData.windowsRightsMgmt;
+    this.o365Email = this.formDataService.formData.o365Email;
 
     //get all approver selections to display
     this.getDivChiefList();
@@ -142,29 +125,49 @@ export class ReviewEmployeeComponent implements OnInit {
           this.formDataService.formData.employeeEmailAddress,
           [Validators.required, Validators.email]
         ),
+        countyDepartmentName: new FormControl(
+          this.formDataService.formData.countyDepartmentName, [
+          Validators.pattern('[a-z A-Z]*'),
+        ]),
+        countyDepartmentNumber: new FormControl(this.formDataService.formData.countyDepartmentNumber, [
+          Validators.pattern('[0-9]*'),
+        ]),
         phoneNumber: new FormControl(
-          this.formDataService.formData.businessPhoneNumber,
+          this.formDataService.formData.phoneNumber,
           [Validators.required, Validators.pattern('[0-9]{10}')]
         ),
+        workPhoneNumber: new FormControl(this.formDataService.formData.workPhoneNumber, [
+          Validators.required,
+          Validators.pattern('[0-9]{10}'),
+        ]),
         employeeNumber: new FormControl(
           this.formDataService.formData.employeeNumber,
           [Validators.required]
         ),
+        contractorName: new FormControl(this.formDataService.formData.contractorName, [
+          Validators.required,
+          Validators.pattern('[a-z A-Z]*'),
+        ]),
+        workOrderNumberInput: new FormControl(this.formDataService.formData.workOrderNumberInput, [
+          Validators.required,
+          Validators.pattern('[0-9]*'),
+        ]),
+        expirationDate: new FormControl(this.formDataService.formData.expirationDate),
       }),
       addressInformation: new FormGroup({
         address: new FormControl(
           this.formDataService.formData.businessStreetAddress,
           Validators.required
         ),
-        city: new FormControl(this.formDataService.formData.businessCity, [
+        city: new FormControl(this.formDataService.formData.city, [
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
         ]),
-        state: new FormControl(this.formDataService.formData.businessState, [
+        state: new FormControl(this.formDataService.formData.state, [
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
         ]),
-        zipCode: new FormControl(this.formDataService.formData.businessZip, [
+        zipCode: new FormControl(this.formDataService.formData.zipCode, [
           Validators.required,
           Validators.minLength(5),
           Validators.maxLength(7),
@@ -172,16 +175,11 @@ export class ReviewEmployeeComponent implements OnInit {
         ]),
       }),
       policyRulesInformation: new FormGroup({
-        defaultCountyWidePolicy: new FormControl(this.formDataService.formData.defaultCountyWidePolicy),
-        departmentPolicyRule0: new FormControl(this.formDataService.formData.departmentPolicyRule0),
-        departmentPolicyRule1: new FormControl(this.formDataService.formData.departmentPolicyRule1),
-        departmentPolicyRule2: new FormControl(this.formDataService.formData.departmentPolicyRule2),
-        departmentPolicyRule3: new FormControl(this.formDataService.formData.departmentPolicyRule3),
-        departmentPolicyRule4: new FormControl(this.formDataService.formData.departmentPolicyRule4),
-        socialNetworkingFacebook: new FormControl(this.formDataService.formData.socialNetworkingFacebook),
-        socialNetworkingTwitter: new FormControl(this.formDataService.formData.socialNetworkingTwitter),
-        socialNetworkingLinkedIn: new FormControl(this.formDataService.formData.socialNetworkingLinkedIn),
-
+        countyWidePolicyA: new FormControl(this.formDataService.formData.countyWidePolicyA),
+        countyWidePolicyB: new FormControl(this.formDataService.formData.countyWidePolicyB),
+        allWebmail: new FormControl(this.formDataService.formData.allWebmail),
+        streamMedia: new FormControl(this.formDataService.formData.streamMedia),
+        justification: new FormControl(this.formDataService.formData.justification),
       }),
       accessInformation: new FormGroup({
         // IBM Data Center Access
@@ -196,45 +194,32 @@ export class ReviewEmployeeComponent implements OnInit {
           this.formDataService.formData.securityAuthorization
         ),
         // Unix Environment Access
+        // NOTE* HERE Might cause an error.
         unixLogonId: new FormControl(this.formDataService.formData.unixLogOnId),
-        application: new FormControl(
+        unixApplication: new FormControl(
           this.formDataService.formData.unixApplication
         ),
-        accessGroup: new FormControl(
+        unixAccessGroup: new FormControl(
           this.formDataService.formData.unixAccessGroup
         ),
-        accountNumber: new FormControl(
+        unixAccountNumber: new FormControl(
           this.formDataService.formData.unixAccountNumber
         ),
         // SecurID Remote Access
         billingAccountNumber: new FormControl(
           this.formDataService.formData.billingAccountNumber
         ),
-        accessType: new FormControl(null), // Not yet implemented on backend
+        // accessType: new FormControl(null), // Not yet implemented on backend
       }),
       additionalInformation: new FormGroup({
-        internetApplication: new FormControl(
-          this.formDataService.formData.internetApplication
-        ),
-        exchangeEmail: new FormControl(
-          this.formDataService.formData.exchangeEmail
-        ),
-        emailEncryption: new FormControl(
-          this.formDataService.formData.emailEncryption
-        ),
         laCountyGovAccess: new FormControl(
           this.formDataService.formData.laCountyGovAccess
         ),
-        tokenlessAuthentication: new FormControl(
-          this.formDataService.formData.tokenlessAuthentication
-        ),
+
         lacMobileWifiAccess: new FormControl(
           this.formDataService.formData.lacMobileWifiAccess
         ),
-        cherwellSms: new FormControl(this.formDataService.formData.cherwellSms),
-        windowsRightsMgmt: new FormControl(
-          this.formDataService.formData.windowsRightsMgmt
-        ),
+        o365Email: new FormControl(this.formDataService.formData.o365Email),
       }),
       managerInformation: new FormGroup({
         managerFirstName: new FormControl(
@@ -249,9 +234,7 @@ export class ReviewEmployeeComponent implements OnInit {
         managerPhone: new FormControl(
           this.formDataService.formData.managerPhone
         ),
-        managerTitle: new FormControl(
-          this.formDataService.formData.managerTitle
-        ),
+
       }),
       signatures: new FormGroup({
         applicationCoordinatorName: new FormControl(
