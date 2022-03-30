@@ -123,7 +123,7 @@ export class AdminService {
     const reformated = {
       // Form specific data
       complete: isComplete,
-      employee: true, // Since it is the employee form
+      employee: data.personalInformation.isEmployee, // Since it is the employee form
 
       // Personal Information
       createDate: data.personalInformation.createDate,

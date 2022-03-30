@@ -1,5 +1,6 @@
 .new-admin-container{
-    background-color: #1d1d1d;
+    background-color: rgb(29, 29, 29);
+    box-shadow: 10px 10px 20px rgb(0, 0, 0);
     border-radius: 6px;
     display: flex;
     flex-direction: column;

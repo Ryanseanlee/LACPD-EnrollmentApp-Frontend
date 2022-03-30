@@ -37,8 +37,10 @@ mat-step {
 }
 
 mat-horizontal-stepper {
-  margin: 60px auto 0px;
+  margin: 60px auto;
   background-color: #1d1d1d;
+  box-shadow: 10px 10px 20px rgb(0, 0, 0);
+
 }
 
 mat-label {

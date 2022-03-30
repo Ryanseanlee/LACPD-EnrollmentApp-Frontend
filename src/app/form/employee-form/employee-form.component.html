@@ -12,13 +12,18 @@
       formGroupName="personalInformation"
       [stepControl]="form.get('personalInformation')"
     >
-      <ng-template matStepLabel>IDK</ng-template>
+      <ng-template matStepLabel>Personal</ng-template>
       <h2 class="mat-display-1" style="margin-bottom: 32px">
         Personal Information
       </h2>
       <p *ngIf="requestNumber">
         Your request number: <span style="color: red">{{ requestNumber }}</span>
       </p>
+      <div>
+        <mat-radio-group name="opList"  fxLayout="column" [(ngModel)]="chosenItem">
+          <mat-radio-button *ngFor="let op of list" [value]="op.name" name="opList" >{{ op.name}}</mat-radio-button>
+      </mat-radio-group>
+      </div>
       <div>
         <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label>First Name</mat-label>

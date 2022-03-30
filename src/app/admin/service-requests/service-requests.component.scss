@@ -10,7 +10,7 @@
 .service-request-title{
   position: relative;
   margin-bottom: 15px;
-  color: #cecece;
+  color: #ffffff;
   align-self: flex-start;
   font-family: sans-serif;
   font-size: clamp(25px, 2vw, 80px);
@@ -19,8 +19,9 @@
 
 .table-container{
   min-height: min(40vw, 1500px);
-  background-color: #1d1d1d;
+  background-color: rgb(29, 29, 29);
   border-radius:8px;
+  box-shadow: 5px 10px 20px black;
 }
 
 .table-format{
@@ -37,7 +38,8 @@ th{
   text-align: center;
   height: 70px;
   padding: 15px;
-  background-color:  #474747;
+  background-color:  #252525;
+  box-shadow: 3px 1px 5px black;
   
 }
 td{
@@ -47,14 +49,14 @@ td{
 }
 
 td {
-  border-bottom: 1px solid rgb(146, 146, 146);
+  border-bottom: 1px solid rgb(124, 124, 124);
   padding: 20px 10px;
 }
 
 .request-number-button{
-  border: 1px solid rgb(0, 0, 0);
-  background-color: rgb(48, 48, 48);
+  border-color: transparent;
   color: lightblue;
+  background-color: #141414;
   font-family: sans-serif;
   width: fit-content;
   padding: min(0.5vw, 5px);
@@ -63,9 +65,9 @@ td {
 }
 
 .review-button{
-  border: 1px solid rgb(0, 0, 0);
-  background-color: rgb(48, 48, 48);
-  color: #00c563;
+  border-color: transparent;
+  background-color: #141414;
+  color: #00ff88;
   font-family: sans-serif;
   width: fit-content;
   padding: min(0.5vw, 5px);
