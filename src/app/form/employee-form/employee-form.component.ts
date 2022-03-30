@@ -93,7 +93,7 @@ export class EmployeeFormComponent implements OnInit {
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
         ]),
-        isEmployee: new FormControl(null),
+        isEmployee: new FormControl(),
         middleInitial: new FormControl(null, Validators.pattern('[a-z A-Z]*')),
         emailAddress: new FormControl(null, [
           Validators.required,

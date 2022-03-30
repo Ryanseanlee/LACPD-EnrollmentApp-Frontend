@@ -73,3 +73,19 @@ element {
   color: rgb(93, 119, 153);
   padding:5px 10px;
 }
+
+.radio-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.radio-text-container{
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+}
+
+.radio-button input:checked ~ .checkmark {
+  background-color: black;
+}

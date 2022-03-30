@@ -118,6 +118,24 @@ export class AdminService {
     );
   }
 
+  public newAdmin(email: string, password: string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        email:this.adminUsername,
+        password:this.adminPassword,
+        'newemail': email,
+        'newpassword': password
+      }),
+    };
+    return this.http.patch(
+      `${environment.apiUrl}/admin/Create_User`,
+      httpOptions,
+      httpOptions
+    );
+
+  }
+
   //reformat data for admin-employee
   public reformatDataPostEmployee(data: any, isComplete: boolean): string {
     const reformated = {

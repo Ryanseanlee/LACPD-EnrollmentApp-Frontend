@@ -1,0 +1,16 @@
+     <form [formGroup]="adminForm" class="new-admin-container">
+        <div class="new-admin-text">Add a new Admin</div>
+        <div class="title-text-format">Enter First Name</div>
+        <input class="input-format" type="firstName" formControlName="firstName">
+        <div class="title-text-format">Enter Last Name</div>
+        <input class="input-format" type="lastName" formControlName="lastName">
+        <div class="title-text-format">Enter Email</div>
+        <input class="input-format" type="email" formControlName="email">
+        <div class="password-container">
+            <div>Enter Password</div>
+            <input class="input-format" type="password" formControlName="password1">
+            <div>Re Enter Password</div>
+            <input class="input-format" type="password" formControlName="password2">
+        </div>   
+        <button class="add-button" (click)="addAdmin()">Add</button>  
+    </form>

@@ -19,10 +19,15 @@
       <p *ngIf="requestNumber">
         Your request number: <span style="color: red">{{ requestNumber }}</span>
       </p>
-      <div>
-        <mat-radio-group name="opList"  fxLayout="column" [(ngModel)]="chosenItem">
-          <mat-radio-button *ngFor="let op of list" [value]="op.name" name="opList" >{{ op.name}}</mat-radio-button>
-      </mat-radio-group>
+      <div class="radio-container">
+        <div class="radio-text-container">
+          <label for="html">Employee</label><br>
+          <input class="radio-button" type="radio" formControlName="isEmployee" value="true" name="isEmployee">
+        </div>  
+        <div class="radio-text-container">
+          <label for="html">Contractor</label><br>
+          <input class="radio-button" type="radio" formControlName="isEmployee" value="false" name="isEmployee">
+        </div>
       </div>
       <div>
         <mat-form-field appearance="outline" class="mat-input-width">
