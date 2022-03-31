@@ -21,16 +21,16 @@ body {
   margin-bottom: 7%;
   margin-top: -7%;
   text-align: center;
-  color: black;
+  color: rgb(0, 174, 255);
   font-weight: bold;
   font-size: 50px;
-  font-family: "Kaushan Script";
+  font-family: sans-serif;
 }
 
 .contact-form h4 {
   margin-bottom: 7%;
   text-decoration: underline;
-  color: black;
+  color: rgb(0, 225, 255);
   font-weight: 100px;
   cursor: pointer;
 }
@@ -49,9 +49,10 @@ body {
   border: none;
   border-radius: 1rem;
   padding: 1.5%;
-  background: #334E68;
+  background: #00ff88;
   font-weight: 600;
-  color: #fff;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   padding-left: 15%;
   padding-right: 15%;
@@ -96,4 +97,27 @@ input[type="checkbox"]:checked + label:after {
 
 .smallerText {
     font-size: 11px;
+}
+
+.next-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(255, 223, 155);
+  padding:5px 10px;
+}
+.previous-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(255, 138, 138);
+  padding:5px 10px;
+  margin-right: 5px;
+}
+.save-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(93, 119, 153);
+  padding:5px 10px;
 }

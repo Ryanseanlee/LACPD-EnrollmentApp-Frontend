@@ -27,12 +27,14 @@ export class AdminService {
   init(): void {
     // Checking if the admin is already logged in, will also initialize adminLoggedIn
     if (this.isAdminLoggedIn()) {
+      this.adminUsername = sessionStorage.getItem('email');
       this.adminPassword = sessionStorage.getItem('password');
     }
   }
 
   // Checks if admin is logged in by searching for password in session storage
   isAdminLoggedIn(): boolean {
+    const usernameFromStorage = sessionStorage.getItem('email');
     const passwordFromStorage = sessionStorage.getItem('password');
     if (passwordFromStorage === null) {
       return false;

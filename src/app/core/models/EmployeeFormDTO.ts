@@ -10,10 +10,7 @@ export class EmployeeFormDTO {
   isComplete: boolean;
   agreementId: string;
 
-  // Type of Registration
-  newRegistration: boolean;
-  deletePriorRegistration: boolean;
-  updatePriorRegistration: boolean;
+
 
   // Personal Information
   lastName: string;

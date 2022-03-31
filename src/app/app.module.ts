@@ -51,6 +51,7 @@ import { AdobeEventHistoryComponent } from './admin/adobe-event-history/adobe-ev
 import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 import { TopLogoComponent } from './top-logo/top-logo.component';
 import { TopNavbarComponent } from './top-navbar/top-navbar.component';
+import { DatePipe } from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -113,7 +114,7 @@ import { TopNavbarComponent } from './top-navbar/top-navbar.component';
     MatSidenavModule,
   ],
   exports: [],
-  providers: [AuthGuard],
+  providers: [AuthGuard, DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

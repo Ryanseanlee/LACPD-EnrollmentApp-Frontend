@@ -3,9 +3,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #323F4B;
+    background-color: #000000;
     column-gap: min(1vw, 60px);
     padding: min(.5vw, 20px);
+    border-bottom: 1px solid rgb(70, 70, 70);
 }
 
 .nav-buttons{
@@ -20,6 +21,7 @@
     border-radius: 3px;
     font-size: 12px;
     font-family:sans-serif;
+    font-weight: 100;
 }
 
 .spacer{
@@ -66,6 +68,7 @@
     color: white;
     font-size: min(.6vw, 25px);
     font-family: sans-serif;
+    font-weight: 400;
 }
 
 .admin-login-logo{

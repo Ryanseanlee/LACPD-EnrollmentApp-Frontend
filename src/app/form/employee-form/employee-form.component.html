@@ -199,13 +199,11 @@
         </mat-form-field>
       </div>
       <div class="button-container">
-        <button mat-raised-button matStepperNext color="primary">Next</button>
+        <button matStepperNext class="next-button">Next</button>
         <span class="spacer"></span>
         <button
           id="personal-info-save-btn"
-          mat-raised-button
           class="save-button"
-          color="accent"
           (click)="save()"
         >
           Save
@@ -291,16 +289,15 @@
         </mat-form-field>
       </div>
       <div class="button-container">
-        <button mat-raised-button matStepperPrevious>Previous</button>
-        <button mat-raised-button matStepperNext color="primary" class="ml-2">
+        <button  matStepperPrevious class="previous-button">Previous</button>
+        <button  matStepperNext class="next-button">
           Next
         </button>
         <span class="spacer"></span>
         <button
           id="address-info-save-btn"
-          mat-raised-button
+
           class="save-button"
-          color="accent"
           (click)="save()"
         >
           Save
@@ -328,7 +325,7 @@
         </h2>
         <p *ngIf="requestNumber">
           Your request number:
-          <span style="color: red">{{ requestNumber }}</span>
+          <span style="color: rgb(255, 126, 126)">{{ requestNumber }}</span>
         </p>
 
         <div class="row">
@@ -469,12 +466,10 @@
           <!-- SecurID Access form -->
 
           <div class="button-container">
-            <button mat-raised-button matStepperPrevious>Previous</button>
+            <button matStepperPrevious class="previous-button">Previous</button>
             <button
-              mat-raised-button
               matStepperNext
-              color="primary"
-              class="ml-2"
+              class="next-button"
               (click)="printForm()"
             >
               Next
@@ -482,9 +477,7 @@
             <span class="spacer"></span>
             <button
               id="access-info-save-btn"
-              mat-raised-button
               class="save-button"
-              color="accent"
               (click)="save()"
             >
               Save

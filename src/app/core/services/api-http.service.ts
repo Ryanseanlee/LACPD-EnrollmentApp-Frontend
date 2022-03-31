@@ -89,61 +89,61 @@ export class ApiHttpService {
     return JSON.stringify(reformated);
   }
 
-  public reformatContractData(data: any): string {
-    const reformated = {
-      // Form specific data
-      employee: false,
-      // contractor info
-      createDate: data.personalInformation.createDate,
-      lastName: data.contractorInformation.lastName,
-      firstName: data.contractorInformation.firstName,
-      middleInitial: data.contractorInformation.middleInitial,
-      companyName: data.contractorInformation.companyName,
-      companyEmailAddress: data.contractorInformation.companyEmailAddress,
-      companyStreetAddress: data.contractorInformation.companyStreetAddress,
-      companyCity: data.contractorInformation.city,
-      companyState: data.contractorInformation.state,
-      companyZip: data.contractorInformation.zipCode,
-      companyPhoneNumber: data.contractorInformation.phoneNumber,
-      // county info
-      contractWorkOrderNumber: data.countyInformation.contractWorkOrderNumber,
-      contractExpirationDate: data.countyInformation.contractExpirationDate,
-      countyEmailAddress: data.countyInformation.countyEmailAddress,
-      businessPhoneNumber: data.countyInformation.phoneNumber,
-      departmentName: data.countyInformation.departmentName,
-      departmentNumber: data.countyInformation.departmentNumber,
-      businessStreetAddress: data.countyInformation.businessStreetAddress,
-      businessCity: data.countyInformation.businessCity,
-      businessZip: data.countyInformation.businessZipCode,
-      //policy rules info
-      defaultCountyWidePolicy:
-        data.policyRulesInformation.applyDefaultCountyWidePolicy,
-      departmentPolicyRule0: data.policyRulesInformation.departmentPolicyRule0,
-      departmentPolicyRule1: data.policyRulesInformation.departmentPolicyRule1,
-      departmentPolicyRule2: data.policyRulesInformation.departmentPolicyRule2,
-      departmentPolicyRule3: data.policyRulesInformation.departmentPolicyRule3,
-      departmentPolicyRule4: data.policyRulesInformation.departmentPolicyRule4,
-      socialNetworkingFacebook:
-        data.policyRulesInformation.socialNetworkingFacebook,
-      socialNetworkingTwitter:
-        data.policyRulesInformation.socialNetworkingTwitter,
-      socialNetworkingLinkedIn:
-        data.policyRulesInformation.socialNetworkingLinkedIn,
-      //Additional Access
-      ibmLogOnId: data.additionalAccessInformation.ibmLogonId,
-      majorGroupCode: data.additionalAccessInformation.majorGroupCode,
-      lsoGroupCode: data.additionalAccessInformation.lsoGroupCode,
-      securityAuthorization:
-        data.additionalAccessInformation.securityAuthorization,
-      unixLogOnId: data.additionalAccessInformation.unixLogonId,
-      unixApplication: data.additionalAccessInformation.application,
-      unixAccessGroup: data.additionalAccessInformation.accessGroup,
-      unixAccountNumber: data.additionalAccessInformation.accountNumber,
-      billingAccountNumber:
-        data.additionalAccessInformation.billingAccountNumber,
-    };
-    return JSON.stringify(reformated);
-  }
+  // public reformatContractData(data: any): string {
+  //   const reformated = {
+  //     // Form specific data
+  //     employee: false,
+  //     // contractor info
+  //     createDate: data.personalInformation.createDate,
+  //     lastName: data.contractorInformation.lastName,
+  //     firstName: data.contractorInformation.firstName,
+  //     middleInitial: data.contractorInformation.middleInitial,
+  //     companyName: data.contractorInformation.companyName,
+  //     companyEmailAddress: data.contractorInformation.companyEmailAddress,
+  //     companyStreetAddress: data.contractorInformation.companyStreetAddress,
+  //     companyCity: data.contractorInformation.city,
+  //     companyState: data.contractorInformation.state,
+  //     companyZip: data.contractorInformation.zipCode,
+  //     companyPhoneNumber: data.contractorInformation.phoneNumber,
+  //     // county info
+  //     contractWorkOrderNumber: data.countyInformation.contractWorkOrderNumber,
+  //     contractExpirationDate: data.countyInformation.contractExpirationDate,
+  //     countyEmailAddress: data.countyInformation.countyEmailAddress,
+  //     businessPhoneNumber: data.countyInformation.phoneNumber,
+  //     departmentName: data.countyInformation.departmentName,
+  //     departmentNumber: data.countyInformation.departmentNumber,
+  //     businessStreetAddress: data.countyInformation.businessStreetAddress,
+  //     businessCity: data.countyInformation.businessCity,
+  //     businessZip: data.countyInformation.businessZipCode,
+  //     //policy rules info
+  //     defaultCountyWidePolicy:
+  //       data.policyRulesInformation.applyDefaultCountyWidePolicy,
+  //     departmentPolicyRule0: data.policyRulesInformation.departmentPolicyRule0,
+  //     departmentPolicyRule1: data.policyRulesInformation.departmentPolicyRule1,
+  //     departmentPolicyRule2: data.policyRulesInformation.departmentPolicyRule2,
+  //     departmentPolicyRule3: data.policyRulesInformation.departmentPolicyRule3,
+  //     departmentPolicyRule4: data.policyRulesInformation.departmentPolicyRule4,
+  //     socialNetworkingFacebook:
+  //       data.policyRulesInformation.socialNetworkingFacebook,
+  //     socialNetworkingTwitter:
+  //       data.policyRulesInformation.socialNetworkingTwitter,
+  //     socialNetworkingLinkedIn:
+  //       data.policyRulesInformation.socialNetworkingLinkedIn,
+  //     //Additional Access
+  //     ibmLogOnId: data.additionalAccessInformation.ibmLogonId,
+  //     majorGroupCode: data.additionalAccessInformation.majorGroupCode,
+  //     lsoGroupCode: data.additionalAccessInformation.lsoGroupCode,
+  //     securityAuthorization:
+  //       data.additionalAccessInformation.securityAuthorization,
+  //     unixLogOnId: data.additionalAccessInformation.unixLogonId,
+  //     unixApplication: data.additionalAccessInformation.application,
+  //     unixAccessGroup: data.additionalAccessInformation.accessGroup,
+  //     unixAccountNumber: data.additionalAccessInformation.accountNumber,
+  //     billingAccountNumber:
+  //       data.additionalAccessInformation.billingAccountNumber,
+  //   };
+  //   return JSON.stringify(reformated);
+  // }
 
   /**
    * @description This method will create the form serverside. Handles both employee and contractor forms.
@@ -160,11 +160,11 @@ export class ApiHttpService {
       );
       // Contractor form
     } else {
-      return this.http.post(
-        `${environment.apiUrl}/service_requests`,
-        this.reformatContractData(data),
-        this.httpOptions
-      );
+      // return this.http.post(
+      //   `${environment.apiUrl}/service_requests`,
+      //   this.reformatContractData(data),
+      //   this.httpOptions
+      // );
     }
   }
 
@@ -182,11 +182,11 @@ export class ApiHttpService {
         this.httpOptions
       );
     } else {
-      return this.http.post(
-        `${environment.apiUrl}/service_requests`,
-        this.reformatContractData(data), // Call the contractor formatter
-        this.httpOptions
-      );
+      // return this.http.post(
+      //   `${environment.apiUrl}/service_requests`,
+      //   this.reformatContractData(data), // Call the contractor formatter
+      //   this.httpOptions
+      // );
     }
   }
 
