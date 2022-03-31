@@ -13,7 +13,7 @@ import { ConfirmationPageComponent } from './confirmation-page/confirmation-page
 import { AuthGuard } from './core/services/auth.guard';
 import { ContractorFormComponent } from './form/contractor-form/contractor-form.component';
 import { EmployeeFormComponent } from './form/employee-form/employee-form.component';
-import { NewAdminComponent } from './new-admin/new-admin.component';
+import { NewAdminComponent } from './admin/new-admin/new-admin.component';
 
 
 const routes: Routes = [
@@ -30,7 +30,7 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       {
-        path:'new-admin',
+        path:'Create_User',
         component: NewAdminComponent,
         canActivate: [AuthGuard],
       },

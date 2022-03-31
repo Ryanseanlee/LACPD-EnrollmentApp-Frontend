@@ -118,12 +118,30 @@ export class AdminService {
     );
   }
 
+  public newAdmin(email: string, password: string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        email:this.adminUsername,
+        password:this.adminPassword,
+        'newemail': email,
+        'newpassword': password
+      }),
+    };
+    return this.http.patch(
+      `${environment.apiUrl}/admin/Create_User`,
+      httpOptions,
+      httpOptions
+    );
+
+  }
+
   //reformat data for admin-employee
   public reformatDataPostEmployee(data: any, isComplete: boolean): string {
     const reformated = {
       // Form specific data
       complete: isComplete,
-      employee: true, // Since it is the employee form
+      employee: data.personalInformation.isEmployee, // Since it is the employee form
 
       // Personal Information
       createDate: data.personalInformation.createDate,

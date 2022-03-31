@@ -24,6 +24,7 @@ export class ResetPasswordComponent implements OnInit {
     this.resetForm = new FormGroup({
       oldPassword: new FormControl('', [Validators.required]),
       newPassword: new FormControl('', [Validators.required]),
+      
     });
   }
 

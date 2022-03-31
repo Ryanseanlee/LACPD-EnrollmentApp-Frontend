@@ -52,6 +52,7 @@ import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 import { TopLogoComponent } from './top-logo/top-logo.component';
 import { TopNavbarComponent } from './top-navbar/top-navbar.component';
 import { DatePipe } from '@angular/common'
+import { NewAdminComponent } from './admin/new-admin/new-admin.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { DatePipe } from '@angular/common'
     DropdownMenuComponent,
     TopLogoComponent,
     TopNavbarComponent,
+    NewAdminComponent,
   ],
   imports: [
     ReactiveFormsModule,

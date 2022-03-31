@@ -21,7 +21,7 @@ export class ServiceRequestsComponent implements OnInit {
     'firstName',
     'lastName',
     'submitDate',
-    'isEmployee',
+    'employee',
     'isComplete',
     'submit'
   ];
@@ -59,11 +59,11 @@ export class ServiceRequestsComponent implements OnInit {
       console.log(this.adminService.adminFormData.requestNumber);
 
       //go to service request details page
-      if (this.formDataService.formData.employee == false) {
+      if (this.formDataService.formData.isEmployee == false) {
          this.router.navigate(['/admin/service-contractor-request-detail', this.formDataService.formData.requestNumber]);
        }
        //go to employee form , if true
-       else if (this.formDataService.formData.employee == true) {
+       else if (this.formDataService.formData.isEmployee == true) {
          this.router.navigate(['/admin/service-employee-request-detail', this.formDataService.formData.requestNumber])
 
        }
@@ -78,14 +78,14 @@ export class ServiceRequestsComponent implements OnInit {
 
       //if not employee(false) -- go to contractor side
 
-      if (this.formDataService.formData.employee == false) {
+      if (this.formDataService.formData.isEmployee == false) {
         this.router.navigate([
           '/admin/review-contractor',
           this.formDataService.formData.requestNumber,
         ]);
       }
       //go to employee form , if true
-      else if (this.formDataService.formData.employee == true) {
+      else if (this.formDataService.formData.isEmployee == true) {
         this.router.navigate([
           '/admin/review-employee',
           this.formDataService.formData.requestNumber,
