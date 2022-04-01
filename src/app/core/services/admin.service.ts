@@ -141,69 +141,60 @@ export class AdminService {
     const reformated = {
       // Form specific data
       complete: isComplete,
-      employee: data.personalInformation.isEmployee, // Since it is the employee form
+      isEmployee: data.personalInformation.isEmployee, // Since it is the employee form
 
       // Personal Information
       createDate: data.personalInformation.createDate,
       lastName: data.personalInformation.lastName,
       firstName: data.personalInformation.firstName,
       middleInitial: data.personalInformation.middleInitial,
-      employeeEmailAddress: data.personalInformation.emailAddress,
-      businessPhoneNumber: data.personalInformation.phoneNumber,
+      emailAddress: data.personalInformation.emailAddress,
+      phoneNumber: data.personalInformation.phoneNumber,
+      workPhoneNumber: data.personalInformation.workPhoneNumber,
+      countyDepartmentName: data.personalInformation.countyDepartmentName,
+      countyDepartmentNumber :data.personalInformation.countyDepartmentNumber,
+      contractorName: data.personalInformation.contractorName,
+      workOrderNumberInput: data.personalInformation.workOrderNumberInput,
       employeeNumber: data.personalInformation.employeeNumber,
-      countyDepartmentName : data.personalInformation.countyDepartmentName,
+      expirationDate : data.personalInformation.expirationDate,
 
 
       // Address Information
-      businessStreetAddress: data.addressInformation.address,
-      businessCity: data.addressInformation.city,
-      businessState: data.addressInformation.state,
-      businessZip: data.addressInformation.zipCode,
+      address: data.addressInformation.address,
+      city: data.addressInformation.city,
+      state: data.addressInformation.state,
+      zipCode: data.addressInformation.zipCode,
 
       //internet policy
-      defaultCountyWidePolicy:
-        data.policyRulesInformation.defaultCountyWidePolicy,
-      departmentPolicyRule0: data.policyRulesInformation.departmentPolicyRule0,
-      departmentPolicyRule1: data.policyRulesInformation.departmentPolicyRule1,
-      departmentPolicyRule2: data.policyRulesInformation.departmentPolicyRule2,
-      departmentPolicyRule3: data.policyRulesInformation.departmentPolicyRule3,
-      departmentPolicyRule4: data.policyRulesInformation.departmentPolicyRule4,
-      socialNetworkingFacebook:
-        data.policyRulesInformation.socialNetworkingFacebook,
-      socialNetworkingTwitter:
-        data.policyRulesInformation.socialNetworkingTwitter,
-      socialNetworkingLinkedIn:
-        data.policyRulesInformation.socialNetworkingLinkedIn,
+      countyWidePolicyA: data.policyRulesInformation.countyWidePolicyA,
+      countyWidePolicyB: data.policyRulesInformation.countyWidePolicyB,
+      allWebmail: data.policyRulesInformation.allWebmail,
+      streamMedia: data.policyRulesInformation.streamMedia,
+      justification: data.policyRulesInformation.justification,
+      
 
       // Access Information
-      ibmLogOnId: data.accessInformation.ibmLogonId,
+      ibmLogonId: data.accessInformation.ibmLogonId,
       majorGroupCode: data.accessInformation.majorGroupCode,
       lsoGroupCode: data.accessInformation.lsoGroupCode,
       securityAuthorization: data.accessInformation.securityAuthorization,
-      unixLogOnId: data.accessInformation.unixLogonId,
-      unixApplication: data.accessInformation.application,
-      unixAccessGroup: data.accessInformation.accessGroup,
-      unixAccountNumber: data.accessInformation.accountNumber,
+      unixLogonId: data.accessInformation.unixLogonId,
+      application: data.accessInformation.application,
+      accessGroup: data.accessInformation.accessGroup,
       billingAccountNumber: data.accessInformation.billingAccountNumber,
 
       // FIXME: On server side accessType(securid) might be misssing
       // Additional Information
-      internetApplication: data.additionalInformation.internetApplication,
-      exchangeEmail: data.additionalInformation.exchangeEmail,
-      emailEncryption: data.additionalInformation.emailEncryption,
       laCountyGovAccess: data.additionalInformation.laCountyGovAccess,
-      tokenlessAuthentication:
-        data.additionalInformation.tokenlessAuthentication,
-      lacMobileWifiAccess: data.additionalInformation.lacMobileWifiAccess,
-      cherwellSms: data.additionalInformation.cherwellSms,
-      windowsRightsMgmt: data.additionalInformation.windowsRightsMgmt,
+      lacMobileWifiAccess: data.addressInformation.lacMobileWifiAccess,
+      o360Email: data.additionalInformation.o360Email,
+     
 
       //managers info
       managerFirstName: data.managerInformation.managerFirstName,
       managerLastName: data.managerInformation.managerLastName,
       managerEmail: data.managerInformation.managerEmail,
       managerPhone: data.managerInformation.managerPhone,
-      managerTitle: data.managerInformation.managerTitle,
 
       //signatures-department Head left, since theres no policy in employee-form
       applicationCoordinatorName: data.signatures.applicationCoordinatorName,
@@ -227,95 +218,7 @@ export class AdminService {
     return JSON.stringify(reformated);
   }
 
-  public reformatDatPostContractor(data: any, isComplete: boolean): string {
-    const reformated = {
-      // Form specific data
-      complete: isComplete,
-      employee: false,
-      // contractor info
-      createDate: data.personalInformation.createDate,
-      lastName: data.contractorInformation.lastName,
-      firstName: data.contractorInformation.firstName,
-      middleInitial: data.contractorInformation.middleInitial,
-      companyName: data.contractorInformation.companyName,
-      companyEmailAddress: data.contractorInformation.companyEmailAddress,
-      companyStreetAddress: data.contractorInformation.companyStreetAddress,
-      companyCity: data.contractorInformation.city,
-      companyState: data.contractorInformation.state,
-      companyZip: data.contractorInformation.zipCode,
-      companyPhoneNumber: data.contractorInformation.phoneNumber,
-      // county info
-      contractWorkOrderNumber: data.countyInformation.contractWorkOrderNumber,
-      contractExpirationDate: data.countyInformation.contractExpirationDate,
-      countyEmailAddress: data.countyInformation.countyEmailAddress,
-      businessPhoneNumber: data.countyInformation.phoneNumber,
-      departmentName: data.countyInformation.departmentName,
-      departmentNumber: data.countyInformation.departmentNumber,
-      businessStreetAddress: data.countyInformation.businessStreetAddress,
-      businessCity: data.countyInformation.businessCity,
-      businessZip: data.countyInformation.businessZipCode,
-      //policy rules info
-      defaultCountyWidePolicy:
-        data.policyRulesInformation.applyDefaultCountyWidePolicy,
-      departmentPolicyRule0: data.policyRulesInformation.departmentPolicyRule0,
-      departmentPolicyRule1: data.policyRulesInformation.departmentPolicyRule1,
-      departmentPolicyRule2: data.policyRulesInformation.departmentPolicyRule2,
-      departmentPolicyRule3: data.policyRulesInformation.departmentPolicyRule3,
-      departmentPolicyRule4: data.policyRulesInformation.departmentPolicyRule4,
-      socialNetworkingFacebook:
-        data.policyRulesInformation.socialNetworkingFacebook,
-      socialNetworkingTwitter:
-        data.policyRulesInformation.socialNetworkingTwitter,
-      socialNetworkingLinkedIn:
-        data.policyRulesInformation.socialNetworkingLinkedIn,
-      //Additional Access
-      ibmLogOnId: data.accessInformation.ibmLogonId,
-      majorGroupCode: data.accessInformation.majorGroupCode,
-      lsoGroupCode: data.accessInformation.lsoGroupCode,
-      securityAuthorization: data.accessInformation.securityAuthorization,
-      unixLogOnId: data.accessInformation.unixLogonId,
-      unixApplication: data.accessInformation.application,
-      unixAccessGroup: data.accessInformation.accessGroup,
-      unixAccountNumber: data.accessInformation.accountNumber,
-      billingAccountNumber: data.accessInformation.billingAccountNumber,
-
-      internetApplication: data.additionalInformation.internetApplication,
-      exchangeEmail: data.additionalInformation.exchangeEmail,
-      emailEncryption: data.additionalInformation.emailEncryption,
-      tokenlessAuthentication:
-        data.additionalInformation.tokenlessAuthentication,
-      lacMobileWifiAccess: data.additionalInformation.lacMobileWifiAccess,
-      cherwellSms: data.additionalInformation.cherwellSms,
-      windowsRightsMgmt: data.additionalInformation.windowsRightsMgmt,
-
-      //managers info
-      managerFirstName: data.managerInformation.managerFirstName,
-      managerLastName: data.managerInformation.managerLastName,
-      managerEmail: data.managerInformation.managerEmail,
-      managerPhone: data.managerInformation.managerPhone,
-      managerTitle: data.managerInformation.managerTitle,
-
-      //signatures-department Head left, since theres no policy in employee-form
-      applicationCoordinatorName: data.signatures.applicationCoordinatorName,
-      applicationCoordinatorPhone: data.signatures.applicationCoordinatorPhone,
-      applicationCoordinatorEmail: data.signatures.applicationCoordinatorEmail,
-
-      divChiefManagerName: data.signatures.divChiefManagerName,
-      divChiefManagerPhone: data.signatures.divChiefManagerPhone,
-      divChiefManagerEmail: data.signatures.divChiefManagerEmail,
-
-      deptInfoSecurityOfficerName: data.signatures.deptInfoSecurityOfficerName,
-      deptInfoSecurityOfficerPhone:
-        data.signatures.deptInfoSecurityOfficerPhone,
-      deptInfoSecurityOfficerEmail:
-        data.signatures.deptInfoSecurityOfficerEmail,
-
-      departmentHeadName: data.signatures.departmentHeadName,
-      departmentHeadPhone: data.signatures.departmentHeadPhone,
-      departmentHeadEmail: data.signatures.departmentHeadEmail,
-    };
-    return JSON.stringify(reformated);
-  }
+  
 
   //starts adobe process
 
@@ -333,19 +236,13 @@ export class AdminService {
         password: this.adminPassword,
       }),
     };
-    if (isEmployee) {
+   
       return this.http.patch(
         `${environment.apiUrl}/admin/service_requests/${requestNumber}`,
         this.reformatDataPostEmployee(data, false),
         httpOptions
       );
-    } else {
-      return this.http.patch(
-        `${environment.apiUrl}/admin/service_requests/${requestNumber}`,
-        this.reformatDatPostContractor(data, false),
-        httpOptions
-      );
-    }
+    
   }
 
   public submitForm(
@@ -361,20 +258,13 @@ export class AdminService {
         password: this.adminPassword,
       }),
     };
-
-    if (isEmployee) {
-      return this.http.patch(
-        `${environment.apiUrl}/admin/service_requests/${requestNumber}`,
-        this.reformatDataPostEmployee(data, true),
-        httpOptions
-      );
-    } else {
-      return this.http.patch(
-        `${environment.apiUrl}/admin/service_requests/${requestNumber}`,
-        this.reformatDatPostContractor(data, true),
-        httpOptions
-      );
-    }
+  
+    return this.http.patch(
+      `${environment.apiUrl}/admin/service_requests/${requestNumber}`,
+      this.reformatDataPostEmployee(data, true),
+      httpOptions
+    );
+  
   }
 
   //reformat div chief

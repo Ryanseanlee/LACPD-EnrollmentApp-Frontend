@@ -93,7 +93,7 @@ export class EmployeeFormComponent implements OnInit {
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
         ]),
-        isEmployee: new FormControl(),
+        isEmployee: new FormControl(true),
         middleInitial: new FormControl(null, Validators.pattern('[a-z A-Z]*')),
         emailAddress: new FormControl(null, [
           Validators.required,
@@ -148,7 +148,7 @@ export class EmployeeFormComponent implements OnInit {
         countyWidePolicyB: new FormControl(false),
         allWebmail: new FormControl(false),
         streamMedia: new FormControl(false),
-        justification: new FormControl(false),
+        justification: new FormControl(null),
       }),
       accessInformation: new FormGroup({
         // IBM Data Center Access
@@ -181,7 +181,7 @@ export class EmployeeFormComponent implements OnInit {
         managerFirstName: new FormControl(null),
         managerLastName: new FormControl(null),
         managerEmail: new FormControl(null),
-        managerPhoneNumber: new FormControl(null),
+        managerPhone: new FormControl(null),
       }),
     });
     return formGroup;
@@ -204,12 +204,15 @@ export class EmployeeFormComponent implements OnInit {
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
         ]),
+        isEmployee: new FormControl(
+          this.formDataService.formData.isEmployee
+        ),
         middleInitial: new FormControl(
           this.formDataService.formData.middleInitial,
           Validators.pattern('[a-z A-Z]*')
         ),
         emailAddress: new FormControl(
-          this.formDataService.formData.employeeEmailAddress,
+          this.formDataService.formData.emailAddress,
           [Validators.required, Validators.email]
         ),
         countyDepartmentName: new FormControl(this.formDataService.formData.countyDepartmentName, [
@@ -244,18 +247,18 @@ export class EmployeeFormComponent implements OnInit {
       }),
       addressInformation: new FormGroup({
         address: new FormControl(
-          this.formDataService.formData.businessStreetAddress,
+          this.formDataService.formData.address,
           Validators.required
         ),
-        city: new FormControl(this.formDataService.formData.businessCity, [
+        city: new FormControl(this.formDataService.formData.city, [
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
         ]),
-        state: new FormControl(this.formDataService.formData.businessState, [
+        state: new FormControl(this.formDataService.formData.state, [
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
         ]),
-        zipCode: new FormControl(this.formDataService.formData.businessZip, [
+        zipCode: new FormControl(this.formDataService.formData.zipCode, [
           Validators.required,
           Validators.minLength(5),
           Validators.maxLength(7),
@@ -282,7 +285,7 @@ export class EmployeeFormComponent implements OnInit {
       accessInformation: new FormGroup({
         // IBM Data Center Access
         renderIBMForm: new FormControl(),
-        ibmLogonId: new FormControl(this.formDataService.formData.ibmLogOnId),
+        ibmLogonId: new FormControl(this.formDataService.formData.ibmLogonId),
         majorGroupCode: new FormControl(
           this.formDataService.formData.majorGroupCode
         ),
@@ -296,14 +299,13 @@ export class EmployeeFormComponent implements OnInit {
         renderUnixEnvAccess: new FormControl(),
         unixLogonId: new FormControl(this.formDataService.formData.unixLogOnId),
         application: new FormControl(
-          this.formDataService.formData.unixApplication
+          this.formDataService.formData.application
         ),
         accessGroup: new FormControl(
-          this.formDataService.formData.unixAccessGroup
+          this.formDataService.formData.accessGroup
         ),
-        accountNumber: new FormControl(
-          this.formDataService.formData.unixAccountNumber
-        ),
+        
+
         // SecurID Remote Access
         renderSecurIdAccess: new FormControl(),
         billingAccountNumber: new FormControl(
@@ -333,7 +335,7 @@ export class EmployeeFormComponent implements OnInit {
         managerEmail: new FormControl(
           this.formDataService.formData.managerEmail
         ),
-        managerPhoneNumber: new FormControl(
+        managerPhone: new FormControl(
           this.formDataService.formData.managerPhone
         ),
       }),

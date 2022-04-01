@@ -15,7 +15,7 @@
     <br />
     <mat-form-field appearance="outline">
       <mat-label class="text-test">Manager's Phone #</mat-label>
-      <input matInput formControlName="managerPhoneNumber" />
+      <input matInput formControlName="managerPhone" />
     </mat-form-field>
     <br />
     <mat-form-field appearance="outline">
@@ -26,11 +26,7 @@
   <!-- Previous/Next Buttons -->
   <div>
     <button matStepperPrevious class="previous-button">Previous</button>
-    <button
-      matStepperNext
-      class="next-button"
-      (click)="printForm()"
-    >
+    <button matStepperNext class="next-button" (click)="printForm()">
       Next
     </button>
   </div>

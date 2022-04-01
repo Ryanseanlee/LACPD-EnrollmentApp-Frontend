@@ -40,7 +40,7 @@
         <td *matCellDef="let element">{{ formatDate(element.submitDate) }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="employee">
+      <ng-container matColumnDef="isEmployee">
         <th *matHeaderCellDef>Employee/Contractor</th>
         <td *matCellDef="let element">
           {{ element.employee ? "Employee" : "Contractor" }}
@@ -57,10 +57,7 @@
       <ng-container matColumnDef="submit">
         <th class="right-title" *matHeaderCellDef>Submit</th>
         <td *matCellDef="let element">
-          <button
-            class="review-button"
-            (click)="review(element.requestNumber)"
-          >
+          <button class="review-button" (click)="review(element.requestNumber)">
             Review
           </button>
         </td>

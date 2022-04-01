@@ -25,14 +25,14 @@ export class ApiHttpService {
     const reformated = {
       // Form specific data
       submitted: isSubmitted,
-      employee: data.personalInformation.isEmployee, // Since it is the employee form
+      isEmployee: data.personalInformation.isEmployee, // Since it is the employee form
 
       // Personal Information\
       createDate: data.personalInformation.createDate,
       lastName: data.personalInformation.lastName,
       firstName: data.personalInformation.firstName,
       middleInitial: data.personalInformation.middleInitial,
-      employeeEmailAddress: data.personalInformation.emailAddress,
+      emailAddress: data.personalInformation.emailAddress,
       phoneNumber: data.personalInformation.phoneNumber,
       workPhoneNumber: data.personalInformation.workPhoneNumber,
       employeeNumber: data.personalInformation.employeeNumber,
@@ -43,10 +43,10 @@ export class ApiHttpService {
       expirationDate: data.personalInformation.expirationDate,
 
       // Address Information
-      businessStreetAddress: data.addressInformation.address,
-      businessCity: data.addressInformation.city,
-      businessState: data.addressInformation.state,
-      businessZip: data.addressInformation.zipCode,
+      address: data.addressInformation.address,
+      city: data.addressInformation.city,
+      state: data.addressInformation.state,
+      zipCode: data.addressInformation.zipCode,
 
       // Internet Access
       countyWidePolicyA: data.internetAccess.countyWidePolicyA,
@@ -54,25 +54,17 @@ export class ApiHttpService {
       allWebmail: data.internetAccess.allWebmail,
       streamMedia: data.internetAccess.streamMedia,
       justification: data.internetAccess.justification,
-      // defaultCountyWidePolicy: data.internetAccess.applyDefaultCountyWidePolicy,
-      // departmentPolicyRule0: data.internetAccess.departmentPolicyRule0,
-      // departmentPolicyRule1: data.internetAccess.departmentPolicyRule1,
-      // departmentPolicyRule2: data.internetAccess.departmentPolicyRule2,
-      // departmentPolicyRule3: data.internetAccess.departmentPolicyRule3,
-      // departmentPolicyRule4: data.internetAccess.departmentPolicyRule4,
-      // socialNetworkingFacebook: data.internetAccess.socialNetworkingFacebook,
-      // socialNetworkingTwitter: data.internetAccess.socialNetworkingTwitter,
-      // socialNetworkingLinkedIn: data.internetAccess.socialNetworkingLinkedIn,
 
       // Access Information
-      ibmLogOnId: data.accessInformation.ibmLogonId,
+      ibmLogonId: data.accessInformation.ibmLogonId,
       majorGroupCode: data.accessInformation.majorGroupCode,
       lsoGroupCode: data.accessInformation.lsoGroupCode,
       securityAuthorization: data.accessInformation.securityAuthorization,
-      unixLogOnId: data.accessInformation.unixLogonId,
-      unixApplication: data.accessInformation.application,
-      unixAccessGroup: data.accessInformation.accessGroup,
-      unixAccountNumber: data.accessInformation.accountNumber,
+
+      unixLogonId: data.accessInformation.unixLogonId,
+      application: data.accessInformation.application,
+      accessGroup: data.accessInformation.accessGroup,
+      
       billingAccountNumber: data.accessInformation.billingAccountNumber,
       // FIXME: On server side accessType(securid) might be misssing
       // Additional Information
@@ -84,66 +76,12 @@ export class ApiHttpService {
       managerFirstName: data.managerInformation.managerFirstName,
       managerLastName: data.managerInformation.managerLastName,
       managerEmail: data.managerInformation.managerEmail,
-      managerPhone: data.managerInformation.managerPhoneNumber,
+      managerPhone: data.managerInformation.managerPhone,
     };
     return JSON.stringify(reformated);
   }
 
-  // public reformatContractData(data: any): string {
-  //   const reformated = {
-  //     // Form specific data
-  //     employee: false,
-  //     // contractor info
-  //     createDate: data.personalInformation.createDate,
-  //     lastName: data.contractorInformation.lastName,
-  //     firstName: data.contractorInformation.firstName,
-  //     middleInitial: data.contractorInformation.middleInitial,
-  //     companyName: data.contractorInformation.companyName,
-  //     companyEmailAddress: data.contractorInformation.companyEmailAddress,
-  //     companyStreetAddress: data.contractorInformation.companyStreetAddress,
-  //     companyCity: data.contractorInformation.city,
-  //     companyState: data.contractorInformation.state,
-  //     companyZip: data.contractorInformation.zipCode,
-  //     companyPhoneNumber: data.contractorInformation.phoneNumber,
-  //     // county info
-  //     contractWorkOrderNumber: data.countyInformation.contractWorkOrderNumber,
-  //     contractExpirationDate: data.countyInformation.contractExpirationDate,
-  //     countyEmailAddress: data.countyInformation.countyEmailAddress,
-  //     businessPhoneNumber: data.countyInformation.phoneNumber,
-  //     departmentName: data.countyInformation.departmentName,
-  //     departmentNumber: data.countyInformation.departmentNumber,
-  //     businessStreetAddress: data.countyInformation.businessStreetAddress,
-  //     businessCity: data.countyInformation.businessCity,
-  //     businessZip: data.countyInformation.businessZipCode,
-  //     //policy rules info
-  //     defaultCountyWidePolicy:
-  //       data.policyRulesInformation.applyDefaultCountyWidePolicy,
-  //     departmentPolicyRule0: data.policyRulesInformation.departmentPolicyRule0,
-  //     departmentPolicyRule1: data.policyRulesInformation.departmentPolicyRule1,
-  //     departmentPolicyRule2: data.policyRulesInformation.departmentPolicyRule2,
-  //     departmentPolicyRule3: data.policyRulesInformation.departmentPolicyRule3,
-  //     departmentPolicyRule4: data.policyRulesInformation.departmentPolicyRule4,
-  //     socialNetworkingFacebook:
-  //       data.policyRulesInformation.socialNetworkingFacebook,
-  //     socialNetworkingTwitter:
-  //       data.policyRulesInformation.socialNetworkingTwitter,
-  //     socialNetworkingLinkedIn:
-  //       data.policyRulesInformation.socialNetworkingLinkedIn,
-  //     //Additional Access
-  //     ibmLogOnId: data.additionalAccessInformation.ibmLogonId,
-  //     majorGroupCode: data.additionalAccessInformation.majorGroupCode,
-  //     lsoGroupCode: data.additionalAccessInformation.lsoGroupCode,
-  //     securityAuthorization:
-  //       data.additionalAccessInformation.securityAuthorization,
-  //     unixLogOnId: data.additionalAccessInformation.unixLogonId,
-  //     unixApplication: data.additionalAccessInformation.application,
-  //     unixAccessGroup: data.additionalAccessInformation.accessGroup,
-  //     unixAccountNumber: data.additionalAccessInformation.accountNumber,
-  //     billingAccountNumber:
-  //       data.additionalAccessInformation.billingAccountNumber,
-  //   };
-  //   return JSON.stringify(reformated);
-  // }
+  
 
   /**
    * @description This method will create the form serverside. Handles both employee and contractor forms.

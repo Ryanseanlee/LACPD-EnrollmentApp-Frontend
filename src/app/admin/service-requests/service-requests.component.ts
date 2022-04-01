@@ -21,7 +21,7 @@ export class ServiceRequestsComponent implements OnInit {
     'firstName',
     'lastName',
     'submitDate',
-    'employee',
+    'isEmployee',
     'isComplete',
     'submit'
   ];
@@ -76,21 +76,11 @@ export class ServiceRequestsComponent implements OnInit {
 
       this.formDataService.formData = res;
 
-      //if not employee(false) -- go to contractor side
-
-      if (this.formDataService.formData.isEmployee == false) {
-        this.router.navigate([
-          '/admin/review-contractor',
-          this.formDataService.formData.requestNumber,
-        ]);
-      }
-      //go to employee form , if true
-      else if (this.formDataService.formData.isEmployee == true) {
         this.router.navigate([
           '/admin/review-employee',
           this.formDataService.formData.requestNumber,
         ]);
-      }
+      
     });
   }
 

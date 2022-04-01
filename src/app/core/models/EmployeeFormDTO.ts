@@ -34,18 +34,30 @@ export class EmployeeFormDTO {
   state: string;
   zipCode: string;
 
-  // Applications Requested
- 
+     // Internet Access
+  countyWidePolicyA: boolean;
+  countyWidePolicyB: boolean;
+  allWebmail: boolean;
+  streamMedia: boolean;
+  justification: string;
+
+  // Access Information
+  ibmLogonId: string;
+  majorGroupCode: string;
+  lsoGroupCode: string;
+  securityAuthorization: string;
+
+  unixLogonId: string;
+  application: string;
+  accessGroup: string;
+  
+  billingAccountNumber: string;
+
+  // additional Requested
   laCountyGovAccess: boolean;
   lacMobileWifiAccess: boolean;
   o360Email: boolean;
 
-  // Personal Webmail Access
-  gmailAccess: boolean;
-  yahooMailAccess: boolean;
-  otherEmailAccess: boolean;
-  otherEmailDomain: string;
-  businessJustification: string;
 
   // Profile Information (might not be done)
   replaceLostToken: boolean;
@@ -53,42 +65,8 @@ export class EmployeeFormDTO {
   changeLogonId: boolean;
   deleteLogonId: boolean;
 
-  // IBM Data Center Access
-  ibmLogOnId: string;
-  majorGroupCode: string;
-  lsoGroupCode: string;
-  securityAuthorization: string;
-  tsoAccess: boolean;
-  tsoGroupCode: string;
-  binNumber: string;
-  subGroup1: string;
-  subGroup2: string;
-  subGroup3: string;
-  onlineAccess: boolean;
-  systemApplication: string;
-  groupName: string;
-  oldGroup: string;
 
-  // Unix Environment Access
-  unixAddLogonId: boolean;
-  unixChangeLogonId: boolean;
-  unixDeleteLogonId: boolean;
-  unixLogOnId: string;
-  unixApplication: string;
-  unixAccessGroup: string;
-  unixAccountNumber: string;
 
-  // SecurID Remote Access
-  billingAccountNumber: string; // TODO: Request name change to billingAccountNumberForSecurIDToken
-  secureIdVpn: boolean;
-  adaptiveAuthenticationVpn: boolean;
-
-  // Department Policy Rules
-  countyWidePolicyA: boolean;
-  countyWidePolicyB: boolean;
-  allWebmail: boolean;
-  streamingMedia: boolean;
-  justification: string;
 
   // TODO: Ask if these are for contractor form
   //   companyName;
@@ -149,27 +127,14 @@ export class EmployeeFormDTO {
     this.expirationDate = personalInformation.expirationDate;
 
     // Access Information
-    this.ibmLogOnId = accessInformation.ibmLogonId;
+    this.ibmLogonId = accessInformation.ibmLogonId;
     this.majorGroupCode = accessInformation.majorGroupCode;
     this.lsoGroupCode = accessInformation.lsoGroupCode;
     this.securityAuthorization = accessInformation.securityAuthorization;
-    // this.tsoAccess: boolean;
-    // this.tsoGroupCode: string;
-    // this.binNumber: string;
-    // this.subGroup1: string;
-    // this.subGroup2: string;
-    // this.subGroup3: string;
-    // this.onlineAccess: boolean;
-    // this.systemApplication: string;
-    // this.groupName: string;
-    // this.oldGroup: string;
-    // this.unixAddLogonId:
-    // this.unixChangeLogonId:
-    // this.unixDeleteLogonId
-    this.unixLogOnId = accessInformation.unixLogonId;
-    this.unixApplication = accessInformation.application;
-    this.unixAccessGroup = accessInformation.accessGroup;
-    this.unixAccountNumber = accessInformation.billingAccountNumber;
+    this.unixLogonId = accessInformation.unixLogonId;
+    this.application = accessInformation.application;
+    this.accessGroup = accessInformation.accessGroup;
+    this.billingAccountNumber = accessInformation.billingAccountNumber;
 
     
 

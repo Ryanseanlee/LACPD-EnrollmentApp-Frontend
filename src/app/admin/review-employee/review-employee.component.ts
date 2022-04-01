@@ -122,7 +122,7 @@ export class ReviewEmployeeComponent implements OnInit {
           Validators.pattern('[a-z A-Z]*')
         ),
         emailAddress: new FormControl(
-          this.formDataService.formData.employeeEmailAddress,
+          this.formDataService.formData.emailAddress,
           [Validators.required, Validators.email]
         ),
         countyDepartmentName: new FormControl(
@@ -156,7 +156,7 @@ export class ReviewEmployeeComponent implements OnInit {
       }),
       addressInformation: new FormGroup({
         address: new FormControl(
-          this.formDataService.formData.businessStreetAddress,
+          this.formDataService.formData.address,
           Validators.required
         ),
         city: new FormControl(this.formDataService.formData.city, [
@@ -195,15 +195,12 @@ export class ReviewEmployeeComponent implements OnInit {
         ),
         // Unix Environment Access
         // NOTE* HERE Might cause an error.
-        unixLogonId: new FormControl(this.formDataService.formData.unixLogOnId),
-        unixApplication: new FormControl(
-          this.formDataService.formData.unixApplication
+        unixLogonId: new FormControl(this.formDataService.formData.unixLogonId),
+        application: new FormControl(
+          this.formDataService.formData.application
         ),
-        unixAccessGroup: new FormControl(
-          this.formDataService.formData.unixAccessGroup
-        ),
-        unixAccountNumber: new FormControl(
-          this.formDataService.formData.unixAccountNumber
+        accessGroup: new FormControl(
+          this.formDataService.formData.accessGroup
         ),
         // SecurID Remote Access
         billingAccountNumber: new FormControl(
