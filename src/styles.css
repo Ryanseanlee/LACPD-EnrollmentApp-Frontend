@@ -21,3 +21,10 @@ body {
   background-color: #a1a1a1;
   color: #fff;
 }
+
+.mat-step-text-label {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 30px;
+  margin: 0px 20px 0px 0px;
+}

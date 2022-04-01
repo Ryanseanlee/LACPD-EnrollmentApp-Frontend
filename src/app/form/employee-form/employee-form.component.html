@@ -3,7 +3,6 @@
   id="regForm"
   [formGroup]="form"
   [@myAnimation]
-  class="container"
   [style.display]="isLoading ? 'none' : 'block'"
 >
   <!-- Personal Information Step -->
@@ -11,25 +10,15 @@
     <mat-step
       formGroupName="personalInformation"
       [stepControl]="form.get('personalInformation')"
+      class="container-flex"
     >
       <ng-template matStepLabel>Personal</ng-template>
-      <h2 class="mat-display-1" style="margin-bottom: 32px">
+      <h2 class="mat-display-1" style="margin: 60px 0px;">
         Personal Information
       </h2>
       <p *ngIf="requestNumber">
         Your request number: <span style="color: red">{{ requestNumber }}</span>
       </p>
-      <div class="radio-container">
-        <div class="radio-text-container">
-          <label for="html">Employee</label><br>
-          <input class="radio-button" type="radio" formControlName="isEmployee" value="true" name="isEmployee">
-        </div>  
-        <div class="radio-text-container">
-          <label for="html">Contractor</label><br>
-          <input class="radio-button" type="radio" formControlName="isEmployee" value="false" name="isEmployee">
-        </div>
-      </div>
-      <div>
         <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label>First Name</mat-label>
           <input
@@ -40,13 +29,14 @@
             formControlName="firstName"
             required
             pattern="[a-zA-Z ]*"
+            class="input-container"
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-hint>Required</mat-hint>
           <mat-error>First name is required and must be letters only</mat-error>
         </mat-form-field>
-      </div>
-      <div>
+ 
+
         <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label>Middle Initial</mat-label>
           <input
@@ -55,12 +45,11 @@
             matInput
             formControlName="middleInitial"
             pattern="[a-zA-Z ]"
+            class="input-container"
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-error>Middle initial must be letters only</mat-error>
         </mat-form-field>
-      </div>
-      <div>
         <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label>Last Name</mat-label>
           <input
@@ -70,13 +59,12 @@
             formControlName="lastName"
             required
             pattern="[a-zA-Z ]*"
+            class="input-container"
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-hint>Required</mat-hint>
           <mat-error>Last name is required and must be letters only</mat-error>
         </mat-form-field>
-      </div>
-      <div>
         <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label>Email</mat-label>
           <input
@@ -84,14 +72,13 @@
             type="text"
             matInput
             formControlName="emailAddress"
+            class="input-container"
             required
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-hint>Required</mat-hint>
           <mat-error>Email is required with correct email format</mat-error>
         </mat-form-field>
-      </div>
-      <div>
         <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label>County Department Name/Organization Name</mat-label>
           <input
@@ -101,13 +88,12 @@
             formControlName="countyDepartmentName"
             required
             pattern="[a-zA-Z ]*"
+            class="input-container"
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-hint>Required</mat-hint>
           <mat-error>County Department Name is Required</mat-error>
         </mat-form-field>
-      </div>
-      <div>
         <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label> County Department number</mat-label>
           <input
@@ -117,13 +103,12 @@
             formControlName="countyDepartmentNumber"
             required
             pattern="[0-9]*"
+            class="input-container"
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-hint>Required</mat-hint>
           <mat-error>County Department Number is is Required</mat-error>
         </mat-form-field>
-      </div>
-      <div>
         <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label> Cell Phone number</mat-label>
           <input
@@ -133,13 +118,12 @@
             required
             formControlName="phoneNumber"
             pattern="[0-9]{10}"
+            class="input-container"
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-hint>Required</mat-hint>
           <mat-error>Phone number is required and must be 10 digit</mat-error>
         </mat-form-field>
-      </div>
-      <div>
         <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label> Work Phone number</mat-label>
           <input
@@ -148,14 +132,13 @@
             matInput
             formControlName="workPhoneNumber"
             pattern="[0-9]{10}"
+            class="input-container"
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-hint>Leave empty if same as Cell Phone number</mat-hint>
           <mat-error>Phone number is required and must be 10 digit</mat-error>
         </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="outline" style="width: 70%">
+        <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label>Employee or Contractor Number</mat-label>
           <input
             id="employeeNumberInput"
@@ -163,13 +146,12 @@
             matInput
             formControlName="employeeNumber"
             required
+            class="input-container"
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-hint>Required</mat-hint>
           <mat-error>Employee or Contractor number is required</mat-error>
         </mat-form-field>
-      </div>
-      <div>
         <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label>Contractor Company Name</mat-label>
           <input
@@ -178,36 +160,34 @@
             matInput
             formControlName="contractorName"
             pattern="[a-zA-Z ]*"
+            class="input-container"
             [errorStateMatcher]="errorStateMatcher"
           />
           <mat-hint>Required</mat-hint>
           <mat-error>County Department Name is Required</mat-error>
         </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="outline" style="width: 70%">
+        <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label>Contract Work Order Number</mat-label>
           <input
             id="workOrderNumberInput"
             type="text"
             matInput
             formControlName="workOrderNumberInput"
+            class="input-container"
             [errorStateMatcher]="errorStateMatcher"
           />
         </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="outline" style="width: 70%">
+        <mat-form-field appearance="outline" class="mat-input-width">
           <mat-label>Contract Expiration Date</mat-label>
           <input
             id="expirationDate"
             type="date"
             matInput
             formControlName="expirationDate"
+            class="input-container"
             [errorStateMatcher]="errorStateMatcher"
           />
         </mat-form-field>
-      </div>
       <div class="button-container">
         <button matStepperNext class="next-button">Next</button>
         <span class="spacer"></span>
