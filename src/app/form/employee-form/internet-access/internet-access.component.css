@@ -1,73 +1,111 @@
-.flex-container {
-    display: flex;
-  }
-  
-  .flex-column {
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-  }
-  
-  div.flex-container {
-    margin-top: 10px;
-  }
-  
-  .button-container {
-    display: flex;
-    flex-direction: row;
-    margin-top: 40px;
-  }
-  
-  .spacer {
-    flex: 1 1 auto;
-  }
-  
-  .access-option-button {
-    width: 235px;
-  }
-  
-  .mat-button-toggle-checked {
-    background-color: lawngreen;
-  }
-  
-  input[type="checkbox"] {
-    visibility: hidden;
-  }
-  input[type="checkbox"]:checked + label:before {
-    background: #fff;
-    color: rgb(40, 212, 83);
-    content: "\2713";
-    text-align: center;
-    margin-right: 5px;
-  }
-  input[type="checkbox"]:checked + label:after {
-    font-weight: bold;
-  }
+.next-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(255, 223, 155);
+  padding:5px 10px;
+  font-family: sans-serif;
+  font-weight: 200px;
+  font-size: 40px;
+}
+.previous-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(255, 138, 138);
+  padding:5px 10px;
+  margin-right: 5px;
+  font-family: sans-serif;
+  font-weight: 200px;
+  font-size: 40px;
+}
+.save-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(93, 119, 153);
+  padding:5px 10px;
+  font-family: sans-serif;
+  font-weight: 200px;
+  font-size: 40px;
+}
 
-  .text-color{
-    color: white;
-  }
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.title-text-format{
+  font-size:  60px;
+  margin: 0px 0px 10px 0px;
+  font-family: sans-serif;
+  width: fit-content;
+  height: fit-content;
+  font-weight: 400px;
+}
 
-  .next-button{
-    background-color: #000000;
-    border-radius: 6px;
-    border: 1px solid black;
-    color: rgb(255, 223, 155);
-    padding:5px 10px;
-  }
-  .previous-button{
-    background-color: #000000;
-    border-radius: 6px;
-    border: 1px solid black;
-    color: rgb(255, 138, 138);
-    padding:5px 10px;
-    margin-right: 5px;
-  }
-  .save-button{
-    background-color: #000000;
-    border-radius: 6px;
-    border: 1px solid black;
-    color: rgb(93, 119, 153);
-    padding:5px 10px;
-  }
+.title-text-format2{
+  font-size:  50px;
+  margin: 0px 0px 10px 0px;
+  font-family: sans-serif;
+  width: fit-content;
+  height: fit-content;
+  font-weight: 400px;
+}
+
+.paragraph-text-format{
+  font-size:  30px;
+  font-family: sans-serif;
+  width: fit-content;
+  height: fit-content;
+  font-weight: 200px;
+}
+
+.tab-text-format{
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: 200px;
+}
+
+.attention-warning-format{
+  color: rgb(255, 92, 92);
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: 100px;
+}
+
+.button-flex-container{
+  display: flex;
+  margin: 5px auto;
+  width: fit-content;
+  gap: 200px;
+}
+
+.button-format{
+  background-color: white;
+  border-radius: 12px;
+  border-color: transparent;
+  font-size: 30px;
+  width: 400px;
+  height: fit-content;
+  padding: 30px 0px;
+}
+
+.input-container{
+  width: 300px;
+  font-size: 30px;
+  background-color: #000000;
+  border: 1px solid transparent;
+  border-bottom: 1px solid white;
+  border-radius: 6px 6px 0px 0px;
+  color: white;
+}
+
+.title-text-format3{
+  font-size: 20px;
+}
+
+.input-flex{
+  display: flex;
+  flex-direction: column;
+}

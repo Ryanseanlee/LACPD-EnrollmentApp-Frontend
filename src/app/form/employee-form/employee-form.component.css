@@ -1,54 +1,97 @@
-.mat-input-width {
-  width: 60%;
-}
-
-@media only screen and (max-width: 600px) {
-  .mat-input-width {
-    width: 100%;
-  }
-}
-
-mat-horizontal-stepper {
-  background-color: rgb(208, 222, 225);
-  border-radius: 1rem;
-}
-
-mat-label {
-  color: rgb(255, 255, 255);
-}
-
-.button-container {
-  display: flex;
-  flex-direction: row;
-}
-.spacer {
-  flex: 1 1 auto;
-}
-
-.access-option-button {
-  margin-top: 3%;
-  margin-bottom: 3%;
-
-}
-
-
-mat-step {
-  background-color: rgb(255, 255, 255);
-}
-
-mat-horizontal-stepper {
-  margin: 60px auto;
+.form-container{
   background-color: #1d1d1d;
   box-shadow: 10px 10px 20px rgb(0, 0, 0);
-
+  border-radius: 6px;
+  border-color: transparent;
+  margin: 50px auto;
+  padding: 10px 40px;
+  width: fit-content;
+  max-width: 2000px;
+  height: fit-content;
 }
 
-mat-label {
-  color: rgb(255, 255, 255);
+.container-flex-parent{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-element {
-  color: rgb(255, 255, 255);
+.container-flex-child{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.tab-text-format{
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: 200px;
+}
+
+.title-text-format{
+  font-size:  60px;
+  border-color:  transparent;
+  align-self: flex-start;
+  margin: 0px 0px 10px 0px;
+  font-family: sans-serif;
+  width: fit-content;
+  height: fit-content;
+  font-weight: 400px;
+}
+
+.input-text-title-format{
+  font-size: 40px;
+  font-family: sans-serif;
+  font-weight: 200px;
+}
+
+.radio-container{
+  background-color: rgb(13, 13, 13);
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: fit-content;
+  height: fit-content;
+}
+.radio-flex-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+input[type="radio"] {
+  background-color: #fff;
+  font: inherit;
+  color: currentColor;
+  width: 30px;
+  height: 30px;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+}
+
+.radio-text-format{
+  font-family: sans-serif;
+  font-size: 30px;
+}
+
+.radio-spacer{
+  margin: 30px 0px;
+}
+
+.input-container-format{
+  background-color: rgb(13, 13, 13);
+  font-size: 40px;
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 8px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 200px;
+  width: fit-content;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }
 
 .next-button{
@@ -57,6 +100,9 @@ element {
   border: 1px solid black;
   color: rgb(255, 223, 155);
   padding:5px 10px;
+  font-family: sans-serif;
+  font-weight: 200px;
+  font-size: 40px;
 }
 .previous-button{
   background-color: #000000;
@@ -65,6 +111,9 @@ element {
   color: rgb(255, 138, 138);
   padding:5px 10px;
   margin-right: 5px;
+  font-family: sans-serif;
+  font-weight: 200px;
+  font-size: 40px;
 }
 .save-button{
   background-color: #000000;
@@ -72,20 +121,42 @@ element {
   border: 1px solid black;
   color: rgb(93, 119, 153);
   padding:5px 10px;
+  font-family: sans-serif;
+  font-weight: 200px;
+  font-size: 40px;
 }
 
-.radio-container{
+.button-container {
+  margin-top: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
 }
 
-.radio-text-container{
-  display: flex;
-  column-gap: 5px;
-  align-items: center;
+.testing{
+  background-color: transparent;
 }
 
-.radio-button input:checked ~ .checkmark {
-  background-color: black;
+.input-container{
+  margin: 30px 0px;
+}
+
+.button-format{
+  background-color: white;
+  border-radius: 12px;
+  border-color: transparent;
+  font-size: 30px;
+  width: 400px;
+  height: fit-content;
+  padding: 30px 0px;
+}
+
+.input-container-format2{
+  background-color: transparent;
+  font-size: 40px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 200px;
+  width: fit-content;
 }
