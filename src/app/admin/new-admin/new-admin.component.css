@@ -1,59 +1,73 @@
 .new-admin-container{
     background-color: rgb(29, 29, 29);
     box-shadow: 10px 10px 20px rgb(0, 0, 0);
-    border-radius: 6px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    margin: 150px auto 0px;
+    margin: min(3.2vw, 120px) auto 0px;
     align-items: flex-start;
     width: fit-content;
-    padding: 30px;
+    padding:min(1vw, 100px)  min(3vw, 100px);
 }
 
 .new-admin-text{
-    color: white;
+    color: rgb(183, 243, 255);
     margin: 0px 0px 30px 0px;
-    font-size: 30px;
-    font-weight: 300;
+    font-size: clamp(10px, 2vw, 110px);
+    font-weight: 100;
     font-family: sans-serif;
+    align-self: center;
 }
 
 .title-text-format{
-    color: white;
-    font-size: 16px;
-    font-weight: 400px;
+    color: rgb(255, 255, 255);
+    font-size: clamp(10px, 1vw, 50px);
+    font-weight: 300;
     margin: 10px 0px 0px 0px;
 }
 
 .input-format{
     width: 100%;
     border-radius: 3px;
-    border: 1px solid black;
-    background-color: #8a8a8a;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     color:white;
     font-weight: 400;
     font-family: sans-serif;
+    font-size: clamp(20px, 1.5vw, 60px);
+    align-self: center;
 }
 
 .password-container{
-    margin: 10px 0px;
-    background-color: rgb(51, 51, 51);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: min(5vw, 50px) 0px;
+    background-color: rgb(22, 22, 22);
+    box-shadow: 5px 5px 10px black;
     color: rgb(255, 255, 255);
-    padding: 10px 10px 20px;
+    padding: min(2vw,80px);
     border-radius: 3px;
     font-weight: 400;
     font-size: 16px;
     font-family: sans-serif;
+    row-gap: min(2vw, 80px);
+    align-self: center;
 }
 
 .add-button{
     align-self: center;
-    color: rgb(255, 217, 0);
+    color: #fff3ac;
     background-color: #000000;
     border-color: transparent;
-    border-radius: 3px;
+    border-radius: 6px;
     font-family: sans-serif;
-    font-size: clamp(10px, 1vw, 30px);
-    padding: 6px 10px;
+    font-size: clamp(10px, 1.3vw, 70px);
+    padding: 6px min(2vw, 60px);
     font-weight: 500;
+}
+
+.input-container{
+    margin: 0px auto;
+    width: min(20vw, 800px);
 }

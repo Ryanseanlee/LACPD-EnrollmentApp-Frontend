@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { AdminService } from '../core/services/admin.service';
+import { TopNavbarComponent } from '../top-navbar/top-navbar.component';
 import {
   trigger,
   state,
@@ -38,7 +39,8 @@ export class AdminComponent implements OnInit {
   constructor(
     private router: Router,
     private adminService: AdminService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    private topNavBar: TopNavbarComponent
   ) {}
 
   ngOnInit(): void {
@@ -72,7 +74,7 @@ export class AdminComponent implements OnInit {
     this.adminService.setAdminCredentials(
       this.formLogin.get('password').value.toString()
     );
-
+    
     // call display request service: if 404 error from API, then redirected to login page
     this.adminService.display().subscribe({
       next: (response) => {
@@ -95,6 +97,7 @@ export class AdminComponent implements OnInit {
         //rehide password after logging in
         this.hide = true;
         this.isLoading = false;
+        this.topNavBar.setAdminInformation();
       },
       error: (error) => {
         if (error.status === 403) {

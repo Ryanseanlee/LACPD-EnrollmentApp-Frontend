@@ -4,50 +4,53 @@
   border-radius: 6px;
   border-color: transparent;
   margin: 50px auto;
-  padding: 10px 40px;
+  padding: 10px 20px;
   width: fit-content;
-  max-width: 2000px;
   height: fit-content;
 }
 
 .container-flex-parent{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  margin: 0px auto;
+  border-radius: 12px;
+  padding: min(1vw, 50px);
+  justify-content: space-around;
 }
 
 .container-flex-child{
   display: flex;
   flex-direction: column;
   width: fit-content;
+  border-radius: 12px;
+  padding: 40px;
 }
 
 .tab-text-format{
-  font-size: 30px;
+  font-size: clamp(5px, 0.8vw, 30px);
   font-family: sans-serif;
-  font-weight: 200px;
+  font-weight: 200;
 }
 
 .title-text-format{
-  font-size:  60px;
-  border-color:  transparent;
-  align-self: flex-start;
-  margin: 0px 0px 10px 0px;
+  font-size: clamp(10px, 1.5vw, 60px);
+  margin:10px auto;
+  width:fit-content;
   font-family: sans-serif;
-  width: fit-content;
-  height: fit-content;
-  font-weight: 400px;
+  color: rgb(183, 243, 255);
+  font-weight: 200;
 }
 
 .input-text-title-format{
-  font-size: 40px;
+  font-size: clamp(10px, 1vw, 50px);
   font-family: sans-serif;
-  font-weight: 200px;
+  font-weight: 100;
+  color: rgb(210, 210, 210);
 }
 
 .radio-container{
-  background-color: rgb(13, 13, 13);
-  border: 1px solid rgb(150, 150, 150);
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 10px;
   padding: 10px 20px;
   width: fit-content;
@@ -64,15 +67,16 @@ input[type="radio"] {
   background-color: #fff;
   font: inherit;
   color: currentColor;
-  width: 30px;
-  height: 30px;
+  width: min(5vw, 30px);
+  width: min(5vw, 30px);
   border: 0.15em solid currentColor;
   border-radius: 50%;
 }
 
 .radio-text-format{
   font-family: sans-serif;
-  font-size: 30px;
+  font-size: clamp(5px, 1vw, 30px);
+  font-weight: 200;
 }
 
 .radio-spacer{
@@ -80,13 +84,13 @@ input[type="radio"] {
 }
 
 .input-container-format{
-  background-color: rgb(13, 13, 13);
-  font-size: 40px;
-  border: 1px solid rgb(150, 150, 150);
-  border-radius: 8px;
+  background-color: rgb(0, 0, 0);
+  font-size: clamp(5px, 1vw, 40px);
+  border: 2px solid rgb(0, 229, 255);
+  border-radius: 5px;
   color: white;
   font-family: sans-serif;
-  font-weight: 200px;
+  font-weight: 200;
   width: fit-content;
 }
 
@@ -101,8 +105,8 @@ input[type="radio"] {
   color: rgb(255, 223, 155);
   padding:5px 10px;
   font-family: sans-serif;
-  font-weight: 200px;
-  font-size: 40px;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
 }
 .previous-button{
   background-color: #000000;
@@ -112,8 +116,8 @@ input[type="radio"] {
   padding:5px 10px;
   margin-right: 5px;
   font-family: sans-serif;
-  font-weight: 200px;
-  font-size: 40px;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
 }
 .save-button{
   background-color: #000000;
@@ -122,8 +126,8 @@ input[type="radio"] {
   color: rgb(93, 119, 153);
   padding:5px 10px;
   font-family: sans-serif;
-  font-weight: 200px;
-  font-size: 40px;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
 }
 
 .button-container {
@@ -137,26 +141,35 @@ input[type="radio"] {
 }
 
 .input-container{
-  margin: 30px 0px;
+  margin: min(1vw, 30px) 0px;
 }
 
 .button-format{
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   border-radius: 12px;
   border-color: transparent;
-  font-size: 30px;
-  width: 400px;
-  height: fit-content;
-  padding: 30px 0px;
+  font-size: clamp(10px, 1vw, 30px);
+  width: min(15vw, 400px);
+  height: min(15vw, 100px);
+  color: white;
+  margin-bottom: 20px;
 }
 
 .input-container-format2{
   background-color: transparent;
-  font-size: 40px;
+  font-size: min(20px, 5vw, 40px);
   border: 1px solid transparent;
   border-bottom: 1px solid white;
   color: white;
   font-family: sans-serif;
   font-weight: 200px;
   width: fit-content;
+}
+
+.dropdown-menu-format{
+  width: fit-content;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid white;
+  color: white;
+  font-size: min(20px, 5vw, 40px);
 }

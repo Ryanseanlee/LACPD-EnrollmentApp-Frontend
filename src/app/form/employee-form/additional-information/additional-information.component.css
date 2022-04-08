@@ -1,33 +1,39 @@
-.flex-container {
-  display: flex;
+.title-text-format{
+  font-size: clamp(10px, 1.5vw, 60px);
+  margin:10px auto;
+  width:fit-content;
+  font-family: sans-serif;
+  color: rgb(0, 229, 255);
+  font-weight: 200;
 }
 
-.flex-column {
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+.input-text-title-format{
+  font-size: clamp(10px, 1.5vw, 40px);
+  font-family: sans-serif;
+  font-weight: 200px;
+  margin-bottom: 60px;
 }
 
-div.flex-container {
-  margin-top: 10px;
+.button-format{
+  background-color: rgb(0, 0, 0);
+  border-radius: 12px;
+  border-color: transparent;
+  font-size: clamp(10px, 1vw, 30px);
+  width: min(15vw, 400px);
+  height: min(15vw, 100px);
+  color: white;
+  margin-bottom: 20px;
 }
 
-.button-container {
+.flex-container{
   display: flex;
   flex-direction: row;
-  margin-top: 40px;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .spacer {
   flex: 1 1 auto;
-}
-
-.access-option-button {
-  width: 235px;
-}
-
-.mat-button-toggle-checked {
-  background-color: lawngreen;
 }
 
 .next-button{
@@ -36,6 +42,9 @@ div.flex-container {
   border: 1px solid black;
   color: rgb(255, 223, 155);
   padding:5px 10px;
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
 }
 .previous-button{
   background-color: #000000;
@@ -44,6 +53,9 @@ div.flex-container {
   color: rgb(255, 138, 138);
   padding:5px 10px;
   margin-right: 5px;
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
 }
 .save-button{
   background-color: #000000;
@@ -51,15 +63,13 @@ div.flex-container {
   border: 1px solid black;
   color: rgb(93, 119, 153);
   padding:5px 10px;
-}
-@media only screen and (max-width: 600px) {
-  .flex-container {
-    display: block;
-  }
-
-  .access-option-button {
-    margin-bottom: 5px;
-  }
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
 }
 
-
+.button-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+}

@@ -75,3 +75,9 @@
     height: auto;
     width: min(1.7vw, 80px);
 }
+
+.welcome-name{
+    font-size: 20px;
+    font-weight: 200;
+    font-family: sans-serif;
+}

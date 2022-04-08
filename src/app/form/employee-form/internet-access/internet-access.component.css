@@ -5,8 +5,8 @@
   color: rgb(255, 223, 155);
   padding:5px 10px;
   font-family: sans-serif;
-  font-weight: 200px;
-  font-size: 40px;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
 }
 .previous-button{
   background-color: #000000;
@@ -16,8 +16,8 @@
   padding:5px 10px;
   margin-right: 5px;
   font-family: sans-serif;
-  font-weight: 200px;
-  font-size: 40px;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
 }
 .save-button{
   background-color: #000000;
@@ -26,9 +26,10 @@
   color: rgb(93, 119, 153);
   padding:5px 10px;
   font-family: sans-serif;
-  font-weight: 200px;
-  font-size: 40px;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
 }
+
 
 .button-container {
   margin-top: 20px;
@@ -36,42 +37,42 @@
   flex-direction: row;
 }
 .title-text-format{
-  font-size:  60px;
-  margin: 0px 0px 10px 0px;
+  font-size: clamp(10px, 1.5vw, 60px);
+  margin:10px auto;
+  width:fit-content;
   font-family: sans-serif;
-  width: fit-content;
-  height: fit-content;
-  font-weight: 400px;
+  color: rgb(0, 229, 255);
+  font-weight: 200;
 }
 
 .title-text-format2{
-  font-size:  50px;
+  font-size: clamp(10px, 1vw, 60px);
   margin: 0px 0px 10px 0px;
   font-family: sans-serif;
   width: fit-content;
   height: fit-content;
-  font-weight: 400px;
+  font-weight: 200;
 }
 
 .paragraph-text-format{
-  font-size:  30px;
+  font-size: clamp(3px, 0.8vw, 30px);
   font-family: sans-serif;
   width: fit-content;
   height: fit-content;
-  font-weight: 200px;
+  font-weight: 200;
 }
 
 .tab-text-format{
   font-size: 30px;
   font-family: sans-serif;
-  font-weight: 200px;
+  font-weight: 200;
 }
 
 .attention-warning-format{
   color: rgb(255, 92, 92);
-  font-size: 30px;
+  font-size: clamp(10px, 1vw, 30px);
   font-family: sans-serif;
-  font-weight: 100px;
+  font-weight: 100;
 }
 
 .button-flex-container{
@@ -82,13 +83,14 @@
 }
 
 .button-format{
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   border-radius: 12px;
   border-color: transparent;
-  font-size: 30px;
-  width: 400px;
-  height: fit-content;
-  padding: 30px 0px;
+  font-size: clamp(5px, 1vw, 30px);
+  width: min(15vw, 400px);
+  height: min(15vw, 100px);
+  color: white;
+  margin-bottom: 20px;
 }
 
 .input-container{
@@ -102,7 +104,7 @@
 }
 
 .title-text-format3{
-  font-size: 20px;
+  font-size: clamp(5px, 1vw, 20px);
 }
 
 .input-flex{

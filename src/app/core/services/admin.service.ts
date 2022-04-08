@@ -43,6 +43,8 @@ export class AdminService {
     }
   }
 
+
+
   // This function sets username
   setAdminUsername(usernameFromAdmin: string): void {
     this.adminUsername = usernameFromAdmin;
@@ -118,10 +120,13 @@ export class AdminService {
     );
   }
 
-  public newAdmin(email: string, password: string){
+  public newAdmin(firstName: string, middleName: string, lastName: string,email: string, password: string){
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        'firstName': firstName,
+        'middleName': middleName,
+        'lastName': lastName,
         email:this.adminUsername,
         password:this.adminPassword,
         'newemail': email,
@@ -570,4 +575,19 @@ export class AdminService {
       httpOptions
     );
   }
+
+  public getAdminInfo(): Observable<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        email: this.adminUsername,
+        password: this.adminPassword,
+      }),
+    };
+    return this.http.get(
+      `${environment.apiUrl}/admin/details`,
+      httpOptions
+    );
+  }
+
 }

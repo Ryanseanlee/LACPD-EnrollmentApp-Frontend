@@ -1,49 +1,80 @@
-.text-test{
-    color: white;
+.title-text-format{
+  font-size: clamp(10px, 2vw, 60px);
+  margin:10px auto;
+  width:fit-content;
+  font-family: sans-serif;
+  color: rgb(183, 243, 255);
+  font-weight: 200;
+}
+
+.input-text-title-format{
+  font-size: clamp(10px, 1vw, 50px);
+  font-family: sans-serif;
+  font-weight: 100;
+  color: rgb(210, 210, 210);
+}
+.input-container-format{
+  background-color: rgb(0, 0, 0);
+  font-size: clamp(5px, 1vw, 40px);
+  border: 2px solid rgb(0, 229, 255);
+  border-radius: 5px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 200;
+  width: fit-content;
+}
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: min(2vw, 80px);
+
+}
+
+.spacer {
+  flex: 1 1 auto;
 }
 
 .next-button{
-    background-color: #000000;
-    border-radius: 6px;
-    border: 1px solid black;
-    color: rgb(255, 197, 73);
-    padding:5px 10px;
-  }
-  .previous-button{
-    background-color: #000000;
-    border-radius: 6px;
-    border: 1px solid black;
-    color: rgb(248, 60, 60);
-    padding:5px 10px;
-    margin-right: 5px;
-  }
-  .save-button{
-    background-color: #000000;
-    border-radius: 6px;
-    border: 1px solid black;
-    color: rgb(93, 119, 153);
-    padding:5px 10px;
-  }
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(255, 223, 155);
+  padding:5px 10px;
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
+}
+.previous-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(255, 138, 138);
+  padding:5px 10px;
+  margin-right: 5px;
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
+}
+.save-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(93, 119, 153);
+  padding:5px 10px;
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: clamp(10px, 1vw, 40px);
+}
 
-  .next-button{
-    background-color: #000000;
-    border-radius: 6px;
-    border: 1px solid black;
-    color: rgb(255, 223, 155);
-    padding:5px 10px;
-  }
-  .previous-button{
-    background-color: #000000;
-    border-radius: 6px;
-    border: 1px solid black;
-    color: rgb(255, 138, 138);
-    padding:5px 10px;
-    margin-right: 5px;
-  }
-  .save-button{
-    background-color: #000000;
-    border-radius: 6px;
-    border: 1px solid black;
-    color: rgb(93, 119, 153);
-    padding:5px 10px;
-  }
+.button-container {
+  display: flex;
+  flex-direction: row;
+}

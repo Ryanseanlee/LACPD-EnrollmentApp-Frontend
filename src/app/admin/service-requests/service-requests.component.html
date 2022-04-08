@@ -40,7 +40,7 @@
         <td *matCellDef="let element">{{ formatDate(element.submitDate) }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="isEmployee">
+      <ng-container matColumnDef="employee">
         <th *matHeaderCellDef>Employee/Contractor</th>
         <td *matCellDef="let element">
           {{ element.employee ? "Employee" : "Contractor" }}

@@ -1,217 +1,219 @@
-<div class="container contact-form">
-  <h3>You're Almost Done!</h3>
-  <p class="instruction">
-    Please confirm the information below. If there is any mistake, click on the
-    heading to go back and make changes. Click Submit once done!
-  </p>
-
+<div>
+  <div class="title-text-format">You're Almost Done!</div>
+  <div class="description-container">
+    <div class="description-text-format">
+      Please confirm the information below. If there is any mistake, click on the
+      heading to go back and make changes. Click Submit once done!
+    </div>
+  </div>
   <!-- Start of First Row -->
-  <div class="row">
+  <div class="grid-container">
     <!-- Employee Basic Informaiton -->
-    <div class="col">
-      <h4 (click)="moveIndex(0)">Employee Basic Information</h4>
+    <div class="flex-column personal-information-container">
+      <div class="column-title-text-format" (click)="moveIndex(0)">Employee Basic Information</div>
+      <div class="flex-row2">
+        <div class="flex-column2">
 
-      <div>
-        <h6>First Name</h6>
-        <div class="sub-group">
-          <p>
+      <div class="input-container">
+        <div class="input-title-text-format">First Name</div>
+        <div class="subgroup">
+          <div class="info-text-format">
             {{ regForm.value.personalInformation.firstName || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h6>Middle Initial</h6>
-        <div class="sub-group">
-          <p>
+      <div class="input-container">
+        <div class="input-title-text-format">Middle Initial</div>
+        <div class="subgroup">
+          <div class="info-text-format">
             {{ regForm.value.personalInformation.middleInitial || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h6>Last Name</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Last Name</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.personalInformation.lastName || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h6>Email Address</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Email Address</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.personalInformation.emailAddress || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
-      <div>
-        <h6>County Department/Organization Name</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">County Department/Organization Name</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{
               regForm.value.personalInformation.countyDepartmentName || "N/A"
             }}
-          </p>
+          </div>
         </div>
       </div>
-      <div>
-        <h6>County Department Number</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">County Department Number</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{
               regForm.value.personalInformation.countyDepartmentNumber || "N/A"
             }}
-          </p>
+          </div>
         </div>
       </div>
-      <div>
-        <h6>Cell Phone Number</h6>
+    </div>
+    <div class="flex-column2">
+      <div class="input-container">
+        <div class="input-title-text-format">Cell Phone Number</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.personalInformation.phoneNumber || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
-      <div>
-        <h6>Work Phone Number</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Work Phone Number</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.personalInformation.workPhoneNumber || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
-      <div>
-        <h6>Employee Number</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Employee Number</div>
         <div class="subgroup">
-          <p class="font-weight-light">
+          <div class="info-text-format">
             {{ regForm.value.personalInformation.employeeNumber || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
-      <div>
-        <h6>Contractor Company Name</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Contractor Company Name</div>
         <div class="subgroup">
-          <p class="font-weight-light">
+          <div class="info-text-format">
             {{ regForm.value.personalInformation.contractorName || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
-      <div>
-        <h6>Contract Work Order Number</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Contract Work Order Number</div>
         <div class="subgroup">
-          <p class="font-weight-light">
+          <div class="info-text-format">
             {{
               regForm.value.personalInformation.workOrderNumberInput || "N/A"
             }}
-          </p>
+          </div>
         </div>
       </div>
-      <div>
-        <h6>Contract Expiration Date</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Contract Expiration Date</div>
         <div class="subgroup">
-          <p class="font-weight-light">
+          <div class="info-text-format">
             {{ regForm.value.personalInformation.expirationDate || "N/A" }}
-          </p>
+          </div>
         </div>
+      </div>
+    </div>
       </div>
     </div>
 
     <!-- Employee Address Information -->
-    <div class="col">
-      <h4 (click)="moveIndex(1)">Employee Address</h4>
+    <div class="flex-column employee-address-container">
+      <div class="column-title-text-format" (click)="moveIndex(1)">Employee Address</div>
 
-      <div>
-        <h6>Street</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Street</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.addressInformation.address || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h6>City</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">City</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.addressInformation.city || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h6>State</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">State</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.addressInformation.state || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h6>Zip Code</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Zip Code</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.addressInformation.zipCode || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Manager Information -->
-    <div class="col">
-      <h4 (click)="moveIndex(1)">Manager Informaiton</h4>
+    <div class="flex-column manager-information-container">
+      <div class="column-title-text-format" (click)="moveIndex(1)">Manager Informaiton</div>
 
-      <div>
-        <h6>First Name</h6>
+      <div class="input-container"> 
+        <div class="input-title-text-format">First Name</div>
         <div class="sub-group">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.managerInformation.managerFirstName || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h6>Last Name</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Last Name</div>
         <div class="sub-group">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.managerInformation.managerLastName || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h6>Email</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Email</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.managerInformation.managerPhoneNumber || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h6>Phone Number</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Phone Number</div>
         <div class="subgroup">
-          <p>
+          <div class="info-text-format">
             {{ regForm.value.managerInformation.managerEmail || "N/A" }}
-          </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   <!-- End of First Row -->
 
-  <br />
-
-  <!-- Start of Second Row -->
-  <div class="row">
     <!-- Applications Requested -->
-    <div class="col">
-      <h4 (click)="moveIndex(4)">Applications Requested</h4>
+    <div class="flex-column applications-request-container">
+      <div class="column-title-text-format"  (click)="moveIndex(4)">Applications Requested</div>
 
-      <div>
-        <h6>Selected Policies</h6>
+      <div class="input-container ">
+        <div class="input-title-text-format">Selected Policies</div>
         <div class="subgroup">
           <div *ngIf="regForm.value.additionalInformation.laCountyGovAccess">
             <input type="checkbox" disabled checked />
@@ -235,18 +237,18 @@
               regForm.value.additionalInformation.lacMobileWifiAccess == false
             "
           >
-            <p>No applications selected</p>
+            <div>No applications selected</div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Internet Access Information-->
-    <div class="col">
-      <h4 (click)="moveIndex(2)">Internet Access Information</h4>
+    <div class="flex-column internet-access-information-container">
+      <div class="column-title-text-format"  (click)="moveIndex(2)">Internet Access Information</div>
 
-      <div>
-        <h6>Selected Policies</h6>
+      <div class="input-container">
+        <div class="input-title-text-format">Selected Policies</div>
         <div class="subgroup">
           <div *ngIf="regForm.value.internetAccess.countyWidePolicyA">
             <input type="checkbox" disabled checked />
@@ -268,11 +270,11 @@
             <label>Stream Media</label>
           </div>
           <div>
-            <h6>Justification</h6>
+            <div class="input-title-text-format">Justification</div>
             <div class="subgroup">
-              <p>
+              <div class="info-text-format">
                 {{ regForm.value.internetAccess.justification }}
-              </p>
+              </div>
             </div>
           </div>
 
@@ -284,19 +286,19 @@
               regForm.value.internetAccess.streamMedia == false
             "
           >
-            <p>No policies selected</p>
+            <div>No policies selected</div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Additional Access Information -->
-    <div class="col">
-      <h4 (click)="moveIndex(3)">Additional Access Information</h4>
+    <div class="flex-column additional-access-information-container">
+      <div class="column-title-text-format"  (click)="moveIndex(3)">Additional Access Information</div>
 
       <!-- IBM info -->
-      <div>
-        <h6>IBM Info</h6>
+      <div class="input-container additional-access-container">
+        <div class="input-title-text-format">IBM Info</div>
         <div
           class="subgroup"
           *ngIf="
@@ -307,30 +309,30 @@
             else elseBlock
           "
         >
-          <p>Logon ID:</p>
-          <p>
+          <div class="input-title-text-format">Logon ID:</div>
+          <div class="info-text-format">
             {{ regForm.value.accessInformation.ibmLogonId || "N/A" }}
-          </p>
-          <p>Major Group Code</p>
-          <p>
+          </div>
+          <div class="input-title-text-format">Major Group Code</div>
+          <div class="info-text-format">
             {{ regForm.value.accessInformation.majorGroupCode || "N/A" }}
-          </p>
-          <p>LSO Group Code:</p>
-          <p>
+          </div>
+          <div class="input-title-text-format">LSO Group Code:</div>
+          <div class="info-text-format">
             {{ regForm.value.accessInformation.lsoGroupCode || "N/A" }}
-          </p>
-          <p>Security Authorization:</p>
-          <p>
+          </div>
+          <div class="input-title-text-format">Security Authorization:</div>
+          <div class="info-text-format"> 
             {{ regForm.value.accessInformation.securityAuthorization || "N/A" }}
-          </p>
+          </div>
         </div>
         <ng-template #elseBlock>None Entered</ng-template>
       </div>
 
-      <br />
+  
 
-      <div>
-        <h6>Unix Info</h6>
+      <div class="input-container additional-access-container">
+        <div class="column-title-text-format"  class="input-title-text-format">Unix Info</div>
         <div
           class="subgroup"
           *ngIf="
@@ -341,30 +343,30 @@
             else elseBlock
           "
         >
-          <p>Logon ID:</p>
-          <p>
+          <div class="input-title-text-format">Logon ID:</div>
+          <div class="info-text-format">
             {{ regForm.value.accessInformation.unixLogonId || "N/A" }}
-          </p>
-          <p>Application</p>
-          <p>
+          </div>
+          <div class="input-title-text-format">Application</div>
+          <div class="info-text-format">
             {{ regForm.value.accessInformation.application || "N/A" }}
-          </p>
-          <p>Access Group:</p>
-          <p>
+          </div>
+          <div class="input-title-text-format">Access Group:</div>
+          <div class="info-text-format">
             {{ regForm.value.accessInformation.accessGroup || "N/A" }}
-          </p>
-          <p>Account Number:</p>
-          <p>
+          </div>
+          <div class="input-title-text-format">Account Number:</div>
+          <div class="info-text-format">
             {{ regForm.value.accessInformation.accountNumber || "N/A" }}
-          </p>
+          </div>
         </div>
         <ng-template #elseBlock></ng-template>
       </div>
 
-      <br />
+  
 
-      <div>
-        <h6>SecurID Remote Access</h6>
+      <div class="input-container additional-access-container">
+        <div class="input-title-text-format">SecurID Remote Access</div>
         <div
           class="subgroup"
           *ngIf="
@@ -373,27 +375,23 @@
             else elseBlock
           "
         >
-          <p>Billing Account Number:</p>
-          <p>
+          <div class="input-title-text-format">Billing Account Number:</div>
+          <div class="info-text-format">
             {{ regForm.value.accessInformation.billingAccountNumber || "N/A" }}
-          </p>
-          <p>Access Type</p>
-          <p>
+          </div>
+          <div class="input-title-text-format">Access Type</div>
+          <div class="info-text-format">
             {{ regForm.value.accessInformation.accessType || "N/A" }}
-          </p>
+          </div>
         </div>
         <ng-template #elseBlock>None Entered</ng-template>
       </div>
     </div>
-  </div>
   <!-- End of Second Row-->
-
-  <div class="text-center">
-    <button class="btnContact" (click)="onClick()">Submit</button>
+</div>
+<div class="button-container">
+  <div>
+    <button class="submit-button" (click)="onClick()">Submit</button>
   </div>
-  <div class="text-center">
-    <button class="btnContact" (click)="onSubmitMarkNotCompleted()">
-      Submit (But do not mark as completed)
-    </button>
-  </div>
+</div>
 </div>

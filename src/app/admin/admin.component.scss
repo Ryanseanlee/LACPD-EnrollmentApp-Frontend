@@ -6,16 +6,17 @@
 }
 
 .max-logo{
-  margin: min(5vw,250px) 0px min(4vw,300px) 0px;
-  border-radius: 6px;
-  padding: 15px;
+  margin: min(2vw, 180px) auto min(12vw,500px);
+  border-radius: 12px;
+  padding: min(1vw, 60px) min(1vw, 30px);
+  width: fit-content;
   box-shadow: 10px 10px 20px rgb(0, 0, 0);
   background-color: rgb(29, 29, 29);
 }
 
 .logo{
-  max-width: min(55vw, 2000px);
-  min-width: max(10vw, 320px);
+  width: min(50vw, 2000px);
+  
 }
 
 .login-input-container{
@@ -23,49 +24,48 @@
   flex-direction: column;
   align-items: center;
   background-color: #1d1d1d;
-  padding: 20px 40px;
-  border-radius: 10px;
+  padding: min(1vw, 100px) min(2vw, 160px);
+  border-radius: 12px;
   box-shadow: 10px 10px 20px rgb(0, 0, 0);
   background-color: rgb(29, 29, 29);
 }
 
 .greetings{
-  font-size: clamp(25px, 3vw, 80px);
-  color: rgb(255, 255, 255);
+  font-size: clamp(40px, 2vw, 100px);
+  color: rgb(183, 243, 255);
   font-family: sans-serif;
   font-weight: 300;
 }
 
 .email-input-text-box{ 
-  border-color: transparent;
+  border: 1px solid white;
   border-radius: 3px;
-  background-color: #8a8a8a;
-  font-size: clamp(10px, 1vw, 30px);
+  background-color: #000000;
+  font-size: clamp(6px,1vw, 50px);
   font-family: sans-serif;
-  margin: min(2vw, 400px) auto min(1vw, 200px);
+  margin: min(2vw, 400px) auto min(1vw, 50px);
   font-weight: 500;
-  color: black;
+  color: white;
 }
 
 .password-input-text-box{ 
-  border-color: transparent;
+  border: 1px solid white;
   border-radius: 3px;
-  background-color: #8a8a8a;
-  font-size: clamp(10px, 1vw, 30px);
+  background-color: #000000;
+  font-size: clamp(6px,1vw, 50px);
   margin: 0 auto min(1vw, 200px);
   font-family: sans-serif;
   font-weight: 500;
-  color:  black;
+  color:  white;
 }
 
 .login-button{
-  color: rgb(255, 217, 0);
+  color: rgb(255, 235, 123);
   background-color: #000000;
   border-color: transparent;
   border-radius: 3px;
   font-family: sans-serif;
-  font-size: clamp(10px, 1vw, 30px);
-  padding: 6px 30px;
+  font-size: clamp(6px, 1vw, 50px);
   font-weight: 500;
 }
 
@@ -130,8 +130,6 @@
     color: white;
     border-radius: 3px;
     font-family: sans-serif;
-    font-size: 20px;
-    padding: 10px 20px; 
-    width: 150px;
+    font-size: clamp(10px, 2vw, 30px);
   }
 }
