@@ -5,7 +5,7 @@
   color: rgb(255, 223, 155);
   padding:5px 10px;
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-size: clamp(10px, 1vw, 40px);
 }
 .previous-button{
@@ -16,7 +16,7 @@
   padding:5px 10px;
   margin-right: 5px;
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-size: clamp(10px, 1vw, 40px);
 }
 .save-button{
@@ -26,7 +26,7 @@
   color: rgb(93, 119, 153);
   padding:5px 10px;
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-size: clamp(10px, 1vw, 40px);
 }
 
@@ -41,17 +41,17 @@
   margin:10px auto;
   width:fit-content;
   font-family: sans-serif;
-  color: rgb(0, 229, 255);
-  font-weight: 200;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
 }
 
 .title-text-format2{
-  font-size: clamp(10px, 1vw, 60px);
+  font-size: clamp(10px, 1.5vw, 60px);
   margin: 0px 0px 10px 0px;
   font-family: sans-serif;
   width: fit-content;
   height: fit-content;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .paragraph-text-format{
@@ -59,20 +59,20 @@
   font-family: sans-serif;
   width: fit-content;
   height: fit-content;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .tab-text-format{
   font-size: 30px;
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .attention-warning-format{
   color: rgb(255, 92, 92);
   font-size: clamp(10px, 1vw, 30px);
   font-family: sans-serif;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .button-flex-container{
@@ -94,8 +94,8 @@
 }
 
 .input-container{
-  width: 300px;
-  font-size: 30px;
+  width: min(10vw, 300px);
+  font-size: clamp(10px, 1vw, 30px);
   background-color: #000000;
   border: 1px solid transparent;
   border-bottom: 1px solid white;

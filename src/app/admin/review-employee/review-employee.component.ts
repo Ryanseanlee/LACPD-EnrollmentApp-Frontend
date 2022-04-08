@@ -107,8 +107,11 @@ export class ReviewEmployeeComponent implements OnInit {
     //create the form group
     this.approval = new FormGroup({
       iscomplete: new FormControl(this.formDataService.formData.complete),
-
+      
       personalInformation: new FormGroup({
+        employee: new FormControl(this.formDataService.formData.employee, [
+          Validators.required
+        ]),
         lastName: new FormControl(this.formDataService.formData.lastName, [
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
@@ -156,18 +159,18 @@ export class ReviewEmployeeComponent implements OnInit {
       }),
       addressInformation: new FormGroup({
         address: new FormControl(
-          this.formDataService.formData.address,
+          this.formDataService.formData.businessStreetAddress,
           Validators.required
         ),
-        city: new FormControl(this.formDataService.formData.city, [
+        city: new FormControl(this.formDataService.formData.businessCity, [
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
         ]),
-        state: new FormControl(this.formDataService.formData.state, [
+        state: new FormControl(this.formDataService.formData.businessState, [
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
         ]),
-        zipCode: new FormControl(this.formDataService.formData.zipCode, [
+        zipCode: new FormControl(this.formDataService.formData.businessZip, [
           Validators.required,
           Validators.minLength(5),
           Validators.maxLength(7),

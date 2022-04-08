@@ -4,17 +4,17 @@
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    margin: min(3.2vw, 120px) auto 0px;
+    margin: min(2vw, 120px) auto 0px;
     align-items: flex-start;
     width: fit-content;
-    padding:min(1vw, 100px)  min(3vw, 100px);
+    padding:min(1vw, 100px);
 }
 
 .new-admin-text{
     color: rgb(183, 243, 255);
     margin: 0px 0px 30px 0px;
-    font-size: clamp(10px, 2vw, 110px);
-    font-weight: 100;
+    font-size: clamp(10px, 1.5vw, 110px);
+    font-weight: 300;
     font-family: sans-serif;
     align-self: center;
 }
@@ -34,7 +34,7 @@
     color:white;
     font-weight: 400;
     font-family: sans-serif;
-    font-size: clamp(20px, 1.5vw, 60px);
+    font-size: clamp(20px, 1vw, 60px);
     align-self: center;
 }
 
@@ -49,7 +49,7 @@
     padding: min(2vw,80px);
     border-radius: 3px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: clamp(20px, 1vw, 60px);
     font-family: sans-serif;
     row-gap: min(2vw, 80px);
     align-self: center;
@@ -62,12 +62,15 @@
     border-color: transparent;
     border-radius: 6px;
     font-family: sans-serif;
-    font-size: clamp(10px, 1.3vw, 70px);
-    padding: 6px min(2vw, 60px);
-    font-weight: 500;
+    font-size: clamp(10px, 1vw, 70px);
+    padding-left: min(1vw, 60px);
+    padding-right: min(1vw, 60px);
+    padding-top: min(0.5vw, 30px);
+    padding-bottom: min(0.5vw, 30px);
+    font-weight: 400;
 }
 
 .input-container{
     margin: 0px auto;
-    width: min(20vw, 800px);
+    width: min(16vw, 800px);
 }

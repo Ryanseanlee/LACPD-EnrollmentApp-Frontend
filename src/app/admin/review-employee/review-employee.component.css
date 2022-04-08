@@ -1,63 +1,174 @@
-.mat-input-width {
-  width: 60%;
+.form-container{
+  background-color: #1d1d1d;
+  box-shadow: 10px 10px 20px rgb(0, 0, 0);
+  border-radius: 6px;
+  border-color: transparent;
+  margin: 0px auto;
+  margin-top: min(1vw, 10px);
+  padding: 10px 20px;
+  width: fit-content;
+  height: fit-content;
 }
 
-
-.button-container {
+.container-flex-parent{
   display: flex;
   flex-direction: row;
-  margin-top: 40px;
+  margin: 0px auto;
+  border-radius: 12px;
+  padding: min(0.5vw, 50px);
+  justify-content: space-around;
+}
+
+.container-flex-child{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  border-radius: 12px;
+  padding: min(1vw, 40px);
+  gap: min(5vw, 20px);
+}
+
+.tab-text-format{
+  font-size: clamp(5px, 0.8vw, 30px);
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.title-text-format{
+  font-size: clamp(10px, 1.5vw, 60px);
+  margin: 0px auto;
+  width:fit-content;
+  font-family: sans-serif;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+}
+
+.input-text-title-format{
+  font-size: clamp(10px, 1vw, 50px);
+  font-family: sans-serif;
+  font-weight: 400;
+  color: rgb(210, 210, 210);
+}
+
+.radio-container{
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: fit-content;
+  height: fit-content;
+}
+.radio-flex-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+input[type="radio"] {
+  background-color: #fff;
+  font: inherit;
+  color: currentColor;
+  width: min(5vw, 30px);
+  width: min(5vw, 30px);
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+}
+
+.radio-text-format{
+  font-family: sans-serif;
+  font-size: clamp(5px, 1vw, 30px);
+  font-weight: 400;
+}
+
+.radio-spacer{
+  margin: 30px 0px;
+}
+
+.input-container-format{
+  background-color: rgb(0, 0, 0);
+  font-size: clamp(5px, 1vw, 40px);
+  border: 2px solid rgb(0, 229, 255);
+  border-radius: 5px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 400;
+  width: fit-content;
 }
 
 .spacer {
   flex: 1 1 auto;
 }
 
-.access-option-button {
-  margin-top: 3%;
-  margin-bottom: 3%;
+.next-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(255, 223, 155);
+  padding:5px 10px;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: clamp(10px, 1vw, 40px);
+}
+.previous-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(255, 138, 138);
+  padding:5px 10px;
+  margin-right: 5px;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: clamp(10px, 1vw, 40px);
+}
+.save-button{
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid black;
+  color: rgb(93, 119, 153);
+  padding:5px 10px;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: clamp(10px, 1vw, 40px);
 }
 
-
-.flex-container {
-  display: flex;
-}
-
-.flex-column {
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-div.flex-container {
-  margin-top: 10px;
-}
-
-.active-directory-button-container, .internet-access-button-container {
+.button-container {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
-  margin-top: 40px;
 }
 
-.active-directory-button, .internet-access-button {
-  width: 235px;
+.testing{
+  background-color: transparent;
 }
 
-.mat-button-toggle-checked {
-  background-color: rgb(255, 255, 255);
+.button-format{
+  background-color: rgb(0, 0, 0);
+  border-radius: 12px;
+  border-color: transparent;
+  font-size: clamp(10px, 1vw, 30px);
+  width: min(15vw, 400px);
+  height: min(15vw, 100px);
+  color: white;
+  margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 600px) {
-  .flex-container {
-    display: block;
-  }
-  .mat-input-width {
-    width: 100%;
-  }
-  .active-directory-button, .internet-access-button {
-    margin-bottom: 5px;
-  }
+.input-container-format2{
+  background-color: transparent;
+  font-size: min(20px, 5vw, 40px);
+  border: 1px solid transparent;
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 200px;
+  width: fit-content;
 }
-.button-color{
-  background-color: black;
+
+.dropdown-menu-format{
+  width: fit-content;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid white;
+  color: white;
+  font-size: min(20px, 5vw, 40px);
 }
+

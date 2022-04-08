@@ -3,7 +3,8 @@
   box-shadow: 10px 10px 20px rgb(0, 0, 0);
   border-radius: 6px;
   border-color: transparent;
-  margin: 50px auto;
+  margin: 0px auto;
+  margin-top: min(1vw, 10px);
   padding: 10px 20px;
   width: fit-content;
   height: fit-content;
@@ -14,7 +15,7 @@
   flex-direction: row;
   margin: 0px auto;
   border-radius: 12px;
-  padding: min(1vw, 50px);
+  padding: min(0.5vw, 50px);
   justify-content: space-around;
 }
 
@@ -23,28 +24,29 @@
   flex-direction: column;
   width: fit-content;
   border-radius: 12px;
-  padding: 40px;
+  padding: min(1vw, 40px);
+  gap: min(5vw, 20px);
 }
 
 .tab-text-format{
   font-size: clamp(5px, 0.8vw, 30px);
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .title-text-format{
   font-size: clamp(10px, 1.5vw, 60px);
-  margin:10px auto;
+  margin: 0px auto;
   width:fit-content;
   font-family: sans-serif;
-  color: rgb(183, 243, 255);
-  font-weight: 200;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
 }
 
 .input-text-title-format{
   font-size: clamp(10px, 1vw, 50px);
   font-family: sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   color: rgb(210, 210, 210);
 }
 
@@ -76,7 +78,7 @@ input[type="radio"] {
 .radio-text-format{
   font-family: sans-serif;
   font-size: clamp(5px, 1vw, 30px);
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .radio-spacer{
@@ -90,7 +92,7 @@ input[type="radio"] {
   border-radius: 5px;
   color: white;
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   width: fit-content;
 }
 
@@ -105,7 +107,7 @@ input[type="radio"] {
   color: rgb(255, 223, 155);
   padding:5px 10px;
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-size: clamp(10px, 1vw, 40px);
 }
 .previous-button{
@@ -116,7 +118,7 @@ input[type="radio"] {
   padding:5px 10px;
   margin-right: 5px;
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-size: clamp(10px, 1vw, 40px);
 }
 .save-button{
@@ -126,7 +128,7 @@ input[type="radio"] {
   color: rgb(93, 119, 153);
   padding:5px 10px;
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-size: clamp(10px, 1vw, 40px);
 }
 
@@ -138,10 +140,6 @@ input[type="radio"] {
 
 .testing{
   background-color: transparent;
-}
-
-.input-container{
-  margin: min(1vw, 30px) 0px;
 }
 
 .button-format{
@@ -173,3 +171,4 @@ input[type="radio"] {
   color: white;
   font-size: min(20px, 5vw, 40px);
 }
+

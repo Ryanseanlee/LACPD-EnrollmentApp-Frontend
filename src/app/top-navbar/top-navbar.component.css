@@ -77,7 +77,9 @@
 }
 
 .welcome-name{
+    position:static;
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 400;
     font-family: sans-serif;
+    width: fit-content;
 }

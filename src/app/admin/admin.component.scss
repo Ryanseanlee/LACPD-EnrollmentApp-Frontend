@@ -32,7 +32,7 @@
 
 .greetings{
   font-size: clamp(40px, 2vw, 100px);
-  color: rgb(183, 243, 255);
+  color: rgb(255, 255, 255);
   font-family: sans-serif;
   font-weight: 300;
 }
@@ -41,7 +41,7 @@
   border: 1px solid white;
   border-radius: 3px;
   background-color: #000000;
-  font-size: clamp(6px,1vw, 50px);
+  font-size: clamp(6px,0.9vw, 50px);
   font-family: sans-serif;
   margin: min(2vw, 400px) auto min(1vw, 50px);
   font-weight: 500;
@@ -52,7 +52,7 @@
   border: 1px solid white;
   border-radius: 3px;
   background-color: #000000;
-  font-size: clamp(6px,1vw, 50px);
+  font-size: clamp(6px,0.9vw, 50px);
   margin: 0 auto min(1vw, 200px);
   font-family: sans-serif;
   font-weight: 500;

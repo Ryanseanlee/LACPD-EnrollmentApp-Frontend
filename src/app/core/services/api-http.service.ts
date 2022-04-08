@@ -25,7 +25,7 @@ export class ApiHttpService {
     const reformated = {
       // Form specific data
       submitted: isSubmitted,
-      isEmployee: data.personalInformation.isEmployee, // Since it is the employee form
+      employee: data.personalInformation.employee, // Since it is the employee form
 
       // Personal Information\
       createDate: data.personalInformation.createDate,
@@ -43,10 +43,10 @@ export class ApiHttpService {
       expirationDate: data.personalInformation.expirationDate,
 
       // Address Information
-      address: data.addressInformation.address,
-      city: data.addressInformation.city,
-      state: data.addressInformation.state,
-      zipCode: data.addressInformation.zipCode,
+      businessStreetAddress: data.addressInformation.address,
+      businessCity: data.addressInformation.city,
+      businessState: data.addressInformation.state,
+      businessZip: data.addressInformation.zipCode,
 
       // Internet Access
       countyWidePolicyA: data.internetAccess.countyWidePolicyA,

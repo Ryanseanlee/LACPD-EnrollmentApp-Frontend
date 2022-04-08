@@ -49,33 +49,33 @@
 }
 
 .title-text-format{
-  font-size: clamp(10px, 1vw, 60px);
+  font-size: clamp(10px, 2vw, 60px);
   margin:10px auto;
   width:fit-content;
   font-family: sans-serif;
   color: rgb(183, 243, 255);
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .input-title-text-format{
 color: rgb(219, 219, 219);
 font-size: clamp(10px, 0.8vw, 30px);
 font-family: sans-serif;
-font-weight: 300;
+font-weight: 400;
 }
 
 .info-text-format{
-  font-size: clamp(10px, 0.8px, 25px);
+  font-size: clamp(10px, 0.8vw, 35px);
   font-family: sans-serif;
   color: rgb(193, 193, 193);
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .description-text-format{
   font-size: clamp(10px, 1vw, 30px);
   margin: 10px auto 0px;
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   border-radius: 20px;
   color: rgb(255, 255, 255);
   padding: min(.5vw, 30px);
@@ -96,7 +96,7 @@ font-weight: 300;
   color: white;
   font-size: clamp(5px, 0.8vw, 40px);
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   align-self: center;
 }
 
@@ -104,7 +104,7 @@ font-weight: 300;
   background-color: black;
   color: rgb(155, 255, 149);
   font-size: clamp(20px, 1vw, 50px);
-  font-weight: 300;
+  font-weight: 400;
   border-color: transparent;
   padding: 20px;
   border-radius: 16px;
@@ -115,7 +115,7 @@ font-weight: 300;
   background-color: black;
   color: rgb(255, 174, 0);
   font-size: clamp(20px, 1vw, 30px);
-  font-weight: 100;
+  font-weight: 400;
   border-color: transparent;
   padding: 30px;
   border-radius: 16px;
@@ -153,3 +153,40 @@ font-weight: 300;
   grid-column: 1/4;
 }
 
+
+@media screen and (max-width: 3000px) {
+  .grid-container{
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-auto-rows: (100px, auto);
+    grid-gap: 20px;
+    justify-items:stretch;
+    align-items: stretch;
+    width: fit-content;
+  }
+  .personal-information-container{
+    grid-row: 1/3;
+  }
+  
+  .employee-address-container{
+  
+  }
+  
+  .manager-information-container{
+  
+  }
+  
+  .applications-request-container{
+  
+  }
+  
+  .internet-access-information-container{
+    
+  }
+  
+  .additional-access-information-container{
+    grid-row: 1/4;
+    grid-column: 4/5;
+  }
+}
