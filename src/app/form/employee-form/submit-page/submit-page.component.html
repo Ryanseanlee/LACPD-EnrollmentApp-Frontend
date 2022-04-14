@@ -185,7 +185,7 @@
         <h6>Email</h6>
         <div class="subgroup">
           <p>
-            {{ regForm.value.managerInformation.managerPhoneNumber || "N/A" }}
+            {{ regForm.value.managerInformation.managerEmail || "N/A" }}
           </p>
         </div>
       </div>
@@ -194,7 +194,7 @@
         <h6>Phone Number</h6>
         <div class="subgroup">
           <p>
-            {{ regForm.value.managerInformation.managerEmail || "N/A" }}
+            {{ regForm.value.managerInformation.managerPhone || "N/A" }}
           </p>
         </div>
       </div>
@@ -355,7 +355,7 @@
           </p>
           <p>Account Number:</p>
           <p>
-            {{ regForm.value.accessInformation.accountNumber || "N/A" }}
+            {{ regForm.value.accessInformation.billingAccountNumber || "N/A" }}
           </p>
         </div>
         <ng-template #elseBlock></ng-template>
