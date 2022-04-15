@@ -2,6 +2,9 @@
     <img src="assets/small_logo.png" alt="logo" class="mini-logo">
     <div class="spacer"></div>
     <div *ngIf="isAdminLoggedIn | async">
+        <button class="nav-buttons" [routerLink]="['/admin/approvers']">
+            Add Approvers
+        </button>
         <button class="nav-buttons" [routerLink]="['/admin/service-requests']">
             <div class="button-flex">
                 <img src="assets/ServiceRequestLogo.png" alt="ServiceRequestLogo" class="service-request-logo">
