@@ -46,13 +46,13 @@ import { SubmitPageComponent } from './form/employee-form/submit-page/submit-pag
 import { LoadingPageComponent } from './form/shared/loading-page/loading-page.component';
 import { SubmissionConfirmationPageComponent } from './form/shared/submission-confirmation-page/submission-confirmation-page.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { SharedModule } from './shared/shared.module';
 import { AdobeEventHistoryComponent } from './admin/adobe-event-history/adobe-event-history.component';
 import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 import { TopLogoComponent } from './top-logo/top-logo.component';
 import { TopNavbarComponent } from './top-navbar/top-navbar.component';
 import { DatePipe } from '@angular/common'
 import { NewAdminComponent } from './admin/new-admin/new-admin.component';
+import { SharedComponent } from './shared/shared.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +81,7 @@ import { NewAdminComponent } from './admin/new-admin/new-admin.component';
     TopLogoComponent,
     TopNavbarComponent,
     NewAdminComponent,
+    SharedComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -100,7 +101,6 @@ import { NewAdminComponent } from './admin/new-admin/new-admin.component';
     MatCardModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule,
     CoreModule,
     FormsModule,
     MatCheckboxModule,

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { AdminService } from '../core/services/admin.service';
+import { DOCUMENT } from '@angular/common';
 import { TopNavbarComponent } from '../top-navbar/top-navbar.component';
 import {
   trigger,
@@ -35,20 +36,19 @@ export class AdminComponent implements OnInit {
   //for loading after form is submitted
   isLoading = false;
 
+  storedTheme: string = localStorage.getItem('theme-color');
+
+
   // if navigation to login page is successful, then don't show login header
   constructor(
     private router: Router,
     private adminService: AdminService,
     public route: ActivatedRoute,
-    private topNavBar: TopNavbarComponent
-  ) {}
+    private topNavBar: TopNavbarComponent,
+  ) {
 
-  ngOnInit(): void {
-    this.formLogin = new FormGroup({
-      email: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required])
-    });
   }
+
 
   // navigate to request status page
   seeServiceRequest(): Promise<boolean> {
@@ -135,4 +135,24 @@ export class AdminComponent implements OnInit {
     //   }
     // }
   }
+  
+  toggleTheme(){
+    alert("it works!!!!!!!");
+    if(this.storedTheme === 'dark-mode'){
+      localStorage.setItem('theme-color', 'light-mode');
+      this.storedTheme = localStorage.getItem('theme-color');
+    }else{
+      localStorage.setItem('theme-color', 'dark-mode');
+      this.storedTheme = localStorage.getItem('theme-color');
+    }
+  }
+  
+  ngOnInit(): void {
+    this.formLogin = new FormGroup({
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
+    });
+  }
+
+
 }

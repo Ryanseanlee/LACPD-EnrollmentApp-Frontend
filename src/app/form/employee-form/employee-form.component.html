@@ -491,6 +491,112 @@
     [printForm]="printForm"
   ></app-manager-information>
 </mat-step>
+
+<mat-step
+      formGroupName="signatures"
+      [stepControl]="form.get('signatures')"
+    >
+      <ng-template matStepLabel>Approvers</ng-template>
+      <div>
+        <h2 class="mat-display-1">Signatures</h2>
+        <h3 class="mat-title">Select the following for signatures</h3>
+        <div class="dropdown-container">
+          <div class="dropdown-divChief">
+            <mat-form-field appearance="outline" class="mat-input-width">
+              <mat-label>Division Chief Manager</mat-label>
+              <mat-select formControlName="divChiefManagerName">
+                <mat-option
+                  [value]="null"
+                  (click)="setSelectedValue('divisionChief', null)"
+                  >None</mat-option
+                >
+                <mat-option
+                  *ngFor="let food of divCheifList"
+                  [value]="food.name"
+                  (click)="setSelectedValue('divisionChief', food.id)"
+                >
+                  {{ food.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="dropdown-deptHead">
+            <mat-form-field appearance="outline" class="mat-input-width">
+              <mat-label>Department Head</mat-label>
+              <mat-select formControlName="departmentHeadName">
+                <mat-option
+                  [value]="null"
+                  (click)="setSelectedValue('departmentHead', null)"
+                  >None</mat-option
+                >
+                <mat-option
+                  *ngFor="let food of deptHeadList"
+                  [value]="food.name"
+                  (click)="setSelectedValue('departmentHead', food.id)"
+                >
+                  {{ food.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="dropdown-appCoord">
+            <mat-form-field appearance="outline" class="mat-input-width">
+              <mat-label>Application Coordinator</mat-label>
+              <mat-select formControlName="applicationCoordinatorName">
+                <mat-option
+                  [value]="null"
+                  (click)="setSelectedValue('appCoord', null)"
+                  >None</mat-option
+                >
+                <mat-option
+                  *ngFor="let food of appCoordList"
+                  [value]="food.name"
+                  (click)="setSelectedValue('appCoord', food.id)"
+                >
+                  {{ food.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="dropdown-deptInfo">
+            <mat-form-field appearance="outline" class="mat-input-width">
+              <mat-label>Dept. Info Sec. Officer</mat-label>
+              <mat-select formControlName="deptInfoSecurityOfficerName">
+                <mat-option
+                  [value]="null"
+                  (click)="setSelectedValue('deptInfo', null)"
+                  >None</mat-option
+                >
+                <mat-option
+                  *ngFor="let food of deptInfoList"
+                  [value]="food.name"
+                  (click)="setSelectedValue('deptInfo', food.id)"
+                >
+                  {{ food.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="button-container">
+        <button mat-raised-button matStepperPrevious>Previous</button>
+        <button mat-raised-button matStepperNext color="primary" class="ml-2">
+          Next
+        </button>
+        <span class="spacer"></span>
+        <button
+          id="employee-info-save-btn"
+          mat-raised-button
+          class="save-button"
+          color="accent"
+          (click)="save()"
+        >
+          Save
+        </button>
+      </div>
+    </mat-step>
+
 <!-- Submit -->
 <mat-step>
   <ng-template matStepLabel>

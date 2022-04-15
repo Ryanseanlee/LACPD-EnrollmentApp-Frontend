@@ -192,7 +192,7 @@
         <div class="input-title-text-format">Email</div>
         <div class="subgroup">
           <div class="info-text-format">
-            {{ regForm.value.managerInformation.managerPhoneNumber || "N/A" }}
+            {{ regForm.value.managerInformation.managerEmail || "N/A" }}
           </div>
         </div>
       </div>
@@ -201,7 +201,7 @@
         <div class="input-title-text-format">Phone Number</div>
         <div class="subgroup">
           <div class="info-text-format">
-            {{ regForm.value.managerInformation.managerEmail || "N/A" }}
+            {{ regForm.value.managerInformation.managerPhone || "N/A" }}
           </div>
         </div>
       </div>
@@ -390,8 +390,7 @@
   <!-- End of Second Row-->
 </div>
 <div class="button-container">
-  <div>
-    <button class="submit-button" (click)="onClick()">Submit</button>
-  </div>
+    <button class="submit-button" (click)="startAdobeProcess()">Submit to Adobe Sign</button>
+    <button class="save-button" (click)="submitServiceRequest()">Save to Service Requests</button>
 </div>
 </div>

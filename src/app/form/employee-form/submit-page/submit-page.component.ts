@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/core/services/admin.service';
 import { ApiHttpService } from 'src/app/core/services/api-http.service';
 import { ConfirmationPageService } from 'src/app/core/services/confirmation-page.service';
 import { FormDataService } from 'src/app/core/services/form-data.service';
@@ -22,17 +23,38 @@ export class SubmitPageComponent implements OnInit {
   // Function to move to desired step(index)
   @Input() moveIndex: (newIndex: number) => void;
   @Input() setIsLoading: (value: boolean) => void;
+  isLoading: boolean;
 
   constructor(
     private apiHttpService: ApiHttpService,
     private formDataService: FormDataService,
     private confirmationPageService: ConfirmationPageService,
-    private router: Router
+    private router: Router,
+    private adminService: AdminService
   ) {}
 
   ngOnInit(): void {}
 
-  onClick(): void {
+  startAdobeProcess = (): void => {
+    this.setIsLoading(true);
+    this.adminService
+      .submitForm(
+        this.formDataService.formData.requestNumber,
+        this.regForm.value,
+        true
+      )
+      .subscribe({
+        next: (response) => {
+          this.formDataService.formData = response;
+          this.confirmationPageService.requestNumber = response.requestNumber;
+          this.confirmationPageService.isAdmin = true;
+          this.router.navigate(['confirmation-page']);
+          console.log(response);
+        },
+      });
+  };
+
+  submitServiceRequest(): void {
     // If there is a form in formData then there is a form in progress
     if (this.formDataService.formData !== undefined) {
       // Render the loading screen

@@ -5,22 +5,20 @@ import { AdminService } from '../core/services/admin.service';
 @Component({
   selector: 'app-top-navbar',
   templateUrl: './top-navbar.component.html',
-  styleUrls: ['./top-navbar.component.css']
+  styleUrls: ['./top-navbar.component.scss']
 })
-export class TopNavbarComponent {
+export class TopNavbarComponent implements OnInit{
 
   firstName:string;
   middleName:string;
   lastName:string;
   private adminInformation: Array<any> = [];
 
-  ngOnInit(): void {
-  }
 
   isAdminLoggedIn: BehaviorSubject<boolean>;
 
   constructor(
-    private adminService: AdminService
+    private adminService: AdminService,
   ) {
     this.isAdminLoggedIn = this.adminService.adminLoggedIn;
   }
@@ -34,9 +32,10 @@ export class TopNavbarComponent {
     });
   }
 
-
   onLogoutClick(): void {
    this.adminService.logAdminOut();
   }
 
+  ngOnInit(): void {
+  }
 }

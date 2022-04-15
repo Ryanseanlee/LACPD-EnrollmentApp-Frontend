@@ -244,7 +244,7 @@ export class AdminService {
    
       return this.http.patch(
         `${environment.apiUrl}/admin/service_requests/${requestNumber}`,
-        this.reformatDataPostEmployee(data, false),
+        this.reformatDataPostEmployee(data, true),
         httpOptions
       );
     
