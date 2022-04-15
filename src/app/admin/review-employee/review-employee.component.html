@@ -210,15 +210,12 @@
   </mat-step>
 
   <mat-step
-      formGroupName="addressInformation"
-      [stepControl]="approval.get('addressInformation')"
+    formGroupName="addressInformation"
+    [stepControl]="approval.get('addressInformation')"
     >
     <ng-template matStepLabel>
       <div class="tab-text-format">Address</div>
     </ng-template>
-    <p *ngIf="requestNumber">
-      Your request number: <span style="color: red">{{ requestNumber }}</span>
-    </p>
     <div class="title-text-format">Address Information</div>
       <div class="container-flex-child">
         <div class="input-container">
@@ -288,121 +285,106 @@
             Save
           </button>
         </div>
-  </mat-step>
- <!--Internet Access-->
- <mat-step
- formGroupName="addressInformation"
- [stepControl]="approval.get('addressInformation')"
->
- <ng-template matStepLabel>Internet Access</ng-template>
- <h2 class="mat-display-1" style="margin-bottom: 32px">Internet Access</h2>
- <!-- Information -->
- <div>
-   <br />
-   <h5><u>Policy Rules Descriptions:</u></h5>
-   <p>
-     <small
-       ><b>Countywide Policy A:</b> Allow access to all categories -except
-       bad Categories<br />
-       <b>Countywide Policy B:(default)</b>No access to sites/domains that
-       are categorized as Adult Content, Gaming, Dating + additional
-       categories such as Hacking, Proxy Avoidance, Remote Access Tools,
-       and Bad Categories<br />
-       <br />
-     </small>
-   </p>
- </div>
 
- <!-- First Row -->
- <div class="flex-container">
-   <!-- For some reason need to also apply to parent in order for this style to work, access-option-button -->
-   <div class="flex-column access-option-button">
-     <mat-button-toggle
-       id="countyWidePolicyA"
-       class="access-option-button"
-       [checked]="countyWidePolicyA"
-       (change)="onButtonChange($event, 'Countywide Policy A')"
-       >Countywide Policy A
-     </mat-button-toggle>
-   </div>
-   <div class="flex-column access-option-button">
-     <mat-button-toggle
-       id="countyWidePolicyB"
-       class="access-option-button"
-       [checked]="countyWidePolicyB"
-       (change)="onButtonChange($event, 'Countywide Policy B')"
-       >Countywide Policy B</mat-button-toggle
-     >
-   </div>
- </div>
- <div>
-   <br />
-   <p>
-     <small>
-       <span style="color: red">Please Note: </span>
-       <span>
-         <ul>
-           <li>
-             Bad Categories (Malicious, Outbound Data/Botnets, Malicious
-             Sources/Malnets,Phishing, and Spam) are Blocked regardless of
-             Policy Rule level - exemptions can be made with proper
-             DISO/CISO approval
-           </li>
-           <li>
-             Access to Personal Webmail Such as Yahoo, Gmail, AOL, ect., is
-             BLOCKED countywide - exemptions can be made with selection and
-             justification indicated below
-           </li>
-         </ul>
-       </span>
-     </small>
-   </p>
- </div>
- <!-- Second row -->
- <div class="flex-container">
-   <div class="flex-column access-option-button">
-     <mat-button-toggle
-       id="allWebmail"
-       class="access-option-button"
-       [checked]="allWebmail"
-       (change)="onButtonChange($event, 'ALL Webmail')"
-       >All Webmail</mat-button-toggle
-     >
-   </div>
-   <div class="flex-column access-option-button">
-     <mat-button-toggle
-       id="streamMedia"
-       class="access-option-button"
-       [checked]="streamMedia"
-       (change)="onButtonChange($event, 'Stream Media')"
-       >Stream Media</mat-button-toggle
-     >
-   </div>
- </div>
- <!--Third Row-->
- <div class="flex-container">
-   <div class="flex-column">
-     <mat-form-field>
-       <mat-label>*Business justification: </mat-label>
-       <input id="justification" matInput />
-     </mat-form-field>
-   </div>
- </div>
- <div class="internet-access-button-container">
-   <button mat-raised-button matStepperPrevious>Previous</button>
-   <button mat-raised-button matStepperNext color="primary" class="ml-2">
-     Next
-   </button>
-   <span class="spacer"></span>
-   <button
-     id="access-info-save-btn"
-     mat-raised-button
-     class="save-button"
-     color="accent"
-     (click)="save()"
-   >
-     Save
-   </button>
+  </mat-step>
+
+  <mat-step
+      formGroupName="policyRulesInformation"
+      [stepControl]="approval.get('policyRulesInformation')"
+    >
+    <ng-template matStepLabel>
+      <div class="tab-text-format">InternetAccess</div>
+    </ng-template>
+    <p *ngIf="requestNumber">
+      Your request number: <span style="color: red">{{ requestNumber }}</span>
+    </p>
+    <div class="title-text-format">Internet Access</div>
+    <!-- Information -->
+    <div>
+      <div class="title-text-format2">Policy Rules Descriptions:</div>
+      <p class="paragraph-text-format">
+          <b>Countywide Policy A:</b> Allow access to all categories -except bad
+          Categories<br />
+          
+          <b>Countywide Policy B:(default)</b>No access to sites/domains that are
+          categorized as Adult Content, Gaming, Dating + additional categories
+          such as Hacking, Proxy Avoidance, Remote Access Tools, and Bad
+          Categories<br />
+          <br />
+      </p>
+    </div>
+  
+    <!-- First Row -->
+    <div class="button-flex-container">
+      <!-- For some reason need to also apply to parent in order for this style to work, button-format -->
+        <mat-button-toggle
+          id="countyWidePolicyA"
+          class="button-format"
+          [checked]="countyWidePolicyA"
+          (change)="onButtonChange($event, 'Countywide Policy A')"
+          >Countywide Policy A</mat-button-toggle>
+        <mat-button-toggle
+          id="countyWidePolicyB"
+          class="button-format"
+          [checked]="countyWidePolicyB"
+          (change)="onButtonChange($event, 'Countywide Policy B')"
+          >Countywide Policy B</mat-button-toggle
+        >
+      </div>
+    <div>
+      <br />
+      <p>
+        <small>
+          <span class="attention-warning-format">Please Note: </span>
+          <span class="paragraph-text-format">
+            <ul>
+              <li>
+                Bad Categories (Malicious, Outbound Data/Botnets, Malicious
+                Sources/Malnets,Phishing, and Spam) are Blocked regardless of
+                Policy Rule level - exemptions can be made with proper DISO/CISO
+                approval
+              </li>
+              <li>
+                Access to Personal Webmail cuch as Yahoo, Gmail, AOL, ect., is
+                BLOCKED countywide - exemptions can be made with selection and
+                justification indicated below
+              </li>
+            </ul>
+          </span>
+        </small>
+      </p>
+    </div>
+    <!-- Second row -->
+    <div class="button-flex-container">
+        <mat-button-toggle
+          id="allWebmail"
+          class="button-format"
+          [checked]="allWebmail"
+          (change)="onButtonChange($event, 'ALL Webmail')"
+          >All Webmail</mat-button-toggle
+        >
+        <mat-button-toggle
+          id="streamMedia"
+          class="button-format"
+          [checked]="streamMedia"
+          (change)="onButtonChange($event, 'Stream Media')"
+          >Stream Media</mat-button-toggle
+        >
+    </div>
+    <!--Third Row-->
+        <div class="input-flex">
+          <mat-label class="text-color" class="title-text-format3">*Business justification: </mat-label>
+          <input id="justification" matInput class="input-container3"/>
+        </div>
+    <div class="button-container">
+      <button matStepperPrevious class="previous-button">Previous</button>
+      <button
+        matStepperNext
+        class="next-button"
+
+      >
+        Next
+      </button>
  </div>
 </mat-step>
  <!-- Access Information Step-->
@@ -584,36 +566,50 @@
 
 <!-- Department -->
 <mat-step [stepControl]="approval.get('additionalInformation')">
-  <ng-template matStepLabel>Active Directory</ng-template>
   <div>
-    <h2 class="mat-display-1">Applications Requested</h2>
-    <h3 class="mat-title">Select the following options</h3>
+    <div class="title-text-format">
+      Applications Requested
+    </div>
+    <ng-template matStepLabel>
+      <div class="tab-text-format">Additional Info</div>
+    </ng-template>
+    <!-- Chiplist -->
+    <!-- <div *ngIf="options.size" @myAnimation>
+      <p id="hello">Options selected</p>
+      <mat-chip-list class="example-chip">
+        <mat-chip @myAnimation class="example-box" *ngFor="let option of options">
+          {{ option }} <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+      <hr @myAnimation />
+    </div> -->
+    <div class="input-text-title-format">Select the following options</div>
     <div class="flex-container">
-      <!-- For some reason need to also apply to parent in order for this style to work, access-option-button -->
+      <!-- For some reason need to also apply to parent in order for this style to work, button-format -->
     </div>
     <div class="flex-container">
-      <div class="flex-column active-directory-button">
+      <div class="input-container">
         <mat-button-toggle
           id="laCountyGovAccess"
-          class="active-directory-button"
+          class="button-format"
           [checked]="laCountyGovAccess"
           (change)="onButtonChange($event, 'LA County Access')"
           >LACounty.gov Access</mat-button-toggle
         >
       </div>
-      <div class="flex-column active-directory-button">
+      <div class="input-container">
         <mat-button-toggle
           id="lacMobileWifiAccess"
-          class="active-directory-button"
+          class="button-format"
           [checked]="lacMobileWifiAccess"
           (change)="onButtonChange($event, 'LAC Mobile')"
           >LACMobile</mat-button-toggle
         >
       </div>
-      <div class="flex-column access-option-button">
+      <div class="input-container">
         <mat-button-toggle
           id="o365Email"
-          class="access-option-button"
+          class="button-format"
           [checked]="o365Email"
           (change)="onButtonChange($event, 'O365 E-mail')"
           >O365 E-mail</mat-button-toggle
@@ -624,17 +620,18 @@
     <div class="flex-column"></div>
   </div>
   <!-- <button (click)="sampleFunction()">Test</button> -->
-  <div class="active-directory-button-container">
-    <button mat-raised-button matStepperPrevious>Previous</button>
-    <button mat-raised-button matStepperNext color="primary" class="ml-2">
+  <div class="button-container">
+    <button matStepperPrevious class="previous-button">Previous</button>
+    <button
+      matStepperNext
+      class="next-button"
+    >
       Next
     </button>
     <span class="spacer"></span>
     <button
       id="access-info-save-btn"
-      mat-raised-button
       class="save-button"
-      color="accent"
       (click)="save()"
     >
       Save
@@ -648,40 +645,133 @@
       formGroupName="managerInformation"
       [stepControl]="approval.get('managerInformation')"
     >
-      <ng-template matStepLabel>Manager</ng-template>
-      <h2 class="mat-display-1" style="margin-bottom: 32px">
-        Manager's Contact Information
-      </h2>
+    <div class="title-text-format">
+      Manager's Contact Information
+      </div>
+      <ng-template matStepLabel>
+        <div class="tab-text-format">Manager Contact Info</div>
+      </ng-template>
+      <div formGroupName="managerInformation" class="flex-container2">
+        <div class="input-container2">
+          <mat-label class="input-text-title-format">Manager's First Name</mat-label>
+          <input matInput class="input-container-format" formControlName="managerFirstName" />
+        </div>
+        <div class="input-container2">
+          <mat-label class="input-text-title-format">Manager's Last Name</mat-label>
+          <input matInput class="input-container-format" formControlName="managerLastName" />
+        </div>
+        <div class="input-container2">
+          <mat-label class="input-text-title-format">Manager's Phone #</mat-label>
+          <input matInput class="input-container-format" formControlName="managerPhone" />
+        </div>
+        <div class="input-container2">
+          <mat-label class="input-text-title-format">Manager's Email</mat-label>
+          <input matInput class="input-container-format" formControlName="managerEmail" />
+        </div>
+      </div>
+      <!-- Previous/Next Buttons -->
       <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Manager's First Name</mat-label>
-          <input matInput formControlName="managerFirstName" />
-        </mat-form-field>
-        <br />
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Manager's Last Name</mat-label>
-          <input matInput formControlName="managerLastName" />
-        </mat-form-field>
-        <br />
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Manager's Phone #</mat-label>
-          <input matInput formControlName="managerPhone" />
-        </mat-form-field>
-        <br />
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Manager's Email</mat-label>
-          <input matInput formControlName="managerEmail" />
-        </mat-form-field>
+        <button matStepperPrevious class="previous-button">Previous</button>
+        <button matStepperNext class="next-button">
+          Next
+        </button>
+      </div>
+    </mat-step>
+    <mat-step
+      formGroupName="signatures"
+      [stepControl]="approval.get('signatures')"
+    >
+      <ng-template matStepLabel>Approvers</ng-template>
+      <div>
+        <h2 class="mat-display-1">Signatures</h2>
+        <h3 class="mat-title">Select the following for signatures</h3>
+        <div class="dropdown-container">
+          <div class="dropdown-divChief">
+            <mat-form-field appearance="outline" class="mat-input-width">
+              <mat-label>Division Chief Manager</mat-label>
+              <mat-select formControlName="divChiefManagerName">
+                <mat-option
+                  [value]="null"
+                  (click)="setSelectedValue('divisionChief', null)"
+                  >None</mat-option
+                >
+                <mat-option
+                  *ngFor="let food of divCheifList"
+                  [value]="food.name"
+                  (click)="setSelectedValue('divisionChief', food.id)"
+                >
+                  {{ food.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="dropdown-deptHead">
+            <mat-form-field appearance="outline" class="mat-input-width">
+              <mat-label>Department Head</mat-label>
+              <mat-select formControlName="departmentHeadName">
+                <mat-option
+                  [value]="null"
+                  (click)="setSelectedValue('departmentHead', null)"
+                  >None</mat-option
+                >
+                <mat-option
+                  *ngFor="let food of deptHeadList"
+                  [value]="food.name"
+                  (click)="setSelectedValue('departmentHead', food.id)"
+                >
+                  {{ food.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="dropdown-appCoord">
+            <mat-form-field appearance="outline" class="mat-input-width">
+              <mat-label>Application Coordinator</mat-label>
+              <mat-select formControlName="applicationCoordinatorName">
+                <mat-option
+                  [value]="null"
+                  (click)="setSelectedValue('appCoord', null)"
+                  >None</mat-option
+                >
+                <mat-option
+                  *ngFor="let food of appCoordList"
+                  [value]="food.name"
+                  (click)="setSelectedValue('appCoord', food.id)"
+                >
+                  {{ food.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="dropdown-deptInfo">
+            <mat-form-field appearance="outline" class="mat-input-width">
+              <mat-label>Dept. Info Sec. Officer</mat-label>
+              <mat-select formControlName="deptInfoSecurityOfficerName">
+                <mat-option
+                  [value]="null"
+                  (click)="setSelectedValue('deptInfo', null)"
+                  >None</mat-option
+                >
+                <mat-option
+                  *ngFor="let food of deptInfoList"
+                  [value]="food.name"
+                  (click)="setSelectedValue('deptInfo', food.id)"
+                >
+                  {{ food.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
       </div>
       <div class="button-container">
-        <button mat-raised-button matStepperPrevious>Previous</button>
-        <button mat-raised-button matStepperNext color="primary" class="ml-2">
+        <button class="previous-button" matStepperPrevious>Previous</button>
+        <button class="next-button" matStepperNext>
           Next
         </button>
         <span class="spacer"></span>
         <button
           id="employee-info-save-btn"
-          mat-raised-button
           class="save-button"
           color="accent"
           (click)="save()"
@@ -690,127 +780,22 @@
         </button>
       </div>
     </mat-step>
-    <mat-step
-    formGroupName="signatures"
-    [stepControl]="approval.get('signatures')"
-  >
-    <ng-template matStepLabel>Approvers</ng-template>
-    <div>
-      <h2 class="mat-display-1">Signatures</h2>
-      <h3 class="mat-title">Select the following for signatures</h3>
-      <div class="dropdown-container">
-        <div class="dropdown-divChief">
-          <mat-form-field appearance="outline" class="mat-input-width">
-            <mat-label>Division Chief Manager</mat-label>
-            <mat-select formControlName="divChiefManagerName">
-              <mat-option
-                [value]="null"
-                (click)="setSelectedValue('divisionChief', null)"
-                >None</mat-option
-              >
-              <mat-option
-                *ngFor="let food of divCheifList"
-                [value]="food.name"
-                (click)="setSelectedValue('divisionChief', food.id)"
-              >
-                {{ food.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="dropdown-deptHead">
-          <mat-form-field appearance="outline" class="mat-input-width">
-            <mat-label>Department Head</mat-label>
-            <mat-select formControlName="departmentHeadName">
-              <mat-option
-                [value]="null"
-                (click)="setSelectedValue('departmentHead', null)"
-                >None</mat-option
-              >
-              <mat-option
-                *ngFor="let food of deptHeadList"
-                [value]="food.name"
-                (click)="setSelectedValue('departmentHead', food.id)"
-              >
-                {{ food.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="dropdown-appCoord">
-          <mat-form-field appearance="outline" class="mat-input-width">
-            <mat-label>Application Coordinator</mat-label>
-            <mat-select formControlName="applicationCoordinatorName">
-              <mat-option
-                [value]="null"
-                (click)="setSelectedValue('appCoord', null)"
-                >None</mat-option
-              >
-              <mat-option
-                *ngFor="let food of appCoordList"
-                [value]="food.name"
-                (click)="setSelectedValue('appCoord', food.id)"
-              >
-                {{ food.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="dropdown-deptInfo">
-          <mat-form-field appearance="outline" class="mat-input-width">
-            <mat-label>Dept. Info Sec. Officer</mat-label>
-            <mat-select formControlName="deptInfoSecurityOfficerName">
-              <mat-option
-                [value]="null"
-                (click)="setSelectedValue('deptInfo', null)"
-                >None</mat-option
-              >
-              <mat-option
-                *ngFor="let food of deptInfoList"
-                [value]="food.name"
-                (click)="setSelectedValue('deptInfo', food.id)"
-              >
-                {{ food.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
-    </div>
-    <div class="button-container">
-      <button mat-raised-button matStepperPrevious>Previous</button>
-      <button mat-raised-button matStepperNext color="primary" class="ml-2">
-        Next
-      </button>
-      <span class="spacer"></span>
-      <button
-        id="employee-info-save-btn"
-        mat-raised-button
-        class="save-button"
-        color="accent"
-        (click)="save()"
-      >
-        Save
-      </button>
-    </div>
-  </mat-step>
 
+    <!-- Submit -->
     <mat-step>
       <ng-template matStepLabel>Start Adobe Process</ng-template>
       <div>
         <h2 class="mat-display-1">Start Adobe Sign process</h2>
         <div class="button-container">
-          <button mat-raised-button matStepperPrevious>Previous</button>
-          <button mat-raised-button matStepperNext color="primary" class="ml-2">
+          <button class="previous-button" matStepperPrevious>Previous</button>
+          <button class="next-button" matStepperNext>
             Next
           </button>
           <span class="spacer"></span>
           <button
             class="submit"
             id="employee-info-save-btn"
-            mat-raised-button
             class="save-button"
-            color="warn"
             (click)="startAdobeProcess()"
           >
             Submit
