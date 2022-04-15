@@ -3,6 +3,11 @@
     <div *ngIf="isAdminLoggedIn | async" class="welcome-name">{{firstName != null ? "Welcome, " + firstName + " " + lastName : " "}}</div>
     <div class="spacer"></div>
     <div *ngIf="isAdminLoggedIn | async">
+        <button class="nav-buttons" [routerLink]="['/admin/approvers']">
+            <div class="button-flex">
+                <div class="text-under-button">Modify Approvers</div>
+            </div>
+        </button>
         <button class="nav-buttons" [routerLink]="['/admin/service-requests']">
             <div class="button-flex">
                 <img src="assets/ServiceRequestLogo.png" alt="ServiceRequestLogo" class="service-request-logo">

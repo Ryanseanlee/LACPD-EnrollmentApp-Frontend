@@ -136,7 +136,7 @@ export class AdminComponent implements OnInit {
     // }
   }
   
-  toggleTheme(){
+  public toggleTheme(){
     alert("it works!!!!!!!");
     if(this.storedTheme === 'dark-mode'){
       localStorage.setItem('theme-color', 'light-mode');

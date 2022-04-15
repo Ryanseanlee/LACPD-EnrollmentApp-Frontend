@@ -2,6 +2,7 @@ import { Component, HostListener, Inject, OnInit , Renderer2} from '@angular/cor
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
+import { AdminComponent } from './admin/admin.component';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit{
   showheader: boolean;
 
   // if navigation to login page is successful, then don't show header for admin functions
-  constructor(private router: Router, @Inject(DOCUMENT) private document: Document, private renderer: Renderer2
+  constructor(private adminComponent, private router: Router, @Inject(DOCUMENT) private document: Document, private renderer: Renderer2
   ) {
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
@@ -37,6 +38,8 @@ export class AppComponent implements OnInit{
       }
     });
   }
+
+
   
   @HostListener('window: resize', ['$event'])
   onResize(event){
