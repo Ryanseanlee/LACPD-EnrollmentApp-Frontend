@@ -183,6 +183,46 @@ export class EmployeeFormComponent implements OnInit {
         managerEmail: new FormControl(null),
         managerPhone: new FormControl(null),
       }),
+      signatures: new FormGroup({
+        applicationCoordinatorName: new FormControl(
+          null
+        ),
+        applicationCoordinatorPhone: new FormControl(
+          null
+        ),
+        applicationCoordinatorEmail: new FormControl(
+          null
+        ),
+
+        divChiefManagerName: new FormControl(
+          null
+        ),
+        divChiefManagerPhone: new FormControl(
+          null
+        ),
+        divChiefManagerEmail: new FormControl(
+          null
+        ),
+
+        deptInfoSecurityOfficerName: new FormControl(
+          null
+        ),
+        deptInfoSecurityOfficerPhone: new FormControl(
+          null
+        ),
+        deptInfoSecurityOfficerEmail: new FormControl(
+          null
+        ),
+        departmentHeadName: new FormControl(
+          null
+        ),
+        departmentHeadPhone: new FormControl(
+          null
+        ),
+        departmentHeadEmail: new FormControl(
+          null
+        ),
+      }),
     });
     return formGroup;
   }
@@ -337,6 +377,46 @@ export class EmployeeFormComponent implements OnInit {
         ),
         managerPhone: new FormControl(
           this.formDataService.formData.managerPhone
+        ),
+      }),
+      signatures: new FormGroup({
+        applicationCoordinatorName: new FormControl(
+          this.formDataService.formData.applicationCoordinatorName
+        ),
+        applicationCoordinatorPhone: new FormControl(
+          this.formDataService.formData.applicationCoordinatorPhone
+        ),
+        applicationCoordinatorEmail: new FormControl(
+          this.formDataService.formData.applicationCoordinatorEmail
+        ),
+
+        divChiefManagerName: new FormControl(
+          this.formDataService.formData.divChiefManagerName
+        ),
+        divChiefManagerPhone: new FormControl(
+          this.formDataService.formData.divChiefManagerPhone
+        ),
+        divChiefManagerEmail: new FormControl(
+          this.formDataService.formData.divChiefManagerEmail
+        ),
+
+        deptInfoSecurityOfficerName: new FormControl(
+          this.formDataService.formData.deptInfoSecurityOfficerName
+        ),
+        deptInfoSecurityOfficerPhone: new FormControl(
+          this.formDataService.formData.deptInfoSecurityOfficerPhone
+        ),
+        deptInfoSecurityOfficerEmail: new FormControl(
+          this.formDataService.formData.deptInfoSecurityOfficerEmail
+        ),
+        departmentHeadName: new FormControl(
+          this.formDataService.formData.departmentHeadName
+        ),
+        departmentHeadPhone: new FormControl(
+          this.formDataService.formData.departmentHeadPhone
+        ),
+        departmentHeadEmail: new FormControl(
+          this.formDataService.formData.departmentHeadEmail
         ),
       }),
     });
