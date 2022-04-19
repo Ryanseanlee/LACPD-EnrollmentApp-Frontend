@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SharedComponent } from './shared.component';
+import { ModeTogglerComponent } from './mode-toggler.component';
 
-describe('SharedComponent', () => {
-  let component: SharedComponent;
-  let fixture: ComponentFixture<SharedComponent>;
+describe('ModeTogglerComponent', () => {
+  let component: ModeTogglerComponent;
+  let fixture: ComponentFixture<ModeTogglerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SharedComponent ]
+      declarations: [ ModeTogglerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SharedComponent);
+    fixture = TestBed.createComponent(ModeTogglerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

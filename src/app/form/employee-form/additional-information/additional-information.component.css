@@ -3,7 +3,7 @@
   margin: 0px auto;
   width:fit-content;
   font-family: sans-serif;
-  color: rgb(255, 255, 255);
+  color: rgb(14, 14, 14);
   font-weight: 400;
 }
 
@@ -12,17 +12,26 @@
   font-family: sans-serif;
   font-weight: 200px;
   margin-bottom: 60px;
+  color: rgb(14, 14, 14);
 }
 
 .button-format{
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(223, 223, 223);
   border-radius: 12px;
   border-color: transparent;
   font-size: clamp(10px, 1vw, 30px);
   width: min(15vw, 400px);
   height: min(15vw, 100px);
-  color: white;
+  color: rgb(14, 14, 14);
   margin-bottom: 20px;
+}
+
+.button-format:hover{
+  background-color:rgb(159, 159, 159);
+}
+
+.button-format:active{
+  background-color:rgb(140, 140, 140);
 }
 
 .flex-container{
@@ -37,20 +46,20 @@
 }
 
 .next-button{
-  background-color: #000000;
+  background-color: #707070;
+  border-color: transparent;
   border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(255, 223, 155);
+  color: rgb(255, 255, 255);
   padding:5px 10px;
   font-family: sans-serif;
   font-weight: 400;
   font-size: clamp(10px, 1vw, 40px);
 }
 .previous-button{
-  background-color: #000000;
+  background-color: #707070;
   border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(255, 138, 138);
+  border-color: transparent;
+  color: rgb(255, 255, 255);
   padding:5px 10px;
   margin-right: 5px;
   font-family: sans-serif;
@@ -58,10 +67,10 @@
   font-size: clamp(10px, 1vw, 40px);
 }
 .save-button{
-  background-color: #000000;
+  background-color: #707070;
   border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(93, 119, 153);
+  border-color: transparent;
+  color: rgb(255, 255, 255);
   padding:5px 10px;
   font-family: sans-serif;
   font-weight: 400;

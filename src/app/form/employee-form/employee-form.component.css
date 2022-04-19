@@ -1,11 +1,10 @@
 .form-container{
-  background-color: #1d1d1d;
-  box-shadow: 10px 10px 20px rgb(0, 0, 0);
+  background-color: rgb(188, 188, 188);
+    box-shadow: 10px 10px 10px rgb(158, 158, 158);
   border-radius: 6px;
   border-color: transparent;
   margin: 0px auto;
-  margin-top: min(1vw, 10px);
-  padding: 10px 20px;
+  margin-top: min(2vw, 50px);
   width: fit-content;
   height: fit-content;
 }
@@ -29,17 +28,18 @@
 }
 
 .tab-text-format{
+  color: rgb(14, 14, 14);
   font-size: clamp(5px, 0.8vw, 30px);
   font-family: sans-serif;
   font-weight: 400;
 }
 
 .title-text-format{
-  font-size: clamp(10px, 1.5vw, 60px);
+  font-size: clamp(10px, 1.5vw, 80px);
   margin: 0px auto;
   width:fit-content;
   font-family: sans-serif;
-  color: rgb(255, 255, 255);
+  color: rgb(14, 14, 14);
   font-weight: 400;
 }
 
@@ -47,12 +47,11 @@
   font-size: clamp(10px, 1vw, 50px);
   font-family: sans-serif;
   font-weight: 400;
-  color: rgb(210, 210, 210);
+  color: rgb(14, 14, 14);
 }
 
 .radio-container{
-  background-color: rgb(0, 0, 0);
-  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(223, 223, 223);
   border-radius: 10px;
   padding: 10px 20px;
   width: fit-content;
@@ -76,6 +75,7 @@ input[type="radio"] {
 }
 
 .radio-text-format{
+  color: rgb(14, 14, 14);
   font-family: sans-serif;
   font-size: clamp(5px, 1vw, 30px);
   font-weight: 400;
@@ -86,14 +86,16 @@ input[type="radio"] {
 }
 
 .input-container-format{
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(223, 223, 223);
+  border: transparent;
   font-size: clamp(5px, 1vw, 40px);
-  border: 2px solid rgb(0, 229, 255);
   border-radius: 5px;
-  color: white;
+  color: rgb(14, 14, 14);
   font-family: sans-serif;
   font-weight: 400;
-  width: fit-content;
+  width: min(20vw, 800px);
+  height: min(2.5vw, 100px);
+  text-align: center;
 }
 
 .spacer {
@@ -101,20 +103,20 @@ input[type="radio"] {
 }
 
 .next-button{
-  background-color: #000000;
+  background-color: #707070;
+  border-color: transparent;
   border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(255, 223, 155);
+  color: rgb(255, 255, 255);
   padding:5px 10px;
   font-family: sans-serif;
   font-weight: 400;
   font-size: clamp(10px, 1vw, 40px);
 }
 .previous-button{
-  background-color: #000000;
+  background-color: #707070;
   border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(255, 138, 138);
+  border-color: transparent;
+  color: rgb(255, 255, 255);
   padding:5px 10px;
   margin-right: 5px;
   font-family: sans-serif;
@@ -122,10 +124,10 @@ input[type="radio"] {
   font-size: clamp(10px, 1vw, 40px);
 }
 .save-button{
-  background-color: #000000;
+  background-color: #707070;
   border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(93, 119, 153);
+  border-color: transparent;
+  color: rgb(255, 255, 255);
   padding:5px 10px;
   font-family: sans-serif;
   font-weight: 400;
@@ -143,14 +145,23 @@ input[type="radio"] {
 }
 
 .button-format{
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(223, 223, 223);
   border-radius: 12px;
   border-color: transparent;
   font-size: clamp(10px, 1vw, 30px);
   width: min(15vw, 400px);
   height: min(15vw, 100px);
-  color: white;
+  color: rgb(14, 14, 14);
   margin-bottom: 20px;
+}
+
+
+.button-format:hover{
+  background-color:rgb(159, 159, 159);
+}
+
+.button-format:active{
+  background-color:rgb(140, 140, 140);
 }
 
 .input-container-format2{
@@ -166,9 +177,8 @@ input[type="radio"] {
 
 .dropdown-menu-format{
   width: fit-content;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(223, 223, 223);
   border: 1px solid white;
-  color: white;
+  color: rgb(14, 14, 14);
   font-size: min(20px, 5vw, 40px);
 }
-

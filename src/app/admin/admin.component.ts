@@ -1,23 +1,14 @@
-import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, Input, OnInit, Renderer2 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { AdminService } from '../core/services/admin.service';
-import { DOCUMENT } from '@angular/common';
-import { TopNavbarComponent } from '../top-navbar/top-navbar.component';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  // ...
-} from '@angular/animations';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 
   // smoother router transitions
 })
@@ -36,7 +27,6 @@ export class AdminComponent implements OnInit {
   //for loading after form is submitted
   isLoading = false;
 
-  storedTheme: string = localStorage.getItem('theme-color');
 
 
   // if navigation to login page is successful, then don't show login header
@@ -44,11 +34,8 @@ export class AdminComponent implements OnInit {
     private router: Router,
     private adminService: AdminService,
     public route: ActivatedRoute,
-    private topNavBar: TopNavbarComponent,
   ) {
-
   }
-
 
   // navigate to request status page
   seeServiceRequest(): Promise<boolean> {
@@ -97,7 +84,7 @@ export class AdminComponent implements OnInit {
         //rehide password after logging in
         this.hide = true;
         this.isLoading = false;
-        this.topNavBar.setAdminInformation();
+
       },
       error: (error) => {
         if (error.status === 403) {
@@ -134,17 +121,6 @@ export class AdminComponent implements OnInit {
     //     this.isHomeRoute();
     //   }
     // }
-  }
-  
-  public toggleTheme(){
-    alert("it works!!!!!!!");
-    if(this.storedTheme === 'dark-mode'){
-      localStorage.setItem('theme-color', 'light-mode');
-      this.storedTheme = localStorage.getItem('theme-color');
-    }else{
-      localStorage.setItem('theme-color', 'dark-mode');
-      this.storedTheme = localStorage.getItem('theme-color');
-    }
   }
   
   ngOnInit(): void {

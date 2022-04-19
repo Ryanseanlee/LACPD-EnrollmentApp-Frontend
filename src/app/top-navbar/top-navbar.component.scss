@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #1c1c1c;
+    background-color: #a1a1a1;
     column-gap: min(1vw, 60px);
     padding: min(0.5vw, 20px);
     box-shadow: 0px 0px 10px black;
@@ -65,7 +65,7 @@
     }
 
     .text-under-button{
-        color: white;
+        color: rgb(44, 44, 44);
         font-size: min(0.6vw, 25px);
         font-family: sans-serif;
         font-weight: 400;

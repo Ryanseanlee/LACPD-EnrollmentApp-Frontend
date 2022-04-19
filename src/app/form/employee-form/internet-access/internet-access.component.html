@@ -18,18 +18,20 @@
   <!-- First Row -->
   <div class="button-flex-container">
     <!-- For some reason need to also apply to parent in order for this style to work, button-format -->
-      <mat-button-toggle
+      <button
+        href="#countyWidePolicyA"
         id="countyWidePolicyA"
         class="button-format"
         [checked]="countyWidePolicyA"
         (change)="onButtonChange($event, 'Countywide Policy A')"
-        >Countywide Policy A</mat-button-toggle>
-      <mat-button-toggle
+        >Countywide Policy A</button>
+      <button
+      href="#countyWidePolicyB"
         id="countyWidePolicyB"
         class="button-format"
         [checked]="countyWidePolicyB"
         (change)="onButtonChange($event, 'Countywide Policy B')"
-        >Countywide Policy B</mat-button-toggle
+        >Countywide Policy B</button
       >
     </div>
   <div>
@@ -57,19 +59,19 @@
   </div>
   <!-- Second row -->
   <div class="button-flex-container">
-      <mat-button-toggle
+      <button
         id="allWebmail"
         class="button-format"
         [checked]="allWebmail"
         (change)="onButtonChange($event, 'ALL Webmail')"
-        >All Webmail</mat-button-toggle
+        >All Webmail</button
       >
-      <mat-button-toggle
+      <button
         id="streamMedia"
         class="button-format"
         [checked]="streamMedia"
         (change)="onButtonChange($event, 'Stream Media')"
-        >Stream Media</mat-button-toggle
+        >Stream Media</button
       >
   </div>
   <!--Third Row-->

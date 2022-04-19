@@ -23,6 +23,7 @@
             <div class="radio-text-format">Employee</div>
             <input
               type="radio"
+              pattern="[A-Za-z]"
               formControlName="isEmployee"
               value="true"
               name="isEmployee"
@@ -48,7 +49,7 @@
             matInput
             formControlName="firstName"
             required
-            pattern="[a-zA-Z ]*"
+            pattern="[a-zA-Z]*"
             class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />

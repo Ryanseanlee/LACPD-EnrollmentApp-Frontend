@@ -24,7 +24,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AdminComponent } from './admin/admin.component';
+import  { AdminComponent } from './admin/admin.component';
 import { ApproversComponent } from './admin/approvers/approvers.component';
 import { ResetPasswordComponent } from './admin/reset-password/reset-password.component';
 import { ReviewContractorComponent } from './admin/review-contractor/review-contractor.component';
@@ -52,7 +52,7 @@ import { TopLogoComponent } from './top-logo/top-logo.component';
 import { TopNavbarComponent } from './top-navbar/top-navbar.component';
 import { DatePipe } from '@angular/common'
 import { NewAdminComponent } from './admin/new-admin/new-admin.component';
-import { SharedComponent } from './shared/shared.component';
+import { ModeTogglerComponent } from './mode-toggler/mode-toggler.component';
 
 @NgModule({
 declarations: [
@@ -81,7 +81,7 @@ declarations: [
   TopLogoComponent,
   TopNavbarComponent,
   NewAdminComponent,
-  SharedComponent,
+  ModeTogglerComponent,
 ],
 imports: [
   ReactiveFormsModule,

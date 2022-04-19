@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
+import  {AdminComponent}  from './admin/admin.component';
 import { AdobeEventHistoryComponent } from './admin/adobe-event-history/adobe-event-history.component';
 import { ApproversComponent } from './admin/approvers/approvers.component';
 import { ResetPasswordComponent } from './admin/reset-password/reset-password.component';

@@ -34,7 +34,7 @@ export class NewAdminComponent implements OnInit {
   }
 
 
-  addAdmin(): void{
+  /* addAdmin(): void{
     this.adminService
     .newAdmin(
       this.adminForm.get('firstName').value,
@@ -54,7 +54,7 @@ export class NewAdminComponent implements OnInit {
         }
       }
     );
-
-  }
+    }
+ */
 
 }

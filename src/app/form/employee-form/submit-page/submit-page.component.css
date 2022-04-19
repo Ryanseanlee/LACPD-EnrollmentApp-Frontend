@@ -14,9 +14,9 @@
  flex-direction: column;
  gap: min(5vw, 20px);
  padding: min(1vw, 20px);
- background-image: grey;
+ background-color: rgb(185, 185, 185);
+ box-shadow: 5px 5px 20px rgb(94, 94, 94);
  border-radius: 16px;
- box-shadow: 5px 5px 20px black;
  align-items: center;
 }
 
@@ -38,7 +38,7 @@
  }
 
 .subgroup{
-  background-color: rgba(0, 0, 0, 0.475);
+  background-color: rgb(223, 223, 223);
   border-radius: 6px;
   padding: min(10px, 1vw, 20px);
   overflow:auto;
@@ -59,12 +59,12 @@
   margin:10px auto;
   width:fit-content;
   font-family: sans-serif;
-  color: rgb(183, 243, 255);
+  color: rgb(14, 14, 14);
   font-weight: 400;
 }
 
 .input-title-text-format{
-color: rgb(219, 219, 219);
+color: rgb(14, 14, 14);
 font-size: clamp(10px, 0.8vw, 30px);
 font-family: sans-serif;
 font-weight: 400;
@@ -73,33 +73,32 @@ font-weight: 400;
 .info-text-format{
   font-size: clamp(10px, 0.8vw, 35px);
   font-family: sans-serif;
-  color: rgb(193, 193, 193);
+  color: rgb(14, 14, 14);
   font-weight: 400;
 }
 
 .description-text-format{
-  font-size: clamp(10px, 1vw, 30px);
+  font-size: clamp(18.3px, 0.72vw, 30px);
   margin: 10px auto 0px;
   font-family: sans-serif;
-  font-weight: 300;
-  border-radius: 20px;
-  color: rgb(255, 255, 255);
-  padding: min(.5vw, 30px);
+  font-weight: 500;
+  border-radius: 10px;
+  color: rgb(14, 14, 14);
+  padding: min(0.5vw, 30px);
   text-align: center;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(154, 154, 154);
   width: fit-content;
 }
 
 .input-container{
-  background-color: rgba(19, 19, 19, 0.72);
+  background-color: rgb(154, 154, 154);
   border-radius: 12px;
-  box-shadow: 0px 5px 10px black;
   width: min(10vw, 500px);
   padding: 10px;
 }
 
 .column-title-text-format{
-  color: white;
+  color: rgb(14, 14, 14);
   font-size: clamp(5px, 0.8vw, 40px);
   font-family: sans-serif;
   font-weight: 400;
@@ -107,8 +106,8 @@ font-weight: 400;
 }
 
 .submit-button{
-  background-color: black;
-  color: rgb(155, 255, 149);
+  background-color: #707070;
+  color: rgb(255, 255, 255);
   font-size: clamp(20px, 1vw, 50px);
   font-weight: 400;
   border-color: transparent;
@@ -118,8 +117,8 @@ font-weight: 400;
 }
 
 .submit-later-button{
-  background-color: black;
-  color: rgb(255, 174, 0);
+  background-color: #707070;
+  color: rgb(255, 255, 255);
   font-size: clamp(20px, 1vw, 30px);
   font-weight: 400;
   border-color: transparent;
