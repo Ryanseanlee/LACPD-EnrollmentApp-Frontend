@@ -1,14 +1,13 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="container">
-    <mat-card class="card">
+<div class="container">
+    <mat-card class="approvers-container">
         <mat-card-header >
-            <mat-card-title><h3>Approvers</h3></mat-card-title>
+            <div class="container-title">Approvers</div>
         </mat-card-header>  
         <mat-tab-group mat-align-tabs="center" dynamicHeight (selectedTabChange)="clear()">
             <mat-tab label="New Approvers">
                 <div class="caption">
-                    <p>Create a new approver</p>
-                    <div class="Text-Color"
-                     class="alert alert-success"
+                    <div class="card-title">Create a new approver</div>
+                    <div class="new-approver-text"
                      role="alert"
                      *ngIf="sucess"
                      > New approver added!
@@ -16,22 +15,20 @@
 
                     <div class="add-container">
                         <form [formGroup] = "newApprover">
-                            <mat-form-field appearance="outline" class="mat-input-width">
-                                <mat-label>Select an option</mat-label>
-                                <mat-select [(value)]="selected">
-                                
-                                  <mat-option *ngFor="let selectedRole of roles" [value]="selectedRole">
+                            <div appearance="outline" class="mat-input-width">
+                                <select [(value)]="selected">
+                                  <option *ngFor="let selectedRole of roles" [value]="selectedRole">
                                     {{selectedRole}}
-                                  </mat-option>
-                                </mat-select>
-                            </mat-form-field>
-                            <mat-form-field appearance="outline" class="mat-input-width">
-                                <mat-label>Name</mat-label>
+                                  </option>
+                                </select>
+                            </div>
+                            <div appearance="outline" class="mat-input-width">
                                 <input matInput formControlName="name" 
                                 [errorStateMatcher]="errorStateMatcher"
+                                placeholder="Name"
                                 required />
                                 <mat-error>Name must be letters only</mat-error>
-                            </mat-form-field>
+                            </div>
                             <mat-form-field appearance="outline" class="mat-input-width">
                                 <mat-label>Phone</mat-label>
                                 <input matInput formControlName="phone" 

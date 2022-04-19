@@ -1,58 +1,10 @@
-.container {
-    padding-top: 40px;
-}
-
-.mat-tab-group {
-    margin-bottom: 48px;
-  }
-
- .card {
-    align-items: center;
-    background-color: #CBD2D9;
-    border-radius: 6px;
-    margin-top: 50px;
- } 
-
-mat-card-header {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10px;
-} 
-
- .caption {
-     text-align: center;
- }
-
- .mat-input-width {
-    width: 60%;
- }
-
- p {
-    padding-top: 20px;
-    text-align: center;
- }
-
-.table-container {
-    text-align:center;
-    width: 100%;
-
-}
-
-.table-container .search {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.mat2-input-width {
-    width: 40%;
-    margin-right: 20%;
-    flex-direction: row;
-}
-
-.mat-tab-label{
-    color: black;
-    opacity: 1;
+.approvers-container{
+    background-color: rgb(188, 188, 188);
+    box-shadow: 10px 10px 10px rgb(158, 158, 158);
+  border-radius: 6px;
+  border-color: transparent;
+  margin: 0px auto;
+  margin-top: min(2vw, 50px);
+  width: fit-content;
+  height: fit-content;
 }
