@@ -5,30 +5,31 @@
     <div *ngIf="isAdminLoggedIn | async">
         <button class="nav-buttons" [routerLink]="['/admin/approvers']">
             <div class="button-flex">
+                <img src="assets/LightModeApproversLogo.png" alt="ApproversLogo" class="approvers-logo">
                 <div class="text-under-button">Modify Approvers</div>
             </div>
         </button>
         <button class="nav-buttons" [routerLink]="['/admin/service-requests']">
             <div class="button-flex">
-                <img src="assets/ServiceRequestLogo.png" alt="ServiceRequestLogo" class="service-request-logo">
+                <img src="assets/LightModeServiceRequestLogo.png" alt="ServiceRequestLogo" class="service-request-logo">
                 <div class="text-under-button">Service Request</div>
             </div>
         </button>
         <button class="nav-buttons" [routerLink]="['/admin/employee-form']">
             <div class="button-flex">
-                <img src="assets/FormsLogo.png" alt="" class="employee-form-logo">
+                <img src="assets/LightModeNewFormLogo.png" alt="" class="employee-form-logo">
                 <div class="text-under-button">New Employee Form</div>
             </div>
         </button>
         <button class="nav-buttons"  [routerLink]="['/admin/reset-password']">
             <div class="button-flex">
-                <img src="assets/ResetPasswordLogo.png" alt="" class="reset-logo">
+                <img src="assets/LightModeResetPasswordLogo.png" alt="" class="reset-logo">
                 <div class="text-under-button">Reset Password</div>
             </div>
         </button>
         <button class="nav-buttons" [routerLink]="['/admin/Create_User']">
             <div class="button-flex">
-                <img src="assets/NewAdminLogo.png" alt="" class="new-admin-logo">
+                <img src="assets/LightModeNewAdminLogo.png" alt="" class="new-admin-logo">
                 <div class="text-under-button">New Admin</div>
             </div>
         </button>
