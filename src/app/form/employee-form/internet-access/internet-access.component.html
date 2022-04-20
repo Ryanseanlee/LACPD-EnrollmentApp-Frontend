@@ -1,50 +1,43 @@
 <div>
-  <h2 class="mat-display-1" style="margin-bottom: 32px">Internet Access</h2>
+  <div class="title-text-format">Internet Access</div>
   <!-- Information -->
   <div>
-    <br />
-    <h5><u>Policy Rules Descriptions:</u></h5>
-    <p>
-      <small
-        ><b>Countywide Policy A:</b> Allow access to all categories -except bad
+    <div class="title-text-format2">Policy Rules Descriptions:</div>
+    <p class="paragraph-text-format">
+        <b>Countywide Policy A:</b> Allow access to all categories -except bad
         Categories<br />
+        
         <b>Countywide Policy B:(default)</b>No access to sites/domains that are
         categorized as Adult Content, Gaming, Dating + additional categories
         such as Hacking, Proxy Avoidance, Remote Access Tools, and Bad
         Categories<br />
         <br />
-      </small>
     </p>
   </div>
 
   <!-- First Row -->
-  <div class="flex-container">
-    <!-- For some reason need to also apply to parent in order for this style to work, access-option-button -->
-    <div class="flex-column access-option-button">
+  <div class="button-flex-container">
+    <!-- For some reason need to also apply to parent in order for this style to work, button-format -->
       <mat-button-toggle
         id="countyWidePolicyA"
-        class="access-option-button"
+        class="button-format"
         [checked]="countyWidePolicyA"
         (change)="onButtonChange($event, 'Countywide Policy A')"
-        >Countywide Policy A
-      </mat-button-toggle>
-    </div>
-    <div class="flex-column access-option-button">
+        >Countywide Policy A</mat-button-toggle>
       <mat-button-toggle
         id="countyWidePolicyB"
-        class="access-option-button"
+        class="button-format"
         [checked]="countyWidePolicyB"
         (change)="onButtonChange($event, 'Countywide Policy B')"
         >Countywide Policy B</mat-button-toggle
       >
     </div>
-  </div>
   <div>
     <br />
     <p>
       <small>
-        <span style="color: rgb(255, 92, 92)">Please Note: </span>
-        <span>
+        <span class="attention-warning-format">Please Note: </span>
+        <span class="paragraph-text-format">
           <ul>
             <li>
               Bad Categories (Malicious, Outbound Data/Botnets, Malicious
@@ -63,35 +56,27 @@
     </p>
   </div>
   <!-- Second row -->
-  <div class="flex-container">
-    <div class="flex-column access-option-button">
+  <div class="button-flex-container">
       <mat-button-toggle
         id="allWebmail"
-        class="access-option-button"
+        class="button-format"
         [checked]="allWebmail"
         (change)="onButtonChange($event, 'ALL Webmail')"
         >All Webmail</mat-button-toggle
       >
-    </div>
-    <div class="flex-column access-option-button">
       <mat-button-toggle
         id="streamMedia"
-        class="access-option-button"
+        class="button-format"
         [checked]="streamMedia"
         (change)="onButtonChange($event, 'Stream Media')"
         >Stream Media</mat-button-toggle
       >
-    </div>
   </div>
   <!--Third Row-->
-  <div class="flex-container">
-    <div class="flex-column">
-      <mat-form-field>
-        <mat-label class="text-color">*Business justification: </mat-label>
-        <input id="justification" matInput />
-      </mat-form-field>
-    </div>
-  </div>
+      <div class="input-flex">
+        <mat-label class="text-color" class="title-text-format3">*Business justification: </mat-label>
+        <input id="justification" matInput class="input-container"/>
+      </div>
   <div class="button-container">
     <button matStepperPrevious class="previous-button">Previous</button>
     <button

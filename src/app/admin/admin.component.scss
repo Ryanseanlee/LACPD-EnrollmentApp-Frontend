@@ -1,72 +1,177 @@
-.admin-login-container{
+.admin-login-container.light-mode{
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+
+  .max-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: min(4vw, 180px) auto min(12vw,500px);
+    border-radius: 12px;
+    padding: min(1vw, 60px) min(1vw, 30px);
+    width: fit-content;
+    background-color: transparent;
+    text-shadow: 2px 2px 2px black;
+  }
+
+  .logo{
+    width: min(50vw, 2000px);
+    
+  }
+
+  .login-input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: min(1vw, 100px) min(2vw, 160px);
+    border-radius: 12px;
+    background-color: rgb(188, 188, 188);
+    box-shadow: 10px 10px 10px rgb(158, 158, 158);
+  }
+
+  .greetings{
+    font-size: clamp(40px, 2vw, 100px);
+    color: black;
+    font-family: sans-serif;
+    font-weight: 300;
+  }
+
+  .email-input-text-box{ 
+    border-color: transparent;
+    border-radius: 3px;
+    background-color: rgb(159, 159, 159);
+    font-size: clamp(6px,0.9vw, 50px);
+    font-family: sans-serif;
+    margin: min(2vw, 400px) auto min(1vw, 50px);
+    font-weight: 500;
+    color: black;
+  }
+
+  .password-input-text-box{ 
+  border-color: transparent;
+    border-radius: 3px;
+    background-color: rgb(159, 159, 159);
+    font-size: clamp(6px,0.9vw, 50px);
+    margin: 0 auto min(1vw, 200px);
+    font-family: sans-serif;
+    font-weight: 500;
+    color: black;
+  }
+
+  .login-button{
+    color: rgb(255, 255, 255);
+    background-color: #707070;
+    border-color: transparent;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-size: clamp(6px, 1vw, 50px);
+    font-weight: 500;
+  }
+
+  .top-text-format{
+    color: rgb(48, 48, 48);
+    font-size: clamp(20px, 2.98vw, 88px);
+    font-weight: 300;
+    font-family: sans-serif;
+  }
+
+  .bottom-text-format{
+    color: rgb(48, 48, 48);
+    font-size: clamp(30px, 5vw, 150px);
+    font-weight: 500;
+    font-family: sans-serif;
+  }
 }
 
-.max-logo{
-  margin: min(5vw,250px) 0px min(4vw,300px) 0px;
-  border-radius: 6px;
-  padding: 15px;
-  box-shadow: 10px 10px 20px rgb(0, 0, 0);
-  background-color: rgb(29, 29, 29);
-}
-
-.logo{
-  max-width: min(55vw, 2000px);
-  min-width: max(10vw, 320px);
-}
-
-.login-input-container{
+.admin-login-container.dark-mode{
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1d1d1d;
-  padding: 20px 40px;
-  border-radius: 10px;
-  box-shadow: 10px 10px 20px rgb(0, 0, 0);
-  background-color: rgb(29, 29, 29);
-}
 
-.greetings{
-  font-size: clamp(25px, 3vw, 80px);
-  color: rgb(255, 255, 255);
-  font-family: sans-serif;
-  font-weight: 300;
-}
 
-.email-input-text-box{ 
+  .max-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: min(4vw, 180px) auto min(12vw,500px);
+    border-radius: 12px;
+    padding: min(1vw, 60px) min(1vw, 30px);
+    width: fit-content;
+    background-color: transparent;
+    text-shadow: 5px 5px 10px black;
+  }
+
+  .logo{
+    width: min(50vw, 2000px);
+    
+  }
+
+  .login-input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: min(1vw, 100px) min(2vw, 160px);
+    border-radius: 12px;
+    box-shadow: 10px 10px 20px black;
+    background-color: rgb(29, 29, 29);
+  }
+
+  .greetings{
+    font-size: clamp(40px, 2vw, 100px);
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    font-weight: 300;
+  }
+
+  .email-input-text-box{ 
+    border-color: transparent;
+    border-radius: 3px;
+    background-color: #8a8a8a;
+    font-size: clamp(6px,0.9vw, 50px);
+    font-family: sans-serif;
+    margin: min(2vw, 400px) auto min(1vw, 50px);
+    font-weight: 500;
+    color: black;
+  }
+
+  .password-input-text-box{ 
   border-color: transparent;
-  border-radius: 3px;
-  background-color: #8a8a8a;
-  font-size: clamp(10px, 1vw, 30px);
-  font-family: sans-serif;
-  margin: min(2vw, 400px) auto min(1vw, 200px);
-  font-weight: 500;
-  color: black;
-}
+    border-radius: 3px;
+    background-color: #8a8a8a;
+    font-size: clamp(6px,0.9vw, 50px);
+    margin: 0 auto min(1vw, 200px);
+    font-family: sans-serif;
+    font-weight: 500;
+    color: black;
+  }
 
-.password-input-text-box{ 
-  border-color: transparent;
-  border-radius: 3px;
-  background-color: #8a8a8a;
-  font-size: clamp(10px, 1vw, 30px);
-  margin: 0 auto min(1vw, 200px);
-  font-family: sans-serif;
-  font-weight: 500;
-  color:  black;
-}
+  .login-button{
+    color: rgb(255, 217, 0);
+    background-color: #919191;
+    border-color: transparent;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-size: clamp(6px, 1vw, 50px);
+    font-weight: 500;
+  }
 
-.login-button{
-  color: rgb(255, 217, 0);
-  background-color: #000000;
-  border-color: transparent;
-  border-radius: 3px;
-  font-family: sans-serif;
-  font-size: clamp(10px, 1vw, 30px);
-  padding: 6px 30px;
-  font-weight: 500;
+  .top-text-format{
+    color: rgb(255, 255, 255);
+    font-size: clamp(30px, 3vw, 100px);
+    font-weight: 300;
+    font-family: sans-serif;
+  }
+
+  .bottom-text-format{
+    color: #ffffff;
+    font-size: clamp(30px, 5vw, 170px);
+    font-weight: 500;
+    font-family: sans-serif;
+  }
 }
 
 @media (max-width: 800px){
@@ -130,8 +235,6 @@
     color: white;
     border-radius: 3px;
     font-family: sans-serif;
-    font-size: 20px;
-    padding: 10px 20px; 
-    width: 150px;
+    font-size: clamp(10px, 2vw, 30px);
   }
 }

@@ -3,47 +3,45 @@
   id="regForm"
   [formGroup]="form"
   [@myAnimation]
-  class="container"
   [style.display]="isLoading ? 'none' : 'block'"
 >
-  <!-- Personal Information Step -->
-  <mat-horizontal-stepper #stepper>
-    <mat-step
-      formGroupName="personalInformation"
-      [stepControl]="form.get('personalInformation')"
-    >
-      <ng-template matStepLabel>Personal</ng-template>
-      <h2 class="mat-display-1" style="margin-bottom: 32px">
-        Personal Information
-      </h2>
-      <p *ngIf="requestNumber">
-        Your request number: <span style="color: red">{{ requestNumber }}</span>
-      </p>
-      <div class="radio-container">
-        <div class="radio-text-container">
-          <label for="html">Employee</label><br />
-          <input
-            class="radio-button"
-            type="radio"
-            formControlName="isEmployee"
-            value="true"
-            name="isEmployee"
-          />
+<!-- Personal Information Step -->
+<mat-horizontal-stepper #stepper class="form-container">
+      <mat-step
+        formGroupName="personalInformation"
+        [stepControl]="form.get('personalInformation')"
+      >
+      <ng-template matStepLabel>
+        <div class="tab-text-format">Personal</div>
+      </ng-template>
+      <div class="title-text-format">Personal Information</div>
+      <div class="container-flex-parent">
+      <div class="container-flex-child">
+        <div class="input-text-title-format"></div>
+        <div class="radio-container">
+          <div class="radio-flex-container">
+            <div class="radio-text-format">Employee</div>
+            <input
+              type="radio"
+              pattern="[A-Za-z]"
+              formControlName="isEmployee"
+              value="true"
+              name="isEmployee"
+            />
+          </div>
+          <div class="radio-spacer"></div>
+          <div class="radio-flex-container">
+            <div class="radio-text-format">Contractor</div>
+            <input
+              type="radio"
+              formControlName="isEmployee"
+              value="false"
+              name="isEmployee"
+            />
+          </div>
         </div>
-        <div class="radio-text-container">
-          <label for="html">Contractor</label><br />
-          <input
-            class="radio-button"
-            type="radio"
-            formControlName="isEmployee"
-            value="false"
-            name="isEmployee"
-          />
-        </div>
-      </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>First Name</mat-label>
+        <div class="input-container">
+          <div class="input-text-title-format">First Name</div>
           <input
             id="firstNameInput"
             #firstNameInput
@@ -51,30 +49,25 @@
             matInput
             formControlName="firstName"
             required
-            pattern="[a-zA-Z ]*"
+            pattern="[a-zA-Z]*"
+            class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />
-          <mat-hint>Required</mat-hint>
-          <mat-error>First name is required and must be letters only</mat-error>
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Middle Initial</mat-label>
+        </div>
+      <div class="input-container">
+        <div class="input-text-title-format">Middle Initial</div>
           <input
             id="middleInitialInput"
             type="text"
             matInput
             formControlName="middleInitial"
             pattern="[a-zA-Z ]"
+            class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />
-          <mat-error>Middle initial must be letters only</mat-error>
-        </mat-form-field>
       </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Last Name</mat-label>
+      <div class="input-container">
+        <div class="input-text-title-format">Last Name</div>
           <input
             id="lastNameInput"
             type="text"
@@ -82,30 +75,24 @@
             formControlName="lastName"
             required
             pattern="[a-zA-Z ]*"
+            class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />
-          <mat-hint>Required</mat-hint>
-          <mat-error>Last name is required and must be letters only</mat-error>
-        </mat-form-field>
       </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Email</mat-label>
-          <input
-            id="emailAddress"
-            type="text"
-            matInput
-            formControlName="emailAddress"
-            required
-            [errorStateMatcher]="errorStateMatcher"
-          />
-          <mat-hint>Required</mat-hint>
-          <mat-error>Email is required with correct email format</mat-error>
-        </mat-form-field>
+      <div class="input-container">
+        <div class="input-text-title-format">Email</div>
+        <input
+          id="emailAddressInput"
+          type="text"
+          matInput
+          formControlName="emailAddress"
+          class="input-container-format"
+          required
+          [errorStateMatcher]="errorStateMatcher"
+        />
       </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>County Department Name/Organization Name</mat-label>
+      <div class="input-container">
+        <div class="input-text-title-format">County Department Name/Organization Name</div>
           <input
             id="countyDepartmentName"
             type="text"
@@ -113,15 +100,14 @@
             formControlName="countyDepartmentName"
             required
             pattern="[a-zA-Z ]*"
+            class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />
-          <mat-hint>Required</mat-hint>
-          <mat-error>County Department Name is Required</mat-error>
-        </mat-form-field>
       </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label> County Department number</mat-label>
+    </div>
+    <div class="container-flex-child">
+      <div class="input-container">
+        <div class="input-text-title-format">County Department number</div>
           <input
             id="countyDepartmentNumber"
             type="phone"
@@ -129,15 +115,12 @@
             formControlName="countyDepartmentNumber"
             required
             pattern="[0-9]*"
+            class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />
-          <mat-hint>Required</mat-hint>
-          <mat-error>County Department Number is is Required</mat-error>
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label> Cell Phone number</mat-label>
+          </div>
+      <div class="input-container">
+          <div class="input-text-title-format"> Cell Phone number</div>
           <input
             id="phoneNumberInput"
             type="phone"
@@ -145,391 +128,382 @@
             required
             formControlName="phoneNumber"
             pattern="[0-9]{10}"
+            class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />
-          <mat-hint>Required</mat-hint>
-          <mat-error>Phone number is required and must be 10 digit</mat-error>
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label> Work Phone number</mat-label>
+        </div>
+
+      <div class="input-container">
+        <div class="input-text-title-format"> Work Phone number</div>
           <input
             id="workPhoneNumberInput"
             type="phone"
             matInput
             formControlName="workPhoneNumber"
             pattern="[0-9]{10}"
+            class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />
-          <mat-hint>Leave empty if same as Cell Phone number</mat-hint>
-          <mat-error>Phone number is required and must be 10 digit</mat-error>
-        </mat-form-field>
       </div>
-      <div>
-        <mat-form-field appearance="outline" style="width: 70%">
-          <mat-label>Employee or Contractor Number</mat-label>
+      
+      <div class="input-container">
+        <div class="input-text-title-format">Employee or Contractor Number</div>
           <input
             id="employeeNumberInput"
             type="text"
             matInput
             formControlName="employeeNumber"
             required
+            class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />
-          <mat-hint>Required</mat-hint>
-          <mat-error>Employee or Contractor number is required</mat-error>
-        </mat-form-field>
       </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Contractor Company Name</mat-label>
+      <div class="input-container">
+        <div class="input-text-title-format">Contractor Company Name</div>
           <input
             id="contractorName"
             type="text"
             matInput
             formControlName="contractorName"
             pattern="[a-zA-Z ]*"
+            class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />
-          <mat-hint>Required</mat-hint>
-          <mat-error>County Department Name is Required</mat-error>
-        </mat-form-field>
       </div>
-      <div>
-        <mat-form-field appearance="outline" style="width: 70%">
-          <mat-label>Contract Work Order Number</mat-label>
+      <div class="input-container">
+        <div class="input-text-title-format">Contract Work Order Number</div>
           <input
             id="workOrderNumberInput"
             type="text"
             matInput
             formControlName="workOrderNumberInput"
+            class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />
-        </mat-form-field>
       </div>
-      <div>
-        <mat-form-field appearance="outline" style="width: 70%">
-          <mat-label>Contract Expiration Date</mat-label>
+      <div class="input-container">
+        <div class="input-text-title-format">Contract Expiration Date</div>
           <input
             id="expirationDate"
             type="date"
             matInput
             formControlName="expirationDate"
+            class="input-container-format"
             [errorStateMatcher]="errorStateMatcher"
           />
-        </mat-form-field>
       </div>
+      </div>
+      </div>
+    <div class="button-container">
+      <button matStepperNext class="next-button">Next</button>
+      <span class="spacer"></span>
+      <button
+        id="personal-info-save-btn"
+        class="save-button"
+        (click)="save()"
+      >
+        Save
+      </button>
+    </div>
+  </mat-step>
+
+  <mat-step
+      formGroupName="addressInformation"
+      [stepControl]="form.get('addressInformation')"
+    >
+    <ng-template matStepLabel>
+      <div class="tab-text-format">Address</div>
+    </ng-template>
+    <div class="title-text-format">Address Information</div>
+      <div class="container-flex-child">
+        <div class="input-container">
+            <div class="input-text-title-format">Street Address</div>
+            <input
+              id="addressInput"
+              type="text"
+              matInput
+              formControlName="address"
+              class="input-container-format"
+              required
+              [errorStateMatcher]="errorStateMatcher"
+            />
+        </div>
+        <div class="input-container">
+            <div class="input-text-title-format">City</div>
+            <input
+              id="cityInput"
+              type="text"
+              matInput
+              formControlName="city"
+              class="input-container-format"
+              required
+              pattern="[a-zA-Z ]*"
+              [errorStateMatcher]="errorStateMatcher"
+            />
+        </div>
+        <div class="input-container">
+            <div class="input-text-title-format">State</div>
+            <input
+              id="stateInput"
+              type="text"
+              matInput
+              formControlName="state"
+              class="input-container-format"
+              required
+              pattern="[a-zA-Z ]*"
+              [errorStateMatcher]="errorStateMatcher"
+            />
+        </div>
+        <div class="input-container">
+            <div class="input-text-title-format">Zip Code</div>
+            <input
+              id="zipCodeInput"
+              type="text"
+              matInput
+              formControlName="zipCode"
+              class="input-container-format"
+              required
+              pattern="[0-9]*"
+              [errorStateMatcher]="errorStateMatcher"
+            />
+        </div>
+</div>
+        <div class="button-container">
+          <button  matStepperPrevious class="previous-button">Previous</button>
+          <button  matStepperNext class="next-button">
+            Next
+          </button>
+          <span class="spacer"></span>
+          <button
+            id="address-info-save-btn"
+  
+            class="save-button"
+            (click)="save()"
+          >
+            Save
+          </button>
+        </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>
+      <div class="tab-text-format">Internet Access</div>
+    </ng-template>
+    <app-internet-access
+      [form]="form"
+      [save]="save"
+      [printForm]="printForm"
+    ></app-internet-access>
+  </mat-step>
+ <!-- Access Information Step-->
+ <mat-step>
+  <ng-template matStepLabel>
+    <div class="tab-text-format">Data Center Access</div>
+  </ng-template>
+  <!-- TODO: Work on naming and values -->
+  <div>
+    <div class="title-text-format">Access Options</div>
+    <div class="container-flex-parent">
+      <!-- Access choices -->
+
+      <!-- IBM Access info button -->
+      <div class="container-flex-child">
+        <button
+          id="ibm-access-btn"
+          (click)="toggleFormRender('ibm')"
+          class="button-format"
+          >IBM Access Information
+        </button>
+        <div class="ibmForm">
+          <div class="input-containter">
+            <!-- TODO: Add a heading here -->
+            <div formGroupName="accessInformation">
+              <div class="input-text-title-format">Logon ID</div>
+              <input
+                id="ibmLogonIdInput"
+                class="input-container-format2"
+                matInput
+                formControlName="ibmLogonId"
+              />
+            </div>
+          </div>
+          <div class="input-containter">
+            <div formGroupName="accessInformation">
+              <div class="input-text-title-format">2-Digit Major Group Code</div>
+              <input
+                id="ibmMajorGroupCodeInput"
+                class="input-container-format2"
+                matInput
+                formControlName="majorGroupCode"
+              />
+            </div>
+          </div>
+          <div class="input-containter">
+            <div formGroupName="accessInformation">
+              <div class="input-text-title-format">2-Digit LSO Group Code</div>
+              <input
+                id="ibmLsoGroupCodeInput"
+                class="input-container-format2"
+                matInput
+                formControlName="lsoGroupCode"
+              />
+            </div>
+          </div>
+          <div class="input-containter">
+            <div formGroupName="accessInformation">
+              <div class="input-text-title-format">Security Authorization</div>
+              <input
+                id="ibmSecurityAuthInput"
+                class="input-container-format2"
+                matInput
+                formControlName="securityAuthorization"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unix Environment button -->
+      <div class="container-flex-child">
+        <button
+          id="unix-access-btn"
+          (click)="toggleFormRender('unix')"
+          class="button-format"
+          >Unix Environment Access</button>
+        <div class="unix-access-form">
+          <!-- TODO: Needs the Type of Request section -->
+          <div class="input-containter">
+            <div formGroupName="accessInformation">
+              <div class="input-text-title-format">Login ID</div>
+              <input
+                id="unixLogonIdInput"
+                class="input-container-format2"
+                matInput
+                formControlName="unixLogonId"
+              />
+            </div>
+          </div>
+          <div class="input-containter">
+            <div formGroupName="accessInformation">
+              <div class="input-text-title-format">Application</div>
+              <input
+                id="applicationInput"
+                class="input-container-format2"
+                matInput
+                formControlName="application"
+              />
+            </div>
+          </div>
+          <div class="input-containter">
+            <div formGroupName="accessInformation">
+              <div class="input-text-title-format">Access Group</div>
+              <input
+                id="accessGroupInput"
+                class="input-container-format2"
+                matInput
+                formControlName="accessGroup"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SecurId button -->
+      <div class="container-flex-child">
+        <button
+          id="securid-access-btn"
+          (click)="toggleFormRender('securid')"
+          class="button-format"
+          >SecurID Remote Access</button>
+        <div class="secur-id-access-form">
+          <div class="input-containter">
+            <div formGroupName="accessInformation">
+              <div class="input-text-title-format">Billing Account Number</div>
+              <input
+                id="billingAccountInput"
+                class="input-container-format2"
+                matInput
+                formControlName="billingAccountNumber"
+              />
+            </div>
+          </div>
+          <div class="input-containter">
+            <div formGroupName="accessInformation">
+              <div class="input-text-title-format" style="margin-bottom: 30px;">Access Type</div>
+              <select
+                formControlName="accessType"
+                id="accessTypeSelect"
+                matNativeControl
+                class="dropdown-menu-format"
+              >
+                <option selected="SecurIDVPN">SecurID VPN</option>
+                <option value="Adapative Authentication VPN">
+                  Adapative Authentication VPN
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Options -->
+    <!-- The forms will render here after the user checks the corresponding checkbox-->
+    <div class="accessInformationForms">
+      <!-- SecurID Access form -->
+
       <div class="button-container">
-        <button matStepperNext class="next-button">Next</button>
+        <button matStepperPrevious class="previous-button">Previous</button>
+        <button
+          matStepperNext
+          class="next-button"
+          (click)="printForm()"
+        >
+          Next
+        </button>
         <span class="spacer"></span>
         <button
-          id="personal-info-save-btn"
+          id="access-info-save-btn"
           class="save-button"
           (click)="save()"
         >
           Save
         </button>
       </div>
-    </mat-step>
+    </div>
+  </div>
+</mat-step>
 
-    <!-- Address Step -->
-    <mat-step
-      formGroupName="addressInformation"
-      [stepControl]="form.get('addressInformation')"
-    >
-      <ng-template matStepLabel>Address</ng-template>
-      <h2 class="mat-display-1" style="margin-bottom: 32px">Address</h2>
-      <p *ngIf="requestNumber">
-        Your request number: <span style="color: red">{{ requestNumber }}</span>
-      </p>
+<mat-step [stepControl]="form.get('additionalInformation')">
+  <ng-template matStepLabel>
+    <div class="tab-text-format">Active Directory</div>
+  </ng-template>
+  <app-additional-information
+    [printForm]="printForm"
+    [save]="save"
+    [form]="form"
+  ></app-additional-information>
+</mat-step>
+<!-- Manager -->
+<mat-step [stepControl]="form.get('managerInformation')">
+  <ng-template matStepLabel>
+    <div class="tab-text-format">Manager</div>
+  </ng-template>
+  <app-manager-information
+    [form]="form"
+    [save]="save"
+    [printForm]="printForm"
+  ></app-manager-information>
+</mat-step>
+<!-- Submit -->
+<mat-step>
+  <ng-template matStepLabel>
+    <div class="tab-text-format">Submit</div>
+  </ng-template>
+  <app-submit-page
+    [regForm]="form"
+    [setSubmitResponse]="setSubmitResponse"
+    [moveIndex]="setIndex"
+    [setIsLoading]="setIsLoading"
+  ></app-submit-page>
+</mat-step>
 
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Street Address</mat-label>
-          <input
-            id="addressInput"
-            type="text"
-            matInput
-            formControlName="address"
-            required
-            [errorStateMatcher]="errorStateMatcher"
-          />
-          <mat-hint>Required</mat-hint>
-          <mat-error>Street address is required</mat-error>
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>City</mat-label>
-          <input
-            id="cityInput"
-            type="text"
-            matInput
-            formControlName="city"
-            required
-            pattern="[a-zA-Z ]*"
-            [errorStateMatcher]="errorStateMatcher"
-          />
-          <mat-hint>Required</mat-hint>
-          <mat-error>City is required and must be letters only</mat-error>
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>State</mat-label>
-          <input
-            id="stateInput"
-            type="text"
-            matInput
-            formControlName="state"
-            required
-            pattern="[a-zA-Z ]*"
-            [errorStateMatcher]="errorStateMatcher"
-          />
-          <mat-hint>Required</mat-hint>
-          <mat-error>State is required and must be letters only</mat-error>
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="outline" class="mat-input-width">
-          <mat-label>Zip Code</mat-label>
-          <input
-            id="zipCodeInput"
-            type="text"
-            matInput
-            formControlName="zipCode"
-            required
-            pattern="[0-9]*"
-            [errorStateMatcher]="errorStateMatcher"
-          />
-          <mat-hint>Required</mat-hint>
-          <mat-error
-            >Zipcode is required and must be numbers only with length
-            5-7</mat-error
-          >
-        </mat-form-field>
-      </div>
-      <div class="button-container">
-        <button matStepperPrevious class="previous-button">Previous</button>
-        <button matStepperNext class="next-button">Next</button>
-        <span class="spacer"></span>
-        <button id="address-info-save-btn" class="save-button" (click)="save()">
-          Save
-        </button>
-      </div>
-    </mat-step>
-
-    <!-- Internet Access -->
-    <mat-step>
-      <ng-template matStepLabel>Internet Access</ng-template>
-      <app-internet-access
-        [form]="form"
-        [save]="save"
-        [printForm]="printForm"
-      ></app-internet-access>
-    </mat-step>
-
-    <!-- Access Information Step-->
-    <mat-step>
-      <ng-template matStepLabel>Data Center Access</ng-template>
-      <!-- TODO: Work on naming and values -->
-      <div>
-        <h2 class="mat-display-1" style="margin-bottom: 16px">
-          Access Options
-        </h2>
-        <p *ngIf="requestNumber">
-          Your request number:
-          <span style="color: rgb(255, 126, 126)">{{ requestNumber }}</span>
-        </p>
-
-        <div class="row">
-          <!-- Access choices -->
-
-          <!-- IBM Access info button -->
-          <div class="access-option-button col-sm-12 col-md-4">
-            <mat-button-toggle
-              id="ibm-access-btn"
-              (click)="toggleFormRender('ibm')"
-              >IBM Access Information
-            </mat-button-toggle>
-            <div class="ibmForm">
-              <div>
-                <!-- TODO: Add a heading here -->
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>Logon ID</mat-label>
-                  <input
-                    id="ibmLogonIdInput"
-                    matInput
-                    formControlName="ibmLogonId"
-                  />
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>2-Digit Major Group Code</mat-label>
-                  <input
-                    id="ibmMajorGroupCodeInput"
-                    matInput
-                    formControlName="majorGroupCode"
-                  />
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>2-Digit LSO Group Code</mat-label>
-                  <input
-                    id="ibmLsoGroupCodeInput"
-                    matInput
-                    formControlName="lsoGroupCode"
-                  />
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>Security Authorization</mat-label>
-                  <input
-                    id="ibmSecurityAuthInput"
-                    matInput
-                    formControlName="securityAuthorization"
-                  />
-                </mat-form-field>
-              </div>
-            </div>
-          </div>
-
-          <!-- Unix Environment button -->
-          <div class="access-option-button col-sm-12 col-md-4">
-            <mat-button-toggle
-              id="unix-access-btn"
-              (click)="toggleFormRender('unix')"
-              >Unix Environment Access</mat-button-toggle
-            >
-            <div class="unix-access-form">
-              <!-- TODO: Needs the Type of Request section -->
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>Login ID</mat-label>
-                  <input
-                    id="unixLogonIdInput"
-                    matInput
-                    formControlName="unixLogonId"
-                  />
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>Application</mat-label>
-                  <input
-                    id="applicationInput"
-                    matInput
-                    formControlName="application"
-                  />
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>Access Group</mat-label>
-                  <input
-                    id="accessGroupInput"
-                    matInput
-                    formControlName="accessGroup"
-                  />
-                </mat-form-field>
-              </div>
-            </div>
-          </div>
-          <!-- SecurId button -->
-          <div class="access-option-button col-sm-12 col-md-4">
-            <mat-button-toggle
-              id="securid-access-btn"
-              (click)="toggleFormRender('securid')"
-              >SecurID Remote Access</mat-button-toggle
-            >
-            <div class="secur-id-access-form">
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>Billing Account Number</mat-label>
-                  <input
-                    id="billingAccountInput"
-                    matInput
-                    formControlName="billingAccountNumber"
-                  />
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field formGroupName="accessInformation">
-                  <mat-label>Access Type</mat-label>
-                  <select
-                    formControlName="accessType"
-                    id="accessTypeSelect"
-                    matNativeControl
-                  >
-                    <option selected="SecurIDVPN">SecurID VPN</option>
-                    <option value="Adapative Authentication VPN">
-                      Adapative Authentication VPN
-                    </option>
-                  </select>
-                </mat-form-field>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Options -->
-        <!-- The forms will render here after the user checks the corresponding checkbox-->
-        <div class="accessInformationForms">
-          <!-- SecurID Access form -->
-
-          <div class="button-container">
-            <button matStepperPrevious class="previous-button">Previous</button>
-            <button matStepperNext class="next-button" (click)="printForm()">
-              Next
-            </button>
-            <span class="spacer"></span>
-            <button
-              id="access-info-save-btn"
-              class="save-button"
-              (click)="save()"
-            >
-              Save
-            </button>
-          </div>
-        </div>
-      </div>
-    </mat-step>
-
-    <!-- Department -->
-    <mat-step [stepControl]="form.get('additionalInformation')">
-      <ng-template matStepLabel>Active Directory</ng-template>
-      <app-additional-information
-        [printForm]="printForm"
-        [save]="save"
-        [form]="form"
-      ></app-additional-information>
-    </mat-step>
-    <!-- Manager -->
-    <mat-step [stepControl]="form.get('managerInformation')">
-      <ng-template matStepLabel>Manager</ng-template>
-      <app-manager-information
-        [form]="form"
-        [save]="save"
-        [printForm]="printForm"
-      ></app-manager-information>
-    </mat-step>
-    <!-- Submit -->
-    <mat-step>
-      <ng-template matStepLabel>Submit</ng-template>
-      <app-submit-page
-        [regForm]="form"
-        [setSubmitResponse]="setSubmitResponse"
-        [moveIndex]="setIndex"
-        [setIsLoading]="setIsLoading"
-      ></app-submit-page>
-    </mat-step>
   </mat-horizontal-stepper>
 </form>
-
-<!-- Loading page -->
-<ng-container *ngIf="isLoading">
-  <app-loading-page></app-loading-page>
-</ng-container>

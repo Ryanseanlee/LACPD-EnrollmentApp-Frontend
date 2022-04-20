@@ -1,65 +1,84 @@
-.flex-container {
-  display: flex;
+.title-text-format{
+  font-size: clamp(10px, 1.5vw, 60px);
+  margin: 0px auto;
+  width:fit-content;
+  font-family: sans-serif;
+  color: rgb(14, 14, 14);
+  font-weight: 400;
 }
 
-.flex-column {
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+.input-text-title-format{
+  font-size: clamp(10px, 1.5vw, 40px);
+  font-family: sans-serif;
+  font-weight: 200px;
+  margin-bottom: 60px;
+  color: rgb(14, 14, 14);
 }
 
-div.flex-container {
-  margin-top: 10px;
+.button-format{
+  background-color: rgb(223, 223, 223);
+  border-radius: 12px;
+  border-color: transparent;
+  font-size: clamp(10px, 1vw, 30px);
+  width: min(15vw, 400px);
+  height: min(15vw, 100px);
+  color: rgb(14, 14, 14);
+  margin-bottom: 20px;
 }
 
-.button-container {
+.button-format:hover{
+  background-color:rgb(159, 159, 159);
+}
+
+.button-format:active{
+  background-color:rgb(140, 140, 140);
+}
+
+.flex-container{
   display: flex;
   flex-direction: row;
-  margin-top: 40px;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .spacer {
   flex: 1 1 auto;
 }
 
-.access-option-button {
-  width: 235px;
-}
-
-.mat-button-toggle-checked {
-  background-color: lawngreen;
-}
-
 .next-button{
-  background-color: #000000;
+  background-color: #707070;
+  border-color: transparent;
   border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(255, 223, 155);
+  color: rgb(255, 255, 255);
   padding:5px 10px;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: clamp(10px, 1vw, 40px);
 }
 .previous-button{
-  background-color: #000000;
+  background-color: #707070;
   border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(255, 138, 138);
+  border-color: transparent;
+  color: rgb(255, 255, 255);
   padding:5px 10px;
   margin-right: 5px;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: clamp(10px, 1vw, 40px);
 }
 .save-button{
-  background-color: #000000;
+  background-color: #707070;
   border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(93, 119, 153);
+  border-color: transparent;
+  color: rgb(255, 255, 255);
   padding:5px 10px;
-}
-@media only screen and (max-width: 600px) {
-  .flex-container {
-    display: block;
-  }
-
-  .access-option-button {
-    margin-bottom: 5px;
-  }
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: clamp(10px, 1vw, 40px);
 }
 
-
+.button-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+}

@@ -1,27 +1,24 @@
 <div [formGroup]="form">
-  <h2 class="mat-display-1" style="margin-bottom: 32px">
-    Manager's Contact Information
-  </h2>
-  <div formGroupName="managerInformation">
-    <mat-form-field appearance="outline">
-      <mat-label class="text-test">Manager's First Name</mat-label>
-      <input matInput formControlName="managerFirstName" />
-    </mat-form-field>
-    <br />
-    <mat-form-field appearance="outline">
-      <mat-label class="text-test">Manager's Last Name</mat-label>
-      <input matInput formControlName="managerLastName" />
-    </mat-form-field>
-    <br />
-    <mat-form-field appearance="outline">
-      <mat-label class="text-test">Manager's Phone #</mat-label>
-      <input matInput formControlName="managerPhone" />
-    </mat-form-field>
-    <br />
-    <mat-form-field appearance="outline">
-      <mat-label class="text-test">Manager's Email</mat-label>
-      <input matInput formControlName="managerEmail" />
-    </mat-form-field>
+  <div class="title-text-format">
+  Manager's Contact Information
+  </div>
+  <div formGroupName="managerInformation" class="flex-container">
+    <div class="input-container">
+      <mat-label class="input-text-title-format">Manager's First Name</mat-label>
+      <input matInput class="input-container-format" formControlName="managerFirstName" />
+    </div>
+    <div class="input-container">
+      <mat-label class="input-text-title-format">Manager's Last Name</mat-label>
+      <input matInput class="input-container-format" formControlName="managerLastName" />
+    </div>
+    <div class="input-container">
+      <mat-label class="input-text-title-format">Manager's Phone #</mat-label>
+      <input matInput class="input-container-format" formControlName="managerPhone" />
+    </div>
+    <div class="input-container">
+      <mat-label class="input-text-title-format">Manager's Email</mat-label>
+      <input matInput class="input-container-format" formControlName="managerEmail" />
+    </div>
   </div>
   <!-- Previous/Next Buttons -->
   <div>

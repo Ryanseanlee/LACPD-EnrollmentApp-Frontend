@@ -1,59 +1,75 @@
 .new-admin-container{
-    background-color: rgb(29, 29, 29);
-    box-shadow: 10px 10px 20px rgb(0, 0, 0);
-    border-radius: 6px;
+    background-color: rgb(188, 188, 188);
+    box-shadow: 10px 10px 10px rgb(158, 158, 158);
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    margin: 150px auto 0px;
+    margin: min(2vw, 120px) auto 0px;
     align-items: flex-start;
     width: fit-content;
-    padding: 30px;
+    padding: 30px 80px;
 }
 
 .new-admin-text{
-    color: white;
+    color: rgb(14, 14, 14);
     margin: 0px 0px 30px 0px;
-    font-size: 30px;
+    font-size: clamp(10px, 1.5vw, 110px);
     font-weight: 300;
     font-family: sans-serif;
+    align-self: center;
 }
 
 .title-text-format{
-    color: white;
-    font-size: 16px;
-    font-weight: 400px;
+    color: rgb(14, 14, 14);
+    font-size: clamp(10px, 1vw, 50px);
+    font-weight: 300;
     margin: 10px 0px 0px 0px;
 }
 
 .input-format{
     width: 100%;
     border-radius: 3px;
-    border: 1px solid black;
-    background-color: #8a8a8a;
-    color:white;
+    background-color: rgb(223, 223, 223);
+    border-color: transparent;
+    color:rgb(14, 14, 14);
     font-weight: 400;
     font-family: sans-serif;
+    font-size: clamp(20px, 1vw, 60px);
+    align-self: center;
 }
 
 .password-container{
-    margin: 10px 0px;
-    background-color: rgb(51, 51, 51);
-    color: rgb(255, 255, 255);
-    padding: 10px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: min(5vw, 50px) 0px;
+    background-color: rgb(157, 157, 157);
+    color: rgb(14, 14, 14);
+    padding: 20px 30px 35px;
     border-radius: 3px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: clamp(20px, 1vw, 60px);
     font-family: sans-serif;
+    row-gap: min(2vw, 80px);
+    align-self: center;
 }
 
 .add-button{
     align-self: center;
-    color: rgb(255, 217, 0);
-    background-color: #000000;
+    color: #ffffff;
+    background-color: #707070;
     border-color: transparent;
-    border-radius: 3px;
+    border-radius: 6px;
     font-family: sans-serif;
-    font-size: clamp(10px, 1vw, 30px);
-    padding: 6px 10px;
-    font-weight: 500;
+    font-size: clamp(10px, 1vw, 70px);
+    padding-left: min(1vw, 60px);
+    padding-right: min(1vw, 60px);
+    padding-top: min(0.5vw, 30px);
+    padding-bottom: min(0.5vw, 30px);
+    font-weight: 400;
+}
+
+.input-container{
+    margin: 0px auto;
+    width: min(16vw, 800px);
 }

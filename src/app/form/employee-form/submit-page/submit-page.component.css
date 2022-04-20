@@ -1,123 +1,197 @@
-body {
-  background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+.grid-container{
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-auto-rows: (100px, auto);
+  grid-gap: 20px;
+  justify-items:stretch;
+  align-items: stretch;
+  width: fit-content;
 }
 
-.contact-form {
-  background: transparent;
-  margin-top: 10%;
-  margin-bottom: 5%;
-  width: 100%;
+.flex-column{
+ display: flex;
+ flex-direction: column;
+ gap: min(5vw, 20px);
+ padding: min(1vw, 20px);
+ background-color: rgb(185, 185, 185);
+ box-shadow: 5px 5px 20px rgb(94, 94, 94);
+ border-radius: 16px;
+ align-items: center;
 }
-.contact-form .form-control {
-  border-radius: 1rem;
+
+.flex-row2{
+  display: flex;
+  flex-direction: row;
+  border-radius: 0px 0px 16px 16px;
+  align-items:center;
+  justify-content: space-around;
+  gap: 30px;
 }
-.contact-form form {
-  padding: 14%;
+
+.flex-column2{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  gap: min(2vw, 20px);
+ }
+
+.subgroup{
+  background-color: rgb(223, 223, 223);
+  border-radius: 6px;
+  padding: min(10px, 1vw, 20px);
+  overflow:auto;
 }
-.contact-form form .row {
-  margin-bottom: 5%;
+
+.subgroup ::-webkit-scrollbar-track{
+  border: 1px solid #000;
+  background-color: black;
 }
-.contact-form h3 {
-  margin-bottom: 7%;
-  margin-top: -7%;
-  text-align: center;
-  color: rgb(0, 174, 255);
-  font-weight: bold;
-  font-size: 50px;
+
+.additional-access-container{
+  width: 800px;
+  align-self: center;
+}
+
+.title-text-format{
+  font-size: clamp(10px, 2vw, 60px);
+  margin:10px auto;
+  width:fit-content;
   font-family: sans-serif;
+  color: rgb(14, 14, 14);
+  font-weight: 400;
 }
 
-.contact-form h4 {
-  margin-bottom: 7%;
-  text-decoration: underline;
-  color: rgb(0, 225, 255);
-  font-weight: 100px;
-  cursor: pointer;
+.input-title-text-format{
+color: rgb(14, 14, 14);
+font-size: clamp(10px, 0.8vw, 30px);
+font-family: sans-serif;
+font-weight: 400;
 }
 
-.instruction {
-  margin-top: -5;
-  margin-bottom: 5%;
-}
-
-.contact-form h4 {
-  margin-bottom: 12%;
-  text-decoration: underline;
-}
-.contact-form .btnContact {
-  margin-top: 8%;
-  border: none;
-  border-radius: 1rem;
-  padding: 1.5%;
-  background: #00ff88;
-  font-weight: 600;
+.info-text-format{
+  font-size: clamp(10px, 0.8vw, 35px);
   font-family: sans-serif;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  padding-left: 15%;
-  padding-right: 15%;
+  color: rgb(14, 14, 14);
+  font-weight: 400;
 }
 
-.contact-form .btnSub {
-  width: 90%;
-  margin-top: 8%;
-  border: none;
-  border-radius: 1rem;
-  padding: 1.5%;
-  background: #1f45c4;
-  font-weight: 300;
-  font-size: 20px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.btnContactSubmit {
-  width: 50%;
-  border-radius: 1rem;
-  padding: 1.5%;
-  color: #fff;
-  background-color: #0062cc;
-  border: none;
-  cursor: pointer;
-}
-
-input[type="checkbox"] {
-  visibility: hidden;
-}
-input[type="checkbox"]:checked + label:before {
-  background: #fff;
-  color: rgb(40, 212, 83);
-  content: "\2713";
+.description-text-format{
+  font-size: clamp(18.3px, 0.72vw, 30px);
+  margin: 10px auto 0px;
+  font-family: sans-serif;
+  font-weight: 500;
+  border-radius: 10px;
+  color: rgb(14, 14, 14);
+  padding: min(0.5vw, 30px);
   text-align: center;
-  margin-right: 5px;
-}
-input[type="checkbox"]:checked + label:after {
-  font-weight: bold;
+  background-color: rgb(154, 154, 154);
+  width: fit-content;
 }
 
-.smallerText {
-    font-size: 11px;
+.input-container{
+  background-color: rgb(154, 154, 154);
+  border-radius: 12px;
+  width: min(10vw, 500px);
+  padding: 10px;
 }
 
-.next-button{
-  background-color: #000000;
-  border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(255, 223, 155);
-  padding:5px 10px;
+.column-title-text-format{
+  color: rgb(14, 14, 14);
+  font-size: clamp(5px, 0.8vw, 40px);
+  font-family: sans-serif;
+  font-weight: 400;
+  align-self: center;
 }
-.previous-button{
-  background-color: #000000;
-  border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(255, 138, 138);
-  padding:5px 10px;
-  margin-right: 5px;
+
+.submit-button{
+  background-color: #707070;
+  color: rgb(255, 255, 255);
+  font-size: clamp(20px, 1vw, 50px);
+  font-weight: 400;
+  border-color: transparent;
+  padding: 20px;
+  border-radius: 16px;
+  width:min(15vw, 400px);
 }
-.save-button{
-  background-color: #000000;
-  border-radius: 6px;
-  border: 1px solid black;
-  color: rgb(93, 119, 153);
-  padding:5px 10px;
+
+.submit-later-button{
+  background-color: #707070;
+  color: rgb(255, 255, 255);
+  font-size: clamp(20px, 1vw, 30px);
+  font-weight: 400;
+  border-color: transparent;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.personal-information-container{
+  grid-row: 1/3;
+}
+
+.employee-address-container{
+
+}
+
+.manager-information-container{
+
+}
+
+.applications-request-container{
+
+}
+
+.internet-access-information-container{
+  
+}
+
+.additional-access-information-container{
+  grid-row: 3/4;
+  grid-column: 1/4;
+}
+
+
+@media screen and (max-width: 3000px) {
+  .grid-container{
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-auto-rows: (100px, auto);
+    grid-gap: 20px;
+    justify-items:stretch;
+    align-items: stretch;
+    width: fit-content;
+  }
+  .personal-information-container{
+    grid-row: 1/3;
+  }
+  
+  .employee-address-container{
+  
+  }
+  
+  .manager-information-container{
+  
+  }
+  
+  .applications-request-container{
+  
+  }
+  
+  .internet-access-information-container{
+    
+  }
+  
+  .additional-access-information-container{
+    grid-row: 1/4;
+    grid-column: 4/5;
+  }
 }
