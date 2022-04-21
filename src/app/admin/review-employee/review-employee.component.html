@@ -373,8 +373,8 @@
     </div>
     <!--Third Row-->
         <div class="input-flex">
-          <mat-label class="text-color" class="title-text-format3">*Business justification: </mat-label>
-          <input id="justification" matInput class="input-container3"/>
+          <div class="title-text-format3">*Business justification: </div>
+          <input id="justification" formControlName="justification" matInput class="input-container3"/>
         </div>
     <div class="button-container">
       <button matStepperPrevious class="previous-button">Previous</button>
@@ -684,13 +684,13 @@
       <ng-template matStepLabel>
         <div class="tab-text-format">Approvers</div>
       </ng-template>
-      <div>
-        <h2 class="title-text-format">Signatures</h2>
-        <h3 class="input-text-title-format">Select the following for signatures</h3>
-        <div class="dropdown-container">
+      <div >
+        <div class="title-text-format">Signatures</div>
+        <div class="title-text-format2">Select the following for signatures</div>
+        <div class="flex-container2">
           <div class="dropdown-divChief">
-            <mat-form-field>
-              <mat-label>Division Chief Manager</mat-label>
+            <div class="input-container2">
+              <mat-label class="input-text-title-format">Division Chief Manager</mat-label>
               <mat-select class="input-container-format" formControlName="divChiefManagerName">
                 <mat-option
                   [value]="null"
@@ -705,11 +705,11 @@
                   {{ food.name }}
                 </mat-option>
               </mat-select>
-            </mat-form-field>
+            </div>
           </div>
           <div class="dropdown-deptHead">
-            <mat-form-field>
-              <mat-label>Department Head</mat-label>
+            <div class="input-container2">
+              <mat-label class="input-text-title-format">Department Head</mat-label>
               <mat-select class="input-container-format"  formControlName="departmentHeadName">
                 <mat-option
                   [value]="null"
@@ -724,11 +724,11 @@
                   {{ food.name }}
                 </mat-option>
               </mat-select>
-            </mat-form-field>
+            </div>
           </div>
           <div class="dropdown-appCoord">
-            <mat-form-field>
-              <mat-label>Application Coordinator</mat-label>
+            <div class="input-container2">
+              <mat-label class="input-text-title-format">Application Coordinator</mat-label>
               <mat-select class="input-container-format"  formControlName="applicationCoordinatorName">
                 <mat-option
                   [value]="null"
@@ -743,11 +743,11 @@
                   {{ food.name }}
                 </mat-option>
               </mat-select>
-            </mat-form-field>
+            </div>
           </div>
           <div class="dropdown-deptInfo">
-            <mat-form-field>
-              <mat-label>Dept. Info Sec. Officer</mat-label>
+            <div class="input-container2">
+              <mat-label class="input-text-title-format">Dept. Info Sec. Officer</mat-label>
               <mat-select class="input-container-format"  formControlName="deptInfoSecurityOfficerName">
                 <mat-option
                   [value]="null"
@@ -762,7 +762,7 @@
                   {{ food.name }}
                 </mat-option>
               </mat-select>
-            </mat-form-field>
+            </div>
           </div>
         </div>
       </div>

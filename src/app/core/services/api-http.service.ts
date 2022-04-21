@@ -77,6 +77,26 @@ export class ApiHttpService {
       managerLastName: data.managerInformation.managerLastName,
       managerEmail: data.managerInformation.managerEmail,
       managerPhone: data.managerInformation.managerPhone,
+
+      //approvers
+
+      applicationCoordinatorName: data.signatures.applicationCoordinatorName,
+      applicationCoordinatorPhone: data.signatures.applicationCoordinatorPhone,
+      applicationCoordinatorEmail: data.signatures.applicationCoordinatorEmail,
+
+      divChiefManagerName: data.signatures.divChiefManagerName,
+      divChiefManagerPhone: data.signatures.divChiefManagerPhone,
+      divChiefManagerEmail: data.signatures.divChiefManagerEmail,
+
+      deptInfoSecurityOfficerName: data.signatures.deptInfoSecurityOfficerName,
+      deptInfoSecurityOfficerPhone:
+        data.signatures.deptInfoSecurityOfficerPhone,
+      deptInfoSecurityOfficerEmail:
+        data.signatures.deptInfoSecurityOfficerEmail,
+
+      departmentHeadName: data.signatures.departmentHeadName,
+      departmentHeadPhone: data.signatures.departmentHeadPhone,
+      departmentHeadEmail: data.signatures.departmentHeadEmail,
     };
     return JSON.stringify(reformated);
   }

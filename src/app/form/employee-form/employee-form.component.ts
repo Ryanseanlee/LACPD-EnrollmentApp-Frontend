@@ -11,6 +11,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatStepper } from '@angular/material/stepper';
 import { ApiHttpService } from 'src/app/core/services/api-http.service';
 import { FormDataService } from 'src/app/core/services/form-data.service';
+import { AdminService } from 'src/app/core/services/admin.service';
 
 @Component({
   selector: 'app-employee-form',
@@ -58,9 +59,15 @@ export class EmployeeFormComponent implements OnInit {
   renderUnixEnvAccess: boolean;
   renderSecurIdAccess: boolean;
 
+  divCheifList: Array<any>;
+  deptHeadList: Array<any>;
+  appCoordList: Array<any>;
+  deptInfoList: Array<any>;
+
   constructor(
     private formDataService: FormDataService,
-    private apiHttpService: ApiHttpService
+    private apiHttpService: ApiHttpService,
+    private adminService: AdminService,
   ) {}
 
   ngOnInit(): void {
@@ -71,6 +78,11 @@ export class EmployeeFormComponent implements OnInit {
      * means that the user is coming from the homepage. Meaning that they
      * are continuing a form.
      */
+
+     this.getDivChiefList();
+     this.getDeptHead();
+     this.getAppCoord();
+     this.getDeptInfo();
     
       // Starting a new form
       this.form = this.createDefaultFormGroup();
@@ -182,6 +194,46 @@ export class EmployeeFormComponent implements OnInit {
         managerLastName: new FormControl(null),
         managerEmail: new FormControl(null),
         managerPhone: new FormControl(null),
+      }),
+      signatures: new FormGroup({
+        applicationCoordinatorName: new FormControl(
+          null
+        ),
+        applicationCoordinatorPhone: new FormControl(
+          null
+        ),
+        applicationCoordinatorEmail: new FormControl(
+          null
+        ),
+
+        divChiefManagerName: new FormControl(
+          null
+        ),
+        divChiefManagerPhone: new FormControl(
+          null
+        ),
+        divChiefManagerEmail: new FormControl(
+          null
+        ),
+
+        deptInfoSecurityOfficerName: new FormControl(
+          null
+        ),
+        deptInfoSecurityOfficerPhone: new FormControl(
+          null
+        ),
+        deptInfoSecurityOfficerEmail: new FormControl(
+          null
+        ),
+        departmentHeadName: new FormControl(
+          null
+        ),
+        departmentHeadPhone: new FormControl(
+          null
+        ),
+        departmentHeadEmail: new FormControl(
+          null
+        ),
       }),
     });
     return formGroup;
@@ -339,9 +391,143 @@ export class EmployeeFormComponent implements OnInit {
           this.formDataService.formData.managerPhone
         ),
       }),
+      signatures: new FormGroup({
+        applicationCoordinatorName: new FormControl(
+          this.formDataService.formData.applicationCoordinatorName
+        ),
+        applicationCoordinatorPhone: new FormControl(
+          this.formDataService.formData.applicationCoordinatorPhone
+        ),
+        applicationCoordinatorEmail: new FormControl(
+          this.formDataService.formData.applicationCoordinatorEmail
+        ),
+
+        divChiefManagerName: new FormControl(
+          this.formDataService.formData.divChiefManagerName
+        ),
+        divChiefManagerPhone: new FormControl(
+          this.formDataService.formData.divChiefManagerPhone
+        ),
+        divChiefManagerEmail: new FormControl(
+          this.formDataService.formData.divChiefManagerEmail
+        ),
+
+        deptInfoSecurityOfficerName: new FormControl(
+          this.formDataService.formData.deptInfoSecurityOfficerName
+        ),
+        deptInfoSecurityOfficerPhone: new FormControl(
+          this.formDataService.formData.deptInfoSecurityOfficerPhone
+        ),
+        deptInfoSecurityOfficerEmail: new FormControl(
+          this.formDataService.formData.deptInfoSecurityOfficerEmail
+        ),
+        departmentHeadName: new FormControl(
+          this.formDataService.formData.departmentHeadName
+        ),
+        departmentHeadPhone: new FormControl(
+          this.formDataService.formData.departmentHeadPhone
+        ),
+        departmentHeadEmail: new FormControl(
+          this.formDataService.formData.departmentHeadEmail
+        ),
+      }),
+    
     });
     return formGroup;
   }
+
+  setSelectedValue(type: string, id: number): void {
+    if (type == 'divisionChief') {
+      if (id == null) {
+        this.form.get('signatures.divChiefManagerPhone').patchValue(null);
+        this.form.get('signatures.divChiefManagerEmail').patchValue(null);
+      } else {
+        this.adminService.getDivChief(id).subscribe((res) => {
+          this.form
+            .get('signatures.divChiefManagerPhone')
+            .patchValue(res.phone);
+          this.form
+            .get('signatures.divChiefManagerEmail')
+            .patchValue(res.email);
+        });
+      }
+    } else if (type == 'departmentHead') {
+      if (id == null) {
+        this.form.get('signatures.departmentHeadPhone').patchValue(null);
+        this.form.get('signatures.departmentHeadEmail').patchValue(null);
+      } else {
+        this.adminService.getDeptHead(id).subscribe((res) => {
+          this.form
+            .get('signatures.departmentHeadPhone')
+            .patchValue(res.phone);
+          this.form
+            .get('signatures.departmentHeadEmail')
+            .patchValue(res.email);
+        });
+      }
+    } else if (type == 'appCoord') {
+      if (id == null) {
+        this.form
+          .get('signatures.applicationCoordinatorPhone')
+          .patchValue(null);
+        this.form
+          .get('signatures.applicationCoordinatorEmail')
+          .patchValue(null);
+      } else {
+        this.adminService.getAppCoord(id).subscribe((res) => {
+          this.form
+            .get('signatures.applicationCoordinatorPhone')
+            .patchValue(res.phone);
+          this.form
+            .get('signatures.applicationCoordinatorEmail')
+            .patchValue(res.email);
+        });
+      }
+    } else {
+      if (id == null) {
+        this.form
+          .get('signatures.deptInfoSecurityOfficerPhone')
+          .patchValue(null);
+        this.form
+          .get('signatures.deptInfoSecurityOfficerEmail')
+          .patchValue(null);
+      } else {
+        this.adminService.getDeptInfoSec(id).subscribe((res) => {
+          this.form
+            .get('signatures.deptInfoSecurityOfficerPhone')
+            .patchValue(res.phone);
+          this.form
+            .get('signatures.deptInfoSecurityOfficerEmail')
+            .patchValue(res.email);
+        });
+      }
+    }
+  }
+  //get list for all approver types
+  getDivChiefList() {
+    this.adminService.getAllDivChief().subscribe((res) => {
+      this.divCheifList = res;
+    });
+  }
+
+  getDeptHead() {
+    this.adminService.getAllDeptHead().subscribe((res) => {
+      this.deptHeadList = res;
+    });
+  }
+
+  getAppCoord() {
+    this.adminService.getAllAppCoord().subscribe((res) => {
+      this.appCoordList = res;
+    });
+  }
+
+  getDeptInfo() {
+    this.adminService.getAllDeptInfoSec().subscribe((res) => {
+      this.deptInfoList = res;
+    });
+  }
+
 
   /*This functions is passed down to submit step
    *and it will change the index of the stepper*/

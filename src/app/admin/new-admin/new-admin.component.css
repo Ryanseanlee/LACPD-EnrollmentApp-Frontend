@@ -7,13 +7,13 @@
     margin: min(2vw, 120px) auto 0px;
     align-items: flex-start;
     width: fit-content;
-    padding: 30px 80px;
+    padding: 20px 40px;
 }
 
 .new-admin-text{
     color: rgb(14, 14, 14);
-    margin: 0px 0px 30px 0px;
-    font-size: clamp(10px, 1.5vw, 110px);
+    margin-bottom: min(1vw, 10px);
+    font-size: clamp(10px, 2.3vw, 110px);
     font-weight: 300;
     font-family: sans-serif;
     align-self: center;
@@ -21,7 +21,7 @@
 
 .title-text-format{
     color: rgb(14, 14, 14);
-    font-size: clamp(10px, 1vw, 50px);
+    font-size: clamp(10px, 1.3vw, 50px);
     font-weight: 300;
     margin: 10px 0px 0px 0px;
 }
@@ -32,7 +32,7 @@
     background-color: rgb(223, 223, 223);
     border-color: transparent;
     color:rgb(14, 14, 14);
-    font-weight: 400;
+    font-weight: 300;
     font-family: sans-serif;
     font-size: clamp(20px, 1vw, 60px);
     align-self: center;
@@ -47,7 +47,7 @@
     color: rgb(14, 14, 14);
     padding: 20px 30px 35px;
     border-radius: 3px;
-    font-weight: 400;
+    font-weight: 300;
     font-size: clamp(20px, 1vw, 60px);
     font-family: sans-serif;
     row-gap: min(2vw, 80px);
@@ -66,7 +66,7 @@
     padding-right: min(1vw, 60px);
     padding-top: min(0.5vw, 30px);
     padding-bottom: min(0.5vw, 30px);
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .input-container{
