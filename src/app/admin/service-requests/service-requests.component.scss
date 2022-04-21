@@ -18,13 +18,15 @@
 }
 
 .table-container{
-  min-height: min(40vw, 1500px);
+  overflow: auto;
+  height: min(40vw, 1500px);
   border-radius:8px;
   background-color: rgb(188, 188, 188);
     box-shadow: 10px 10px 10px rgb(158, 158, 158);
 }
 
 .table-format{
+  position:sticky;
   background-color: transparent;
   font-size: min(1vw, 50px);
   font-family: sans-serif;

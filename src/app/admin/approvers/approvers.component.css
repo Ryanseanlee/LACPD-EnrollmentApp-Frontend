@@ -12,7 +12,7 @@ box-shadow: 10px 10px 10px rgb(158, 158, 158);
 .container-title{
     width: fit-content;
     margin: 0px auto;
-    font-size: 30px;
+    font-size: clamp(30px, 2vw, 60px);
     font-family: sans-serif;
     font-weight: 400;
 }
@@ -20,7 +20,7 @@ box-shadow: 10px 10px 10px rgb(158, 158, 158);
 .card-title{
     width: fit-content;
     margin: 0px auto;
-    font-size: 20px;
+    font-size: clamp(20px, 1.3vw, 40px);
     font-family: sans-serif;
     font-weight: 500;
 }
@@ -39,7 +39,7 @@ box-shadow: 10px 10px 10px rgb(158, 158, 158);
 }
 
 .input-text-title-format{
-    font-size: clamp(10px, 1.3vw, 40px);
+    font-size: clamp(10px, .8vw, 40px);
     font-family: sans-serif;
     font-weight: 400;
     color: rgb(14, 14, 14);
@@ -48,7 +48,7 @@ box-shadow: 10px 10px 10px rgb(158, 158, 158);
 .input-format{
     background-color: rgb(223, 223, 223);
   border: transparent;
-  font-size: clamp(5px, 1vw, 40px);
+  font-size: clamp(5px, .8vw, 40px);
   border-radius: 5px;
   color: rgb(14, 14, 14);
   font-family: sans-serif;
@@ -106,4 +106,9 @@ box-shadow: 10px 10px 10px rgb(158, 158, 158);
     font-family: sans-serif;
     font-weight: 400;
     font-size: clamp(10px, 1vw, 40px);
+}
+
+::ng-deep .mat-tab-label
+{
+  font-size: clamp(10px,1vw, 30px);
 }

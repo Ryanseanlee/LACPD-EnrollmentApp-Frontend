@@ -387,6 +387,43 @@
         <ng-template #elseBlock>None Entered</ng-template>
       </div>
     </div>
+
+    <div class="flex-column approvers-container">
+      <div class="column-title-text-format"  (click)="moveIndex(7)">Approvers</div>
+      <div class="input-container">
+        <div class="input-title-text-format">Division Chief Manager</div>
+        <div class="subgroup">
+          <div class="info-text-format">
+            {{ regForm.value.signatures.divChiefManagerName || "N/A" }}
+          </div>
+        </div>  
+      </div>
+      <div class="input-container">
+        <div class="input-title-text-format">Department Head</div>
+        <div class="subgroup">
+          <div class="info-text-format">
+            {{ regForm.value.signatures.departmentHeadName || "N/A" }}
+          </div>
+        </div>  
+      </div>
+      <div class="input-container">
+        <div class="input-title-text-format">Application Coordinator</div>
+          <div class="subgroup">
+            <div class="info-text-format">
+              {{ regForm.value.signatures.applicationCoordinatorName || "N/A" }}
+            </div>
+          </div>
+      </div>
+      <div class="input-container">
+        <div class="input-title-text-format">Dept. Info Sec. Officer</div>
+        <div class="subgroup">
+          <div class="info-text-format">
+            {{ regForm.value.signatures.deptInfoSecurityOfficerName || "N/A" }}
+          </div>
+        </div>
+      </div>
+    </div>
+
   <!-- End of Second Row-->
 </div>
 <div class="button-container">
