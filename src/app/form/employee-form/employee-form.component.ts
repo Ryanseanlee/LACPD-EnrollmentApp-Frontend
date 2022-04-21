@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatStepper } from '@angular/material/stepper';
+import { AdminService } from 'src/app/core/services/admin.service';
 import { ApiHttpService } from 'src/app/core/services/api-http.service';
 import { FormDataService } from 'src/app/core/services/form-data.service';
 
@@ -58,9 +59,12 @@ export class EmployeeFormComponent implements OnInit {
   renderUnixEnvAccess: boolean;
   renderSecurIdAccess: boolean;
 
+
+
   constructor(
     private formDataService: FormDataService,
-    private apiHttpService: ApiHttpService
+    private apiHttpService: ApiHttpService,
+    private adminService: AdminService,
   ) {}
 
   ngOnInit(): void {
@@ -71,12 +75,12 @@ export class EmployeeFormComponent implements OnInit {
      * means that the user is coming from the homepage. Meaning that they
      * are continuing a form.
      */
-    
+
       // Starting a new form
       this.form = this.createDefaultFormGroup();
       // To show the form instead of the submit page
       this.hasSubmitted = false;
-    
+ 
   }
   /**
    * Takes care of creating a form group.
@@ -339,9 +343,12 @@ export class EmployeeFormComponent implements OnInit {
           this.formDataService.formData.managerPhone
         ),
       }),
+      
     });
     return formGroup;
   }
+
+  
 
   /*This functions is passed down to submit step
    *and it will change the index of the stepper*/
@@ -360,6 +367,8 @@ export class EmployeeFormComponent implements OnInit {
   setIsLoading = (value: boolean): void => {
     this.isLoading = value;
   };
+
+    
 
   // This function is responsible for saving the form
   save = (): void => {
