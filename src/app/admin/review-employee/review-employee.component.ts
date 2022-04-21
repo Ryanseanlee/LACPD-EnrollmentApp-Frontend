@@ -109,6 +109,9 @@ export class ReviewEmployeeComponent implements OnInit {
       iscomplete: new FormControl(this.formDataService.formData.complete),
 
       personalInformation: new FormGroup({
+        isEmployee: new FormControl(
+          this.formDataService.formData.isEmployee
+        ),
         lastName: new FormControl(this.formDataService.formData.lastName, [
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
