@@ -13,6 +13,7 @@ export class NewAdminComponent implements OnInit {
   hide1 = true;
   hide2 = true;
   firstName: string;
+  middleInitial: string;
   lastName: string;
   email: string;
   password1: string;
@@ -24,6 +25,7 @@ export class NewAdminComponent implements OnInit {
   ngOnInit(): void {
     this.adminForm = new FormGroup({
       firstName: new FormControl('',[Validators.required]),
+      middleInitial: new FormControl('', [Validators.required]),
       lastName: new FormControl('',[Validators.required]),
       email: new FormControl('',[Validators.required]),
       password1: new FormControl('',[Validators.required]),
@@ -35,11 +37,14 @@ export class NewAdminComponent implements OnInit {
   addAdmin(): void{
     this.adminService
     .newAdmin(
+      this.adminForm.get('firstName').value,
+      this.adminForm.get('middleInitial').value,
+      this.adminForm.get('lastName').value,
       this.adminForm.get('email').value,
       this.adminForm.get('password1').value
     ).subscribe(
       (res) => {
-        alert()
+        alert("It worked")
         this.message = 'It worked :D';
       },
       (error) =>{

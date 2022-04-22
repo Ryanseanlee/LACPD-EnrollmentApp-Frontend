@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { AdminService } from '../core/services/admin.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   trigger,
   state,
@@ -11,11 +12,17 @@ import {
   transition,
   // ...
 } from '@angular/animations';
+import { TopNavbarComponent } from '../top-navbar/top-navbar.component';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
+  animations: [
+    trigger('titleTextFade',[
+      
+    ]),
+  ]
 
   // smoother router transitions
 })
@@ -38,7 +45,8 @@ export class AdminComponent implements OnInit {
   constructor(
     private router: Router,
     private adminService: AdminService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    private topNavBar: TopNavbarComponent,
   ) {}
 
   ngOnInit(): void {
@@ -72,6 +80,7 @@ export class AdminComponent implements OnInit {
     this.adminService.setAdminCredentials(
       this.formLogin.get('password').value.toString()
     );
+    this.topNavBar.setAdminInformation();
 
     // call display request service: if 404 error from API, then redirected to login page
     this.adminService.display().subscribe({

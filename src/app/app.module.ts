@@ -114,6 +114,7 @@ import { NewAdminComponent } from './admin/new-admin/new-admin.component';
     MatTableModule,
     MatProgressSpinnerModule,
     MatSidenavModule,
+
   ],
   exports: [],
   providers: [AuthGuard, DatePipe],

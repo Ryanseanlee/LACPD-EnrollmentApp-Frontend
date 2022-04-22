@@ -83,9 +83,10 @@
 
     .welcome-name{
         position:static;
-        font-size: 20px;
+        font-size: clamp(20px, 1.3vw, 40px);
         font-weight: 400;
         font-family: sans-serif;
         width: fit-content;
+        color: rgb(14, 14, 14);
     }
 }
