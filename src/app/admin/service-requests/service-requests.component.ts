@@ -26,6 +26,7 @@ export class ServiceRequestsComponent implements OnInit {
     'submit'
   ];
   dataSource: any;
+  isSubmitted: boolean = false;
 
   constructor(
     private adminService: AdminService,

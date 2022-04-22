@@ -1,15 +1,12 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
-import { fadeing } from './route-animations';
+import { trigger, transition, group, query, style, animate} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [
-    fadeing,
-  ]
 })
 export class AppComponent implements OnInit {
   title = 'form-app';
@@ -38,8 +35,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  prepareRouter(outlet:RouterOutlet){
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animations'];
+  getDepth(outlet: RouterOutlet){
+    return outlet;
   }
 
   @HostListener('window: resize', ['$event'])
