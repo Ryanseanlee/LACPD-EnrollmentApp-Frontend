@@ -5,7 +5,6 @@
   </div>
   <form class="login-input-container" [formGroup]="formLogin">
     <div class="greetings">Welcome</div>
-
     <input class="email-input-text-box"
     [type]="hide ? 'email' : 'text'"
     placeholder="email"
@@ -15,8 +14,7 @@
     [type]="hide ? 'password' : 'text'"
     placeholder="password"
     formControlName="password">
-    <button class="login-button" [disabled]="isLoading" (click)="adminLogin()">Login</button>
-
+    <button class="login-button" [disabled]="isLoading" (click)="adminLogin() ">Login</button>
     </form>
 </div>
 

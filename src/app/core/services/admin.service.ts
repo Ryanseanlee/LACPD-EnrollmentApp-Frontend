@@ -118,14 +118,17 @@ export class AdminService {
     );
   }
 
-  public newAdmin(email: string, password: string){
+  public newAdmin(firstName: string, middleName: string, lastName: string, email: string, password: string){
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         email:this.adminUsername,
         password:this.adminPassword,
         'newemail': email,
-        'newpassword': password
+        'newpassword': password,
+        'firstName': firstName,
+        'middleName': middleName,
+        'lastName': lastName,
       }),
     };
     return this.http.patch(
@@ -218,6 +221,20 @@ export class AdminService {
     return JSON.stringify(reformated);
   }
 
+  public getAdminInfo(){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        email: this.adminUsername,
+        password: this.adminPassword,
+      }),
+    };
+    return this.http.get(
+      `${environment.apiUrl}/admin/details`,
+      httpOptions
+    );
+  }
+
   
 
   //starts adobe process
@@ -240,7 +257,7 @@ export class AdminService {
       return this.http.patch(
         `${environment.apiUrl}/admin/service_requests/${requestNumber}`,
         this.reformatDataPostEmployee(data, false),
-        httpOptions
+        httpOptions,
       );
     
   }

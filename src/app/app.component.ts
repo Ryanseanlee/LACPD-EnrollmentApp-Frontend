@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
+import { trigger, transition, group, query, style, animate} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +33,10 @@ export class AppComponent implements OnInit {
         }
       }
     });
+  }
+
+  getDepth(outlet: RouterOutlet){
+    return outlet;
   }
 
   @HostListener('window: resize', ['$event'])

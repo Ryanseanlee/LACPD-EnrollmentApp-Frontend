@@ -169,7 +169,7 @@ input[type="radio"] {
   font-size: min(20px, 5vw, 40px);
   border: 1px solid transparent;
   border-bottom: 1px solid white;
-  color: white;
+  color: rgb(0, 0, 0);
   font-family: sans-serif;
   font-weight: 200px;
   width: fit-content;

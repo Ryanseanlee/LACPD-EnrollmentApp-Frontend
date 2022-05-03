@@ -6,12 +6,9 @@
       <ng-container matColumnDef="requestNumber">
         <th class="left-title" *matHeaderCellDef>Request Number</th>
         <td *matCellDef="let element">
-          <button
-            class="request-number-button"
-            (click)="viewDetails(element.requestNumber)"
-          >
+          <div>
             {{ element.requestNumber }}
-          </button>
+          </div>
         </td>
       </ng-container>
 
@@ -56,11 +53,11 @@
 
       <ng-container matColumnDef="submit">
         <th class="right-title" *matHeaderCellDef>Submit</th>
-        <td *matCellDef="let element">
-          <button class="review-button" (click)="review(element.requestNumber)">
-            Review
-          </button>
-        </td>
+            <td *matCellDef="let element">
+                <button class="review-button" (click)="review(element.requestNumber)">
+                  Review
+                </button>
+            </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

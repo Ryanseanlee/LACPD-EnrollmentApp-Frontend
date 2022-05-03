@@ -1,15 +1,18 @@
   
 <div [ngSwitch]="navView" class="page-color light-mode"> 
   <div *ngSwitchCase=true>
-    <app-top-navbar>
-      <router-outlet></router-outlet>
-    </app-top-navbar>
+    <app-top-navbar></app-top-navbar>
+      <div [@routeAnimation]="getDepth(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>  
+      
   </div>
 
   <div *ngSwitchCase=false>
     <app-dropdown-menu>
-      <router-outlet></router-outlet>
-    </app-dropdown-menu>
+    <div [@routeAnimation]="getDepth(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>  
+  </app-dropdown-menu>
   </div>
-
 </div>

@@ -7,10 +7,12 @@ import { AdminService } from '../core/services/admin.service';
   templateUrl: './top-navbar.component.html',
   styleUrls: ['./top-navbar.component.scss']
 })
-export class TopNavbarComponent {
+export class TopNavbarComponent implements OnInit {
 
-  ngOnInit(): void {
-  }
+  firstName:string;
+  middleName:string;
+  lastName:string;
+  private adminInformation: any;
 
   isAdminLoggedIn: BehaviorSubject<boolean>;
 
@@ -20,8 +22,24 @@ export class TopNavbarComponent {
     this.isAdminLoggedIn = this.adminService.adminLoggedIn;
   }
 
-  onLogoutClick(): void {
-    this.adminService.logAdminOut();
+  setAdminInformation(){
+    this.adminService.getAdminInfo().subscribe((res)=>{
+      this.adminInformation = res;
+      this.firstName = this.adminInformation[0];
+      this.middleName = this.adminInformation[1];
+      this.lastName = this.adminInformation[2];
+    });
   }
 
+  onLogoutClick(): void {
+    this.adminService.logAdminOut();
+    this.firstName = null;
+    this.middleName = null;
+    this.lastName = null;
+  }
+
+
+  ngOnInit(): void {
+    this.setAdminInformation();
+  }
 }

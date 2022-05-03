@@ -6,7 +6,7 @@
         </div>
         <div class="input-container">
             <div class="title-text-format">Enter Middle Initial</div>
-            <input class="input-format" type="middleName" formControlName="middleName">
+            <input class="input-format" type="middleName" formControlName="middleInitial">
         </div> 
         <div class="input-container">
             <div class="title-text-format">Enter Last Name</div>
@@ -26,5 +26,5 @@
                 <input class="input-format" type="password" formControlName="password2">
             </div>
         </div>   
-        <button class="add-button" >Add</button>  
+        <button class="add-button" (click)="addAdmin()" >Add</button>  
     </form>
