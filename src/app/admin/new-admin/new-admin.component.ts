@@ -44,8 +44,8 @@ export class NewAdminComponent implements OnInit {
       this.adminForm.get('password1').value
     ).subscribe(
       (res) => {
-        alert("It worked")
-        this.message = 'It worked :D';
+        alert("New Admin Added")
+        this.message = 'New Admin Added';
       },
       (error) =>{
         if (error.status === 403) {
