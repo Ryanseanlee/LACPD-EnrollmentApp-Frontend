@@ -25,7 +25,7 @@ export class ApiHttpService {
     const reformated = {
       // Form specific data
       submitted: isSubmitted,
-      isEmployee: data.personalInformation.isEmployee, // Since it is the employee form
+      employee: data.personalInformation.isEmployee, // Since it is the employee form
 
       // Personal Information\
       createDate: data.personalInformation.createDate,
