@@ -23,9 +23,9 @@
             <div class="radio-text-format">Employee</div>
             <input
               type="radio"
-              pattern="[A-Za-z]"
+              id="isEmployee"
               formControlName="isEmployee"
-              value="true"
+              value=true
               name="isEmployee"
             />
           </div>
@@ -34,8 +34,9 @@
             <div class="radio-text-format">Contractor</div>
             <input
               type="radio"
+              id="isContractor"
               formControlName="isEmployee"
-              value="false"
+              value=false
               name="isEmployee"
             />
           </div>
@@ -307,12 +308,12 @@
 
       <!-- IBM Access info button -->
       <div class="container-flex-child">
-        <button
+        <mat-button-toggle
           id="ibm-access-btn"
           (click)="toggleFormRender('ibm')"
           class="button-format"
           >IBM Access Information
-        </button>
+        </mat-button-toggle>
         <div class="ibmForm">
           <div class="input-containter">
             <!-- TODO: Add a heading here -->
@@ -364,11 +365,11 @@
 
       <!-- Unix Environment button -->
       <div class="container-flex-child">
-        <button
+        <mat-button-toggle
           id="unix-access-btn"
           (click)="toggleFormRender('unix')"
           class="button-format"
-          >Unix Environment Access</button>
+          >Unix Environment Access</mat-button-toggle>
         <div class="unix-access-form">
           <!-- TODO: Needs the Type of Request section -->
           <div class="input-containter">
@@ -408,11 +409,11 @@
       </div>
       <!-- SecurId button -->
       <div class="container-flex-child">
-        <button
+        <mat-button-toggle
           id="securid-access-btn"
           (click)="toggleFormRender('securid')"
           class="button-format"
-          >SecurID Remote Access</button>
+          >SecurID Remote Access</mat-button-toggle>
         <div class="secur-id-access-form">
           <div class="input-containter">
             <div formGroupName="accessInformation">

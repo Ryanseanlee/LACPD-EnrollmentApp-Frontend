@@ -190,7 +190,7 @@ export class AdminService {
       // Additional Information
       laCountyGovAccess: data.additionalInformation.laCountyGovAccess,
       lacMobileWifiAccess: data.addressInformation.lacMobileWifiAccess,
-      o360Email: data.additionalInformation.o360Email,
+      o365Email: data.additionalInformation.o365Email,
      
 
       //managers info
@@ -267,6 +267,7 @@ export class AdminService {
     data: any,
     isEmployee: boolean
   ): Observable<any> {
+    alert("Hello world");
     // set the password in headers
     const httpOptions = {
       headers: new HttpHeaders({

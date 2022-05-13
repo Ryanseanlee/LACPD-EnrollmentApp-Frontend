@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ApiHttpService } from 'src/app/core/services/api-http.service';
 import { ConfirmationPageService } from 'src/app/core/services/confirmation-page.service';
 import { FormDataService } from 'src/app/core/services/form-data.service';
+import { AdminService } from 'src/app/core/services/admin.service';
 
 @Component({
   selector: 'app-submit-page',
@@ -27,12 +28,13 @@ export class SubmitPageComponent implements OnInit {
     private apiHttpService: ApiHttpService,
     private formDataService: FormDataService,
     private confirmationPageService: ConfirmationPageService,
-    private router: Router
+    private router: Router,
+    private adminService: AdminService,
   ) {}
 
   ngOnInit(): void {}
 
-  onClick(): void {
+  onClickSave(): void {
     // If there is a form in formData then there is a form in progress
     if (this.formDataService.formData !== undefined) {
       // Render the loading screen
@@ -64,7 +66,7 @@ export class SubmitPageComponent implements OnInit {
       // as they were completing the form
     } else {
       this.setIsLoading(true);
-      this.apiHttpService.submitForm(this.regForm.value, true).subscribe({
+      this.apiHttpService.submitForm(this.regForm.value,true).subscribe({
         next: (response) => {
           this.confirmationPageService.requestNumber = response.requestNumber;
           this.confirmationPageService.isAdmin = false; // Render the default confirmation page
@@ -81,15 +83,16 @@ export class SubmitPageComponent implements OnInit {
     }
   }
   // This function is for testing purposes. It will not mark isCompleted as true(it should be if submitting form this step)
-  onSubmitMarkNotCompleted(): void {
-    // this.isLoading$.next(true);
-    // If there is a form in formData then there is a form in progress
+  onClickSubmit(): void {
+    
     if (this.formDataService.formData !== undefined) {
+      // Render the loading screen
+      this.setIsLoading(true);
       // Save the form
       this.apiHttpService
         .saveForm(
           this.formDataService.formData.requestNumber,
-          false,
+          true,
           this.regForm.value
         )
         .subscribe({
@@ -97,26 +100,49 @@ export class SubmitPageComponent implements OnInit {
             // Set the formData to the response, might be needed somewhere else
             this.formDataService.formData = response;
             this.confirmationPageService.requestNumber = response.requestNumber;
-            this.confirmationPageService.isAdmin = false;
-
-            // Set the submitResponse so that the submit page renders
-            this.router.navigate(['confirmation-page']);
+            this.confirmationPageService.isAdmin = false; // Render the default confirmation page
+          },
+          error: (error) => {
+            // Remove loading screen
+            this.setIsLoading(false);
+            // Notify user that something went wrong
+            alert('Something went wrong!');
           },
         });
 
       // If the else statement executes, then the user probably didn't save their progress
       // as they were completing the form
     } else {
-      // this.isLoading$.next(true);
-      this.apiHttpService
-        .createForm(this.regForm.value, true) // This will not mark the form as completed
-        .subscribe({
-          next: (response) => {
-            this.confirmationPageService.requestNumber = response.requestNumber;
-            this.confirmationPageService.isAdmin = false;
-            this.router.navigate(['confirmation-page']);
-          },
-        });
+      this.setIsLoading(true);
+      this.apiHttpService.submitForm(this.regForm.value,true).subscribe({
+        next: (response) => {
+          this.confirmationPageService.requestNumber = response.requestNumber;
+          this.confirmationPageService.isAdmin = false; // Render the default confirmation page
+        },
+        error: (error) => {
+          // Remove the loading screen
+          this.setIsLoading(false);
+          // Notify the user that an error occured
+          alert('Something went wrong!');
+          throw new Error(error.message);
+        },
+      });
     }
+    alert("Hello");
+    this.adminService
+      .submitForm(
+        this.formDataService.formData.requestNumber,
+        this.regForm.value,
+        true
+      )
+      .subscribe({
+        next: (response) => {
+          this.formDataService.formData = response;
+          this.confirmationPageService.requestNumber = response.requestNumber;
+          this.confirmationPageService.isAdmin = true;
+          this.router.navigate(['/confirmation-page']);
+          console.log(response);
+        },
+      });
   }
 }

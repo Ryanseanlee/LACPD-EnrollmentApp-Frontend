@@ -98,6 +98,7 @@ export class ApiHttpService {
       departmentHeadPhone: data.signatures.departmentHeadPhone,
       departmentHeadEmail: data.signatures.departmentHeadEmail,
     };
+    alert(JSON.stringify(reformated));
     return JSON.stringify(reformated);
   }
 

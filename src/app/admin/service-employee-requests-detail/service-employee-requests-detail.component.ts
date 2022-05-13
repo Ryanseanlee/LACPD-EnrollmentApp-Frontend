@@ -29,6 +29,9 @@ export class ServiceEmployeeRequestsDetailComponent implements OnInit {
     this.requestNumber = this.adminService.adminFormData.requestNumber;
     this.adminForm = new FormGroup({
       personalInformation: new FormGroup({
+        isEmployee:new FormControl(this.adminService.adminFormData.isEmployee, [
+          Validators.required,
+        ]),
         lastName: new FormControl(this.adminService.adminFormData.lastName, [
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),

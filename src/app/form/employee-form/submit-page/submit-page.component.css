@@ -116,21 +116,23 @@ font-weight: 400;
   width:min(15vw, 400px);
 }
 
-.submit-later-button{
+.save-button{
   background-color: #707070;
   color: rgb(255, 255, 255);
-  font-size: clamp(20px, 1vw, 30px);
+  font-size: clamp(20px, 1vw, 50px);
   font-weight: 400;
   border-color: transparent;
-  padding: 30px;
+  padding: 20px;
   border-radius: 16px;
+  width:min(15vw, 400px);
 }
 
 .button-container{
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  width: fit-content;
+  margin: auto;
 }
 
 .personal-information-container{

@@ -58,7 +58,7 @@ export class AdditionalInformationComponent implements OnInit {
     ]).value;
     this.o365Email = this.form.get([
       'additionalInformation',
-      'o360Email',
+      'o365Email',
     ]).value;
   } // 854572
 

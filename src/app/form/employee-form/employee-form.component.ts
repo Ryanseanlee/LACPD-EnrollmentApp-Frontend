@@ -105,7 +105,7 @@ export class EmployeeFormComponent implements OnInit {
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
         ]),
-        isEmployee: new FormControl(true),
+        isEmployee: new FormControl(null),
         middleInitial: new FormControl(null, Validators.pattern('[a-z A-Z]*')),
         emailAddress: new FormControl(null, [
           Validators.required,
@@ -257,7 +257,7 @@ export class EmployeeFormComponent implements OnInit {
           Validators.pattern('[a-z A-Z]*'),
         ]),
         isEmployee: new FormControl(
-          this.formDataService.formData.isEmployee
+          this.formDataService.formData.isEmployee,
         ),
         middleInitial: new FormControl(
           this.formDataService.formData.middleInitial,
@@ -372,8 +372,8 @@ export class EmployeeFormComponent implements OnInit {
         lacMobileWifiAccess: new FormControl(
           this.formDataService.formData.lacMobileWifiAccess
         ),
-        o360Email: new FormControl(
-          this.formDataService.formData.o360Email
+        o365Email: new FormControl(
+          this.formDataService.formData.o365Email
         ),
       }),
       // TODO: Retrieve these values from formData
@@ -434,6 +434,16 @@ export class EmployeeFormComponent implements OnInit {
     
     });
     return formGroup;
+  }
+
+  setRadioButtonValues(){
+    if(this.form.get('personalInformation.isEmployee')){
+      var element = <HTMLInputElement> document.getElementById("isEmployee");
+      element.checked = true;
+    }else{
+      var element = <HTMLInputElement> document.getElementById("isContractor");
+      element.checked = true;
+    }
   }
 
   setSelectedValue(type: string, id: number): void {

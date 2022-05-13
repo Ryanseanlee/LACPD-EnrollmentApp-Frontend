@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader, ViewChild } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -81,7 +81,7 @@ export class ReviewEmployeeComponent implements OnInit {
     private confirmationPageService: ConfirmationPageService,
     private router: Router
   ) {}
-
+  
   ngOnInit(): void {
     //request Number to display in form
     this.requestNumber = this.formDataService.formData.requestNumber;
@@ -109,6 +109,9 @@ export class ReviewEmployeeComponent implements OnInit {
       iscomplete: new FormControl(this.formDataService.formData.complete),
 
       personalInformation: new FormGroup({
+        isEmployee: new FormControl(this.formDataService.formData.isEmployee,[
+          Validators.required,
+        ]),
         lastName: new FormControl(this.formDataService.formData.lastName, [
           Validators.required,
           Validators.pattern('[a-z A-Z]*'),
@@ -274,7 +277,16 @@ export class ReviewEmployeeComponent implements OnInit {
         ),
       }),
     });
+    alert(this.formDataService.formData.isEmployee);
+    if(this.formDataService.formData.isEmployee){
+      var element = <HTMLInputElement> document.getElementById("isEmployee");
+      element.checked = true;
+    }else{
+      var element = <HTMLInputElement> document.getElementById("isContractor");
+      element.checked = true;
+    }
   }
+
 
   //set to approval form here for mat-select signatures
   setSelectedValue(type: string, id: number): void {

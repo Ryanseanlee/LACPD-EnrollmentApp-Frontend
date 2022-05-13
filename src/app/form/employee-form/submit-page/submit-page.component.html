@@ -225,15 +225,15 @@
             <label>LACMobile</label>
           </div>
 
-          <div *ngIf="regForm.value.additionalInformation.o360Email">
+          <div *ngIf="regForm.value.additionalInformation.o365Email">
             <input type="checkbox" disabled checked />
-            <label>Office 360 Email</label>
+            <label>Office 365 Email</label>
           </div>
 
           <div
             *ngIf="
               regForm.value.additionalInformation.laCountyGovAccess == false &&
-              regForm.value.additionalInformation.o360Email == false &&
+              regForm.value.additionalInformation.o365Email == false &&
               regForm.value.additionalInformation.lacMobileWifiAccess == false
             "
           >
@@ -427,8 +427,7 @@
   <!-- End of Second Row-->
 </div>
 <div class="button-container">
-  <div>
-    <button class="submit-button" (click)="onClick()">Submit</button>
-  </div>
+    <button class="save-button" (click)="onClickSave()">Save</button>
+    <button class="submit-button" (click)="onClickSubmit()">Submit</button>
 </div>
 </div>

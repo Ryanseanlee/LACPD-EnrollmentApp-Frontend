@@ -56,7 +56,7 @@ export class EmployeeFormDTO {
   // additional Requested
   laCountyGovAccess: boolean;
   lacMobileWifiAccess: boolean;
-  o360Email: boolean;
+  o365Email: boolean;
 
 
   // Profile Information (might not be done)
@@ -141,6 +141,6 @@ export class EmployeeFormDTO {
     // Additional Information
     this.laCountyGovAccess = additionalInformation.laCountyGovAccess;
     this.lacMobileWifiAccess = additionalInformation.lacMobileWifiAccess;
-    this.o360Email = additionalInformation.o360Email;
+    this.o365Email = additionalInformation.o365Email;
   }
 }
