@@ -82,6 +82,13 @@ When a pull request or commit gets pushed to the master branch, it will automati
 
 - Github: [@PaulClefUbeCoding](https://github.com/PaulClefUbeCoding)
 
+## 2021 Authors
+
+👤 **Ryan Lee**
+- Github: [@Ryanseanlee](https://github.com/Ryanseanlee)
+
+👤 **Joshua Parez**
+- Github:
 
 
 
